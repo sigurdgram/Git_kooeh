@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://ghlbw566eqj5"]
+
+[ext_resource type="Script" uid="uid://bxd57c38nlmd1" path="res://Scripts/Buildable/Buildable_Table1.gd" id="1_i3w2a"]
+[ext_resource type="Texture2D" uid="uid://dgsigdjxl77op" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E001_WoodenTable.png" id="2_2ywu0"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_758yc"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="3_b1vc3"]
+[ext_resource type="Script" uid="uid://cp2neomp1mnxl" path="res://addons/buildable_system/Scripts/Node2Ds/CollisionPolygonShape.gd" id="4_y4vmf"]
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="5_qf0dd"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="7_4r155"]
+[ext_resource type="Script" uid="uid://dhqmrcvillut0" path="res://Scripts/RestaurantSystems/UpgradableComponent.gd" id="9_lpo84"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjv02"]
+resource_local_to_scene = true
+shader = ExtResource("2_758yc")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.02
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Asset_Table3_SE" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite")]
+script = ExtResource("1_i3w2a")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+metadata/AttachmentSlots = {
+"Tabletop": NodePath("Tabletop"),
+"Tabletop_NE": NodePath("Tabletop_NE"),
+"Tabletop_NW": NodePath("Tabletop_NW"),
+"Tabletop_SE": NodePath("Tabletop_SE"),
+"Tabletop_SW": NodePath("Tabletop_SW")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_jjv02")
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2ywu0")
+offset = Vector2(0, -75)
+
+[node name="TShadowSquare" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+visibility_layer = 3
+texture = ExtResource("3_b1vc3")
+offset = Vector2(3, 10)
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("4_y4vmf")
+shape = ExtResource("5_qf0dd")
+
+[node name="Tabletop" type="Node2D" parent="."]
+position = Vector2(0, -83)
+scale = Vector2(0.5, 0.5)
+metadata/AttachmentSlots = {
+"StringName": NodePath(".")
+}
+
+[node name="Tabletop_NW" type="Node2D" parent="."]
+position = Vector2(-33, -107)
+
+[node name="Tabletop_NE" type="Node2D" parent="."]
+position = Vector2(33, -107)
+
+[node name="Tabletop_SE" type="Node2D" parent="."]
+position = Vector2(33, -63)
+
+[node name="Tabletop_SW" type="Node2D" parent="."]
+position = Vector2(-33, -63)
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("7_4r155")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+process_mode = 4
+collision_mask = 0
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("4_y4vmf")
+shape = ExtResource("5_qf0dd")
+
+[node name="UpgradableComponent" type="Node" parent="."]
+script = ExtResource("9_lpo84")

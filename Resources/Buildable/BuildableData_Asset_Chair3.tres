@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=14 format=3 uid="uid://drhhgxnenga8b"]
+
+[ext_resource type="PackedScene" uid="uid://c7kqf8ysv6wx2" path="res://Scenes/Buildable/Buildable_Chair3.tscn" id="1_vs80k"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_8tvkp"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_nbubq"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_e2hfr"]
+[ext_resource type="PackedScene" uid="uid://dln7yqmt31ppw" path="res://Scenes/Buildable/Buildable_Asset_Chair3/Buildable_Asset_Chair3_SE.tscn" id="5_a7i6j"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="6_pcrgl"]
+[ext_resource type="PackedScene" uid="uid://c0f5i5slfn1gp" path="res://Scenes/Buildable/Buildable_Asset_Chair3/Buildable_Asset_Chair3_SW.tscn" id="7_qrx7x"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="8_80qie"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="9_ktdve"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="10_xqvyc"]
+[ext_resource type="Texture2D" uid="uid://cyacstmvmid0o" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E002_PlasticStoolBlue.png" id="11_eipft"]
+
+[sub_resource type="Resource" id="Resource_m30iq"]
+script = ExtResource("6_pcrgl")
+buildable = ExtResource("5_a7i6j")
+buildReqs = Array[ExtResource("2_8tvkp")]([ExtResource("3_nbubq"), ExtResource("4_e2hfr")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_62jek"]
+script = ExtResource("6_pcrgl")
+buildable = ExtResource("7_qrx7x")
+buildReqs = Array[ExtResource("2_8tvkp")]([ExtResource("3_nbubq"), ExtResource("4_e2hfr")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[resource]
+resource_name = "BuildableData.Chair3"
+script = ExtResource("10_xqvyc")
+name = "Chair 3"
+buildableScene = ExtResource("1_vs80k")
+texture = ExtResource("11_eipft")
+category = 2
+price = 100
+layer = 0
+customData = {}
+tileSetID = 10
+tileExtensions = Array[ExtResource("8_80qie")]([])
+flippedTileExtensions = Array[ExtResource("8_80qie")]([])
+restrictions = Array[ExtResource("9_ktdve")]([])
+id = "BuildableData.Chair3"
+displayName = "Chair3"
+layer2 = 2
+collisionPriority = 2
+collisionLayer = 129
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: null,
+2: null,
+3: SubResource("Resource_m30iq"),
+4: null,
+5: SubResource("Resource_62jek"),
+6: null,
+7: null
+}

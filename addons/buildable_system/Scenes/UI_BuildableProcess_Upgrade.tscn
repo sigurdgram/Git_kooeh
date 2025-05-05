@@ -1,0 +1,284 @@
+[gd_scene load_steps=20 format=3 uid="uid://byhx7apvqg6qt"]
+
+[ext_resource type="Script" uid="uid://b86a3w11couny" path="res://Scripts/UISystem/UIs/Buildable/UI_BuildableProcess_Upgrade.gd" id="1_fpnlb"]
+[ext_resource type="PackedScene" uid="uid://bamdfw848a0qb" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Upgrade_Entry.tscn" id="2_fife3"]
+[ext_resource type="Texture2D" uid="uid://djltwt0pwxjtm" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_Box.png" id="2_v7hci"]
+[ext_resource type="PackedScene" uid="uid://bqn4mcwhkw3wx" path="res://Scenes/UIs/EconomySystem/UI_Economy.tscn" id="4_66jky"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="4_ibbk4"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="5_i0qh8"]
+[ext_resource type="Texture2D" uid="uid://rmg05i6h2e08" path="res://Art/UI/Atlas_UI_Button_Hamburger.tres" id="7_m72i8"]
+[ext_resource type="Texture2D" uid="uid://g7xqom2s112p" path="res://2024_Art/2024 UI Assets/Edit Mode/T_EditMode_ChoiceButton_Normal.png" id="8_bd52g"]
+[ext_resource type="Texture2D" uid="uid://bq7gbhl18mohw" path="res://2024_Art/2024 UI Assets/Edit Mode/T_EditMode_ChoiceButton_Selected.png" id="8_pv4ra"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4huv0"]
+texture = ExtResource("7_m72i8")
+modulate_color = Color(1, 0.898039, 0.756863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhxln"]
+texture = ExtResource("7_m72i8")
+modulate_color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7vl4"]
+texture = ExtResource("7_m72i8")
+modulate_color = Color(1, 0.898039, 0.756863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lr4f0"]
+texture = ExtResource("7_m72i8")
+modulate_color = Color(0.478431, 0.478431, 0.478431, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2h82r"]
+texture = ExtResource("7_m72i8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78ouf"]
+content_margin_top = 8.0
+content_margin_bottom = 15.0
+texture = ExtResource("2_v7hci")
+texture_margin_left = 42.0
+texture_margin_top = 57.0
+texture_margin_right = 44.0
+texture_margin_bottom = 54.0
+expand_margin_top = 20.0
+region_rect = Rect2(274, 100, 1499, 298)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4scg"]
+texture = ExtResource("8_pv4ra")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 46.0
+texture_margin_bottom = 43.0
+region_rect = Rect2(14, 53, 482, 149)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ep1gk"]
+texture = ExtResource("8_bd52g")
+texture_margin_left = 33.0
+texture_margin_top = 35.0
+texture_margin_right = 35.0
+texture_margin_bottom = 32.0
+region_rect = Rect2(24, 62, 463, 131)
+modulate_color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pv4ra"]
+texture = ExtResource("8_bd52g")
+texture_margin_left = 34.0
+texture_margin_top = 34.0
+texture_margin_right = 37.0
+texture_margin_bottom = 33.0
+region_rect = Rect2(24, 62, 464, 132)
+
+[sub_resource type="GDScript" id="GDScript_7htcr"]
+resource_name = "BTN_UpgradeRestaurant"
+script/source = "extends Button
+
+@export var _RTB: RichTextLabel
+
+var _textPlaceholder: String
+var _buildableSystem: BuildableSystem
+var _upgradeBundle: UpgradeBundle
+
+func _ready() -> void:
+	_textPlaceholder = _RTB.text
+	GameplayVariables.onEconomyUpdate.connect(_on_money_updated)
+	pressed.connect(_on_select_upgrade)
+	pass
+
+func setup(buildableSystem: BuildableSystem) -> void:
+	_buildableSystem = buildableSystem
+	_upgradeBundle = _buildableSystem.get_upgrade_bundle()
+	evaluate_availability()
+	pass
+
+func can_upgrade() -> BuildableTypes.EBuildableError:
+	var ret := BuildableTypes.EBuildableError.OK
+	var level: int = GameplayVariables.get_var(KooehConstant.restaurantLevelVarName)
+	ret |= BuildableTypes.EBuildableError.MaxLevel if level + 1 >= _upgradeBundle.data.size() else 0
+	
+	if not ret:
+		var data: UpgradeData = _upgradeBundle.data[level + 1]
+		var d: Dictionary = data.data
+		for i in d:
+			match i:
+				\"Price\": 
+					ret |= BuildableTypes.EBuildableError.NoMoney if EconomySystem.get_currency() < d[\"Price\"] else 0
+	
+	return ret
+
+func _on_money_updated(_money: float, _delta: float) -> void:
+	evaluate_availability()
+	pass
+
+func evaluate_availability() -> void:
+	var state: BuildableTypes.EBuildableError = can_upgrade()
+	disabled = state != BuildableTypes.EBuildableError.OK
+	
+	var price: String
+	if not state & BuildableTypes.EBuildableError.MaxLevel:
+		var level: int = GameplayVariables.get_var(KooehConstant.restaurantLevelVarName)
+		price = _comma_per_thousands(_upgradeBundle.data[level + 1].data[\"Price\"])
+	else:
+		price = \"---\"
+		
+	_RTB.text = _textPlaceholder.format({\"MoneyAmount\": price})
+	pass
+
+func _on_select_upgrade() -> void:
+	UITree.Prompt(\"Are you sure you want to upgrade restaurant?\", 
+	func (): 
+		var level: int = GameplayVariables.get_var(KooehConstant.restaurantLevelVarName)
+		var price: int = _upgradeBundle.data[level + 1].data[\"Price\"]
+		GameplayVariables.add_money(-price)
+		BuildableUpgrade.upgrade_restaurant(_buildableSystem)
+		owner.rebuild_ui(),
+	func (): print(\"No\"))
+	pass
+
+func _comma_per_thousands(number: int) -> String:
+	var numString: String = str(number)
+	var retVal: String = \"\"
+	
+	var mod = numString.length() % 3
+	for i in range(0, numString.length()):
+		if i != 0 && i % 3 == mod:
+			retVal += \",\"
+		retVal += numString[i]
+	
+	return retVal
+"
+
+[node name="UI_BuildableProcess_Upgrade" type="Control" node_paths=PackedStringArray("_BTNUpgradeRestaurant", "_BTNPause", "_tabContainer", "_templateTab")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fpnlb")
+_buyFrame = ExtResource("2_fife3")
+_BTNUpgradeRestaurant = NodePath("BTN_UpgradeRestaurant")
+_BTNPause = NodePath("BTN_Hamburger")
+_tabContainer = NodePath("Control/TabContainer")
+_templateTab = NodePath("Control/Template_Tab")
+
+[node name="UI_Economy" parent="." instance=ExtResource("4_66jky")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -132.23
+offset_top = 30.0
+offset_right = -132.23
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.4, 0.4)
+
+[node name="BTN_Hamburger" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxTexture_4huv0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_uhxln")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k7vl4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lr4f0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2h82r")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 340)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -330.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_ibbk4")
+theme_override_colors/font_unselected_color = Color(0.160784, 0.0470588, 0, 1)
+theme_override_colors/font_hovered_color = Color(0.160784, 0.0470588, 0, 1)
+theme_override_colors/font_selected_color = Color(0.160784, 0.0470588, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/panel = SubResource("StyleBoxTexture_78ouf")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_c4scg")
+theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_ep1gk")
+theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_pv4ra")
+
+[node name="Template_Tab" type="ScrollContainer" parent="Control"]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -213.0
+offset_right = -44.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="HBoxContainer" parent="Control/Template_Tab"]
+layout_mode = 2
+
+[node name="BTN_UpgradeRestaurant" type="Button" parent="." node_paths=PackedStringArray("_RTB")]
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = 208.365
+offset_bottom = 308.365
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("4_ibbk4")
+theme_type_variation = &"Button_Menu"
+script = SubResource("GDScript_7htcr")
+_RTB = NodePath("Control/RichTextLabel")
+
+[node name="Control" type="Control" parent="BTN_UpgradeRestaurant"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BTN_UpgradeRestaurant/Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.160784, 0.0470588, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_i0qh8")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]Upgrade Restaurant
+[img=30x27]res://Art/UI/Atlas_UI_Money.tres[/img] {MoneyAmount}[/center]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false

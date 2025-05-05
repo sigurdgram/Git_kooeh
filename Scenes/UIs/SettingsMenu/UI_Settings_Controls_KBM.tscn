@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://big2oy0g6tewq"]
+
+[ext_resource type="Script" uid="uid://rvef5e685b8c" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_Controls_KBM.gd" id="1_k48o2"]
+[ext_resource type="PackedScene" uid="uid://bqxge466qs1rj" path="res://Scenes/UIs/SettingsMenu/UI_Settings_ControlRebindEntry_KBM.tscn" id="2_wdc47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3b0c"]
+
+[node name="UI_Settings_Controls_KBM" type="PanelContainer" node_paths=PackedStringArray("_keyBindings")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r3b0c")
+script = ExtResource("1_k48o2")
+_keyBindings = NodePath("ScrollContainer/VBoxContainer")
+_keyBindEntryTemplate = ExtResource("2_wdc47")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2

@@ -1,0 +1,38 @@
+[gd_scene load_steps=16 format=3 uid="uid://crhybhl58bc6k"]
+
+[ext_resource type="Script" uid="uid://cqnd3xpk7eoax" path="res://Tests/Phase3Tests/test_Phase3Test.gd" id="1_wv5nc"]
+[ext_resource type="PackedScene" uid="uid://cnbhcky25a6wp" path="res://Scenes/UIs/Phase3UI/Cooking/UI_Phase3_Cookbook.tscn" id="2_taki2"]
+[ext_resource type="Script" uid="uid://xquwy6cfoxin" path="res://Scripts/Phase3Systems/Phase3CookSystem.gd" id="4_8pa0c"]
+[ext_resource type="AudioStream" uid="uid://c6qw80xaaepbt" path="res://Audio/SFX/AS_SFX_QTEComplete.wav" id="4_aptmm"]
+[ext_resource type="PackedScene" uid="uid://d36sxoo7yshfm" path="res://Scenes/QTEBars/QTEBar_Drag.tscn" id="5_w0m28"]
+[ext_resource type="PackedScene" uid="uid://csnoqq4e5pq71" path="res://Scenes/QTEBars/QTEBar_Hori_TapInRange.tscn" id="6_tt5an"]
+[ext_resource type="PackedScene" uid="uid://c02yk6l5jfai6" path="res://Scenes/QTEBars/QTEBar_Radial_TapInRange.tscn" id="7_cyisk"]
+[ext_resource type="PackedScene" uid="uid://3bqp7iw8ffeu" path="res://Scenes/UIs/Phase3UI/Cooking/UI_Phase3_CookingUI.tscn" id="8_n246f"]
+[ext_resource type="PackedScene" uid="uid://cciqj0ipy5ncw" path="res://Scenes/QTEBars/QTEBar_Shake.tscn" id="8_qriad"]
+[ext_resource type="PackedScene" uid="uid://bhnbjaxwyagu3" path="res://Scenes/QTEBars/QTEBar_HoldToRange.tscn" id="9_3uytt"]
+[ext_resource type="PackedScene" uid="uid://40uqrucu7hv2" path="res://Scenes/UIs/Misc/UI_RatingPrompt.tscn" id="9_eftw1"]
+[ext_resource type="PackedScene" uid="uid://cp40fdd3m3y7b" path="res://Scenes/UIs/Misc/UI_Countdown.tscn" id="10_hd28k"]
+[ext_resource type="PackedScene" uid="uid://6l2rf4oijtc5" path="res://Scenes/QTEBars/QTEBar_Stir.tscn" id="10_m5itk"]
+[ext_resource type="PackedScene" uid="uid://crbxcd1luvvs8" path="res://Scenes/QTEBars/QTEBar_Steam.tscn" id="11_v85ro"]
+[ext_resource type="PackedScene" uid="uid://bpfqc17cnd84l" path="res://Scenes/QTEBars/QTEBar_Pour.tscn" id="12_wypy2"]
+
+[node name="TestPhase3Test" type="Node" node_paths=PackedStringArray("phase3CookSystem")]
+script = ExtResource("1_wv5nc")
+_phase3Cookbook = ExtResource("2_taki2")
+phase3CookSystem = NodePath("Phase3CookSystem")
+
+[node name="Phase3CookSystem" type="Node" parent="."]
+script = ExtResource("4_8pa0c")
+_audioQTEComplete = ExtResource("4_aptmm")
+assetTypeToLoad = "DebugFoodData"
+qteBar_Drag = ExtResource("5_w0m28")
+qteBar_Hori_TapInRange = ExtResource("6_tt5an")
+qteBar_Radial_TapInRange = ExtResource("7_cyisk")
+qteBar_Shake = ExtResource("8_qriad")
+qteBar_HoldToRange = ExtResource("9_3uytt")
+qteBar_Stir = ExtResource("10_m5itk")
+qteBar_Steam = ExtResource("11_v85ro")
+qteBar_Pour = ExtResource("12_wypy2")
+_phase3CookingUI = ExtResource("8_n246f")
+_learnedRecipePrompt = ExtResource("9_eftw1")
+_countdownUI = ExtResource("10_hd28k")

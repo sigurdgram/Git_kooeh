@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://yvn3bo07pgdo"]
+
+[ext_resource type="PackedScene" uid="uid://m6m5jlbnyg7o" path="res://Scenes/Customers/Customer_Base.tscn" id="1_8qoy8"]
+[ext_resource type="Texture2D" uid="uid://fi3yjs5l06vw" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (1).png" id="2_64sd0"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_ovcq2"]
+[ext_resource type="AnimationLibrary" uid="uid://gk1aff766abk" path="res://2024_Art/2024 Characters/Tiger/AnimLib_Character_Customer_Tiger.tres" id="4_l7std"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxjv4"]
+resource_local_to_scene = true
+shader = ExtResource("3_ovcq2")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.014
+shader_parameter/uvRescale = 1.085
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Customer_C" instance=ExtResource("1_8qoy8")]
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_64sd0")
+offset = Vector2(5, -145)
+
+[node name="Label" parent="CenterContainer" index="0"]
+text = "D"
+
+[node name="PANCONT_OrderPopup" parent="." index="5"]
+material = SubResource("ShaderMaterial_rxjv4")
+offset_left = 93.0
+offset_top = -239.0
+offset_right = 275.0
+offset_bottom = -9.0
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": ExtResource("4_l7std")
+}
+
+[node name="AnimationTree" parent="." index="7"]
+parameters/Stationary/Eat/blend_position = Vector2(-0.1003, 0.015873)
+
+[node name="TShadowRound" parent="." index="8"]
+position = Vector2(0, 0)

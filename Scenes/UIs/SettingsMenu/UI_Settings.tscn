@@ -1,0 +1,308 @@
+[gd_scene load_steps=18 format=3 uid="uid://ds1ky8k7byyli"]
+
+[ext_resource type="Script" uid="uid://b0027xat5x4wc" path="res://Scripts/UISystem/UIs/Settings/UI_Settings.gd" id="1_pj45f"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_hja6g"]
+[ext_resource type="Texture2D" uid="uid://c18b5trl4u7c3" path="res://2024_Art/2024 Journal UI/T_Journal_Base00.png" id="3_88ahn"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="5_8c0xf"]
+[ext_resource type="PackedScene" uid="uid://bj0snbfs664pp" path="res://Scenes/UIs/SettingsMenu/UI_Settings_MiscSettings.tscn" id="6_ftjp6"]
+[ext_resource type="PackedScene" uid="uid://dlht5pdwa6xj8" path="res://Scenes/UIs/SettingsMenu/UI_Settings_AudioSettings.tscn" id="7_vf87p"]
+[ext_resource type="PackedScene" uid="uid://whl46b41dvrd" path="res://Scenes/UIs/SettingsMenu/UI_Settings_VideoSettings.tscn" id="8_fwa5k"]
+[ext_resource type="FontFile" uid="uid://cv0i6mujau7fk" path="res://Themes/Fonts/RooneyPro/RooneyPro-Bold.ttf" id="9_reldg"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="12_cfdhk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmp3v"]
+shader = ExtResource("2_hja6g")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_jyb0g"]
+offsets = PackedFloat32Array(0.487465)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k6qw6"]
+gradient = SubResource("Gradient_jyb0g")
+width = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_056fk"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.984314, 0.960784, 0.843137, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xfuay"]
+
+[sub_resource type="Animation" id="Animation_dgjem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o84uk"]
+resource_name = "NotebookGroup_In"
+length = 0.52
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0745098, 0.0745098, 0.0745098, 0.764706), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bj84h"]
+_data = {
+&"RESET": SubResource("Animation_dgjem"),
+&"Settings_In": SubResource("Animation_o84uk")
+}
+
+[node name="UI_Settings" type="Control" node_paths=PackedStringArray("_inAnim", "_controlsTabCont", "_controlPrevious", "_settingsPageInitialFocus")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_pj45f")
+_inAnim = NodePath("AnimationPlayer_In")
+_controlsTabCont = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer/TABCONT_Controls")
+_controlPrevious = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer/HBOX_Control_ApplyRevert/BTN_Control_RestoreDefault")
+_settingsPageInitialFocus = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/SCROLLCONT_Settings/VBoxContainer/UI_Settings_AudioSettings/VBOX_AudioSettings/HBox_MasterVolume/MasterVolume")
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dmp3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = SubResource("GradientTexture1D_k6qw6")
+
+[node name="Control_NotebookGroup" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -958.08
+offset_top = -540.0
+offset_right = 961.92
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 1080)
+
+[node name="TextRect_Notebook" type="TextureRect" parent="Control_NotebookGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -35.0
+offset_right = 22.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_88ahn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="REFRECT_LEFT" type="ReferenceRect" parent="Control_NotebookGroup/TextRect_Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.223
+anchor_top = 0.13
+anchor_right = 0.485
+anchor_bottom = 0.8
+offset_left = -0.160004
+offset_top = -0.400009
+offset_right = 0.799988
+
+[node name="REFRECT_Title" type="ReferenceRect" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+
+[node name="PANCONT_Title" type="PanelContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/REFRECT_Title"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_056fk")
+
+[node name="TXT_Settings" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/REFRECT_Title/PANCONT_Title"]
+layout_mode = 2
+theme = ExtResource("5_8c0xf")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("9_reldg")
+theme_override_font_sizes/font_size = 30
+text = "Game Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SCROLLCONT_Settings" type="ScrollContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.068
+anchor_right = 1.004
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -0.232002
+offset_right = -0.0160217
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/SCROLLCONT_Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+
+[node name="UI_Settings_AudioSettings" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/SCROLLCONT_Settings/VBoxContainer" instance=ExtResource("7_vf87p")]
+layout_mode = 2
+
+[node name="UI_Settings_VideoSettings" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/SCROLLCONT_Settings/VBoxContainer" instance=ExtResource("8_fwa5k")]
+layout_mode = 2
+
+[node name="UI_Settings_MiscSettings" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/SCROLLCONT_Settings/VBoxContainer" instance=ExtResource("6_ftjp6")]
+layout_mode = 2
+
+[node name="REFRECT_RIGHT" type="ReferenceRect" parent="Control_NotebookGroup/TextRect_Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513
+anchor_top = 0.13
+anchor_right = 0.774
+anchor_bottom = 0.8
+offset_left = 0.039978
+offset_top = -0.400009
+offset_right = 0.919922
+
+[node name="PANCONT_Controls" type="PanelContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_8c0xf")
+theme_type_variation = &"PanelCont_SubSetting"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PANCONT_Controls_Title" type="PanelContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("5_8c0xf")
+theme_type_variation = &"PanelCont_SubSettingTitle"
+
+[node name="TXT_Controls" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer/PANCONT_Controls_Title"]
+layout_mode = 2
+theme = ExtResource("5_8c0xf")
+theme_type_variation = &"Label_SubSettingTitle"
+text = "Controls"
+
+[node name="TABCONT_Controls" type="TabContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xfuay")
+tabs_visible = false
+tab_focus_mode = 0
+
+[node name="HBOX_Control_ApplyRevert" type="HBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 85
+alignment = 1
+
+[node name="BTN_Control_RestoreDefault" type="Button" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_RIGHT/PANCONT_Controls/VBoxContainer/HBOX_Control_ApplyRevert"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("5_8c0xf")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 24
+text = "Restore Default"
+
+[node name="AnimationPlayer_In" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Control_NotebookGroup")
+libraries = {
+"": SubResource("AnimationLibrary_bj84h")
+}
+
+[node name="REFRECT_InputLegend" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.944
+anchor_right = 0.99
+anchor_bottom = 0.99
+offset_top = 12.4799
+offset_right = -0.00012207
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="REFRECT_InputLegend"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI_Up" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("12_cfdhk")]
+layout_mode = 2
+input = "ui_up"
+
+[node name="UI_Down" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("12_cfdhk")]
+layout_mode = 2
+input = "ui_down"
+
+[node name="UI_Left" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("12_cfdhk")]
+layout_mode = 2
+input = "ui_left"
+
+[node name="UI_Right" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("12_cfdhk")]
+layout_mode = 2
+input = "ui_right"
+
+[node name="UI_Cancel" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("12_cfdhk")]
+layout_mode = 2
+input = "ui_cancel"
+_translationContext = "back"
+
+[node name="UI_Accept" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("12_cfdhk")]
+layout_mode = 2
+input = "ui_accept"
+
+[connection signal="visibility_changed" from="Control_NotebookGroup/TextRect_Notebook/REFRECT_LEFT/SCROLLCONT_Settings" to="." method="_on_scrollcont_settings_visibility_changed"]

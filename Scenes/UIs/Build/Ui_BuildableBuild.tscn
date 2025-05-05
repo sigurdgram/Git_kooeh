@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhffl63f0r5h3"]
+
+[ext_resource type="Script" uid="uid://dcmgg476jtlx8" path="res://Scripts/UISystem/UIs/Buildable/UI_BuildableBuild.gd" id="1_1dujy"]
+
+[node name="UI_BuildableBuild" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1dujy")
+
+[node name="Yes" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -225.0
+offset_right = 128.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49, 0.99, 0, 0.5)
+
+[node name="No" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -225.0
+offset_right = 128.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.55, 0, 0, 0.5)

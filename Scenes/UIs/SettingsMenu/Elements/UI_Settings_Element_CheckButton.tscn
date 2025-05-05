@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceb7tjnyotfjm"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_4vsb0"]
+[ext_resource type="Script" uid="uid://da3mw6t055go0" path="res://Scripts/UISystem/UIs/Settings/Elements/UI_Settings_Element_CheckButton.gd" id="2_fv6ni"]
+[ext_resource type="Texture2D" uid="uid://cehgvtwq1nqq" path="res://Art/UI/Atlas_UI_CheckButton_Yes.tres" id="3_lb5ni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vc7sx"]
+
+[node name="UI_InGamePause_CheckButton" type="Button" node_paths=PackedStringArray("_label", "_checktextureRect")]
+custom_minimum_size = Vector2(313, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1328.0
+offset_bottom = -1040.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_4vsb0")
+theme_type_variation = &"Entry_Button"
+script = ExtResource("2_fv6ni")
+_label = NodePath("MarginContainer/HBoxContainer/TXT_Label")
+_checktextureRect = NodePath("MarginContainer/HBoxContainer/CenterContainer/TEXTRECT_Check")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4vsb0")
+theme_type_variation = &"Entry_MarginCont"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TXT_Label" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(259, 0)
+layout_mode = 2
+theme = ExtResource("1_4vsb0")
+theme_type_variation = &"HeaderMedium"
+text = "Text"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vc7sx")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TEXTRECT_Check" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme = ExtResource("1_4vsb0")
+theme_type_variation = &"Entry_TextureRect_Check"
+texture = ExtResource("3_lb5ni")
+expand_mode = 3
+stretch_mode = 5

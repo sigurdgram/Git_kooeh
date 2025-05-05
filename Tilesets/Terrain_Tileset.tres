@@ -1,0 +1,88 @@
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://dqehrdpkw57r"]
+
+[ext_resource type="Texture2D" uid="uid://5mujsbfwdsy4" path="res://PlaceHolder Assets/TestTiles2/Kooeh_E000_Test_Floor1 heightened.png" id="1_lxmtl"]
+[ext_resource type="Texture2D" uid="uid://dyqt1hbkgf1i5" path="res://PlaceHolder Assets/TestTiles2/Kooeh_E000_Test_Floor1.png" id="2_rv6ue"]
+[ext_resource type="Texture2D" uid="uid://dg2372j2yq134" path="res://PlaceHolder Assets/TestTiles2/Kooeh_E000_Test_Wall heightened.png" id="3_c5jk1"]
+[ext_resource type="Texture2D" uid="uid://chul27wvmevd0" path="res://PlaceHolder Assets/TestTiles2/Kooeh_E000_Test_Wall.png" id="4_yug2o"]
+[ext_resource type="Texture2D" uid="uid://bwgilq45kihqf" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Floor000_Base.png" id="5_5b4je"]
+[ext_resource type="Texture2D" uid="uid://c1mihdiejmagx" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Wall000_ Base_Left.png" id="6_3p07o"]
+[ext_resource type="Texture2D" uid="uid://cbmteyqxsk3mx" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Wall000_ Base_Right.png" id="7_hb5q5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qecty"]
+texture = ExtResource("1_lxmtl")
+margins = Vector2i(0, 600)
+texture_region_size = Vector2i(764, 443)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -5)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_r0bs7"]
+vertices = PackedVector2Array(509, 0, 0, 294, -509, 0, 0, -294)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-508.5, 0, 0, -294, 508.5, 0, 0, 294)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j365d"]
+texture = ExtResource("2_rv6ue")
+texture_region_size = Vector2i(1016, 616)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -13)
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_r0bs7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo7vy"]
+texture = ExtResource("3_c5jk1")
+texture_region_size = Vector2i(549, 941)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-240, -145)
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/texture_origin = Vector2i(240, -145)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2heut"]
+texture = ExtResource("4_yug2o")
+texture_region_size = Vector2i(549, 655)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-235, 0)
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/texture_origin = Vector2i(240, 0)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7foa8"]
+vertices = PackedVector2Array(509, 0, 0, 294, -509, 0, 0, -294)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -294, -508.5, 0, 0, 294, 508.5, 0)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpfun"]
+texture = ExtResource("5_5b4je")
+texture_region_size = Vector2i(1024, 1024)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(1, -18)
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7foa8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ludf"]
+texture = ExtResource("6_3p07o")
+texture_region_size = Vector2i(545, 757)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-239, 80)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ad8x7"]
+texture = ExtResource("7_hb5q5")
+texture_region_size = Vector2i(545, 757)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(239, 80)
+
+[resource]
+tile_shape = 1
+tile_size = Vector2i(1017, 588)
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_qecty")
+sources/1 = SubResource("TileSetAtlasSource_j365d")
+sources/2 = SubResource("TileSetAtlasSource_fo7vy")
+sources/3 = SubResource("TileSetAtlasSource_2heut")
+sources/5 = SubResource("TileSetAtlasSource_2ludf")
+sources/7 = SubResource("TileSetAtlasSource_ad8x7")
+sources/4 = SubResource("TileSetAtlasSource_bpfun")

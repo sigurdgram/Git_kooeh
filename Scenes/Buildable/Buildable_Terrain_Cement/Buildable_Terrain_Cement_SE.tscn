@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://beb01buu5mkmk"]
+
+[ext_resource type="Script" uid="uid://ceiidopb1c1fh" path="res://addons/buildable_system/Scripts/Node2Ds/Buildable.gd" id="1_p21t8"]
+[ext_resource type="Texture2D" uid="uid://bwgilq45kihqf" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Floor000_Base.png" id="2_e671h"]
+
+[node name="Buildable_Terrain_Cement_SE" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite")]
+script = ExtResource("1_p21t8")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("2_e671h")
+offset = Vector2(0, 92)
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -220, -508, 74, 2, 368, 509, 74)

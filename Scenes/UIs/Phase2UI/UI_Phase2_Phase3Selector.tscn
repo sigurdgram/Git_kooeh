@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://cocmumacemymc"]
+
+[ext_resource type="Script" uid="uid://c2ehjy6s3414f" path="res://Scripts/UISystem/UIs/Phase2UI/UI_Phase2_Phase3Selector.gd" id="1_jfy3r"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_ux3rn"]
+[ext_resource type="PackedScene" uid="uid://pp11xafiwpvx" path="res://Scenes/UIs/Misc/UI_DemoEnd.tscn" id="2_ynr3e"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="3_ht8eg"]
+[ext_resource type="PackedScene" uid="uid://cnbhcky25a6wp" path="res://Scenes/UIs/Phase3UI/Cooking/UI_Phase3_Cookbook.tscn" id="3_xhqrd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4nhh"]
+shader = ExtResource("2_ux3rn")
+shader_parameter/tint = Color(0.360784, 0.360784, 0.360784, 1)
+shader_parameter/strength = 0.806
+
+[sub_resource type="Gradient" id="Gradient_bq7ly"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p5eyu"]
+gradient = SubResource("Gradient_bq7ly")
+width = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5nvnj"]
+
+[node name="UI_Phase2_Phase3Selector" type="Control" node_paths=PackedStringArray("_shopCustomizationBtn", "_recipeDiscoveryBtn", "_endDayBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfy3r")
+_shopCustomizationBtn = NodePath("Panel/VBoxContainer/HBoxContainer/ASPECTRECT_ShopCustomization/BTN_ShopCustomization")
+_recipeDiscoveryBtn = NodePath("Panel/VBoxContainer/HBoxContainer/ASPECTRECT_RecipeDiscovery/BTN_RecipeDiscovery")
+_endDayBtn = NodePath("Panel/VBoxContainer/ASPECTRECT_EndDay/BTN_EndDay")
+_demoEndUI = ExtResource("2_ynr3e")
+_cookBookPhase3 = ExtResource("3_xhqrd")
+
+[node name="TEXTRECT_Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_v4nhh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_p5eyu")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5nvnj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="ASPECTRECT_ShopCustomization" type="AspectRatioContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 3.535
+
+[node name="BTN_ShopCustomization" type="Button" parent="Panel/VBoxContainer/HBoxContainer/ASPECTRECT_ShopCustomization"]
+layout_mode = 2
+theme = ExtResource("3_ht8eg")
+theme_type_variation = &"Button_Basic"
+theme_override_font_sizes/font_size = 50
+text = "Shop Customization"
+
+[node name="ASPECTRECT_RecipeDiscovery" type="AspectRatioContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 3.535
+
+[node name="BTN_RecipeDiscovery" type="Button" parent="Panel/VBoxContainer/HBoxContainer/ASPECTRECT_RecipeDiscovery"]
+layout_mode = 2
+theme = ExtResource("3_ht8eg")
+theme_type_variation = &"Button_Basic"
+theme_override_font_sizes/font_size = 50
+text = "Recipe Discovery"
+
+[node name="ASPECTRECT_EndDay" type="AspectRatioContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 3.535
+
+[node name="BTN_EndDay" type="Button" parent="Panel/VBoxContainer/ASPECTRECT_EndDay"]
+layout_mode = 2
+theme = ExtResource("3_ht8eg")
+theme_type_variation = &"Button_Basic"
+theme_override_font_sizes/font_size = 50
+text = "End Day"

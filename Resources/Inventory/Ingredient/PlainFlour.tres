@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://iyxrt1c61p2x"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_yifdx"]
+[ext_resource type="Texture2D" uid="uid://b0etjjsmfyhfj" path="res://Art/Ingredient_Spritesheet/T_I003_WFlour.tres" id="2_qygeg"]
+
+[resource]
+resource_name = "IngredientData.PlainFlour"
+script = ExtResource("1_yifdx")
+name = "Plain Flour"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_qygeg")
+bundlePrice = 10
+bundlePurchaseAmount = 10

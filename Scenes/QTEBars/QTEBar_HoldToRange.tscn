@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhnbjaxwyagu3"]
+
+[ext_resource type="Script" uid="uid://cx04oejdy4t4" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_HoldToRange.gd" id="1_n7y3h"]
+[ext_resource type="Texture2D" uid="uid://c2cf4luvg48bq" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Horizontal_Over.png" id="2_ogirq"]
+[ext_resource type="Shader" uid="uid://c4wvtbfjqyda0" path="res://Scripts/Shaders/QTEBars/Shad_QTEBar_Hori.gdshader" id="3_6h2fs"]
+[ext_resource type="Texture2D" uid="uid://bth08ewqyqmcf" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Horizontal_Progress.png" id="4_n2hk6"]
+[ext_resource type="Texture2D" uid="uid://xd1jebwmio0c" path="res://Art/UI/Cooking/T_Icon_Spatula.png" id="5_bshq7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htvae"]
+resource_local_to_scene = true
+shader = ExtResource("3_6h2fs")
+shader_parameter/sectorLimits = PackedVector2Array(0.1, 0.2, 0.3, 0.435)
+shader_parameter/processMode = 0
+shader_parameter/progress = 0.0
+shader_parameter/baseColor = Color(0.980392, 0.952941, 0.847059, 1)
+shader_parameter/tapZoneColor = Color(0.996078, 0.729412, 0.407843, 1)
+shader_parameter/progressColor = Color(0.894118, 0.509804, 0.0980392, 1)
+
+[node name="QTEBar_HoldToRange" type="Control" node_paths=PackedStringArray("_qteTexture", "_pointerTexture")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n7y3h")
+_qteTexture = NodePath("QTEBar_Hori_WishingTree/Frame/Fill")
+_pointerTexture = NodePath("QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control/TEXTRECT_Pointer")
+tapZoneColor = Color(0.254902, 0.282353, 0.803922, 1)
+
+[node name="QTEBar_Hori_WishingTree" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="TextureRect" parent="QTEBar_Hori_WishingTree"]
+layout_mode = 2
+texture = ExtResource("2_ogirq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Fill" type="TextureRect" parent="QTEBar_Hori_WishingTree/Frame"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_htvae")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_n2hk6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="QTEBar_Hori_WishingTree/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2"]
+layout_mode = 2
+
+[node name="TEXTRECT_Pointer" type="TextureRect" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control"]
+layout_mode = 2
+anchor_left = 0.472
+anchor_top = 0.411
+anchor_right = 0.528
+anchor_bottom = 0.589
+offset_left = -500.32
+offset_top = 0.339996
+offset_right = -499.68
+offset_bottom = -0.340027
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bshq7")
+expand_mode = 4
+stretch_mode = 5

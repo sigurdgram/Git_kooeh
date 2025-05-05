@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnosq0d5qho86"]
+
+[ext_resource type="Script" uid="uid://dnw0lit6yj325" path="res://Scripts/UISystem/UIs/Phase2UI/UI_Phase2_GamePlay.gd" id="1_cd6tq"]
+[ext_resource type="PackedScene" uid="uid://b72bd5xshdsj6" path="res://Scenes/UIs/Build/UI_BuildMenu.tscn" id="2_recat"]
+[ext_resource type="PackedScene" uid="uid://cd7mi3h1rgcku" path="res://Scenes/UIs/Inventory/UI_InventoryMenu.tscn" id="3_qqb3j"]
+[ext_resource type="PackedScene" uid="uid://bqn4mcwhkw3wx" path="res://Scenes/UIs/EconomySystem/UI_Economy.tscn" id="5_ofvy8"]
+[ext_resource type="PackedScene" uid="uid://bdmmmcjq6kotj" path="res://Scenes/UIs/Phase2UI/UI_Phase2_OperationHours.tscn" id="6_hs1vh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gxtt"]
+
+[sub_resource type="SystemFont" id="SystemFont_podi2"]
+font_names = PackedStringArray("RooneySans")
+subpixel_positioning = 0
+
+[node name="UI_Phase2_GamePlay" type="Control" node_paths=PackedStringArray("_btnBuild", "_btnInventory")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cd6tq")
+_btnBuild = NodePath("Menu Button/MarginContainer/HBoxContainer/BuildButton")
+_btnInventory = NodePath("Menu Button/MarginContainer/HBoxContainer/InventoryButton")
+_buildMenuUI = ExtResource("2_recat")
+_inventoryMenuUI = ExtResource("3_qqb3j")
+
+[node name="Menu Button" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0gxtt")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu Button"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu Button/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BuildButton" type="Button" parent="Menu Button/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_podi2")
+theme_override_font_sizes/font_size = 50
+text = "Build
+"
+
+[node name="InventoryButton" type="Button" parent="Menu Button/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_podi2")
+theme_override_font_sizes/font_size = 50
+text = "Inventory
+"
+
+[node name="UI_Economy" parent="." instance=ExtResource("5_ofvy8")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -380.0
+offset_top = 45.0
+offset_right = -380.0
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="UI_Phase2_OperationHours" parent="." instance=ExtResource("6_hs1vh")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -220.0
+offset_top = 17.0
+offset_right = -20.0
+offset_bottom = 217.0
+grow_horizontal = 0
+grow_vertical = 1

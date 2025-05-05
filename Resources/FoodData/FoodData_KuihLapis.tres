@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=16 format=3 uid="uid://gndl8pkfa5uw"]
+
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="2_mev21"]
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="3_56xeu"]
+[ext_resource type="Script" uid="uid://brrlpfd302c4p" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="3_mev21"]
+[ext_resource type="Texture2D" uid="uid://brgnaq56ufutu" path="res://Art/Food_Spritesheet/Atlas_KuihLapis.tres" id="7_ftssj"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="9_0xwx0"]
+[ext_resource type="Texture2D" uid="uid://dknvd8nytdj8b" path="res://2024_Art/2024 Isometric F&B/T_Food_KuihLapis_Eating.png" id="10_60ae2"]
+
+[sub_resource type="Resource" id="Resource_60ae2"]
+script = ExtResource("2_mev21")
+difficulty = 0
+tapRange = 0.25
+interval = 1.5
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_qkm0q"]
+script = ExtResource("3_56xeu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_60ae2")
+description = ""
+
+[sub_resource type="Resource" id="Resource_iqlrs"]
+script = ExtResource("3_mev21")
+difficulty = 0
+speed = 0.4
+barLengthMultiplier = 1.35
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_54hlg"]
+script = ExtResource("3_56xeu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_iqlrs")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxswt"]
+atlas = ExtResource("10_60ae2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5xvw"]
+atlas = ExtResource("10_60ae2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54hlg"]
+atlas = ExtResource("10_60ae2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mev21"]
+atlas = ExtResource("10_60ae2")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqlrs"]
+atlas = ExtResource("10_60ae2")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.KuihLapis"
+script = ExtResource("9_0xwx0")
+name = "Kuih Lapis"
+type = 1
+difficulty = 0
+description = "Multiple layers of joy! Sometimes you'll even see fancy colours or intricate patterns - kuih lapis is like actual edible art!"
+sprite = SubResource("AtlasTexture_iqlrs")
+journalSprite = ExtResource("7_ftssj")
+platelessSprite = SubResource("AtlasTexture_mev21")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_xxswt"), SubResource("AtlasTexture_g5xvw"), SubResource("AtlasTexture_54hlg")])
+cookTime = 7.0
+price = 10.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.CoconutMilk": 2,
+"IngredientData.Salt": 1,
+"IngredientData.Water": 2
+}
+cookInstructions = Array[ExtResource("3_56xeu")]([SubResource("Resource_qkm0q"), SubResource("Resource_54hlg")])

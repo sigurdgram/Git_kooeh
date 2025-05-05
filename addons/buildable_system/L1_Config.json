@@ -1,0 +1,213 @@
+{
+	"GridData": "uid://suy3eyx6wmqh",
+	"Layers": {
+		"Asset": [
+			{
+				"AttachmentSlots": {
+
+				},
+				"direction": 3.0,
+				"id": "BuildableData.Table3",
+				"level": 1,
+				"mapPos": "(2, 12)"
+			},
+			{
+				"AttachmentSlots": {
+
+				},
+				"direction": 3.0,
+				"id": "BuildableData.Table3",
+				"level": 1,
+				"mapPos": "(2, 10)"
+			},
+			{
+				"direction": 3.0,
+				"id": "BuildableData.OrderCounter",
+				"level": 1,
+				"mapPos": "(1, 7)"
+			},
+			{
+				"AttachmentSlots": {
+
+				},
+				"direction": 3.0,
+				"id": "BuildableData.Table2",
+				"level": 1,
+				"mapPos": "(0, 5)"
+			},
+			{
+				"direction": 3.0,
+				"id": "BuildableData.CookingStation",
+				"level": 1,
+				"mapPos": "(3, 5)"
+			},
+			{
+				"direction": 5.0,
+				"id": "BuildableData.Chair2",
+				"mapPos": "(3, 10)"
+			},
+			{
+				"direction": 5.0,
+				"id": "BuildableData.Chair2",
+				"mapPos": "(3, 12)"
+			},
+			{
+				"direction": 3,
+				"id": "BuildableData.DisplayCounter",
+				"level": 1,
+				"mapPos": "(2, 7)"
+			}
+		],
+		"Floor": [
+			{
+				"direction": 1.0,
+				"id": "BuildableData.Wall",
+				"mapPos": "(4, 11)"
+			},
+			{
+				"direction": 1.0,
+				"id": "BuildableData.Wall",
+				"mapPos": "(4, 7)"
+			},
+			{
+				"direction": 7.0,
+				"id": "BuildableData.Wall",
+				"mapPos": "(1, 4)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.Pillar",
+				"mapPos": "(4, 4)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(3, 12)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(2, 12)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(1, 12)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(0, 12)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(0, 11)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(1, 11)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(2, 11)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(3, 11)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(3, 10)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(2, 10)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(1, 10)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(0, 10)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(0, 9)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(1, 9)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(2, 9)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.RedTile",
+				"mapPos": "(3, 9)"
+			},
+			{
+				"direction": 1.0,
+				"id": "BuildableData.Entrance",
+				"mapPos": "(0, 11)"
+			}
+		],
+		"Terrain": [
+			{
+				"direction": 0.0,
+				"id": "BuildableData.Cement",
+				"mapPos": "(2, 10)"
+			},
+			{
+				"direction": 0.0,
+				"id": "BuildableData.Cement",
+				"mapPos": "(2, 6)"
+			},
+			{
+				"direction": 1.0,
+				"id": "BuildableData.Beam",
+				"mapPos": "(4, 11)"
+			},
+			{
+				"direction": 1.0,
+				"id": "BuildableData.Beam",
+				"mapPos": "(4, 7)"
+			},
+			{
+				"direction": 7.0,
+				"id": "BuildableData.Beam",
+				"mapPos": "(1, 4)"
+			},
+			{
+				"direction": 5.0,
+				"id": "BuildableData.InvisibleWall",
+				"mapPos": "(0, 7)"
+			},
+			{
+				"direction": 5.0,
+				"id": "BuildableData.InvisibleWall",
+				"mapPos": "(0, 11)"
+			},
+			{
+				"direction": 3.0,
+				"id": "BuildableData.InvisibleWall",
+				"mapPos": "(1, 12)"
+			}
+		]
+	},
+	"RestaurantLevel": 0,
+	"UpgradeBundle": "uid://ubs6lai42am2"
+}

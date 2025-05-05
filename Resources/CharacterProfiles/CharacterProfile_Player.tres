@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CharacterProfile" load_steps=11 format=3 uid="uid://coev7xonhhxoy"]
+
+[ext_resource type="Texture2D" uid="uid://c5t0l255tb73q" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Annoyed.png" id="1_bth5c"]
+[ext_resource type="Script" uid="uid://ou6lpe3um5vm" path="res://Scripts/Resources/CharacterProfile.gd" id="1_sms0i"]
+[ext_resource type="Texture2D" uid="uid://5fwdxvvv6ap5" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Awkward.png" id="2_dvnoy"]
+[ext_resource type="Texture2D" uid="uid://h1kuh5m0o7rv" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Bashful.png" id="3_v35tb"]
+[ext_resource type="Texture2D" uid="uid://d0j3pxvtlfcbx" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Confused.png" id="4_4mtg6"]
+[ext_resource type="Texture2D" uid="uid://5fxy3rxh5c5d" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Excited.png" id="5_3ur7g"]
+[ext_resource type="Texture2D" uid="uid://bv4bvkxnhp6gx" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Happy.png" id="6_m0h72"]
+[ext_resource type="Texture2D" uid="uid://ibuwov88d7fl" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Intrigued.png" id="7_srtbe"]
+[ext_resource type="Texture2D" uid="uid://iai6bog0pnl" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Neutral.png" id="8_e58si"]
+[ext_resource type="Texture2D" uid="uid://c3v0wgebjsnlq" path="res://Art/Character/T_Character_MCMale/T_Portraits/T_Portrait_MCMale_Shocked.png" id="9_1ygyy"]
+
+[resource]
+script = ExtResource("1_sms0i")
+name = "Player"
+texture = ExtResource("8_e58si")
+emotes = {
+"Annoyed": ExtResource("1_bth5c"),
+"Awkward": ExtResource("2_dvnoy"),
+"Bashful": ExtResource("3_v35tb"),
+"Confused": ExtResource("4_4mtg6"),
+"Excited": ExtResource("5_3ur7g"),
+"Happy": ExtResource("6_m0h72"),
+"Intrigued": ExtResource("7_srtbe"),
+"Neutral": ExtResource("8_e58si"),
+"Shocked": ExtResource("9_1ygyy")
+}

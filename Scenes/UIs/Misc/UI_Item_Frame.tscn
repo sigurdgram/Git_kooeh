@@ -1,0 +1,158 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmdjiqcs7v4nt"]
+
+[ext_resource type="Script" uid="uid://scm48u06y11h" path="res://Scripts/UISystem/UIs/Misc/UI_Item_Frame.gd" id="1_hwf15"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_ll5wj"]
+[ext_resource type="Texture2D" uid="uid://dmy253uai50rs" path="res://Art/Ingredient_Spritesheet/T_I000_Water.tres" id="2_ut85i"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="4_kwaxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32spn"]
+resource_local_to_scene = true
+bg_color = Color(0.839216, 0.784314, 0.65098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI_Item_Frame" type="Control" node_paths=PackedStringArray("_rarityPanelCont", "_nameTxt", "_textRect", "_amountTxt")]
+custom_minimum_size = Vector2(154, 214)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -107.0
+offset_right = 66.5
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hwf15")
+_rarityPanelCont = NodePath("PANELCONT_Rarity")
+_nameTxt = NodePath("REFRECT_Frame/REFRECT_Name/TXT_Name")
+_textRect = NodePath("REFRECT_Frame/REFRECT_Item/AspectRatioContainer/TEXTRECT_Item")
+_amountTxt = NodePath("REFRECT_Frame/REFRECT_Amount/TXT_Amount")
+
+[node name="PANELCONT_Rarity" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_32spn")
+
+[node name="REFRECT_Frame" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -81.0
+offset_right = 70.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="REFRECT_Item" type="ReferenceRect" parent="REFRECT_Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -87.5
+offset_right = 70.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="REFRECT_Frame/REFRECT_Item"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -46.0
+offset_right = 71.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="TEXTRECT_Item" type="TextureRect" parent="REFRECT_Frame/REFRECT_Item/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_ut85i")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="REFRECT_Amount" type="ReferenceRect" parent="REFRECT_Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -2.5
+offset_right = 70.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_Amount" type="Label" parent="REFRECT_Frame/REFRECT_Amount"]
+layout_mode = 1
+offset_right = 140.0
+offset_bottom = 25.0
+theme = ExtResource("1_ll5wj")
+theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("4_kwaxk")
+text = "x9999"
+horizontal_alignment = 1
+
+[node name="REFRECT_Name" type="ReferenceRect" parent="REFRECT_Frame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -44.365
+offset_right = 64.0
+offset_bottom = -3.36499
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TXT_Name" type="Label" parent="REFRECT_Frame/REFRECT_Name"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -41.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ll5wj")
+theme_type_variation = &"HeaderMedium"
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_kwaxk")
+theme_override_font_sizes/font_size = 18
+text = "Food Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

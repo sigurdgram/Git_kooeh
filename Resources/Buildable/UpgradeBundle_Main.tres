@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeBundle" load_steps=5 format=3 uid="uid://ubs6lai42am2"]
+
+[ext_resource type="Script" uid="uid://yjtws8ngqi4g" path="res://addons/buildable_system/Scripts/Resources/UpgradeData.gd" id="1_0ngpm"]
+[ext_resource type="JSON" path="res://addons/buildable_system/NewL1_Config.json" id="2_rhfv5"]
+[ext_resource type="Script" uid="uid://c6thws1ch181k" path="res://addons/buildable_system/Scripts/Resources/UpgradeBundle.gd" id="7_8fp4u"]
+
+[sub_resource type="Resource" id="Resource_3elm5"]
+script = ExtResource("1_0ngpm")
+data = {
+"Config": ExtResource("2_rhfv5"),
+&"CustomerSpawnModifier": 1.0
+}
+
+[resource]
+script = ExtResource("7_8fp4u")
+data = Array[ExtResource("1_0ngpm")]([SubResource("Resource_3elm5")])

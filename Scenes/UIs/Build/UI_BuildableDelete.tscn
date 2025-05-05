@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dddpyo23qur3o"]
+
+[ext_resource type="Script" uid="uid://c0q4u4ceev18p" path="res://Scripts/UISystem/UIs/Buildable/UI_BuildableDelete.gd" id="1_eiawp"]
+[ext_resource type="Texture2D" uid="uid://c1mto8o10mhmh" path="res://PlaceHolder Assets/Sprites/Scene/ui-small-buttons.png" id="2_t5am8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16y2o"]
+atlas = ExtResource("2_t5am8")
+region = Rect2(0, 0, 160, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnbmh"]
+atlas = SubResource("AtlasTexture_16y2o")
+region = Rect2(32, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sp5n"]
+atlas = ExtResource("2_t5am8")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihk5m"]
+atlas = ExtResource("2_t5am8")
+region = Rect2(16, 192, 16, 16)
+
+[node name="UI_BuildableDelete" type="Control" node_paths=PackedStringArray("_deleteIndicator")]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.56, 1.54901)
+script = ExtResource("1_eiawp")
+_deleteIndicator = NodePath("TR_DeleteIndicator")
+_deleteStateTexture = Array[Texture2D]([SubResource("AtlasTexture_gnbmh"), SubResource("AtlasTexture_3sp5n")])
+
+[node name="TR_DeleteIndicator" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.992968)
+texture = SubResource("AtlasTexture_ihk5m")
+stretch_mode = 4

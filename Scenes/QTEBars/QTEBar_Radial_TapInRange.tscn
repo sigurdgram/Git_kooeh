@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://c02yk6l5jfai6"]
+
+[ext_resource type="Script" uid="uid://c10cy2wej76ho" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Radial_TapInRange.gd" id="1_a102a"]
+[ext_resource type="AudioStream" uid="uid://cqljunipisldy" path="res://Audio/SFX/AS_SFX_QTE_PingPong_Left.wav" id="2_g71op"]
+[ext_resource type="Texture2D" uid="uid://deb4deh2mlq2u" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Halo_Over.png" id="2_no3hm"]
+[ext_resource type="AudioStream" uid="uid://rl02jc6i00n1" path="res://Audio/SFX/AS_SFX_QTE_PingPong_Right.wav" id="3_7sepd"]
+[ext_resource type="Shader" uid="uid://dc3oqrqs343vs" path="res://Scripts/Shaders/QTEBars/Shad_QTEBar_Radial.gdshader" id="3_salsw"]
+[ext_resource type="Texture2D" uid="uid://dposrjfc4sgsl" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Halo_Progress.png" id="3_slk6c"]
+[ext_resource type="Texture2D" uid="uid://xd1jebwmio0c" path="res://Art/UI/Cooking/T_Icon_Spatula.png" id="5_3aaqp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fs2ma"]
+resource_local_to_scene = true
+shader = ExtResource("3_salsw")
+shader_parameter/sectorLimits = PackedVector2Array(0, 65.75, 90, 180)
+shader_parameter/processMode = 0
+shader_parameter/progress = 0.09
+shader_parameter/tapZoneColor = Color(0.996078, 0.729412, 0.407843, 1)
+shader_parameter/borderColor = Color(1, 1, 1, 1)
+shader_parameter/progressColor = Color(0.894118, 0.509804, 0.0980392, 1)
+shader_parameter/baseColor = Color(0.980392, 0.952941, 0.847059, 1)
+
+[node name="QTEBar_Radial_TapInRange" type="Control" node_paths=PackedStringArray("_qteTexture", "_knob")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a102a")
+_qteTexture = NodePath("AspectRatioContainer/Frame/Fill")
+_knob = NodePath("AspectRatioContainer/Frame/Control")
+_qteLeft = ExtResource("2_g71op")
+_qteRight = ExtResource("3_7sepd")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+
+[node name="Frame" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("2_no3hm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Divider" type="TextureRect" parent="AspectRatioContainer/Frame"]
+modulate = Color(0.894118, 0.509804, 0.0980392, 1)
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = -0.04
+anchor_right = 0.537
+anchor_bottom = 0.179
+offset_left = -0.0400391
+offset_top = 0.200005
+offset_right = -0.0400391
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3aaqp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Divider2" type="TextureRect" parent="AspectRatioContainer/Frame"]
+modulate = Color(0.894118, 0.509804, 0.0980392, 1)
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = -0.04
+anchor_right = 0.537
+anchor_bottom = 0.179
+offset_left = -0.0400391
+offset_top = 0.200005
+offset_right = -0.0400391
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3aaqp")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+
+[node name="Fill" type="TextureRect" parent="AspectRatioContainer/Frame"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_fs2ma")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_slk6c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="AspectRatioContainer/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(515, 515)
+
+[node name="Knob" type="TextureRect" parent="AspectRatioContainer/Frame/Control"]
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = -0.04
+anchor_right = 0.537
+anchor_bottom = 0.179
+offset_left = -0.0400391
+offset_top = 0.200005
+offset_right = -0.0400391
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3aaqp")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="resized" from="AspectRatioContainer/Frame/Control" to="." method="_on_knob_control_resized"]

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cnr4ai3rr8fgo"]
+
+[ext_resource type="Texture2D" uid="uid://g3jdie2f802u" path="res://Art/UI/Wishing/T_WishingTree_PartThree.png" id="1_e1dxc"]
+
+[resource]
+atlas = ExtResource("1_e1dxc")
+region = Rect2(807, 35, 2377, 1288)

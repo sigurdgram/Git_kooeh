@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://came3aelvj6jn"]
+
+[ext_resource type="PackedScene" uid="uid://c76rou3tpc6no" path="res://Scenes/Buildable/Buildable_Internal_Beam/Buildable_Internal_Beam_SE.tscn" id="1_man2c"]
+
+[node name="Buildable_Internal_Beam_SE" instance=ExtResource("1_man2c")]
+
+[node name="Sprite2D" parent="." index="0"]
+offset = Vector2(110.735, 7.985)

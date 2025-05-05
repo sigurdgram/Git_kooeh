@@ -1,0 +1,98 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_fxcdb"]
+
+[resource]
+script = ExtResource("1_fxcdb")
+using_states = PackedStringArray()
+titles = {
+"cust_convo_openingDay_firstCust_served": "2"
+}
+character_names = PackedStringArray("Speaker0")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "2",
+&"type": "title"
+},
+"1": {
+&"id": "1",
+&"next_id": "2",
+&"type": ""
+},
+"10": {
+&"id": "10",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"2": {
+&"character": "Speaker0",
+&"id": "2",
+&"next_id": "3",
+&"text": "Mmm...",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Speaker0",
+&"id": "3",
+&"next_id": "4",
+&"text": "Mmmmmm!",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Speaker0",
+&"id": "4",
+&"next_id": "5",
+&"text": "Not bad.",
+&"type": "dialogue"
+},
+"5": {
+&"character": "Speaker0",
+&"id": "5",
+&"next_id": "6",
+&"text": "Not amazing. But not bad.",
+&"type": "dialogue"
+},
+"6": {
+&"character": "Speaker0",
+&"id": "6",
+&"next_id": "7",
+&"text": "You'll be updating the menu soon?",
+&"type": "dialogue"
+},
+"7": {
+&"character": "Speaker0",
+&"id": "7",
+&"next_id": "8",
+&"text": "Was wondering why you didn't have more to offer.",
+&"type": "dialogue"
+},
+"8": {
+&"character": "Speaker0",
+&"id": "8",
+&"next_id": "9",
+&"text": "I'll come by if I'm in the area.",
+&"type": "dialogue"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ cust_convo_openingDay_firstCust_served
+
+Speaker0: Mmm...
+Speaker0: Mmmmmm!
+Speaker0: Not bad.
+Speaker0: Not amazing. But not bad.
+Speaker0: You'll be updating the menu soon?
+Speaker0: Was wondering why you didn't have more to offer.
+Speaker0: I'll come by if I'm in the area.
+=> END"
+metadata/dialogue_manager_version = "3.4.0"

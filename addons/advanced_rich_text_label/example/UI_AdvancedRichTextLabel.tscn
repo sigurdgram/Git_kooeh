@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr6l6xnan0y7y"]
+
+[ext_resource type="Script" uid="uid://wpeyog2djkvv" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabel.gd" id="1_lhktp"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_wudbh"]
+[ext_resource type="Script" uid="uid://0epvqwsjm5e" path="res://Scripts/UISystem/UIs/Dialogue/AdvancedRichTextLabelParser_Input.gd" id="2_1iui1"]
+[ext_resource type="Script" uid="uid://dwcf1rariwikr" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabelParser.gd" id="3_owhjt"]
+
+[sub_resource type="Resource" id="Resource_xoxyy"]
+script = ExtResource("2_1iui1")
+_imageScale = 2.0
+
+[node name="AdvancedRichTextLabel" type="RichTextLabel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wudbh")
+theme_type_variation = &"RTL_Dialogue_VN"
+bbcode_enabled = true
+text = "Hi [input]InputData.Navigate[/input]"
+script = ExtResource("1_lhktp")
+_parsers = Array[ExtResource("3_owhjt")]([SubResource("Resource_xoxyy")])

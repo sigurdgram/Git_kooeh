@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c16182ibvuay6"
+path="res://.godot/imported/Dialogue_FirstEverS1Customer.dialogue-1156124852c2183077e9ca88c693035f.tres"
+
+[deps]
+
+source_file="res://Resources/Dialogue/Dialogue_FirstEverS1Customer.dialogue"
+dest_files=["res://.godot/imported/Dialogue_FirstEverS1Customer.dialogue-1156124852c2183077e9ca88c693035f.tres"]
+
+[params]
+
+dummy_value_ignore_me=0

@@ -1,0 +1,152 @@
+[gd_scene load_steps=73 format=3 uid="uid://b2n2chlg6jnwu"]
+
+[ext_resource type="Texture2D" uid="uid://dkacrppyljd28" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (1).png" id="2_4vwgb"]
+[ext_resource type="Texture2D" uid="uid://5hytpu87kup" path="res://2024_Art/T_ShadowRound.png" id="3_gni50"]
+[ext_resource type="Texture2D" uid="uid://docc5hmb24m42" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (2).png" id="3_ywqeh"]
+[ext_resource type="Texture2D" uid="uid://bvt7bvikfe4gr" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (3).png" id="4_ou7mp"]
+[ext_resource type="Texture2D" uid="uid://dwrwdw0n2iful" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (4).png" id="5_von21"]
+[ext_resource type="Texture2D" uid="uid://q3k04jh3rn0v" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (5).png" id="6_0uh6k"]
+[ext_resource type="Texture2D" uid="uid://dm7p2103khbab" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (6).png" id="7_dqkk4"]
+[ext_resource type="Texture2D" uid="uid://dbu5puhr37hlq" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (7).png" id="8_ajmjl"]
+[ext_resource type="Texture2D" uid="uid://dfjt8wrwrx24" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (8).png" id="9_hv7q1"]
+[ext_resource type="Texture2D" uid="uid://bhaajl81031to" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (9).png" id="10_u87wi"]
+[ext_resource type="Texture2D" uid="uid://ca7f1gtmyvb1q" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (10).png" id="11_1g5ur"]
+[ext_resource type="Texture2D" uid="uid://48nfex1mkdoo" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (11).png" id="12_0wh81"]
+[ext_resource type="Texture2D" uid="uid://cbdd3xb6cfoc5" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (12).png" id="13_a7pky"]
+[ext_resource type="Texture2D" uid="uid://cwjw01euppqk0" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (13).png" id="14_tn7rp"]
+[ext_resource type="Texture2D" uid="uid://bxlq0ypfljufd" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (14).png" id="15_22x1r"]
+[ext_resource type="Texture2D" uid="uid://8lhnwtkxfudu" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (15).png" id="16_wap24"]
+[ext_resource type="Texture2D" uid="uid://yeohaq2buef6" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (16).png" id="17_fby76"]
+[ext_resource type="Texture2D" uid="uid://bdgleu7a110ix" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (17).png" id="18_34tt5"]
+[ext_resource type="Texture2D" uid="uid://diggsr5q718ir" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (18).png" id="19_muqgm"]
+[ext_resource type="Texture2D" uid="uid://bvgoo1825bdok" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (19).png" id="20_g684t"]
+[ext_resource type="Texture2D" uid="uid://rg3w0s1fp0em" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (20).png" id="21_j16vy"]
+[ext_resource type="Texture2D" uid="uid://c26kn7b508ohl" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (21).png" id="22_rerjl"]
+[ext_resource type="Texture2D" uid="uid://bkudy5jmpsapx" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (22).png" id="23_vtdmp"]
+[ext_resource type="Texture2D" uid="uid://d1gifix7jqdng" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (23).png" id="24_e2cu8"]
+[ext_resource type="Texture2D" uid="uid://bwrfuiv5bdubx" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (24).png" id="25_akkhi"]
+[ext_resource type="Texture2D" uid="uid://c3w4q8n3jl0wb" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (25).png" id="26_rkfh4"]
+[ext_resource type="Texture2D" uid="uid://cvqx653w0e2gp" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (26).png" id="27_bxjun"]
+[ext_resource type="Texture2D" uid="uid://b2poq2kph7ypf" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (27).png" id="28_bbmat"]
+[ext_resource type="Texture2D" uid="uid://c7p2m1nuqhaw8" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (28).png" id="29_yav16"]
+[ext_resource type="Texture2D" uid="uid://bauneoey45xfc" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (29).png" id="30_5nru4"]
+[ext_resource type="Texture2D" uid="uid://dvxie1jqt8or0" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (30).png" id="31_24mkb"]
+[ext_resource type="Texture2D" uid="uid://dd7m3bevfmtlf" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (31).png" id="32_mjvqc"]
+[ext_resource type="Texture2D" uid="uid://do3jkfjxev20f" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackOpti/T_Kooeh_A001_Tana_IdleBreathingBack_ (32).png" id="33_60s87"]
+[ext_resource type="Texture2D" uid="uid://dt7h4dyommye4" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (1).png" id="34_ka4uo"]
+[ext_resource type="Texture2D" uid="uid://vs11xpg0yj2v" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (2).png" id="35_00npo"]
+[ext_resource type="Texture2D" uid="uid://dmnrf88s2oawt" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (3).png" id="36_ia1xt"]
+[ext_resource type="Texture2D" uid="uid://k42olgraotgd" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (4).png" id="37_taokl"]
+[ext_resource type="Texture2D" uid="uid://c6fyle6lpabkb" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (5).png" id="38_45071"]
+[ext_resource type="Texture2D" uid="uid://k2a6rv18mkv7" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (6).png" id="39_obis5"]
+[ext_resource type="Texture2D" uid="uid://dlluck6uviciv" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (7).png" id="40_vissn"]
+[ext_resource type="Texture2D" uid="uid://bj4rsm0g4hny3" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (8).png" id="41_pnuh8"]
+[ext_resource type="Texture2D" uid="uid://rdq4bbqcyunp" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (9).png" id="42_3h1gk"]
+[ext_resource type="Texture2D" uid="uid://jh3gwxi0nax0" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (10).png" id="43_dirrx"]
+[ext_resource type="Texture2D" uid="uid://djrx3wo13aac8" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (11).png" id="44_5fhnl"]
+[ext_resource type="Texture2D" uid="uid://bvjcfvn8y6sxm" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (12).png" id="45_bdkng"]
+[ext_resource type="Texture2D" uid="uid://sv0xji14wnc7" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (13).png" id="46_oskhn"]
+[ext_resource type="Texture2D" uid="uid://880ftdoxfeyo" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (14).png" id="47_ivqso"]
+[ext_resource type="Texture2D" uid="uid://mqfbyvdrsjoh" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (15).png" id="48_83dnl"]
+[ext_resource type="Texture2D" uid="uid://n7bgiu53h1fl" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (16).png" id="49_mod3i"]
+[ext_resource type="Texture2D" uid="uid://gl82wehbhc63" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (17).png" id="50_lwfx3"]
+[ext_resource type="Texture2D" uid="uid://bblco6vfkhhf2" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (18).png" id="51_g123j"]
+[ext_resource type="Texture2D" uid="uid://22mhxuqfa6h3" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (19).png" id="52_hpqph"]
+[ext_resource type="Texture2D" uid="uid://c8lhfq006won1" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (20).png" id="53_h81i8"]
+[ext_resource type="Texture2D" uid="uid://h43tmg3ce6x4" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (21).png" id="54_h16ed"]
+[ext_resource type="Texture2D" uid="uid://0uo5a7aqd7nu" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (22).png" id="55_jvayx"]
+[ext_resource type="Texture2D" uid="uid://bh14daeats2g3" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (23).png" id="56_qu2c5"]
+[ext_resource type="Texture2D" uid="uid://c7vnj6vbwjq2" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (24).png" id="57_8u248"]
+[ext_resource type="Texture2D" uid="uid://b8egflqvtgltx" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (25).png" id="58_abf7c"]
+[ext_resource type="Texture2D" uid="uid://rng345alqowl" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (26).png" id="59_lpqno"]
+[ext_resource type="Texture2D" uid="uid://dlbd2q1apbj12" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (27).png" id="60_p3xyo"]
+[ext_resource type="Texture2D" uid="uid://dbwuyqxnh10m5" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (28).png" id="61_h8bgl"]
+[ext_resource type="Texture2D" uid="uid://d3hsrplm8bv3t" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (29).png" id="62_ag5xp"]
+[ext_resource type="Texture2D" uid="uid://c1sklqt6x88jl" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (30).png" id="63_n6ubp"]
+[ext_resource type="Texture2D" uid="uid://duespjocfyqlo" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (31).png" id="64_xvvu1"]
+[ext_resource type="Texture2D" uid="uid://c8ppqulkpsafv" path="res://2024_Art/2024 Characters/Tana/T_Kooeh_Tana_IdleBreathingBackBlinkOpti/T_Kooeh_A001_Tana_IdleBreathingBackBlink_ (32).png" id="65_5i6w8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2fhf"]
+size = Vector2(15.2913, 18.5606)
+
+[sub_resource type="Animation" id="Animation_hqo4g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_40y85"]
+resource_name = "Tana_Idle_Back"
+length = 3.15001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_4vwgb"), ExtResource("3_ywqeh"), ExtResource("4_ou7mp"), ExtResource("5_von21"), ExtResource("6_0uh6k"), ExtResource("7_dqkk4"), ExtResource("8_ajmjl"), ExtResource("9_hv7q1"), ExtResource("10_u87wi"), ExtResource("11_1g5ur"), ExtResource("12_0wh81"), ExtResource("13_a7pky"), ExtResource("14_tn7rp"), ExtResource("15_22x1r"), ExtResource("16_wap24"), ExtResource("17_fby76"), ExtResource("18_34tt5"), ExtResource("19_muqgm"), ExtResource("20_g684t"), ExtResource("21_j16vy"), ExtResource("22_rerjl"), ExtResource("23_vtdmp"), ExtResource("24_e2cu8"), ExtResource("25_akkhi"), ExtResource("26_rkfh4"), ExtResource("27_bxjun"), ExtResource("28_bbmat"), ExtResource("29_yav16"), ExtResource("30_5nru4"), ExtResource("31_24mkb"), ExtResource("32_mjvqc"), ExtResource("33_60s87"), ExtResource("34_ka4uo"), ExtResource("35_00npo"), ExtResource("36_ia1xt"), ExtResource("37_taokl"), ExtResource("38_45071"), ExtResource("39_obis5"), ExtResource("40_vissn"), ExtResource("41_pnuh8"), ExtResource("42_3h1gk"), ExtResource("43_dirrx"), ExtResource("44_5fhnl"), ExtResource("45_bdkng"), ExtResource("46_oskhn"), ExtResource("47_ivqso"), ExtResource("48_83dnl"), ExtResource("49_mod3i"), ExtResource("50_lwfx3"), ExtResource("51_g123j"), ExtResource("52_hpqph"), ExtResource("53_h81i8"), ExtResource("54_h16ed"), ExtResource("55_jvayx"), ExtResource("56_qu2c5"), ExtResource("57_8u248"), ExtResource("58_abf7c"), ExtResource("59_lpqno"), ExtResource("60_p3xyo"), ExtResource("61_h8bgl"), ExtResource("62_ag5xp"), ExtResource("63_n6ubp"), ExtResource("64_xvvu1"), ExtResource("65_5i6w8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v0gme"]
+_data = {
+&"RESET": SubResource("Animation_hqo4g"),
+&"Tana_Idle_Back": SubResource("Animation_40y85")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3rht"]
+animation = &"Tana_Idle_Back"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0ejvw"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q5wlq"]
+states/End/position = Vector2(583, 78)
+states/Start/position = Vector2(232, 78)
+states/Tana_Idle_Back/node = SubResource("AnimationNodeAnimation_x3rht")
+states/Tana_Idle_Back/position = Vector2(378, 62)
+transitions = ["Start", "Tana_Idle_Back", SubResource("AnimationNodeStateMachineTransition_0ejvw")]
+
+[node name="Character_Tanah_Prologue" type="Sprite2D" groups=["Tana"]]
+z_index = 1
+y_sort_enabled = true
+offset = Vector2(-19, -94.645)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2.5, -12.5)
+scale = Vector2(4.12, 2.64)
+shape = SubResource("RectangleShape2D_t2fhf")
+
+[node name="TShadowRound" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.6)
+z_index = -1
+position = Vector2(-10, 9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_gni50")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v0gme")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_q5wlq")
+anim_player = NodePath("../AnimationPlayer")

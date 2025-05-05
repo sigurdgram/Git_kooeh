@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://8lly5edd42cc"]
+
+[ext_resource type="Texture2D" uid="uid://cuwpjfjpq3ll4" path="res://Art/UI/T_Interface_SettingsWindows02.png" id="1_ycmb8"]
+
+[resource]
+atlas = ExtResource("1_ycmb8")
+region = Rect2(129, 100, 84, 86)

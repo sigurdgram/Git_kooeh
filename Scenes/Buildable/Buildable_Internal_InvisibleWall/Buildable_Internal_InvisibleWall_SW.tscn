@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://vomd31ymjpwu"]
+
+[ext_resource type="Script" uid="uid://ceiidopb1c1fh" path="res://addons/buildable_system/Scripts/Node2Ds/Buildable.gd" id="1_85j3m"]
+[ext_resource type="Script" uid="uid://cp2neomp1mnxl" path="res://addons/buildable_system/Scripts/Node2Ds/CollisionPolygonShape.gd" id="2_poy8u"]
+[ext_resource type="Shape2D" uid="uid://fi33dsfkipdi" path="res://Resources/Buildable/CVShape_IsoGrid_1x4.tres" id="3_y4yxb"]
+
+[node name="Buildable_Internal_InvisibleWall_SW" type="Area2D" node_paths=PackedStringArray("_clickablePolygon")]
+script = ExtResource("1_85j3m")
+_clickablePolygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-128, 74)
+disabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-128, 74)
+collision_mask = 0
+
+[node name="CollisionPolygonShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(128, 138, 242, 72, -253, -211, -369, -146)
+script = ExtResource("2_poy8u")
+shape = ExtResource("3_y4yxb")

@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://crclhmnche5t2"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_g7qu0"]
+[ext_resource type="Script" uid="uid://dtwkiy5plok2w" path="res://Scripts/UISystem/UIs/Phase3UI/UI_Phase3_Cookbook_Entry.gd" id="2_3k5pf"]
+[ext_resource type="Texture2D" uid="uid://ctwsex1wdvd2r" path="res://PlaceHolder Assets/Sprites/Scene/icon.svg" id="3_edto3"]
+[ext_resource type="Texture2D" uid="uid://cd0ooad12yrva" path="res://Art/UI/T_Icon_Checkmark.png" id="4_ytx13"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyked"]
+
+[node name="UI_Phase3_Cookbook_Entry" type="Button" node_paths=PackedStringArray("_btnFood", "_itemImg", "_itemTxt", "_checkMarkTextRect")]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1597.0
+offset_bottom = -997.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g7qu0")
+theme_type_variation = &"Button_NameTagWithIcon"
+script = ExtResource("2_3k5pf")
+_btnFood = NodePath(".")
+_itemImg = NodePath("MarginContainer/HBoxContainer/IMG_Item")
+_itemTxt = NodePath("MarginContainer/HBoxContainer/TXT_Item")
+_checkMarkTextRect = NodePath("TEXTRECT_Checkmark")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="IMG_Item" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("3_edto3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TXT_Item" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_g7qu0")
+theme_type_variation = &"Button_NameTagWithIcon"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pyked")
+text = "Food"
+vertical_alignment = 1
+
+[node name="TEXTRECT_Checkmark" type="TextureRect" parent="."]
+modulate = Color(0.257813, 0.1875, 0.132813, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -59.5
+offset_bottom = 59.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_ytx13")
+expand_mode = 1
+stretch_mode = 5

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputData" load_steps=4 format=3 uid="uid://61dy83hbubdx"]
+
+[ext_resource type="Script" uid="uid://cseyqynuc8rd5" path="res://Scripts/Resources/InputData.gd" id="1_rx5jk"]
+[ext_resource type="Texture2D" uid="uid://u3k75sn1tb83" path="res://addons/controller_icons/assets/mouse/simple.png" id="1_ykq6p"]
+[ext_resource type="Texture2D" uid="uid://bhat3ss1rwdjb" path="res://addons/controller_icons/assets/xboxseries/l_stick.png" id="2_7qff8"]
+
+[resource]
+resource_name = "InputData.Shake"
+script = ExtResource("1_rx5jk")
+displayName = "Shake"
+inputLegends = {
+0: ExtResource("1_ykq6p"),
+1: ExtResource("2_7qff8")
+}

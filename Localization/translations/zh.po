@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+msgid "act_pause"
+msgstr "暂停"
+
+msgctxt "skip"
+msgid "act_pause"
+msgstr "跳过"
+
+msgctxt "cancel"
+msgid "act_pause"
+msgstr "取消"
+
+msgid "act_up"
+msgstr "上"
+
+msgid "act_down"
+msgstr "下"
+
+msgid "act_left"
+msgstr "左"
+
+msgid "act_right"
+msgstr "右"
+
+msgid "act_interact"
+msgstr "使用"
+
+msgid "ui_up"
+msgstr "上"
+
+msgid "ui_down"
+msgstr "下"
+
+msgid "ui_left"
+msgstr "左"
+
+msgid "ui_right"
+msgstr "右"
+
+msgid "ui_accept"
+msgstr "确认"
+
+msgctxt "select"
+msgid "ui_accept"
+msgstr "选择"
+
+msgid "ui_cancel"
+msgstr "取消"
+
+msgctxt "back"
+msgid "ui_cancel"
+msgstr "返回"
+
+msgid "MAIN_MENU-START"
+msgstr "开始游戏"
+
+msgid "MAIN_MENU-LOAD"
+msgstr "加载游戏"
+
+msgid "MAIN_MENU-SETTINGS"
+msgstr "设置"
+
+msgid "MAIN_MENU-CREDITS"
+msgstr "制作人员名单"
+
+msgid "MAIN_MENU-QUIT"
+msgstr "退出游戏"
+
+msgid "PROMPT-WARNING"
+msgstr "警告"
+
+msgid "PROMPT-QUIT_WARNING"
+msgstr ""
+"您确认要退出游戏？\n"
+" 未保存的游戏进度将会丢失。"
+
+msgid "PROMPT-YES"
+msgstr "是"
+
+msgid "PROMPT-NO"
+msgstr "否"
+
+msgid "en"
+msgstr "English"
+
+msgid "zh-Hans"
+msgstr "中文（简体）"

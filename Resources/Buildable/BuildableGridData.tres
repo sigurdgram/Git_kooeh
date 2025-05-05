@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BuildableGridData" load_steps=5 format=3 uid="uid://suy3eyx6wmqh"]
+
+[ext_resource type="Script" uid="uid://dngbhwn3tvth" path="res://addons/buildable_system/Scripts/Resources/BuildableGridData.gd" id="1_bw4wu"]
+[ext_resource type="ArrayMesh" uid="uid://baif88e1yjn0e" path="res://Resources/Buildable/ArrayMesh_IsoGrid.tres" id="1_egeyk"]
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="1_ibxn1"]
+[ext_resource type="Texture2D" uid="uid://c41hsi308w0ij" path="res://Art/Icon/T_IsoGrid.png" id="4_5sowk"]
+
+[resource]
+script = ExtResource("1_bw4wu")
+texture = ExtResource("4_5sowk")
+layer = 0
+mesh = ExtResource("1_egeyk")
+collisionLayer = 2
+cellShape = ExtResource("1_ibxn1")
+cellShapeType = 1
+cellSize = Vector2i(255, 148)
+gridSize = Vector2i(13, 13)

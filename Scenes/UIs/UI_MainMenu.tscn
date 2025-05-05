@@ -1,0 +1,346 @@
+[gd_scene load_steps=17 format=3 uid="uid://bsowtv2isymwg"]
+
+[ext_resource type="Script" uid="uid://k1cb3q2b1l26" path="res://Scripts/UISystem/UIs/UI_MainMenu.gd" id="1_nvrxw"]
+[ext_resource type="PackedScene" uid="uid://ds1ky8k7byyli" path="res://Scenes/UIs/SettingsMenu/UI_Settings.tscn" id="2_ruklw"]
+[ext_resource type="PackedScene" uid="uid://coidncv6hv7ls" path="res://Scenes/UIs/UI_Credits.tscn" id="3_dcbny"]
+[ext_resource type="PackedScene" uid="uid://d3l8mt377bxbu" path="res://Scenes/UIs/Misc/UI_BasicButton.tscn" id="6_b5tgx"]
+[ext_resource type="PackedScene" uid="uid://bpsejd1j55lv5" path="res://Scenes/UIs/Journal/UI_Journal.tscn" id="6_ryk2s"]
+[ext_resource type="Texture2D" uid="uid://c7vxqgwyjd884" path="res://2024_Art/T_Kooeh_Mainmenu BG.png" id="7_4a30q"]
+[ext_resource type="AudioStream" uid="uid://gqt37lv5fkgo" path="res://Audio/Music/AS_Music_menu_intro.wav" id="7_7u1dq"]
+[ext_resource type="AudioStream" uid="uid://cqrjm5lffsbo" path="res://Audio/Music/AS_Music_menu-cooking_loop.wav" id="8_5v4eb"]
+[ext_resource type="Texture2D" uid="uid://dqhx2outp0n38" path="res://2024_Art/2024 UI Assets/T_KooehTitle.png" id="8_qr1s3"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="10_usw4s"]
+[ext_resource type="Texture2D" uid="uid://b6byyga0c2oe7" path="res://Art/UI/T_Kooeh_QR Code.png" id="11_3ks1n"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="11_ggp7q"]
+
+[sub_resource type="Gradient" id="Gradient_fi71h"]
+offsets = PackedFloat32Array(0.0632911)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hey5x"]
+gradient = SubResource("Gradient_fi71h")
+width = 1
+
+[sub_resource type="Animation" id="Animation_h4d8a"]
+resource_name = "Anim_In"
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/TEXTRECT_Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Start:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Settings:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Credits:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Quit:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06r86"]
+_data = {
+&"Anim_In": SubResource("Animation_h4d8a")
+}
+
+[node name="UI_MainMenu" type="Control" node_paths=PackedStringArray("_btnStart", "_btnSettings", "_btnCredits", "_btnQuit", "_btnDebug", "_journalBtn", "_animPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nvrxw")
+_btnStart = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Start")
+_btnSettings = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Settings")
+_btnCredits = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Credits")
+_btnQuit = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer/BTN_Quit")
+_btnDebug = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/BTN_Debug")
+_journalBtn = NodePath("TEXTRECT_Background/MarginContainer/REFRECT_Content/BTN_Journal")
+_animPlayer = NodePath("AnimationPlayer")
+_audioStreamIntro = ExtResource("7_7u1dq")
+_audioStreamLoop = ExtResource("8_5v4eb")
+_settingsMenuUI = ExtResource("2_ruklw")
+_creditsMenuUI = ExtResource("3_dcbny")
+_journalUI = ExtResource("6_ryk2s")
+
+[node name="TEXTRECT_White" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_hey5x")
+expand_mode = 1
+
+[node name="TEXTRECT_Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.477
+anchor_right = 0.5
+anchor_bottom = 0.477
+offset_left = -960.0
+offset_top = -515.16
+offset_right = 960.0
+offset_bottom = 564.84
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_4a30q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="TEXTRECT_Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.477
+anchor_right = 0.5
+anchor_bottom = 0.477
+offset_left = -960.0
+offset_top = -515.16
+offset_right = 960.0
+offset_bottom = 564.84
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="REFRECT_Content" type="ReferenceRect" parent="TEXTRECT_Background/MarginContainer"]
+layout_mode = 2
+border_width = 2.2
+
+[node name="BTN_Debug" type="Button" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202
+anchor_top = 0.508
+anchor_right = 0.358
+anchor_bottom = 0.585
+offset_left = 0.459991
+offset_top = -0.440002
+offset_right = -174.66
+offset_bottom = -41.05
+theme_override_font_sizes/font_size = 46
+text = "Debug QTEs"
+icon_alignment = 1
+
+[node name="TEXTRECT_Title" type="TextureRect" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.36
+anchor_bottom = 0.426
+offset_left = 565.0
+offset_top = 13.0
+offset_right = 566.8
+offset_bottom = 12.82
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_qr1s3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.5
+offset_top = -29.0
+offset_right = 211.5
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_usw4s")
+theme_type_variation = &"Button_Menu"
+
+[node name="BTN_Start" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer" instance=ExtResource("6_b5tgx")]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("10_usw4s")
+text = "MAIN_MENU-START"
+
+[node name="BTN_Settings" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer" instance=ExtResource("6_b5tgx")]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+text = "MAIN_MENU-SETTINGS"
+
+[node name="BTN_Credits" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer" instance=ExtResource("6_b5tgx")]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+text = "MAIN_MENU-CREDITS"
+
+[node name="BTN_Quit" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content/VBoxContainer" instance=ExtResource("6_b5tgx")]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+text = "MAIN_MENU-QUIT"
+
+[node name="BTN_Journal" type="Button" parent="TEXTRECT_Background/MarginContainer/REFRECT_Content"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.401
+anchor_top = 0.823
+anchor_right = 0.581
+anchor_bottom = 0.917
+offset_left = -0.77002
+offset_top = -0.390015
+offset_right = 0.630005
+offset_bottom = 0.189941
+theme = ExtResource("10_usw4s")
+theme_type_variation = &"Button_NameTagWithIcon"
+text = "Journal"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_06r86")
+}
+
+[node name="TEXTRECT_QR" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 534.0
+offset_top = 102.0
+offset_right = 878.0
+offset_bottom = 446.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_3ks1n")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 502.0
+offset_top = 67.0
+offset_right = 910.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("10_usw4s")
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "Follow us and give us a feedback!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="REFRECT_InputLegend" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -888.0
+offset_top = 464.0
+offset_right = 885.0
+offset_bottom = 514.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="REFRECT_InputLegend"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.16
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -881.5
+offset_top = 5.0
+offset_right = 884.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="UI_Up" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("11_ggp7q")]
+layout_mode = 2
+input = "ui_up"
+
+[node name="UI_Down" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("11_ggp7q")]
+layout_mode = 2
+input = "ui_down"
+
+[node name="UI_Left" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("11_ggp7q")]
+layout_mode = 2
+input = "ui_left"
+
+[node name="UI_Right" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("11_ggp7q")]
+layout_mode = 2
+input = "ui_right"
+
+[node name="UI_Accept" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("11_ggp7q")]
+layout_mode = 2
+input = "ui_accept"

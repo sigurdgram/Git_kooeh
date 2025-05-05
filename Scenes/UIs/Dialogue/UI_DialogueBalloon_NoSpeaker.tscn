@@ -1,0 +1,186 @@
+[gd_scene load_steps=16 format=3 uid="uid://dstyx40uxmckv"]
+
+[ext_resource type="Script" uid="uid://dia7m0m1dodgy" path="res://Scripts/UISystem/UIs/Dialogue/UI_DialogueBalloon_NoSpeaker.gd" id="1_516oh"]
+[ext_resource type="Texture2D" uid="uid://djltwt0pwxjtm" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_Box.png" id="2_jrt2f"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="3_co32t"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="3_ct8n1"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_u0htj"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="4_8c160"]
+[ext_resource type="Script" uid="uid://0epvqwsjm5e" path="res://Scripts/UISystem/UIs/Dialogue/AdvancedRichTextLabelParser_Input.gd" id="6_3eo14"]
+[ext_resource type="Texture2D" uid="uid://dqborbcjsg8nk" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_Finished.png" id="8_4xyhq"]
+[ext_resource type="Script" uid="uid://dwcf1rariwikr" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabelParser.gd" id="8_hd14b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs4p7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_647iq"]
+resource_local_to_scene = true
+shader = ExtResource("3_u0htj")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.07
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 20
+shader_parameter/enabled = true
+
+[sub_resource type="Resource" id="Resource_mevdx"]
+script = ExtResource("6_3eo14")
+_imageScale = 2.0
+
+[sub_resource type="SystemFont" id="SystemFont_0de6h"]
+font_names = PackedStringArray("RooneySans")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3c8"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+draw_center = false
+
+[node name="UI_DialogueBalloon" type="Control" node_paths=PackedStringArray("balloon", "dialogue_label", "responses_menu", "response_template", "_dialogueFinishedHBox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_516oh")
+balloon = NodePath("BalloonControl")
+dialogue_label = NodePath("BalloonControl/PANEL_Description/NinePatch/RTL_DialogueLabel")
+responses_menu = NodePath("BalloonControl/VBOX_Response")
+response_template = NodePath("BalloonControl/ResponseTemplate")
+_dialogueFinishedHBox = NodePath("BalloonControl/PANEL_Description/NinePatch/HBOX_Dialogue_Finished")
+
+[node name="BalloonControl" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.775
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="PANEL_Description" type="Panel" parent="BalloonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = -0.202
+anchor_right = 0.917
+anchor_bottom = 0.79
+offset_left = -0.225006
+offset_top = 0.0860329
+offset_right = 0.48877
+offset_bottom = 0.0299377
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qs4p7")
+
+[node name="NinePatch" type="NinePatchRect" parent="BalloonControl/PANEL_Description"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jrt2f")
+region_rect = Rect2(273, 100, 1508, 300)
+patch_margin_left = 52
+patch_margin_top = 60
+patch_margin_right = 52
+patch_margin_bottom = 60
+
+[node name="HBOX_Dialogue_Finished" type="HBoxContainer" parent="BalloonControl/PANEL_Description/NinePatch"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -147.455
+offset_top = -69.205
+offset_right = -63.455
+offset_bottom = -29.2049
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UI_InputLegend" parent="BalloonControl/PANEL_Description/NinePatch/HBOX_Dialogue_Finished" instance=ExtResource("3_ct8n1")]
+layout_mode = 2
+input = "act_interact"
+
+[node name="IMG_Input" parent="BalloonControl/PANEL_Description/NinePatch/HBOX_Dialogue_Finished/UI_InputLegend/HBoxContainer" index="0"]
+material = SubResource("ShaderMaterial_647iq")
+
+[node name="TXT_Input" parent="BalloonControl/PANEL_Description/NinePatch/HBOX_Dialogue_Finished/UI_InputLegend/HBoxContainer" index="1"]
+visible = false
+
+[node name="TEXTRECT_Dialogue_Finished" type="TextureRect" parent="BalloonControl/PANEL_Description/NinePatch/HBOX_Dialogue_Finished"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture = ExtResource("8_4xyhq")
+expand_mode = 3
+
+[node name="RTL_DialogueLabel" type="RichTextLabel" parent="BalloonControl/PANEL_Description/NinePatch"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 49.0
+offset_right = -68.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_co32t")
+theme_type_variation = &"RTL_Dialogue_VN"
+theme_override_colors/default_color = Color(0.196078, 0.0862745, 0.0470588, 1)
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Blah Blah Blah"
+script = ExtResource("4_8c160")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+_parsers = Array[ExtResource("8_hd14b")]([SubResource("Resource_mevdx")])
+
+[node name="VBOX_Response" type="VBoxContainer" parent="BalloonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.785
+anchor_top = -1.71183
+anchor_right = 0.978
+anchor_bottom = -0.0518308
+offset_left = 0.799927
+offset_top = -0.0249023
+offset_right = 0.239868
+offset_bottom = -0.0849838
+mouse_filter = 2
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ResponseTemplate" type="RichTextLabel" parent="BalloonControl"]
+layout_mode = 2
+offset_left = 194.0
+offset_top = 153.0
+offset_right = 1910.0
+offset_bottom = 163.0
+theme_override_fonts/normal_font = SubResource("SystemFont_0de6h")
+theme_override_font_sizes/normal_font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+
+[connection signal="gui_input" from="." to="." method="_on_balloon_gui_input"]
+
+[editable path="BalloonControl/PANEL_Description/NinePatch/HBOX_Dialogue_Finished/UI_InputLegend"]

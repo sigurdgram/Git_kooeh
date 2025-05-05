@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=5 format=3 uid="uid://6jqq14f1ymdi"]
+
+[ext_resource type="Script" uid="uid://c5c8oojstqwwm" path="res://Scripts/Resources/ConditionalRandomizer/ConditionalRandomizer_Base.gd" id="1_eehc1"]
+[ext_resource type="PackedScene" uid="uid://yvn3bo07pgdo" path="res://Scenes/Customers/Customer_C.tscn" id="1_jmwt7"]
+[ext_resource type="Script" uid="uid://chasj45xrtms1" path="res://Scripts/Resources/CustomerData.gd" id="2_qubaw"]
+[ext_resource type="Script" uid="uid://1478kv0t2icv" path="res://Scripts/Resources/Conditions/Condition_Base.gd" id="4_j2bit"]
+
+[resource]
+resource_name = "CustomerData.TigerAunty"
+script = ExtResource("2_qubaw")
+identifier = "T-1"
+name = "Tiger Aunty"
+scene = ExtResource("1_jmwt7")
+customerRarity = 3
+weight = 0.0
+foodOrderRate = {
+"FoodData.KopiO": 1,
+"FoodData.KuihLapis": 1,
+"FoodData.OndehOndeh": 1,
+"FoodData.SirapLimau": 1,
+"FoodData.TehTarik": 1
+}
+patience = 30.0
+spawnTrigger = Array[ExtResource("4_j2bit")]([])
+paymentBonus = Array[ExtResource("1_eehc1")]([])
+customerSize = 100.0

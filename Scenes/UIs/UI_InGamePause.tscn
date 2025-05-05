@@ -1,0 +1,317 @@
+[gd_scene load_steps=16 format=3 uid="uid://cyd2inrh4i52j"]
+
+[ext_resource type="Script" uid="uid://crdkd4suxl3b3" path="res://Scripts/UISystem/UIs/UI_InGamePause.gd" id="1_f8lw3"]
+[ext_resource type="PackedScene" uid="uid://ds1ky8k7byyli" path="res://Scenes/UIs/SettingsMenu/UI_Settings.tscn" id="2_ehtm0"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_h3amy"]
+[ext_resource type="PackedScene" uid="uid://bpsejd1j55lv5" path="res://Scenes/UIs/Journal/UI_Journal.tscn" id="2_s0jwj"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="4_7m03m"]
+[ext_resource type="Texture2D" uid="uid://cmerolbar30v8" path="res://2024_Art/2024 UI Assets/T_UI_PopupMenuWindow.png" id="5_sjtns"]
+[ext_resource type="FontFile" uid="uid://cv0i6mujau7fk" path="res://Themes/Fonts/RooneyPro/RooneyPro-Bold.ttf" id="14_ic64n"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="15_oc1t7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmp3v"]
+shader = ExtResource("2_h3amy")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_7bsjp"]
+offsets = PackedFloat32Array(0.487465)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k6qw6"]
+gradient = SubResource("Gradient_7bsjp")
+width = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt0ya"]
+atlas = ExtResource("5_sjtns")
+region = Rect2(26, 740, 1995, 2615)
+
+[sub_resource type="Animation" id="Animation_o84uk"]
+resource_name = "NotebookGroup_In"
+length = 0.52
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.401426, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0745098, 0.0745098, 0.0745098, 0.764706), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ASPECTRECT_InputLegend:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.24, 0.49),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dgjem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ASPECTRECT_InputLegend:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bj84h"]
+_data = {
+&"InGamePause_In": SubResource("Animation_o84uk"),
+&"RESET": SubResource("Animation_dgjem")
+}
+
+[node name="UI_InGamePause" type="Control" node_paths=PackedStringArray("_resumeBtn", "_journalBtn", "_settingBtn", "_quitToMainBtn", "_quitGameBtn", "_inAnim")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f8lw3")
+_resumeBtn = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent/BTN_Resume")
+_journalBtn = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent/BTN_Journal")
+_settingBtn = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent/BTN_Settings")
+_quitToMainBtn = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent/BTN_MainMenu")
+_quitGameBtn = NodePath("Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent/BTN_QuitGame")
+_inAnim = NodePath("AnimationPlayer_In")
+_settingsUITemplate = ExtResource("2_ehtm0")
+_journalUI = ExtResource("2_s0jwj")
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dmp3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = SubResource("GradientTexture1D_k6qw6")
+
+[node name="Control_NotebookGroup" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 1080)
+
+[node name="TextRect_Notebook" type="TextureRect" parent="Control_NotebookGroup"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.485
+offset_top = 58.0
+offset_right = 369.514
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_vt0ya")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="REFRECT_Content" type="ReferenceRect" parent="Control_NotebookGroup/TextRect_Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.106
+anchor_top = 0.125
+anchor_right = 0.86
+anchor_bottom = 0.919
+offset_left = 0.0300751
+offset_top = -0.25
+offset_right = 0.300598
+offset_bottom = -0.430054
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_Paused" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -339.0
+offset_right = 260.0
+offset_bottom = -288.0
+theme = ExtResource("4_7m03m")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("14_ic64n")
+theme_override_font_sizes/font_size = 50
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -314.0
+offset_right = 260.0
+offset_bottom = -243.0
+theme = ExtResource("4_7m03m")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.105
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.149994
+offset_right = 0.000244141
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBOX_PauseContent" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="BTN_Resume" type="Button" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_7m03m")
+theme_type_variation = &"Button_Menu"
+text = "Resume"
+
+[node name="BTN_Journal" type="Button" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_7m03m")
+theme_type_variation = &"Button_Menu"
+text = "Journal"
+
+[node name="BTN_Settings" type="Button" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_7m03m")
+theme_type_variation = &"Button_Menu"
+text = "Settings"
+
+[node name="BTN_MainMenu" type="Button" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_7m03m")
+theme_type_variation = &"Button_Menu"
+text = "Main Menu"
+
+[node name="BTN_QuitGame" type="Button" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Content/MarginContainer/VBoxContainer/VBOX_PauseContent"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_7m03m")
+theme_type_variation = &"Button_Menu"
+text = "Quit Game"
+
+[node name="AnimationPlayer_In" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Control_NotebookGroup")
+libraries = {
+&"": SubResource("AnimationLibrary_bj84h")
+}
+
+[node name="ASPECTRECT_InputLegend" type="ReferenceRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1470.0
+offset_top = -100.0
+offset_right = -18.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ASPECTRECT_InputLegend"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="UI_InputLegend" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("15_oc1t7")]
+layout_mode = 2
+
+[node name="UI_InputLegend2" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("15_oc1t7")]
+layout_mode = 2
+
+[node name="UI_InputLegend3" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("15_oc1t7")]
+layout_mode = 2

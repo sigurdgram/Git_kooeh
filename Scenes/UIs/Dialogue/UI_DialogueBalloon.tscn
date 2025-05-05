@@ -1,0 +1,240 @@
+[gd_scene load_steps=16 format=3 uid="uid://dygvfrcta86vj"]
+
+[ext_resource type="Script" uid="uid://c7o1i4u06i2d" path="res://Scripts/UISystem/UIs/Dialogue/UI_DialogueBalloon.gd" id="1_uufxx"]
+[ext_resource type="Texture2D" uid="uid://djltwt0pwxjtm" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_Box.png" id="2_3gho0"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="3_27rrb"]
+[ext_resource type="Texture2D" uid="uid://dqborbcjsg8nk" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_Finished.png" id="3_bxs46"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_eqhba"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="3_nwh44"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="4_c6koc"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="4_otn80"]
+[ext_resource type="Texture2D" uid="uid://cf42cxeuddm6g" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana00.png" id="5_8xecd"]
+[ext_resource type="Texture2D" uid="uid://d3v5268aoc7ru" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_NameTag.png" id="8_f76qh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6blp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0m3y"]
+resource_local_to_scene = true
+shader = ExtResource("3_eqhba")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.07
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 20
+shader_parameter/enabled = true
+
+[sub_resource type="SystemFont" id="SystemFont_0de6h"]
+font_names = PackedStringArray("RooneySans")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3c8"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+draw_center = false
+
+[node name="UI_DialogueBalloon" type="Control" node_paths=PackedStringArray("portraitRect", "balloon", "character_label", "dialogue_label", "responses_menu", "response_template", "_dialogueFinishedHBox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uufxx")
+portraitRect = NodePath("BalloonControl/AspectRatioContainer/TEXTRECT_Portrait")
+balloon = NodePath("BalloonControl")
+character_label = NodePath("BalloonControl/TEXTRECT_Name/Label_CharacterName")
+dialogue_label = NodePath("BalloonControl/PANEL_Description/TextureRect/RTL_DialogueLabel")
+responses_menu = NodePath("BalloonControl/VBOX_Response")
+response_template = NodePath("BalloonControl/ResponseTemplate")
+_dialogueFinishedHBox = NodePath("BalloonControl/PANEL_Description/TextureRect/HBOX_Dialogue_Finished")
+metadata/_edit_horizontal_guides_ = [1081.0, 1029.0, 765.0, 715.0]
+metadata/_edit_vertical_guides_ = [1877.0]
+
+[node name="BalloonControl" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.775
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="PANEL_Description" type="Panel" parent="BalloonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.564
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.0759888
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t6blp")
+
+[node name="TextureRect" type="TextureRect" parent="BalloonControl/PANEL_Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502
+anchor_top = 0.569
+anchor_right = 0.502
+anchor_bottom = 0.908
+offset_left = -987.84
+offset_top = -271.293
+offset_right = 1060.16
+offset_bottom = 111.844
+texture = ExtResource("2_3gho0")
+stretch_mode = 4
+
+[node name="HBOX_Dialogue_Finished" type="HBoxContainer" parent="BalloonControl/PANEL_Description/TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -412.0
+offset_top = -182.0
+offset_right = -328.0
+offset_bottom = -142.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UI_InputLegend" parent="BalloonControl/PANEL_Description/TextureRect/HBOX_Dialogue_Finished" instance=ExtResource("3_27rrb")]
+layout_mode = 2
+input = "act_interact"
+
+[node name="IMG_Input" parent="BalloonControl/PANEL_Description/TextureRect/HBOX_Dialogue_Finished/UI_InputLegend/HBoxContainer" index="0"]
+material = SubResource("ShaderMaterial_o0m3y")
+
+[node name="TXT_Input" parent="BalloonControl/PANEL_Description/TextureRect/HBOX_Dialogue_Finished/UI_InputLegend/HBoxContainer" index="1"]
+visible = false
+
+[node name="TEXTRECT_Dialogue_Finished" type="TextureRect" parent="BalloonControl/PANEL_Description/TextureRect/HBOX_Dialogue_Finished"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture = ExtResource("3_bxs46")
+expand_mode = 3
+
+[node name="RTL_DialogueLabel" type="RichTextLabel" parent="BalloonControl/PANEL_Description/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.231
+anchor_right = 0.857
+anchor_bottom = 0.797
+offset_left = 369.624
+offset_top = 24.7279
+offset_right = -47.136
+offset_bottom = -55.0643
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_c6koc")
+theme_type_variation = &"RTL_Dialogue_VN"
+theme_override_colors/default_color = Color(0.196078, 0.0862745, 0.0470588, 1)
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Blah Blah Blah"
+script = ExtResource("3_nwh44")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+
+[node name="AspectRatioContainer" type="CenterContainer" parent="BalloonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.179
+anchor_right = 0.5
+anchor_bottom = 0.877
+offset_left = -895.0
+offset_top = -346.497
+offset_right = -383.0
+offset_bottom = -4.11099
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="BalloonControl/AspectRatioContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_8xecd")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TEXTRECT_Name" type="TextureRect" parent="BalloonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.325
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -897.0
+offset_top = -47.9749
+offset_right = -385.0
+offset_bottom = 44.0001
+texture = ExtResource("8_f76qh")
+expand_mode = 1
+
+[node name="Label_CharacterName" type="Label" parent="BalloonControl/TEXTRECT_Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.99
+offset_top = 44.0
+offset_right = -35.01
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_c6koc")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.196078, 0.0862745, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("4_otn80")
+theme_override_font_sizes/font_size = 40
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBOX_Response" type="VBoxContainer" parent="BalloonControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.785
+anchor_top = -1.975
+anchor_right = 0.978
+anchor_bottom = -0.315
+offset_left = 0.799927
+offset_top = -0.0249023
+offset_right = 0.239868
+offset_bottom = -0.0849915
+mouse_filter = 2
+alignment = 2
+
+[node name="ResponseTemplate" type="RichTextLabel" parent="BalloonControl"]
+layout_mode = 2
+offset_left = 194.0
+offset_top = 153.0
+offset_right = 1910.0
+offset_bottom = 163.0
+theme_override_fonts/normal_font = SubResource("SystemFont_0de6h")
+theme_override_font_sizes/normal_font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+
+[editable path="BalloonControl/PANEL_Description/TextureRect/HBOX_Dialogue_Finished/UI_InputLegend"]

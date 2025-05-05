@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8xgbojkx7pfc"]
+
+[ext_resource type="PackedScene" uid="uid://ghlbw566eqj5" path="res://Scenes/Buildable/Buildable_Asset_Table3/Buildable_Asset_Table3_SE.tscn" id="1_c3uhx"]
+
+[node name="Buildable_Asset_Table3_SE" instance=ExtResource("1_c3uhx")]
+
+[node name="Sprite2D" parent="." index="0"]
+flip_h = true

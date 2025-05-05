@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://e86ussatll8q"]
+
+[ext_resource type="Script" uid="uid://f5fajv3jl4fa" path="res://Scripts/Buildable/Buildable_Table.gd" id="1_1vuhn"]
+[ext_resource type="PackedScene" uid="uid://h8043hrwhb6h" path="res://Scenes/Buildable/Buildable_Base.tscn" id="1_kht5m"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_dtykw"]
+[ext_resource type="PackedScene" uid="uid://syy7c2n0n6d5" path="res://Scenes/Seat.tscn" id="3_76kki"]
+[ext_resource type="Texture2D" uid="uid://uaqjbscfldrs" path="res://2024_Art/2024 Restaurant (SceneEatery)/Table1.tres" id="4_fledy"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="5_tdy73"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjv02"]
+resource_local_to_scene = true
+shader = ExtResource("2_dtykw")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.005
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Table1" node_paths=PackedStringArray("foodPosition", "_areaNavigation") groups=["Table"] instance=ExtResource("1_kht5m")]
+script = ExtResource("1_1vuhn")
+foodPosition = NodePath("FoodPosition")
+seatScene = ExtResource("3_76kki")
+_areaNavigation = NodePath("NavigationArea")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_jjv02")
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fledy")
+offset = Vector2(0, -75)
+
+[node name="TShadowSquare" type="Sprite2D" parent="Sprite2D" index="0"]
+modulate = Color(1, 1, 1, 0.6)
+visibility_layer = 3
+z_index = -1
+texture = ExtResource("5_tdy73")
+offset = Vector2(3, 10)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(128, 0, 0, -72, -128, 0, 0, 74)
+disabled = true
+
+[node name="NavigationArea" type="Area2D" parent="." index="2" groups=["NavigationArea"]]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NavigationArea" index="0"]
+polygon = PackedVector2Array(106, 0, 0, -56, -102, 0, 0, 58)
+
+[node name="FoodPosition" type="Node2D" parent="." index="3"]
+position = Vector2(-1, 85)
+
+[node name="Type1" type="Node2D" parent="FoodPosition" index="0"]
+
+[node name="Node2D" type="Node2D" parent="FoodPosition/Type1" index="0"]
+position = Vector2(37, -144)
+
+[node name="Type2" type="Node2D" parent="FoodPosition" index="1"]
+
+[node name="Node2D" type="Node2D" parent="FoodPosition/Type2" index="0"]
+position = Vector2(-29, -150)
+
+[node name="Node2D2" type="Node2D" parent="FoodPosition/Type2" index="1"]
+position = Vector2(18, -169)
+
+[node name="Type3" type="Node2D" parent="FoodPosition" index="2"]
+
+[node name="Node2D" type="Node2D" parent="FoodPosition/Type3" index="0"]
+position = Vector2(-33, -191)
+
+[node name="Node2D2" type="Node2D" parent="FoodPosition/Type3" index="1"]
+position = Vector2(9, -182)
+
+[node name="Node2D3" type="Node2D" parent="FoodPosition/Type3" index="2"]
+position = Vector2(12, -134)
+
+[node name="Type4" type="Node2D" parent="FoodPosition" index="3"]
+
+[node name="Node2D" type="Node2D" parent="FoodPosition/Type4" index="0"]
+position = Vector2(32, -189)
+
+[node name="Node2D2" type="Node2D" parent="FoodPosition/Type4" index="1"]
+position = Vector2(-5, -185)
+
+[node name="Node2D3" type="Node2D" parent="FoodPosition/Type4" index="2"]
+position = Vector2(-10, -124)
+
+[node name="Node2D4" type="Node2D" parent="FoodPosition/Type4" index="3"]
+position = Vector2(43, -157)

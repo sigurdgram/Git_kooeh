@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://bem5wr3htw5u7"]
+
+[ext_resource type="PackedScene" uid="uid://h8043hrwhb6h" path="res://Scenes/Buildable/Buildable_Base.tscn" id="1_td27g"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_00tgu"]
+[ext_resource type="Script" uid="uid://d2v0s1roeu4eq" path="res://Scripts/Buildable/Buildable_Temple.gd" id="2_k20jp"]
+[ext_resource type="PackedScene" uid="uid://d3tkjtby3olbs" path="res://Scenes/UIs/Phase1UI/UI_Phase1_Temple_Gather.tscn" id="3_1qjav"]
+[ext_resource type="PackedScene" uid="uid://cbcu3c7lmhkq3" path="res://Scenes/UIs/Phase1UI/UI_Phase1_Temple_Purchase.tscn" id="4_ugh7g"]
+[ext_resource type="AudioStream" uid="uid://bntlqcx816bln" path="res://Audio/SFX/AS_SFX_Pickup.wav" id="5_h3xkd"]
+[ext_resource type="Texture2D" uid="uid://drwxlymgsuk54" path="res://2024_Art/2024 Scene1/T_Scene1_Temple.png" id="6_f4lmy"]
+[ext_resource type="Texture2D" uid="uid://kdqshtadi0ys" path="res://2024_Art/2024 Scene1/T_Scene1_IngredientBag.png" id="7_0mo6a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dnnc"]
+resource_local_to_scene = true
+shader = ExtResource("2_00tgu")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.003
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87nco"]
+atlas = ExtResource("6_f4lmy")
+region = Rect2(0, 0, 1338, 1179)
+
+[node name="Buildable_Temple" node_paths=PackedStringArray("_ingredientBag") groups=["Buildable_Temple", "Interactable"] instance=ExtResource("1_td27g")]
+script = ExtResource("2_k20jp")
+_ingredientsToPickup = {
+"IngredientData.BlackTeaLeaves": 10,
+"IngredientData.CoconutMilk": 20,
+"IngredientData.CoffeePowder": 10,
+"IngredientData.CondensedMilk": 10,
+"IngredientData.Egg": 20,
+"IngredientData.GlutinousRiceFlour": 30,
+"IngredientData.IcingSugar": 50,
+"IngredientData.Lime": 30,
+"IngredientData.Oil": 10,
+"IngredientData.PineappleJam": 30,
+"IngredientData.PlainFlour": 50,
+"IngredientData.RoseSyrup": 20,
+"IngredientData.Salt": 10,
+"IngredientData.Sugar": 20,
+"IngredientData.Water": 110
+}
+_collectionUI = ExtResource("3_1qjav")
+_purchaseUI = ExtResource("4_ugh7g")
+_ingredientBag = NodePath("Sprite_IngredientBag")
+_audioPickup = ExtResource("5_h3xkd")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_1dnnc")
+position = Vector2(-237, -262)
+texture = SubResource("AtlasTexture_87nco")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(11.0522, -6.57483)
+scale = Vector2(1.01857, 1.01258)
+polygon = PackedVector2Array(-98.2281, 247.462, 279.753, 42.0459, 345.531, 52.9092, 398.547, 7.48072, 393.638, -252.252, 207.102, -445.818, -374, -330, -535.115, 152.654, -294.582, 300.791, -194.441, 365.971, -105.1, 310.667)
+
+[node name="Sprite_IngredientBag" type="Sprite2D" parent="." index="2"]
+position = Vector2(78, -88)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_0mo6a")

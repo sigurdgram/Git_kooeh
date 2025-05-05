@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://v7ulhrdc3fs4"]
+
+[ext_resource type="Script" uid="uid://chpt8wtqimgv7" path="res://Scripts/UISystem/UIs/Misc/UI_Button_Frame.gd" id="1_bykjn"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_bbqfn"]
+[ext_resource type="Texture2D" uid="uid://dmy253uai50rs" path="res://Art/Ingredient_Spritesheet/T_I000_Water.tres" id="3_ocddj"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="4_dhx1k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwp44"]
+
+[node name="UI_Button_Frame" type="Button" node_paths=PackedStringArray("_nameTxt", "_textRect", "_selectedTxt")]
+custom_minimum_size = Vector2(154, 214)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -125.0
+offset_right = 54.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bbqfn")
+theme_type_variation = &"Button_Frame"
+script = ExtResource("1_bykjn")
+_nameTxt = NodePath("PANELCONT_Rarity/REFRECT_Frame/REFRECT_Name/TXT_Name")
+_textRect = NodePath("PANELCONT_Rarity/REFRECT_Frame/REFRECT_Ingredient/AspectRatioContainer/TEXTRECT_Item")
+_selectedTxt = NodePath("PANELCONT_Rarity/REFRECT_Frame/REFRECT_Selected/TXT_Selected")
+
+[node name="PANELCONT_Rarity" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mwp44")
+
+[node name="REFRECT_Frame" type="ReferenceRect" parent="PANELCONT_Rarity"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="REFRECT_Ingredient" type="ReferenceRect" parent="PANELCONT_Rarity/REFRECT_Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -84.0
+offset_right = 77.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PANELCONT_Rarity/REFRECT_Frame/REFRECT_Ingredient"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -63.5
+offset_right = 77.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TEXTRECT_Item" type="TextureRect" parent="PANELCONT_Rarity/REFRECT_Frame/REFRECT_Ingredient/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_ocddj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="REFRECT_Name" type="ReferenceRect" parent="PANELCONT_Rarity/REFRECT_Frame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -58.0
+offset_right = 64.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TXT_Name" type="Label" parent="PANELCONT_Rarity/REFRECT_Frame/REFRECT_Name"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bbqfn")
+theme_type_variation = &"HeaderMedium"
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_dhx1k")
+theme_override_font_sizes/font_size = 18
+text = "Food Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 227
+
+[node name="REFRECT_Selected" type="ReferenceRect" parent="PANELCONT_Rarity/REFRECT_Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -27.0
+offset_right = 64.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TXT_Selected" type="Label" parent="PANELCONT_Rarity/REFRECT_Frame/REFRECT_Selected"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.5
+offset_right = 64.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bbqfn")
+theme_override_colors/font_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+theme_override_colors/font_outline_color = Color(1, 0.964706, 0.901961, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "[ Selected ]"
+horizontal_alignment = 1
+vertical_alignment = 1

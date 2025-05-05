@@ -1,0 +1,116 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnsp5j051rejg"]
+
+[ext_resource type="Script" uid="uid://choq5cjb55dmb" path="res://Scripts/Buildable/Buildable_Attachment_DisplayCounter.gd" id="1_1pt24"]
+[ext_resource type="Texture2D" uid="uid://bp8qoc2q0kmmw" path="res://2024_Art/2024 Scene1/T_Scene1_YellowTray_Full.png" id="1_lnqi8"]
+[ext_resource type="Script" uid="uid://cp2neomp1mnxl" path="res://addons/buildable_system/Scripts/Node2Ds/CollisionPolygonShape.gd" id="1_y2q7r"]
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="2_3tyui"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_qp33t"]
+[ext_resource type="AudioStream" uid="uid://bntlqcx816bln" path="res://Audio/SFX/AS_SFX_Pickup.wav" id="2_ukjvh"]
+[ext_resource type="Texture2D" uid="uid://cojh7inifcub4" path="res://2024_Art/2024 Scene1/T_Scene1_YellowTray_Top.png" id="3_a7dau"]
+[ext_resource type="Texture2D" uid="uid://dlrdunjh8iem3" path="res://2024_Art/2024 Scene1/T_Scene1_YellowTray_Bottom.png" id="4_r1mc3"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="7_i7jlr"]
+[ext_resource type="Texture2D" uid="uid://bbbcfnu51afyg" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E002PlasticFoldableTable.png" id="10_w7yud"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="11_lprib"]
+[ext_resource type="Script" uid="uid://dhqmrcvillut0" path="res://Scripts/RestaurantSystems/UpgradableComponent.gd" id="12_356pd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jincy"]
+resource_local_to_scene = true
+shader = ExtResource("2_qp33t")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0.367889, 0.614951, 1.15514e-06, 1)
+shader_parameter/line_thickness = 0.04
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Attachment_DisplayCounter_SE" type="Area2D" node_paths=PackedStringArray("_foodPositions", "_staticBody", "_interactableComp", "_clickablePolygon", "_sprite") groups=["Buildable.DisplayCounter"]]
+collision_mask = 0
+script = ExtResource("1_1pt24")
+_foodPositions = NodePath("Sprite2D/Sprite_YellowTray_Full/FoodPositions")
+_staticBody = NodePath("StaticBody2D")
+_audioPickup = ExtResource("2_ukjvh")
+_interactableComp = NodePath("InteractableComponent")
+_clickablePolygon = NodePath("CollisionPolygonShape2D")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_w7yud")
+offset = Vector2(0, -75)
+
+[node name="TShadowSquare" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+visibility_layer = 3
+texture = ExtResource("11_lprib")
+offset = Vector2(3, 10)
+
+[node name="Sprite_YellowTray_Full" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_jincy")
+position = Vector2(0, -173.51)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnqi8")
+
+[node name="Sprite_YellowTray_Top" type="Sprite2D" parent="Sprite2D/Sprite_YellowTray_Full"]
+texture = ExtResource("3_a7dau")
+offset = Vector2(-1.625, -17)
+
+[node name="FoodPositions" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full"]
+position = Vector2(0, 28)
+
+[node name="Pos_3" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full/FoodPositions"]
+y_sort_enabled = true
+position = Vector2(-4, -49.5875)
+
+[node name="Pos_1" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full/FoodPositions"]
+y_sort_enabled = true
+position = Vector2(10, -31.5875)
+
+[node name="Pos_0" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full/FoodPositions"]
+y_sort_enabled = true
+position = Vector2(-40, -25.5875)
+
+[node name="Pos_5" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full/FoodPositions"]
+y_sort_enabled = true
+position = Vector2(38, -27.5875)
+
+[node name="Pos_4" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full/FoodPositions"]
+y_sort_enabled = true
+position = Vector2(-14, -14.5875)
+
+[node name="Pos_2" type="Node2D" parent="Sprite2D/Sprite_YellowTray_Full/FoodPositions"]
+y_sort_enabled = true
+position = Vector2(6, -2.5875)
+
+[node name="Sprite_YellowTray_Bottom" type="Sprite2D" parent="Sprite2D/Sprite_YellowTray_Full"]
+texture = ExtResource("4_r1mc3")
+offset = Vector2(0, 31.14)
+
+[node name="CollisionPolygonShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("1_y2q7r")
+shape = ExtResource("2_3tyui")
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("7_i7jlr")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D/Sprite_YellowTray_Full")
+
+[node name="UpgradableComponent" type="Node" parent="."]
+script = ExtResource("12_356pd")
+metadata/_custom_type_script = "uid://dhqmrcvillut0"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+process_mode = 4
+collision_mask = 0
+
+[node name="CollisionPolygonShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("1_y2q7r")
+shape = ExtResource("2_3tyui")

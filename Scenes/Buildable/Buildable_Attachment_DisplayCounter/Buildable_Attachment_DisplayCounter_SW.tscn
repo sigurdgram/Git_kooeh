@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cie0fdw8b76bj"]
+
+[ext_resource type="PackedScene" uid="uid://cnsp5j051rejg" path="res://Scenes/Buildable/Buildable_Attachment_DisplayCounter/Buildable_Attachment_DisplayCounter_SE.tscn" id="1_5tp5e"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_pgl6u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfxm8"]
+resource_local_to_scene = true
+shader = ExtResource("2_pgl6u")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0.367889, 0.614951, 1.15514e-06, 1)
+shader_parameter/line_thickness = 0.04
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Attachment_DisplayCounter_SE" instance=ExtResource("1_5tp5e")]
+
+[node name="Sprite2D" parent="." index="0"]
+flip_h = true
+
+[node name="Sprite_YellowTray_Full" parent="." index="1"]
+material = SubResource("ShaderMaterial_yfxm8")
+flip_h = true
+
+[node name="Sprite_YellowTray_Top" parent="Sprite_YellowTray_Full" index="0"]
+offset = Vector2(1.155, -17)
+flip_h = true
+
+[node name="Sprite_YellowTray_Bottom" parent="Sprite_YellowTray_Full" index="2"]
+flip_h = true

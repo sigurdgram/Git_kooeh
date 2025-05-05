@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=10 format=3 uid="uid://cl5pbjnl4ceko"]
+
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="1_4gaej"]
+[ext_resource type="PackedScene" uid="uid://d0x2jn6wr8ewu" path="res://Scenes/Buildable/Buildable_Asset_Entrance/Buildable_Asset_Entrance_NE.tscn" id="1_iyf5j"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="2_f8s0f"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_jx76d"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="3_a6wy6"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="3_jq76s"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_12xsd"]
+[ext_resource type="Texture2D" uid="uid://bwnykalqek76o" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_DoorIndicator2.png" id="5_s60tg"]
+
+[sub_resource type="Resource" id="Resource_w0pta"]
+script = ExtResource("3_jq76s")
+buildable = ExtResource("1_iyf5j")
+buildReqs = Array[ExtResource("2_jx76d")]([ExtResource("4_12xsd")])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[resource]
+resource_name = "BuildableData.Entrance"
+script = ExtResource("3_a6wy6")
+name = "Entrance"
+buildableScene = ExtResource("1_iyf5j")
+texture = ExtResource("5_s60tg")
+category = 0
+price = 100
+layer = 0
+customData = {}
+tileSetID = 0
+tileExtensions = Array[ExtResource("1_4gaej")]([])
+flippedTileExtensions = Array[ExtResource("1_4gaej")]([])
+restrictions = Array[ExtResource("2_f8s0f")]([])
+id = "BuildableData.Entrance"
+displayName = "Entrance"
+layer2 = 1
+collisionPriority = 2
+collisionLayer = 64
+defaultDirection = 1
+directionalVariants = {
+0: null,
+1: SubResource("Resource_w0pta"),
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: null
+}

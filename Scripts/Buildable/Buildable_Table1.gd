@@ -1,0 +1,2 @@
+extends Buildable
+class_name Buildable_Table1

@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://bf6w2qh4ymovs"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_hsmnm"]
+[ext_resource type="Texture2D" uid="uid://b7u8lcfojhxxu" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_RecipeTabNormal.png" id="2_7whs3"]
+[ext_resource type="Script" uid="uid://c6focsyojalvb" path="res://Scripts/UISystem/UIs/Journal/UI_Journal_Entry.gd" id="2_fw117"]
+[ext_resource type="Texture2D" uid="uid://ctwsex1wdvd2r" path="res://PlaceHolder Assets/Sprites/Scene/icon.svg" id="2_v8hps"]
+[ext_resource type="Texture2D" uid="uid://cb8c6h86mu858" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_RecipeTabHover.png" id="3_jxiwk"]
+[ext_resource type="Texture2D" uid="uid://cabprtot6v8jl" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_RecipeTabPressed.png" id="4_yx7lu"]
+[ext_resource type="Texture2D" uid="uid://b8exy82gcy31g" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_RecipeTabSelected.png" id="5_saxpw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yoptn"]
+texture = ExtResource("2_7whs3")
+region_rect = Rect2(75, 14, 873, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utjs4"]
+texture = ExtResource("3_jxiwk")
+region_rect = Rect2(67, 6, 889, 116)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbnuk"]
+texture = ExtResource("4_yx7lu")
+expand_margin_left = 8.0
+expand_margin_top = 3.0
+expand_margin_right = 8.0
+expand_margin_bottom = 3.0
+region_rect = Rect2(67, 6, 889, 116)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07vml"]
+texture = ExtResource("2_7whs3")
+region_rect = Rect2(75, 14, 873, 100)
+modulate_color = Color(0.544974, 0.544974, 0.544974, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rdv5b"]
+texture = ExtResource("5_saxpw")
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+region_rect = Rect2(58, 61, 907, 134)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_015il"]
+
+[node name="UI_Journal_Entry" type="Button" node_paths=PackedStringArray("_btnFood", "_itemImg", "_itemTxt")]
+process_mode = 2
+custom_minimum_size = Vector2(323, 83)
+anchors_preset = -1
+anchor_right = 0.168
+anchor_bottom = 0.077
+offset_right = 0.439972
+offset_bottom = -0.160011
+theme = ExtResource("1_hsmnm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yoptn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_utjs4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pbnuk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_07vml")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rdv5b")
+script = ExtResource("2_fw117")
+_btnFood = NodePath(".")
+_itemImg = NodePath("MarginContainer/HBoxContainer/IMG_Item")
+_itemTxt = NodePath("MarginContainer/HBoxContainer/TXT_Item")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="IMG_Item" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_v8hps")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TXT_Item" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_hsmnm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_015il")
+text = "Food"
+vertical_alignment = 1

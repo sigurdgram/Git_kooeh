@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ctwsex1wdvd2r"
+path="res://.godot/imported/icon.svg-bbdb449df1a4914b06ced7f31be23a19.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://PlaceHolder Assets/Sprites/Scene/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-bbdb449df1a4914b06ced7f31be23a19.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

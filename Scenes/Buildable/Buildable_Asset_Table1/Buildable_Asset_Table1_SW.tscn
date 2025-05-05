@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://nbdwclsicynf"]
+
+[ext_resource type="PackedScene" uid="uid://cop84d4osxfww" path="res://Scenes/Buildable/Buildable_Asset_Table1/Buildable_Asset_Table1_SE.tscn" id="1_hcvku"]
+
+[node name="Buildable_Table1_SE" instance=ExtResource("1_hcvku")]
+
+[node name="Sprite2D" parent="." index="0"]
+flip_h = true
+
+[node name="Tabletop" parent="." index="1"]
+position = Vector2(-2.83, -87.83)

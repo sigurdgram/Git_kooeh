@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://crpjiw1yutg7c"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_xsgdx"]
+[ext_resource type="Texture2D" uid="uid://ceowsd24aisjc" path="res://Art/Ingredient_Spritesheet/T_I019_GRice.tres" id="2_8jjl7"]
+
+[resource]
+resource_name = "IngredientData.GlutinousRice"
+script = ExtResource("1_xsgdx")
+name = "Glutinous Rice"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_8jjl7")
+bundlePrice = 10
+bundlePurchaseAmount = 10

@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=3 uid="uid://6l2rf4oijtc5"]
+
+[ext_resource type="Texture2D" uid="uid://deb4deh2mlq2u" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Halo_Over.png" id="1_etk3t"]
+[ext_resource type="Script" uid="uid://kj5tu85evihw" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Stir.gd" id="1_mac8x"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="2_ujgn8"]
+[ext_resource type="AudioStream" uid="uid://he14x2y1cb23" path="res://Audio/SFX/AS_SFX_ui_select_3.wav" id="3_ob0e3"]
+[ext_resource type="AudioStream" uid="uid://7q0nic053bc5" path="res://Audio/SFX/AS_SFX_ui_select_1.wav" id="4_4wuqp"]
+[ext_resource type="Texture2D" uid="uid://dposrjfc4sgsl" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Halo_Progress.png" id="4_q3iyx"]
+[ext_resource type="Texture2D" uid="uid://cp50htbxat0px" path="res://Art/UI/Cooking/T_Icon_Circle.png" id="7_d11be"]
+
+[sub_resource type="Resource" id="Resource_ohgsk"]
+script = ExtResource("2_ujgn8")
+difficulty = 0
+numberOfExecutions = 3
+speed = 50.0
+
+[node name="QTEBar_Stir" type="Control" node_paths=PackedStringArray("_knob", "_target")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mac8x")
+qteData = SubResource("Resource_ohgsk")
+_knob = NodePath("AspectRatioContainer/MarginContainer/Frame/CTRL_Knob")
+_target = NodePath("AspectRatioContainer/MarginContainer/Frame/CTRL_Target")
+_defaultTargetColor = Color(1, 0.729412, 0.407843, 1)
+_passAudio = ExtResource("3_ob0e3")
+_failAudio = ExtResource("4_4wuqp")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Frame" type="TextureRect" parent="AspectRatioContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_etk3t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fill" type="TextureRect" parent="AspectRatioContainer/MarginContainer/Frame"]
+modulate = Color(0.980392, 0.952941, 0.847059, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q3iyx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CTRL_Target" type="Control" parent="AspectRatioContainer/MarginContainer/Frame"]
+modulate = Color(1, 0.729412, 0.407843, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Knob" type="TextureRect" parent="AspectRatioContainer/MarginContainer/Frame/CTRL_Target"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.389
+anchor_top = -0.04
+anchor_right = 0.608
+anchor_bottom = 0.179
+offset_left = -0.120026
+offset_top = 0.200005
+offset_right = 0.359985
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_d11be")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CTRL_Knob" type="Control" parent="AspectRatioContainer/MarginContainer/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Knob" type="TextureRect" parent="AspectRatioContainer/MarginContainer/Frame/CTRL_Knob"]
+modulate = Color(0.619608, 0.2, 0.00784314, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39
+anchor_top = -0.04
+anchor_right = 0.609
+anchor_bottom = 0.179
+offset_left = 77.72
+offset_top = 0.200005
+offset_right = -77.8
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q3iyx")
+expand_mode = 2
+stretch_mode = 5

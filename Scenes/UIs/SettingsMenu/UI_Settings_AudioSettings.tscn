@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlht5pdwa6xj8"]
+
+[ext_resource type="Script" uid="uid://cfy6tqbvid4kx" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_AudioSettings.gd" id="1_1g4yw"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_mlyfw"]
+[ext_resource type="PackedScene" uid="uid://djkmuvvtf7pxh" path="res://Scenes/UIs/SettingsMenu/Elements/UI_Settings_Element_Slider.tscn" id="2_2eu7e"]
+
+[node name="UI_Settings_AudioSettings" type="PanelContainer" node_paths=PackedStringArray("_masterVolume", "_musicVolume", "_sfxVolume", "_muteMaster", "_muteMusic", "_muteSFX")]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = -1
+anchor_left = 0.383
+anchor_top = 0.414
+anchor_right = 0.617
+anchor_bottom = 0.587
+offset_left = -0.360046
+offset_top = 0.879974
+offset_right = 0.359863
+offset_bottom = 0.039978
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mlyfw")
+theme_type_variation = &"PanelCont_SubSetting"
+script = ExtResource("1_1g4yw")
+_masterVolume = NodePath("VBOX_AudioSettings/HBox_MasterVolume/MasterVolume")
+_musicVolume = NodePath("VBOX_AudioSettings/HBox_MusicVolume/MusicVolume")
+_sfxVolume = NodePath("VBOX_AudioSettings/HBox_SFXVolume/SFXVolume")
+_muteMaster = NodePath("VBOX_AudioSettings/HBox_MasterVolume/BTN_MuteMaster")
+_muteMusic = NodePath("VBOX_AudioSettings/HBox_MusicVolume/BTN_MuteMusic")
+_muteSFX = NodePath("VBOX_AudioSettings/HBox_SFXVolume/BTN_MuteSFX")
+
+[node name="VBOX_AudioSettings" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PANCONT_SubSettingTitle" type="PanelContainer" parent="VBOX_AudioSettings"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_mlyfw")
+theme_type_variation = &"PanelCont_SubSettingTitle"
+
+[node name="TXT_Title" type="Label" parent="VBOX_AudioSettings/PANCONT_SubSettingTitle"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_mlyfw")
+theme_type_variation = &"Label_SubSettingTitle"
+text = "Audio Settings"
+
+[node name="HBox_MasterVolume" type="HBoxContainer" parent="VBOX_AudioSettings"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MasterVolume" parent="VBOX_AudioSettings/HBox_MasterVolume" instance=ExtResource("2_2eu7e")]
+layout_mode = 2
+size_flags_horizontal = 3
+_text = "Master Volume"
+_maxValue = 1.0
+value = 0.75
+step = 0.05
+
+[node name="BTN_MuteMaster" type="CheckBox" parent="VBOX_AudioSettings/HBox_MasterVolume"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("1_mlyfw")
+theme_type_variation = &"Button_Mute"
+icon_alignment = 1
+
+[node name="HBox_MusicVolume" type="HBoxContainer" parent="VBOX_AudioSettings"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MusicVolume" parent="VBOX_AudioSettings/HBox_MusicVolume" instance=ExtResource("2_2eu7e")]
+layout_mode = 2
+size_flags_horizontal = 3
+_text = "Music Volume"
+_maxValue = 1.0
+value = 0.75
+step = 0.05
+
+[node name="BTN_MuteMusic" type="CheckBox" parent="VBOX_AudioSettings/HBox_MusicVolume"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("1_mlyfw")
+theme_type_variation = &"Button_Mute"
+icon_alignment = 1
+
+[node name="HBox_SFXVolume" type="HBoxContainer" parent="VBOX_AudioSettings"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SFXVolume" parent="VBOX_AudioSettings/HBox_SFXVolume" instance=ExtResource("2_2eu7e")]
+layout_mode = 2
+size_flags_horizontal = 3
+_text = "SFX Volume "
+_maxValue = 1.0
+value = 0.75
+step = 0.05
+
+[node name="BTN_MuteSFX" type="CheckBox" parent="VBOX_AudioSettings/HBox_SFXVolume"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("1_mlyfw")
+theme_type_variation = &"Button_Mute"
+icon_alignment = 1

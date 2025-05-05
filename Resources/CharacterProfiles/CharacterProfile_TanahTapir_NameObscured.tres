@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CharacterProfile" load_steps=10 format=3 uid="uid://bnrt8fuadfawp"]
+
+[ext_resource type="Script" uid="uid://ou6lpe3um5vm" path="res://Scripts/Resources/CharacterProfile.gd" id="1_24alb"]
+[ext_resource type="Texture2D" uid="uid://c8v23t3smpxky" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana04_.png" id="1_brtxo"]
+[ext_resource type="Texture2D" uid="uid://5sjgwy6ao5o8" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana01_.png" id="2_kog2o"]
+[ext_resource type="Texture2D" uid="uid://bs5uatg4cpnh8" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana06_.png" id="3_bildc"]
+[ext_resource type="Texture2D" uid="uid://bnkb8i2w5vp44" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana03_.png" id="4_lget7"]
+[ext_resource type="Texture2D" uid="uid://56sfer8eh7jd" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana07_.png" id="5_plkib"]
+[ext_resource type="Texture2D" uid="uid://de8gl2n06d8df" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana05_.png" id="6_44t2x"]
+[ext_resource type="Texture2D" uid="uid://cf42cxeuddm6g" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana00.png" id="7_jx5iv"]
+[ext_resource type="Texture2D" uid="uid://bhoxrx51ka2un" path="res://2024_Art/2024 Portraits/T_Portrait00_Tana/T_Portrait00_Tana02_.png" id="8_ncv5r"]
+
+[resource]
+script = ExtResource("1_24alb")
+name = "???"
+texture = ExtResource("7_jx5iv")
+emotes = {
+"Annoyed": ExtResource("1_brtxo"),
+"Awkward": ExtResource("2_kog2o"),
+"Bashful": ExtResource("3_bildc"),
+"Confused": ExtResource("4_lget7"),
+"Excited": ExtResource("5_plkib"),
+"Happy": ExtResource("6_44t2x"),
+"Intrigued": ExtResource("4_lget7"),
+"Neutral": ExtResource("7_jx5iv"),
+"Shocked": ExtResource("8_ncv5r")
+}

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb2ey7o50tpmo"]
+
+[ext_resource type="Script" uid="uid://c58ogqegfbbwl" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_Controls_Gamepad.gd" id="1_2cus0"]
+[ext_resource type="PackedScene" uid="uid://dj14b5u76ryui" path="res://Scenes/UIs/SettingsMenu/UI_Settings_ControlRebindEntry_Gamepad.tscn" id="2_m5ayc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3b0c"]
+
+[node name="UI_Settings_Controls_Gamepad" type="PanelContainer" node_paths=PackedStringArray("_keyBindings")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r3b0c")
+script = ExtResource("1_2cus0")
+_keyBindings = NodePath("ScrollContainer/VBoxContainer")
+_keyBindEntryTemplate = ExtResource("2_m5ayc")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2

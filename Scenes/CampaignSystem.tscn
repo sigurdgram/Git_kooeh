@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://doj573kxoi6a"]
+
+[ext_resource type="Script" uid="uid://07gy1xyskaw3" path="res://Scripts/Campaign/CampaignSystem.gd" id="1_vfalt"]
+
+[node name="CampaignSystem" type="Node"]
+script = ExtResource("1_vfalt")

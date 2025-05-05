@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=15 format=3 uid="uid://nwbhjtgmxxag"]
+
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_5k8su"]
+[ext_resource type="Script" uid="uid://c7yj15mgkcm4f" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="3_bj0u2"]
+[ext_resource type="Script" uid="uid://c1cthqm2hg5pq" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_ydeev"]
+[ext_resource type="Script" uid="uid://4rogwn50mgyw" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="4_5k8su"]
+[ext_resource type="Script" uid="uid://c5c3o7o67jtf3" path="res://Scripts/Resources/FoodData.gd" id="8_xvfka"]
+[ext_resource type="Texture2D" uid="uid://ceau8b5tmoxw" path="res://2024_Art/2024 Isometric F&B/T_Food_KopiO_Eating.png" id="11_ydeev"]
+
+[sub_resource type="Resource" id="Resource_1njcr"]
+script = ExtResource("3_ydeev")
+referenceCurve = ExtResource("2_5k8su")
+scale = 1.5
+difficulty = 0
+qteHitCount = 3
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_ey6bc"]
+script = ExtResource("3_bj0u2")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_1njcr")
+description = ""
+
+[sub_resource type="Resource" id="Resource_ydeev"]
+script = ExtResource("4_5k8su")
+difficulty = 0
+numberOfExecutions = 3
+speed = 100.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_0c1w3"]
+script = ExtResource("3_bj0u2")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_ydeev")
+description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8rnt"]
+atlas = ExtResource("11_ydeev")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tavbk"]
+atlas = ExtResource("11_ydeev")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8rly"]
+atlas = ExtResource("11_ydeev")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1njcr"]
+atlas = ExtResource("11_ydeev")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.KopiO"
+script = ExtResource("8_xvfka")
+name = "Kopi O"
+type = 2
+difficulty = 0
+description = "Brewed coffee; it's the original."
+sprite = SubResource("AtlasTexture_1njcr")
+journalSprite = SubResource("AtlasTexture_1njcr")
+platelessSprite = SubResource("AtlasTexture_1njcr")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_o8rnt"), SubResource("AtlasTexture_tavbk"), SubResource("AtlasTexture_a8rly")])
+cookTime = 5.0
+price = 10.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.CoffeePowder": 1,
+"IngredientData.Water": 2
+}
+cookInstructions = Array[ExtResource("3_bj0u2")]([SubResource("Resource_ey6bc"), SubResource("Resource_0c1w3")])

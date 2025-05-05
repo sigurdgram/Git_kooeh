@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=20 format=3 uid="uid://dnpwi1eatvleh"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_25wp3"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_lxed5"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="2_rcpsy"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_juufa"]
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="4_juufa"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="5_k2be7"]
+[ext_resource type="Texture2D" uid="uid://c2wsrxuirioth" path="res://Art/Food_Spritesheet/Atlas_PatPoh.tres" id="6_8tdgp"]
+[ext_resource type="Texture2D" uid="uid://dllini718j60a" path="res://2024_Art/2024 Isometric F&B/T_Food_PatPoh_Eating.png" id="8_5scop"]
+
+[sub_resource type="Resource" id="Resource_k2be7"]
+script = ExtResource("3_juufa")
+referenceCurve = ExtResource("2_lxed5")
+scale = 1.5
+difficulty = 1
+qteHitCount = 4
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_8tdgp"]
+script = ExtResource("1_25wp3")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_k2be7")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_5scop"]
+script = ExtResource("4_juufa")
+difficulty = 1
+tapRange = 0.15
+interval = 1.0
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_3sqnc"]
+script = ExtResource("1_25wp3")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_5scop")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_kw228"]
+script = ExtResource("5_k2be7")
+difficulty = 1
+numberOfExecutions = 4
+speed = 150.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_ltfoy"]
+script = ExtResource("1_25wp3")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_kw228")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw228"]
+atlas = ExtResource("8_5scop")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltfoy"]
+atlas = ExtResource("8_5scop")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt5oc"]
+atlas = ExtResource("8_5scop")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5scop"]
+atlas = ExtResource("8_5scop")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sqnc"]
+atlas = ExtResource("8_5scop")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.PatPoh"
+script = ExtResource("2_rcpsy")
+name = "Pat Poh"
+type = 2
+difficulty = 1
+description = "A herbal drink that will definitely quench your thrist, made from \"eight treasures\" - or eight types of traditional Chinese herbs."
+sprite = SubResource("AtlasTexture_3sqnc")
+journalSprite = ExtResource("6_8tdgp")
+platelessSprite = SubResource("AtlasTexture_5scop")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_kw228"), SubResource("AtlasTexture_ltfoy"), SubResource("AtlasTexture_qt5oc")])
+cookTime = 7.0
+price = 20.0
+batchCookAmount = 1
+ingredients = {
+&"IngredientData.ChineseHerbs": 1,
+&"IngredientData.Sugar": 1,
+&"IngredientData.Water": 2
+}
+cookInstructions = Array[ExtResource("1_25wp3")]([SubResource("Resource_8tdgp"), SubResource("Resource_3sqnc"), SubResource("Resource_ltfoy")])
+metadata/_custom_type_script = "uid://c6u41cdmdxk78"

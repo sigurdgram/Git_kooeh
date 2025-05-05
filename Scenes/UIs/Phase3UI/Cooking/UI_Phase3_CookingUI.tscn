@@ -1,0 +1,490 @@
+[gd_scene load_steps=27 format=3 uid="uid://3bqp7iw8ffeu"]
+
+[ext_resource type="Script" uid="uid://brumxwam75iq4" path="res://Scripts/UISystem/UIs/Phase3UI/UI_Phase3_CookingUI.gd" id="1_go0r2"]
+[ext_resource type="AudioStream" uid="uid://b8s41kjlv67g3" path="res://Audio/SFX/AS_SFX_FireCracklingLoop.wav" id="2_1r6so"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_4w4sl"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_fxue6"]
+[ext_resource type="AudioStream" uid="uid://deb1i07d77q8i" path="res://Audio/SFX/AS_SFX_int_cooking_shake.wav" id="2_qktws"]
+[ext_resource type="PackedScene" uid="uid://degrv5jjyxd14" path="res://Scenes/UIs/Phase3UI/Cooking/UI_Phase3_Cooking_IngredientAmount_Frame.tscn" id="2_x4uwg"]
+[ext_resource type="Texture2D" uid="uid://ctkb18jyq2mqw" path="res://Art/UI/Cooking/Atlas_UI_Phase3_Cooking_FoodInfo.tres" id="4_mhlyb"]
+[ext_resource type="Script" uid="uid://dqmkui6kjmwjw" path="res://Scripts/UISystem/UIs/Misc/UI_ResizableLabel.gd" id="5_qau3c"]
+[ext_resource type="Texture2D" uid="uid://brgnaq56ufutu" path="res://Art/Food_Spritesheet/Atlas_KuihLapis.tres" id="6_xbfpt"]
+[ext_resource type="Texture2D" uid="uid://bnagd3k0sduvl" path="res://Art/UI/Cooking/Atlas_UI_Phase3_Cooking_Ingredients.tres" id="7_wlliy"]
+[ext_resource type="Texture2D" uid="uid://dms3hf1xk75ik" path="res://Art/UI/Cooking/T_CookingSystem_Firewood.png" id="8_twrd7"]
+[ext_resource type="Texture2D" uid="uid://cwrt4bn6x5by6" path="res://Art/UI/Cooking/T_CookingSystem_Pot_SliceC.png" id="9_pcfpy"]
+[ext_resource type="Texture2D" uid="uid://dkftgtbnj4rc2" path="res://2024_Art/2024 Journal UI/T_Player Profile UI/T_Journal_CurrencyIcon.png" id="10_flisf"]
+[ext_resource type="Texture2D" uid="uid://nn0wumyu04bd" path="res://Art/UI/Cooking/T_CookingSystem_Pot_SliceB.png" id="10_vqlqb"]
+[ext_resource type="Texture2D" uid="uid://bf6fmvdxk8qi4" path="res://Art/UI/Cooking/T_CookingSystem_Pot_SliceA.png" id="12_064cs"]
+[ext_resource type="Script" uid="uid://wpeyog2djkvv" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabel.gd" id="15_3wwtt"]
+[ext_resource type="Script" uid="uid://0epvqwsjm5e" path="res://Scripts/UISystem/UIs/Dialogue/AdvancedRichTextLabelParser_Input.gd" id="16_d5pd5"]
+[ext_resource type="Script" uid="uid://dwcf1rariwikr" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabelParser.gd" id="17_p1kt8"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="18_y2umm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r48jf"]
+shader = ExtResource("2_4w4sl")
+shader_parameter/tint = Color(0.360784, 0.360784, 0.360784, 1)
+shader_parameter/strength = 0.806
+
+[sub_resource type="Gradient" id="Gradient_xwdb8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ukve"]
+gradient = SubResource("Gradient_xwdb8")
+width = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6org"]
+content_margin_left = 33.0
+content_margin_top = 50.0
+content_margin_right = 38.0
+content_margin_bottom = 70.0
+texture = ExtResource("4_mhlyb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50isb"]
+texture = ExtResource("7_wlliy")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svc7a"]
+
+[sub_resource type="Resource" id="Resource_6av87"]
+script = ExtResource("16_d5pd5")
+_imageScale = 2.0
+
+[node name="UI_Phase3Cooking" type="Control" node_paths=PackedStringArray("_descriptionTxt", "_QTEBarContainer", "_timeTxt", "_timeHBox", "_potFoodArea", "_potAspectRect", "_qteHintText", "_foodNameTxt", "_foodImgTextRect", "_foodTypeTxt", "_foodPriceTxt", "_foodDifficultyTxt", "_foodCookingTimeTxt", "_ingredientVBox")]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_go0r2")
+_descriptionTxt = NodePath("REFRECT_QTE/VBoxContainer/TXT_CookInstruction")
+_QTEBarContainer = NodePath("REFRECT_QTE/VBoxContainer/REFRECT_QTEContainer")
+_timeTxt = NodePath("REFRECT_QTE/VBoxContainer/HBox_Timer/TXT_Timer_Value")
+_timeHBox = NodePath("REFRECT_QTE/VBoxContainer/HBox_Timer")
+_potFoodArea = NodePath("ASPECTRECT_Pot/TEXTRECT_Pot/TEXTRECT_Pot_SliceC/Control_Pot_FoodArea")
+_potAspectRect = NodePath("ASPECTRECT_Pot")
+_qteHintText = NodePath("REFRECT_QTE/VBoxContainer/ARTL_HintText")
+_audioFireCrackling = ExtResource("2_1r6so")
+_audioFireShake = ExtResource("2_qktws")
+_foodNameTxt = NodePath("ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/TXT_FoodName")
+_foodImgTextRect = NodePath("ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/AspectRatioContainer/TEXTRECT_FoodImg")
+_foodTypeTxt = NodePath("ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Type/TXT_Type_Value")
+_foodPriceTxt = NodePath("ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Price/TXT_Price_Value")
+_foodDifficultyTxt = NodePath("ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Difficulty/TXT_Difficulty_Value")
+_foodCookingTimeTxt = NodePath("ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_CookingTime/TXT_CookingTime_Value")
+_requiredAmountFrame = ExtResource("2_x4uwg")
+_ingredientVBox = NodePath("ASPECTRECT_Ingredients/Panel/REFRECT_Ingredients/MarginContainer/ScrollContainer/VBOX_Ingredients")
+
+[node name="TEXTRECT_Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_r48jf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_3ukve")
+expand_mode = 1
+
+[node name="ASPECTRECT_FoodInfo" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.169
+anchor_right = 0.133
+anchor_bottom = 0.831
+offset_left = -209.36
+offset_top = 0.47998
+offset_right = 210.64
+offset_bottom = -0.480042
+grow_vertical = 2
+ratio = 0.6
+
+[node name="Panel" type="Panel" parent="ASPECTRECT_FoodInfo"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i6org")
+
+[node name="REFRECT_FoodInfo" type="ReferenceRect" parent="ASPECTRECT_FoodInfo/Panel"]
+layout_mode = 2
+anchor_left = 0.079
+anchor_top = 0.071
+anchor_right = 0.91
+anchor_bottom = 0.9
+offset_left = -0.18
+offset_top = 0.299999
+offset_right = -0.200012
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_FoodName" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.166
+offset_bottom = -0.280006
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 50
+text = "Kuih Lapis"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("5_qau3c")
+_maxFontSize = 50
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo"]
+layout_mode = 2
+anchor_left = 0.069
+anchor_top = 0.183
+anchor_right = 0.914
+anchor_bottom = 0.621
+offset_left = 0.919014
+offset_top = -2.13995
+offset_right = 1.01398
+offset_bottom = -2.17996
+
+[node name="TEXTRECT_FoodImg" type="TextureRect" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("6_xbfpt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.641
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.219971
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer"]
+layout_mode = 2
+
+[node name="HBox_Type" type="HBoxContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TXT_Type" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Type"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "Type: "
+vertical_alignment = 1
+
+[node name="TXT_Type_Value" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Type"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "Food"
+vertical_alignment = 1
+
+[node name="HBox_Price" type="HBoxContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TXT_Price" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Price"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "Price: "
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Price"]
+layout_mode = 2
+texture = ExtResource("10_flisf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TXT_Price_Value" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Price"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "20
+"
+vertical_alignment = 1
+
+[node name="HBox_Difficulty" type="HBoxContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TXT_Difficulty" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Difficulty"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "Difficulty: "
+vertical_alignment = 1
+
+[node name="TXT_Difficulty_Value" type="RichTextLabel" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_fxue6")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=dark green]Food"
+
+[node name="HBox_CookingTime" type="HBoxContainer" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TXT_CookingTime" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_CookingTime"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "Cooking Time: "
+vertical_alignment = 1
+
+[node name="TXT_CookingTime_Value" type="Label" parent="ASPECTRECT_FoodInfo/Panel/REFRECT_FoodInfo/MarginContainer/VBoxContainer/HBox_CookingTime"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+text = "5s"
+vertical_alignment = 1
+
+[node name="ASPECTRECT_Ingredients" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = 183.0
+offset_right = -50.0
+offset_bottom = -183.0
+grow_horizontal = 0
+grow_vertical = 2
+ratio = 0.6
+
+[node name="Panel" type="Panel" parent="ASPECTRECT_Ingredients"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_50isb")
+
+[node name="REFRECT_Ingredients" type="ReferenceRect" parent="ASPECTRECT_Ingredients/Panel"]
+clip_contents = true
+layout_mode = 2
+anchor_left = 0.079
+anchor_top = 0.089
+anchor_right = 0.912
+anchor_bottom = 0.88
+offset_left = -0.18
+offset_top = -0.299999
+offset_right = -1.04004
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ASPECTRECT_Ingredients/Panel/REFRECT_Ingredients"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 554.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ASPECTRECT_Ingredients/Panel/REFRECT_Ingredients/MarginContainer"]
+layout_mode = 2
+
+[node name="VBOX_Ingredients" type="VBoxContainer" parent="ASPECTRECT_Ingredients/Panel/REFRECT_Ingredients/MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(264.66, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+alignment = 1
+
+[node name="ASPECTRECT_Pot" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.306
+anchor_top = 0.17
+anchor_right = 0.694
+anchor_bottom = 1.168
+offset_left = 0.47998
+offset_top = -0.600006
+offset_right = -0.47998
+offset_bottom = 1.55994
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(372, 540)
+mouse_filter = 2
+ratio = 0.6903
+
+[node name="TEXTRECT_Pot" type="TextureRect" parent="ASPECTRECT_Pot"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("9_pcfpy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TEXTRECT_Pot_SliceC" type="TextureRect" parent="ASPECTRECT_Pot/TEXTRECT_Pot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.208
+offset_top = -0.466753
+offset_right = 5.0
+offset_bottom = -112.792
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_vqlqb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control_Pot_FoodArea" type="Control" parent="ASPECTRECT_Pot/TEXTRECT_Pot/TEXTRECT_Pot_SliceC"]
+layout_mode = 1
+anchor_left = 0.391893
+anchor_top = 0.51512
+anchor_right = 0.60829
+anchor_bottom = 0.580813
+offset_left = 0.431915
+offset_right = 0.431946
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TEXTRECT_Pot_SliceA" type="TextureRect" parent="ASPECTRECT_Pot/TEXTRECT_Pot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.092
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.156891
+offset_bottom = 0.207764
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_064cs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control_Fire" type="Control" parent="ASPECTRECT_Pot"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ASPECTRECT_Fire" type="AspectRatioContainer" parent="ASPECTRECT_Pot/Control_Fire"]
+layout_mode = 2
+anchor_top = 0.12
+anchor_right = 1.0
+anchor_bottom = 1.12
+offset_left = -0.238037
+offset_top = -0.335068
+offset_right = 0.238037
+offset_bottom = -0.335083
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 0.6903
+
+[node name="TEXTRECT_Fire" type="TextureRect" parent="ASPECTRECT_Pot/Control_Fire/ASPECTRECT_Fire"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("8_twrd7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="REFRECT_QTE" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.243
+anchor_top = 0.017
+anchor_right = 0.762
+anchor_bottom = 0.5
+offset_left = -0.560028
+offset_top = -0.360001
+offset_right = 0.959961
+
+[node name="VBoxContainer" type="VBoxContainer" parent="REFRECT_QTE"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox_Timer" type="HBoxContainer" parent="REFRECT_QTE/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TXT_Timer" type="Label" parent="REFRECT_QTE/VBoxContainer/HBox_Timer"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Time: "
+
+[node name="TXT_Timer_Value" type="Label" parent="REFRECT_QTE/VBoxContainer/HBox_Timer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TXT_CookInstruction" type="Label" parent="REFRECT_QTE/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Add Water"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="REFRECT_QTE/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_svc7a")
+
+[node name="REFRECT_QTEContainer" type="ReferenceRect" parent="REFRECT_QTE/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="REFRECT_QTE/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_svc7a")
+
+[node name="ARTL_HintText" type="RichTextLabel" parent="REFRECT_QTE/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_fxue6")
+theme_type_variation = &"Header_Large"
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+fit_content = true
+script = ExtResource("15_3wwtt")
+_parsers = Array[ExtResource("17_p1kt8")]([SubResource("Resource_6av87")])
+
+[node name="REFRECT_InputLegend" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.931
+anchor_right = 1.0
+anchor_bottom = 0.968
+offset_top = -0.480042
+offset_bottom = -0.440063
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="REFRECT_InputLegend"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI_InputLegend3" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("18_y2umm")]
+layout_mode = 2
+input = "ui_cancel"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CharacterProfile" load_steps=9 format=3 uid="uid://bsoyhgogfyt4r"]
+
+[ext_resource type="Texture2D" uid="uid://daxcm5ccxrth7" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger00_neutral1.png" id="1_cvh7v"]
+[ext_resource type="Script" uid="uid://ou6lpe3um5vm" path="res://Scripts/Resources/CharacterProfile.gd" id="1_q5qd5"]
+[ext_resource type="Texture2D" uid="uid://ql05bpyr67lm" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger01_awkward.png" id="2_pi8ev"]
+[ext_resource type="Texture2D" uid="uid://d03gudol3y65x" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger00_neutral2.png" id="2_vaob8"]
+[ext_resource type="Texture2D" uid="uid://cb3p1p4rn0pdx" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger02_shocked.png" id="3_62d63"]
+[ext_resource type="Texture2D" uid="uid://cs73vf54gc2f4" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger03_sad.png" id="4_g44o7"]
+[ext_resource type="Texture2D" uid="uid://ciu4j1uxchifr" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger04_angry.png" id="5_jhqs8"]
+[ext_resource type="Texture2D" uid="uid://r424wsba6qus" path="res://2024_Art/2024 Portraits/T_Portrait01_Tiger/T_Portrait01_Tiger05_happy.png" id="6_h5q1v"]
+
+[resource]
+script = ExtResource("1_q5qd5")
+name = "Tiger Aunty"
+texture = ExtResource("2_vaob8")
+emotes = {
+"Angry": ExtResource("5_jhqs8"),
+"Awkward": ExtResource("2_pi8ev"),
+"Happy": ExtResource("6_h5q1v"),
+"Neutral": ExtResource("1_cvh7v"),
+"Sad": ExtResource("4_g44o7"),
+"Shocked": ExtResource("3_62d63")
+}

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://syy7c2n0n6d5"]
+
+[ext_resource type="Script" uid="uid://cymf3clngspbx" path="res://Scripts/RestaurantSystems/CustomerManagement/Seat.gd" id="1_cmgac"]
+
+[node name="Seat" type="Node2D"]
+script = ExtResource("1_cmgac")

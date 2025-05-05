@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbuoe18onn5gg"]
+
+[ext_resource type="Script" uid="uid://blowwu2g51u7f" path="res://Scripts/UISystem/UI_Tree.gd" id="1_c8mkt"]
+[ext_resource type="PackedScene" uid="uid://cnf6dylir58s8" path="res://Scenes/UIs/Misc/UI_Prompt.tscn" id="2_0h2hj"]
+[ext_resource type="Script" uid="uid://b442a2nq20h1y" path="res://Scripts/UISystem/UI_Layer.gd" id="2_vb55x"]
+[ext_resource type="Script" uid="uid://btow0w80fwwsu" path="res://Scripts/UISystem/UILayer_Base.gd" id="3_0hqk8"]
+[ext_resource type="PackedScene" uid="uid://bb4t1a2ek7rg7" path="res://Scenes/UIs/Misc/UI_RewardPrompt.tscn" id="3_24o4k"]
+[ext_resource type="PackedScene" uid="uid://tfc2dogbk5t6" path="res://Scenes/UIs/Misc/UI_FlyInText.tscn" id="4_uckyo"]
+[ext_resource type="PackedScene" uid="uid://dvyhl4j16fxrs" path="res://Scenes/UIs/Misc/UI_DevVersion.tscn" id="6_06pxu"]
+
+[node name="UI_Tree" type="CanvasLayer"]
+process_mode = 1
+script = ExtResource("1_c8mkt")
+_uiPrompt = ExtResource("2_0h2hj")
+_rewardPrompt = ExtResource("3_24o4k")
+_flyInNotification = ExtResource("4_uckyo")
+
+[node name="Layer_Base" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_0hqk8")
+
+[node name="Layer_Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_vb55x")
+
+[node name="Layer_GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_vb55x")
+
+[node name="Layer_Prompt" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_vb55x")
+
+[node name="Layer_Permanent1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_vb55x")
+_removeWidgetsWhenChangeScene = false
+
+[node name="UI_DevVersion" parent="Layer_Permanent1" instance=ExtResource("6_06pxu")]
+layout_mode = 1
+
+[node name="Layer_Permanent2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_vb55x")
+_removeWidgetsWhenChangeScene = false

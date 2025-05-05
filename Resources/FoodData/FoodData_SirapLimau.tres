@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=18 format=3 uid="uid://0foprjak5mmr"]
+
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="2_m8phm"]
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="3_dq3tv"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="3_m8phm"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="4_q31ml"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="5_1cbx4"]
+[ext_resource type="Texture2D" uid="uid://lwgcfsi41oo0" path="res://2024_Art/2024 Isometric F&B/T_SirapL100.png" id="5_66i6j"]
+[ext_resource type="Texture2D" uid="uid://bcesqdpu5ej2s" path="res://2024_Art/2024 Isometric F&B/T_SirapL50.png" id="6_ldjrb"]
+[ext_resource type="Texture2D" uid="uid://cj3ldh4mu8ixp" path="res://2024_Art/2024 Isometric F&B/T_SirapL0.png" id="7_imldm"]
+[ext_resource type="Texture2D" uid="uid://8w8ncjr2s2ll" path="res://Art/Food_Spritesheet/Atlas_SirapLimau.tres" id="8_87wxl"]
+[ext_resource type="Texture2D" uid="uid://r4iopb65bcdk" path="res://2024_Art/2024 Isometric F&B/Plateless/T_SirapL.png" id="9_cg4yb"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="11_qn7ry"]
+
+[sub_resource type="Resource" id="Resource_q31ml"]
+script = ExtResource("2_m8phm")
+difficulty = 1
+tapRange = 0.15
+interval = 1.0
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_8drc2"]
+script = ExtResource("3_dq3tv")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_q31ml")
+description = ""
+
+[sub_resource type="Resource" id="Resource_1cbx4"]
+script = ExtResource("3_m8phm")
+difficulty = 1
+numberOfExecutions = 4
+speed = 150.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_x8oog"]
+script = ExtResource("3_dq3tv")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_1cbx4")
+description = ""
+
+[sub_resource type="Resource" id="Resource_m6017"]
+script = ExtResource("5_1cbx4")
+referenceCurve = ExtResource("4_q31ml")
+scale = 1.5
+difficulty = 1
+qteHitCount = 4
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_ug5id"]
+script = ExtResource("3_dq3tv")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_m6017")
+description = ""
+
+[resource]
+resource_name = "FoodData.SirapLimau"
+script = ExtResource("11_qn7ry")
+name = "Sirap Limau"
+type = 2
+difficulty = 1
+description = "A little bit of a sweet and sour treat - it's a perfect refresher to cool down on a hot day."
+sprite = ExtResource("9_cg4yb")
+journalSprite = ExtResource("8_87wxl")
+platelessSprite = ExtResource("9_cg4yb")
+eatingSprites = Array[Texture2D]([ExtResource("5_66i6j"), ExtResource("6_ldjrb"), ExtResource("7_imldm")])
+cookTime = 7.0
+price = 20.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.Lime": 3,
+"IngredientData.RoseSyrup": 2,
+"IngredientData.Sugar": 2,
+"IngredientData.Water": 3
+}
+cookInstructions = Array[ExtResource("3_dq3tv")]([SubResource("Resource_8drc2"), SubResource("Resource_x8oog"), SubResource("Resource_ug5id")])

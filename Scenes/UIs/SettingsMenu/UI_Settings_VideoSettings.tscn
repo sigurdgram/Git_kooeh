@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://whl46b41dvrd"]
+
+[ext_resource type="Script" uid="uid://cat2yigtfn44h" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_VideoSettings.gd" id="1_0xp6w"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_v6d8f"]
+[ext_resource type="PackedScene" uid="uid://b8tycbcne0q2u" path="res://Scenes/UIs/SettingsMenu/Elements/UI_Settings_Element_DropdownOption.tscn" id="10_vfk31"]
+
+[node name="UI_Settings_VideoSettings" type="PanelContainer" node_paths=PackedStringArray("_resolution", "_windowMode", "_applySettings", "_restoreDefault")]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = -1
+anchor_left = 0.355
+anchor_top = 0.406
+anchor_right = 0.645
+anchor_bottom = 0.594
+offset_left = 10.4
+offset_top = 22.52
+offset_right = -10.4
+offset_bottom = -22.52
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v6d8f")
+theme_type_variation = &"PanelCont_SubSetting"
+script = ExtResource("1_0xp6w")
+_resolution = NodePath("VBOX_VideoSettings/DropDown_ScreenResolution")
+_windowMode = NodePath("VBOX_VideoSettings/DropDown_DisplayMode")
+_applySettings = NodePath("VBOX_VideoSettings/HBoxContainer/BTN_ApplySettings")
+_restoreDefault = NodePath("VBOX_VideoSettings/HBoxContainer/BTN_RestoreDefault")
+
+[node name="VBOX_VideoSettings" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PANCONT_Title" type="PanelContainer" parent="VBOX_VideoSettings"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_v6d8f")
+theme_type_variation = &"PanelCont_SubSettingTitle"
+
+[node name="TXT_Title" type="Label" parent="VBOX_VideoSettings/PANCONT_Title"]
+layout_mode = 2
+theme = ExtResource("1_v6d8f")
+theme_type_variation = &"Label_SubSettingTitle"
+text = "Display Settings"
+
+[node name="DropDown_ScreenResolution" parent="VBOX_VideoSettings" instance=ExtResource("10_vfk31")]
+layout_mode = 2
+_text = "Screen Resolution"
+
+[node name="DropDown_DisplayMode" parent="VBOX_VideoSettings" instance=ExtResource("10_vfk31")]
+layout_mode = 2
+_text = "Display Mode"
+
+[node name="Spacer" type="Control" parent="VBOX_VideoSettings"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBOX_VideoSettings"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 85
+alignment = 1
+
+[node name="BTN_ApplySettings" type="Button" parent="VBOX_VideoSettings/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_v6d8f")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 24
+text = "Apply"
+
+[node name="BTN_RestoreDefault" type="Button" parent="VBOX_VideoSettings/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_v6d8f")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 24
+text = "Revert"

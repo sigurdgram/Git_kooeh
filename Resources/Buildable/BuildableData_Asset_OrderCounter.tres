@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=20 format=3 uid="uid://cgvnx5i0qfuw6"]
+
+[ext_resource type="PackedScene" uid="uid://cvb5t4skd8k33" path="res://Scenes/Buildable/Buildable_OrderCounter.tscn" id="1_uke3b"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_83y3g"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_jfnei"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_scc0y"]
+[ext_resource type="PackedScene" uid="uid://ddhxmhmif8hom" path="res://Scenes/Buildable/Buildable_Asset_OrderCounter/Buildable_Asset_OrderCounter_SE.tscn" id="5_u2nmi"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="6_eccj2"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="8_mtytm"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="9_b6mx4"]
+[ext_resource type="Script" uid="uid://bbe6eeumkkgy8" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Minimum.gd" id="10_maijt"]
+[ext_resource type="Script" uid="uid://varsmc3c1v1j" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Maximum.gd" id="11_1noou"]
+[ext_resource type="Script" uid="uid://chg4hx2d7uvum" path="res://Resources/BuildableRestrictions/BuildableRestrictions_SeatCount.gd" id="12_bval2"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="13_uwo1o"]
+[ext_resource type="Texture2D" uid="uid://clpo0x43ij7o" path="res://2024_Art/2024 Restaurant (SceneEatery)/OrderCounter.tres" id="14_o7to3"]
+
+[sub_resource type="Resource" id="Resource_jroaj"]
+script = ExtResource("6_eccj2")
+buildable = ExtResource("5_u2nmi")
+buildReqs = Array[ExtResource("2_83y3g")]([ExtResource("3_jfnei"), ExtResource("4_scc0y")])
+variantData = {
+"RPosQueuePoints": PackedVector2Array(1, 0, 2, 0, 3, 0),
+"RPosQueueStart": Vector2i(-3, 1),
+"Spawnpoint": Vector2i(0, -1)
+}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_0qi1h"]
+script = ExtResource("8_mtytm")
+direction = 6
+length = 3
+
+[sub_resource type="Resource" id="Resource_8nfph"]
+script = ExtResource("10_maijt")
+_minAmount = 1
+restrictionMessage = "At least 1 Order Counter needed!"
+
+[sub_resource type="Resource" id="Resource_pi6v1"]
+script = ExtResource("11_1noou")
+_maxAmount = 1
+restrictionMessage = "Max of 1 Order Counter allowed!"
+
+[sub_resource type="Resource" id="Resource_ty2dg"]
+script = ExtResource("12_bval2")
+_minSeats = 1
+_maxSeats = 100
+restrictionMessage = "At least 1 seat (Table + Chair) needed!"
+
+[sub_resource type="Resource" id="Resource_2y7cy"]
+script = ExtResource("8_mtytm")
+direction = 2
+length = 3
+
+[resource]
+resource_name = "BuildableData.OrderCounter"
+script = ExtResource("13_uwo1o")
+name = "Order Counter"
+buildableScene = ExtResource("1_uke3b")
+texture = ExtResource("14_o7to3")
+category = 4
+price = 100
+layer = 0
+customData = {
+"Upgrade": {
+1: {
+"Price": 70.0
+}
+}
+}
+tileSetID = 3
+tileExtensions = Array[ExtResource("8_mtytm")]([SubResource("Resource_2y7cy")])
+flippedTileExtensions = Array[ExtResource("8_mtytm")]([SubResource("Resource_0qi1h")])
+restrictions = Array[ExtResource("9_b6mx4")]([SubResource("Resource_8nfph"), SubResource("Resource_pi6v1"), SubResource("Resource_ty2dg")])
+id = "BuildableData.OrderCounter"
+displayName = "OrderCounter"
+layer2 = 2
+collisionPriority = 2
+collisionLayer = 256
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: null,
+2: null,
+3: SubResource("Resource_jroaj"),
+4: null,
+5: null,
+6: null,
+7: null
+}

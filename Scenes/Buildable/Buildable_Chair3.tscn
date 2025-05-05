@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7kqf8ysv6wx2"]
+
+[ext_resource type="PackedScene" uid="uid://h8043hrwhb6h" path="res://Scenes/Buildable/Buildable_Base.tscn" id="1_5lkfa"]
+[ext_resource type="Script" uid="uid://c2xwasp5qsmgp" path="res://Scripts/Buildable/Buildable_Chair.gd" id="2_cahht"]
+[ext_resource type="PackedScene" uid="uid://syy7c2n0n6d5" path="res://Scenes/Seat.tscn" id="3_730r7"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_tfgcr"]
+[ext_resource type="Texture2D" uid="uid://cyacstmvmid0o" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E002_PlasticStoolBlue.png" id="4_vyk7d"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="5_hit61"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cofm"]
+resource_local_to_scene = true
+shader = ExtResource("3_tfgcr")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.005
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjyuc"]
+radius = 54.04
+
+[node name="Buildable_Chair3" node_paths=PackedStringArray("sitPosition", "_navTargetTolerance", "rayCast", "_areaNavigation") groups=["Chair"] instance=ExtResource("1_5lkfa")]
+script = ExtResource("2_cahht")
+sitPosition = NodePath("SitPosition")
+_navTargetTolerance = NodePath("COLSHAPE_NavTolerance")
+seatScene = ExtResource("3_730r7")
+rayCast = NodePath("RayCast2D")
+_canInteract = false
+_areaNavigation = NodePath("NavigationArea")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_2cofm")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_vyk7d")
+
+[node name="TShadowSquare" type="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = -1
+position = Vector2(0, 23)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("5_hit61")
+
+[node name="SitPosition" type="Node2D" parent="." index="2"]
+position = Vector2(2.4, -30)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="3" groups=["chair", "furniture"]]
+position = Vector2(2.4, 15.1)
+polygon = PackedVector2Array(48.6, 7.9, 46.6, -33.1, -51.4, -33.1, -52.4, 7.9, -1.4, 37.9)
+
+[node name="NavigationArea" type="Area2D" parent="." index="4" groups=["NavigationArea"]]
+position = Vector2(2, 16)
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationArea" index="0" groups=["chair", "furniture"]]
+position = Vector2(0, -1)
+
+[node name="COLSHAPE_NavTolerance" type="CollisionShape2D" parent="." index="5"]
+position = Vector2(2.4, -3)
+shape = SubResource("CircleShape2D_tjyuc")
+disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="6"]
+z_index = 10
+scale = Vector2(5, 5)
+target_position = Vector2(12, 12)
+hit_from_inside = true
+collide_with_areas = true

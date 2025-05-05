@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://wrvmgc6g8deg"]
+
+[ext_resource type="Script" uid="uid://bas7v6m65yi5w" path="res://Scripts/UISystem/UIs/Buildable/UI_BuildableRestrictions.gd" id="1_i42a2"]
+[ext_resource type="PackedScene" uid="uid://cdb725y8qhh31" path="res://Scenes/UIs/Build/RTL_Restrictions.tscn" id="2_5vefx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lgvl"]
+bg_color = Color(0.937255, 0.87451, 0.709804, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.243137, 0.172549, 0.117647, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="UI_BuildableRestrictions" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -0.920044
+grow_horizontal = 0
+script = ExtResource("1_i42a2")
+container = NodePath("PanelContainer/ScrollContainer/VBoxContainer")
+textLabelScene = ExtResource("2_5vefx")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -379.0
+offset_bottom = 436.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8lgvl")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

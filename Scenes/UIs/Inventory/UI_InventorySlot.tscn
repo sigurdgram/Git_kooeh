@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://davgct6uqki4k"]
+
+[ext_resource type="Script" uid="uid://bujb71t2chsw8" path="res://Scripts/InventorySystem/Slot.gd" id="1_tjilv"]
+
+[node name="Slot" type="PanelContainer" node_paths=PackedStringArray("_colorRect", "_textureRect", "_labelQuantity", "_labelName")]
+custom_minimum_size = Vector2(150, 150)
+offset_right = 150.0
+offset_bottom = 150.0
+script = ExtResource("1_tjilv")
+_colorRect = NodePath("ColorRect")
+_textureRect = NodePath("ColorRect/MarginContainer/ColorRect/TextureRect")
+_labelQuantity = NodePath("QuantityLabel")
+_labelName = NodePath("NameLabel")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 150.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/ColorRect"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_right = 134.0
+offset_bottom = 134.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuantityLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "x999
+"
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

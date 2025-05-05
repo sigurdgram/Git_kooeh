@@ -1,0 +1,54 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://34taqyypdjfw"]
+
+[ext_resource type="Texture2D" uid="uid://b4r8v675r0062" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Tile001_Red1.png" id="2_ggajx"]
+[ext_resource type="Texture2D" uid="uid://e0ckh38gjqfj" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Wall001_SeafoamHalfTileWall_Left.png" id="7_4u7uv"]
+[ext_resource type="Texture2D" uid="uid://b6d8f811hfsjw" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Wall001_SeafoamHalfTileWall_Right.png" id="8_dwep6"]
+[ext_resource type="Texture2D" uid="uid://b354qaq8biada" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Tile000_CementD1.png" id="9_h622g"]
+[ext_resource type="Texture2D" uid="uid://dxmvqouvtq6vw" path="res://Art/Environment/T_Environment_Outside_FloorConcrete.png" id="10_i5eby"]
+[ext_resource type="Texture2D" uid="uid://dg2372j2yq134" path="res://PlaceHolder Assets/TestTiles2/Kooeh_E000_Test_Wall heightened.png" id="11_3rgdx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_keb8k"]
+texture = ExtResource("2_ggajx")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr8vl"]
+texture = ExtResource("7_4u7uv")
+texture_region_size = Vector2i(129, 515)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-63, 38)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d42kt"]
+texture = ExtResource("8_dwep6")
+texture_region_size = Vector2i(129, 515)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(63, 38)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qt47e"]
+texture = ExtResource("9_h622g")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eftgm"]
+texture = ExtResource("10_i5eby")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vn1jc"]
+texture = ExtResource("11_3rgdx")
+texture_region_size = Vector2i(549, 941)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -95)
+
+[resource]
+tile_shape = 1
+tile_layout = 1
+tile_size = Vector2i(254, 146)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 2
+sources/5 = SubResource("TileSetAtlasSource_eftgm")
+sources/7 = SubResource("TileSetAtlasSource_vn1jc")
+sources/11 = SubResource("TileSetAtlasSource_keb8k")
+sources/16 = SubResource("TileSetAtlasSource_jr8vl")
+sources/17 = SubResource("TileSetAtlasSource_d42kt")
+sources/18 = SubResource("TileSetAtlasSource_qt47e")

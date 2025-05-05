@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btw2ufgj2x22x"]
+
+[ext_resource type="Texture2D" uid="uid://b4r8v675r0062" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Tile001_Red1.png" id="1_e3gk8"]
+
+[node name="HighlightTestRed" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.858824, 0, 0.223529, 1)
+texture = ExtResource("1_e3gk8")

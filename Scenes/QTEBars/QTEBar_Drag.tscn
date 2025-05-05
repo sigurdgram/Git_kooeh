@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://d36sxoo7yshfm"]
+
+[ext_resource type="Script" uid="uid://30fyiutgmhc3" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Drag.gd" id="1_40083"]
+[ext_resource type="PackedScene" uid="uid://yojof6n6my6o" path="res://Scenes/QTEBars/QTEBar_Drag_Knob.tscn" id="2_tbvsm"]
+[ext_resource type="Curve2D" uid="uid://b4tcnwu8yb5ed" path="res://Resources/QTEData_Drag/QTECurve_CircleClockwise.tres" id="3_7oqn2"]
+[ext_resource type="Texture2D" uid="uid://8iemx4nyuckj" path="res://Art/UI/Cooking/T_CookingSystem_DirectionIndicator.png" id="4_gck58"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="5_u0sni"]
+[ext_resource type="Texture2D" uid="uid://cp50htbxat0px" path="res://Art/UI/Cooking/T_Icon_Circle.png" id="5_u3guv"]
+
+[sub_resource type="Gradient" id="Gradient_r7txs"]
+colors = PackedColorArray(0.988281, 0.714844, 0.457031, 1, 0.996094, 0.898438, 0.566406, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_matvt"]
+shader = ExtResource("5_u0sni")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0.15625, 0.0625, 0.00390625, 1)
+shader_parameter/line_thickness = 0.038
+shader_parameter/uvRescale = 1.088
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = true
+
+[node name="QTEBar_Drag" type="Control" node_paths=PackedStringArray("path", "border", "line", "end")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40083")
+path = NodePath("Path2D")
+border = NodePath("L2D_Border")
+line = NodePath("L2D_Fill")
+end = NodePath("TEXTRECT_End")
+knobScene = ExtResource("2_tbvsm")
+targetScene = ExtResource("2_tbvsm")
+knobSize = 50.0
+borderWidth = 10.0
+auto_move_speed = 100.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = ExtResource("3_7oqn2")
+
+[node name="L2D_Border" type="Line2D" parent="."]
+width = 65.0
+default_color = Color(0.175781, 0.0859375, 0.0625, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="L2D_Fill" type="Line2D" parent="."]
+width = 60.0
+default_color = Color(0.980469, 0.953125, 0.847656, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="L2D_Hint" type="Line2D" parent="."]
+visible = false
+texture_repeat = 2
+width = 40.0
+gradient = SubResource("Gradient_r7txs")
+texture = ExtResource("4_gck58")
+texture_mode = 1
+
+[node name="TEXTRECT_End" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.996094, 0.933594, 0.683594, 1)
+material = SubResource("ShaderMaterial_matvt")
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+mouse_filter = 2
+texture = ExtResource("5_u3guv")
+expand_mode = 1
+stretch_mode = 5

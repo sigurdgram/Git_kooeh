@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=3 uid="uid://ccak6suo8ygx4"]
+
+[ext_resource type="Script" uid="uid://bqne0avpjy22a" path="res://addons/buildable_system/Scripts/Node2Ds/BuildableSystem.gd" id="1_vjll2"]
+[ext_resource type="Resource" uid="uid://suy3eyx6wmqh" path="res://Resources/Buildable/BuildableGridData.tres" id="2_k1w5f"]
+[ext_resource type="PackedScene" uid="uid://c0dr4esotwumc" path="res://Scenes/IsometricCursor.tscn" id="3_mnc0a"]
+[ext_resource type="Resource" uid="uid://ubs6lai42am2" path="res://Resources/Buildable/UpgradeBundle_Main.tres" id="3_r3437"]
+[ext_resource type="PackedScene" uid="uid://ca7oetb32vjxv" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Build.tscn" id="4_cdnux"]
+[ext_resource type="Script" uid="uid://defghthwqr7bn" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableBuild.gd" id="5_wbhyf"]
+[ext_resource type="Script" uid="uid://f3uop8ge1q7h" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableDelete.gd" id="6_byysr"]
+[ext_resource type="PackedScene" uid="uid://6ifjgcl4gnvj" path="res://addons/buildable_system/Scenes/UI_Buildable_Editor.tscn" id="6_gk5l6"]
+[ext_resource type="Script" uid="uid://cqkpe42vlkqtt" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableMove.gd" id="7_64cbv"]
+[ext_resource type="Script" uid="uid://dnx0kdy1fn4v7" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableUpgrade.gd" id="8_exkj1"]
+
+[sub_resource type="GDScript" id="GDScript_cq0gq"]
+resource_name = "RTSCamera"
+script/source = "extends Camera2D
+
+@export_group(\"Zoom\")
+@export var _zoomStep: Vector2
+@export_group(\"Edge Pan\")
+@export var _enableEdgePan: bool = false
+@export var _edgePanSpeed: float = 2.0
+
+var _mouseStartPos: Vector2
+var _screenStartPos: Vector2
+var _dragging = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action(\"rmb\"):
+		if event.is_pressed():
+			_mouseStartPos = event.position
+			_screenStartPos = position
+			_dragging = true
+		else:
+			_dragging = false
+	elif event is InputEventMouseMotion and _dragging:
+		position = zoom * (_mouseStartPos - event.position) + _screenStartPos
+		
+	if event.is_action_pressed(\"zoom_in\"):
+		var mousePos = get_global_mouse_position()
+		zoom = clamp(zoom + _zoomStep, Vector2.ONE * 0.1, Vector2.ONE * 2)
+		position += mousePos - get_global_mouse_position()
+	elif event.is_action_pressed(\"zoom_out\"):
+		var mousePos = get_global_mouse_position()
+		zoom = clamp(zoom - _zoomStep, Vector2.ONE * 0.1, Vector2.ONE * 2)
+		position += mousePos - get_global_mouse_position()
+	pass
+
+func _physics_process(delta: float) -> void:
+	if _dragging:
+		return
+	
+	if not _enableEdgePan:
+		return
+	
+	var vRect: Rect2 = get_viewport_rect()
+	var edgePanVector: Vector2 = (get_local_mouse_position() / vRect.size) * 2.0
+	var absVector: Vector2 = abs(edgePanVector)
+	
+	var adjustedZoom: Vector2 = Vector2.ONE * 0.99 / zoom
+	if absVector.x < adjustedZoom.x and absVector.y < adjustedZoom.y:
+		return
+		
+	var newDelta: Vector2 = zoom * edgePanVector * _edgePanSpeed
+	var newPos: Vector2 = position + newDelta
+	if newPos.x > limit_left and newPos.x < limit_right and newPos.y > limit_top and newPos.y < limit_right:
+		position += newDelta
+	pass
+"
+
+[sub_resource type="Resource" id="Resource_mkugu"]
+script = ExtResource("5_wbhyf")
+processMenu = ExtResource("4_cdnux")
+
+[sub_resource type="Resource" id="Resource_mdudo"]
+script = ExtResource("6_byysr")
+
+[sub_resource type="Resource" id="Resource_3ajq6"]
+script = ExtResource("7_64cbv")
+
+[sub_resource type="Resource" id="Resource_x7dg2"]
+script = ExtResource("8_exkj1")
+_upgradableLayer = 256
+_disableCost = true
+
+[node name="LV_BuildableSystemTest" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+editor_draw_limits = true
+script = SubResource("GDScript_cq0gq")
+_zoomStep = Vector2(0.1, 0.1)
+_edgePanSpeed = 4.0
+
+[node name="BuildableSystem" type="Node2D" parent="." node_paths=PackedStringArray("_root2D", "_layerHolder")]
+y_sort_enabled = true
+position = Vector2(56, 474)
+script = ExtResource("1_vjll2")
+_root2D = NodePath(".")
+_gridData = ExtResource("2_k1w5f")
+_layerHolder = NodePath("LayerHolder")
+upgradeBundle = ExtResource("3_r3437")
+_cursor = ExtResource("3_mnc0a")
+_interactionMapping = {
+"Build": SubResource("Resource_mkugu"),
+"Delete": SubResource("Resource_mdudo"),
+"Move": SubResource("Resource_3ajq6"),
+"Upgrade": SubResource("Resource_x7dg2")
+}
+
+[node name="LayerHolder" type="Node2D" parent="BuildableSystem"]
+
+[node name="Terrain" type="Node2D" parent="BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="Floor" type="Node2D" parent="BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="Asset" type="Node2D" parent="BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI_BuildableEditor" parent="CanvasLayer" node_paths=PackedStringArray("_buildableSystem") instance=ExtResource("6_gk5l6")]
+_buildableSystem = NodePath("../../BuildableSystem")
+_gridData = ExtResource("2_k1w5f")

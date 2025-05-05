@@ -1,0 +1,350 @@
+[gd_scene load_steps=23 format=3 uid="uid://cbcu3c7lmhkq3"]
+
+[ext_resource type="Script" uid="uid://jirjrt111s0l" path="res://Scripts/UISystem/UIs/Phase1UI/UI_Phase1_Temple_Purchase.gd" id="1_jxono"]
+[ext_resource type="PackedScene" uid="uid://cfd3ro55u8b41" path="res://Scenes/UIs/Misc/UI_Buy_Frame.tscn" id="2_qarqx"]
+[ext_resource type="AudioStream" uid="uid://7q0nic053bc5" path="res://Audio/SFX/AS_SFX_ui_select_1.wav" id="3_1q86n"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="3_abmp4"]
+[ext_resource type="Texture2D" uid="uid://dk1s5wq1m6jyp" path="res://Art/UI/Wishing/Atlas_WishingTree_Frame_Fill.tres" id="3_juo0t"]
+[ext_resource type="AudioStream" uid="uid://he14x2y1cb23" path="res://Audio/SFX/AS_SFX_ui_select_3.wav" id="4_7lnso"]
+[ext_resource type="Texture2D" uid="uid://be6rptqv8kv4" path="res://Art/UI/Wishing/Atlas_WishingTree_Frame.tres" id="4_t1127"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="5_vbs7q"]
+[ext_resource type="Texture2D" uid="uid://d1poeef81tys2" path="res://Art/Food_Spritesheet/Atlas_KopiO.tres" id="6_v0ugj"]
+[ext_resource type="FontFile" uid="uid://dr37x3lu53xhy" path="res://Themes/Fonts/Font_RooneySansHv.OTF" id="7_lhtjf"]
+[ext_resource type="Texture2D" uid="uid://c7il01pocs2uk" path="res://Art/UI/Atlas_UI_LeftArrow.tres" id="8_hv12a"]
+[ext_resource type="Texture2D" uid="uid://dea0qprnmi0yq" path="res://Art/UI/Atlas_UI_RightArrow.tres" id="9_ii8wu"]
+[ext_resource type="Texture2D" uid="uid://cq60nvd3m7k0y" path="res://Art/UI/Atlas_UI_Money.tres" id="10_065ce"]
+[ext_resource type="PackedScene" uid="uid://d3l8mt377bxbu" path="res://Scenes/UIs/Misc/UI_BasicButton.tscn" id="11_3hemi"]
+[ext_resource type="PackedScene" uid="uid://bqn4mcwhkw3wx" path="res://Scenes/UIs/EconomySystem/UI_Economy.tscn" id="12_b6ghy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ukff"]
+shader = ExtResource("3_abmp4")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_bxe1y"]
+offsets = PackedFloat32Array(0.487465)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t8ng0"]
+gradient = SubResource("Gradient_bxe1y")
+width = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlakr"]
+content_margin_left = 50.0
+content_margin_top = 40.0
+content_margin_right = 50.0
+content_margin_bottom = 40.0
+texture = ExtResource("4_t1127")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58r70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxcyq"]
+bg_color = Color(0.752941, 0.682353, 0.552941, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w54en"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.623529, 0.552941, 0.419608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI_Temple_Purchase" type="Control" node_paths=PackedStringArray("_itemGrid", "_labelPrice", "_btnBuy", "_btnBack", "_detailsFoodName", "_detailsFoodTextRect", "_detailsFoodDesc", "_relatedRecipesTree", "_purchaseAmountTxt", "_amountSelectorLeft", "_amountSelectorRight")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxono")
+_itemGrid = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/PANEL_Left/VBoxContainer/ScrollContainer/GRID_Item")
+_labelPrice = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_PricePurchase_Group/HBoxContainer/TXT_Price")
+_btnBuy = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_PricePurchase_Group/BTN_Buy")
+_btnBack = NodePath("ASPECTCONT_BTN_Close/BTN_Close")
+_slot = ExtResource("2_qarqx")
+_audioLeft = ExtResource("3_1q86n")
+_audioRight = ExtResource("4_7lnso")
+_detailsFoodName = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/TXT_Details_FoodName")
+_detailsFoodTextRect = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/AspectRatioContainer/TEXTRECT_FoodImage")
+_detailsFoodDesc = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TXT_Details_FoodDescription")
+_relatedRecipesTree = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/TREE_RelatedRecipes")
+_purchaseAmountTxt = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector/TXT_Amount")
+_amountSelectorLeft = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector/BTN_Left")
+_amountSelectorRight = NodePath("MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector/BTN_Right")
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_6ukff")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = SubResource("GradientTexture1D_t8ng0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_juo0t")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mlakr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBOX_Content" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="PANEL_Left" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_58r70")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/PANEL_Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/PANEL_Left/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 50
+text = "What you want to buy?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/PANEL_Left/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="GRID_Item" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/PANEL_Left/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+columns = 6
+
+[node name="VBOX_Right" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="PANEL_Details" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxcyq")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer"]
+layout_mode = 2
+
+[node name="TXT_Details_FoodName" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 30
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TEXTRECT_FoodImage" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("6_v0ugj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="TXT_Details_FoodDescription" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"HeaderMedium"
+text = "Description
+"
+
+[node name="TREE_RelatedRecipes" type="Tree" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/PANEL_Details/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/title_button_color = Color(0.242188, 0.171875, 0.117188, 1)
+theme_override_colors/font_color = Color(0.242188, 0.171875, 0.117188, 1)
+theme_override_colors/guide_color = Color(0, 0, 0, 0)
+theme_override_colors/relationship_line_color = Color(0.847656, 0.792969, 0.691406, 1)
+theme_override_constants/draw_relationship_lines = 1
+theme_override_constants/relationship_line_width = 4
+theme_override_constants/icon_max_width = 85
+theme_override_fonts/title_button_font = ExtResource("7_lhtjf")
+theme_override_fonts/font = ExtResource("7_lhtjf")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/panel = SubResource("StyleBoxFlat_w54en")
+allow_search = false
+hide_folding = true
+enable_recursive_folding = false
+scroll_horizontal_enabled = false
+
+[node name="HBOX_AmountSelector" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector"]
+layout_mode = 2
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Amount:"
+vertical_alignment = 1
+
+[node name="BTN_Left" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("8_hv12a")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TXT_Amount" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="BTN_Right" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_AmountSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("9_ii8wu")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBOX_PricePurchase_Group" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_PricePurchase_Group"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Price_Money" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_PricePurchase_Group/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+texture = ExtResource("10_065ce")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TXT_Price" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_PricePurchase_Group/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.3
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="BTN_Buy" parent="MarginContainer/PanelContainer/VBoxContainer/HBOX_Content/VBOX_Right/HBOX_PricePurchase_Group" instance=ExtResource("11_3hemi")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+_fontSize = 30
+text = "Buy"
+
+[node name="ASPECTCONT_BTN_Close" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.957
+anchor_top = 0.109
+anchor_right = 0.989
+anchor_bottom = 0.165
+offset_left = 10.5598
+offset_top = 10.28
+offset_right = -10.8801
+offset_bottom = -10.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(20, 20)
+
+[node name="BTN_Close" type="Button" parent="ASPECTCONT_BTN_Close"]
+layout_mode = 2
+theme = ExtResource("5_vbs7q")
+theme_type_variation = &"Button_X"
+
+[node name="UI_Economy" parent="." instance=ExtResource("12_b6ghy")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -196.0
+offset_top = 112.0
+offset_right = -196.0
+offset_bottom = 112.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.7, 0.7)

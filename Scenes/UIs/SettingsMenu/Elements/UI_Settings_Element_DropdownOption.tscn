@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8tycbcne0q2u"]
+
+[ext_resource type="Script" uid="uid://cpakm3pt4nf7w" path="res://Scripts/UISystem/UIs/Settings/Elements/UI_Settings_Element_DropdownOption.gd" id="1_ukgmv"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_xyart"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbyqf"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.984314, 0.960784, 0.843137, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI_Settings_Element_DropdownOption" type="MarginContainer" node_paths=PackedStringArray("_label", "_optionBTN")]
+custom_minimum_size = Vector2(313, 30)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -15.0
+offset_right = 156.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukgmv")
+_label = NodePath("HBoxContainer/PANCONT_Title/TXT_Title")
+_optionBTN = NodePath("HBoxContainer/OPTBTN_Selections")
+metadata/_edit_horizontal_guides_ = [516.0, 565.0]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PANCONT_Title" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nbyqf")
+
+[node name="TXT_Title" type="Label" parent="HBoxContainer/PANCONT_Title"]
+layout_mode = 2
+theme = ExtResource("1_xyart")
+theme_type_variation = &"HeaderMedium"
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OPTBTN_Selections" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_xyart")
+alignment = 1
+fit_to_longest_item = false
+allow_reselect = true

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://fsxc6kptwktf"]
+
+[ext_resource type="PackedScene" uid="uid://m6m5jlbnyg7o" path="res://Scenes/Customers/Customer_Base.tscn" id="1_ks41i"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_lyay0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ybfw"]
+resource_local_to_scene = true
+shader = ExtResource("2_lyay0")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.014
+shader_parameter/uvRescale = 1.085
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Customer_B" instance=ExtResource("1_ks41i")]
+
+[node name="Label" parent="CenterContainer" index="0"]
+text = "B
+"
+
+[node name="PANCONT_OrderPopup" parent="." index="5"]
+material = SubResource("ShaderMaterial_2ybfw")
+
+[node name="AnimationTree" parent="." index="8"]
+parameters/Stationary/Eat/blend_position = Vector2(-0.00688076, 0.00452495)

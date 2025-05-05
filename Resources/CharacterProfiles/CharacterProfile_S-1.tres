@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterProfile" load_steps=3 format=3 uid="uid://dfhavukagcg2o"]
+
+[ext_resource type="Script" uid="uid://ou6lpe3um5vm" path="res://Scripts/Resources/CharacterProfile.gd" id="1_805rj"]
+[ext_resource type="Texture2D" uid="uid://ctwsex1wdvd2r" path="res://PlaceHolder Assets/Sprites/Scene/icon.svg" id="2_ae5yr"]
+
+[resource]
+script = ExtResource("1_805rj")
+name = "Pineapple Tart Person"
+texture = ExtResource("2_ae5yr")
+emotes = {}

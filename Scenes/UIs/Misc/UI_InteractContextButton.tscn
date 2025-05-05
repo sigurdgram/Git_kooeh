@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm3suljr7pxxu"]
+
+[ext_resource type="Texture2D" uid="uid://do07wvw2oytrt" path="res://PlaceHolder Assets/Sprites/Scene/ui-large-buttons-horizontal.png" id="2_gafpt"]
+[ext_resource type="FontFile" uid="uid://dr37x3lu53xhy" path="res://Themes/Fonts/Font_RooneySansHv.OTF" id="3_82x2r"]
+[ext_resource type="Script" uid="uid://mvucs2kmcx7a" path="res://Scripts/UISystem/UIs/Misc/UI_InteractContextButton.gd" id="3_sae1b"]
+[ext_resource type="AudioStream" uid="uid://b2huwuu8arjdj" path="res://Audio/SFX/AS_SFX_ui_button-general.wav" id="4_qjid3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj816"]
+atlas = ExtResource("2_gafpt")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui33g"]
+content_margin_left = 14.0
+content_margin_top = 4.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_rj816")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hwoex"]
+content_margin_left = 14.0
+content_margin_top = 4.0
+content_margin_right = 14.0
+texture = ExtResource("2_gafpt")
+region_rect = Rect2(48, 16, 48, 16)
+
+[node name="UI_InteractContextButton" type="Button"]
+custom_minimum_size = Vector2(200, 75)
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 0.069
+offset_right = -49.68
+offset_bottom = -24.52
+theme_override_colors/font_color = Color(0.341176, 0.0901961, 0, 1)
+theme_override_fonts/font = ExtResource("3_82x2r")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ui33g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ui33g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hwoex")
+text = "asdasdasd"
+script = ExtResource("3_sae1b")
+_audioClick = ExtResource("4_qjid3")

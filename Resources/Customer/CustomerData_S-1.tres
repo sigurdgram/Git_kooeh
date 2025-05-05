@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=7 format=3 uid="uid://dl1ov4iuw3gah"]
+
+[ext_resource type="Script" uid="uid://bq8h15g8vgv2d" path="res://Scripts/Resources/CustomerData.gd" id="1_2pjuk"]
+[ext_resource type="Script" uid="uid://c8skb4gur3f2d" path="res://Scripts/Resources/ConditionalRandomizer/ConditionalRandomizer_Base.gd" id="1_olsul"]
+[ext_resource type="PackedScene" uid="uid://ceeiixp32mp8n" path="res://Scenes/Customers/Customer_S-1.tscn" id="3_31x83"]
+[ext_resource type="Script" uid="uid://i5hg27jng24p" path="res://Scripts/Resources/Conditions/Condition_Base.gd" id="4_31olj"]
+[ext_resource type="Script" uid="uid://cyudshlgudvif" path="res://Scripts/Resources/Conditions/Condition_Day.gd" id="5_mpkii"]
+
+[sub_resource type="Resource" id="Resource_lq6a8"]
+script = ExtResource("5_mpkii")
+fromDay = 32
+toDay = 32
+
+[resource]
+script = ExtResource("1_2pjuk")
+identifier = "S-1"
+name = "Pineapple Tart Person"
+scene = ExtResource("3_31x83")
+customerRarity = 3
+weight = 0.0
+foodOrderRate = {
+"FoodData.KopiO": 1,
+"FoodData.PineappleTart": 1
+}
+patience = 30.0
+spawnTrigger = Array[ExtResource("4_31olj")]([SubResource("Resource_lq6a8")])
+paymentBonus = Array[ExtResource("1_olsul")]([])
+customerSize = 150.0

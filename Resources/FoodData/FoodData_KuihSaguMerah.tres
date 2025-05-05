@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=19 format=3 uid="uid://cafui0c1grt7k"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_3un0h"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="2_ifait"]
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="2_u1jt1"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="3_lveag"]
+[ext_resource type="Script" uid="uid://brrlpfd302c4p" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="4_o0csi"]
+[ext_resource type="Texture2D" uid="uid://bmnydigndsbxx" path="res://Art/Food_Spritesheet/Atlas_KuihSaguMerah.tres" id="5_lveag"]
+[ext_resource type="Texture2D" uid="uid://byw8k4437mf50" path="res://2024_Art/2024 Isometric F&B/T_Food_KuihSaguMerah_Eating.png" id="7_o0csi"]
+
+[sub_resource type="Resource" id="Resource_ql6h6"]
+script = ExtResource("2_u1jt1")
+difficulty = 0
+tapRange = 0.25
+interval = 1.5
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_uo6ni"]
+script = ExtResource("1_3un0h")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_ql6h6")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_nu6qr"]
+script = ExtResource("3_lveag")
+difficulty = 0
+numberOfExecutions = 3
+speed = 100.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_78706"]
+script = ExtResource("1_3un0h")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_nu6qr")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_iews6"]
+script = ExtResource("4_o0csi")
+difficulty = 0
+speed = 0.4
+barLengthMultiplier = 1.35
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_ajlyc"]
+script = ExtResource("1_3un0h")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_iews6")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo6ni"]
+atlas = ExtResource("7_o0csi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu6qr"]
+atlas = ExtResource("7_o0csi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78706"]
+atlas = ExtResource("7_o0csi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0csi"]
+atlas = ExtResource("7_o0csi")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql6h6"]
+atlas = ExtResource("7_o0csi")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.KuihSaguMerah"
+script = ExtResource("2_ifait")
+name = "Kuih Sagu Merah"
+type = 1
+difficulty = 0
+description = "Kuih Sagu Merah - it's so pretty, don't you think? Almost sparkles a little!"
+sprite = SubResource("AtlasTexture_ql6h6")
+journalSprite = ExtResource("5_lveag")
+platelessSprite = SubResource("AtlasTexture_o0csi")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_uo6ni"), SubResource("AtlasTexture_nu6qr"), SubResource("AtlasTexture_78706")])
+cookTime = 7.0
+price = 10.0
+batchCookAmount = 1
+ingredients = {
+&"IngredientData.GratedCoconut": 3,
+&"IngredientData.Salt": 1,
+&"IngredientData.Water": 2
+}
+cookInstructions = Array[ExtResource("1_3un0h")]([SubResource("Resource_uo6ni"), SubResource("Resource_78706"), SubResource("Resource_ajlyc")])
+metadata/_custom_type_script = "uid://c6u41cdmdxk78"

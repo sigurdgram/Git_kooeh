@@ -1,0 +1,33 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://b31yxed6asvwh"]
+
+[ext_resource type="PackedScene" uid="uid://c7kqf8ysv6wx2" path="res://Scenes/Buildable/Buildable_Chair3.tscn" id="2_k2p7e"]
+[ext_resource type="PackedScene" uid="uid://cy1n8qk6clnaj" path="res://Scenes/Buildable/Buildable_Chair4.tscn" id="3_nxxs3"]
+[ext_resource type="PackedScene" uid="uid://bcpisoshe5rlq" path="res://Scenes/Buildable/Buildable_CookingStation.tscn" id="6_dhs2k"]
+[ext_resource type="PackedScene" uid="uid://tvjursuybmn5" path="res://Scenes/Buildable/Buildable_DisplayCounter.tscn" id="7_oyyn3"]
+[ext_resource type="PackedScene" uid="uid://cvb5t4skd8k33" path="res://Scenes/Buildable/Buildable_OrderCounter.tscn" id="8_l43yi"]
+[ext_resource type="PackedScene" uid="uid://e86ussatll8q" path="res://Scenes/Buildable/Buildable_Table1.tscn" id="9_254r8"]
+[ext_resource type="PackedScene" uid="uid://bru6jjjfj0hm1" path="res://Scenes/Buildable/Buildable_Table2.tscn" id="10_bbfr7"]
+[ext_resource type="PackedScene" uid="uid://qm8hleinh0h4" path="res://Scenes/Buildable/Buildable_Table3.tscn" id="11_n36o7"]
+[ext_resource type="PackedScene" uid="uid://dtpuyqnjachnv" path="res://Scenes/Buildable/Buildable_Table4.tscn" id="12_kflph"]
+[ext_resource type="PackedScene" uid="uid://bmkw227ctabh2" path="res://Scenes/Buildable/Buildable_Chair1.tscn" id="13_306s7"]
+[ext_resource type="PackedScene" uid="uid://csn6r4r2g13qy" path="res://Scenes/Buildable/Buildable_Chair2.tscn" id="14_3ubop"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8jhaj"]
+resource_name = "Restaurant Buildables"
+scenes/1/scene = ExtResource("6_dhs2k")
+scenes/2/scene = ExtResource("7_oyyn3")
+scenes/3/scene = ExtResource("8_l43yi")
+scenes/4/scene = ExtResource("9_254r8")
+scenes/5/scene = ExtResource("10_bbfr7")
+scenes/6/scene = ExtResource("11_n36o7")
+scenes/7/scene = ExtResource("12_kflph")
+scenes/8/scene = ExtResource("13_306s7")
+scenes/9/scene = ExtResource("14_3ubop")
+scenes/10/scene = ExtResource("2_k2p7e")
+scenes/11/scene = ExtResource("3_nxxs3")
+
+[resource]
+tile_shape = 1
+tile_layout = 1
+tile_size = Vector2i(254, 146)
+sources/6 = SubResource("TileSetScenesCollectionSource_8jhaj")

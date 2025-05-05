@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqlkjpevbb4b1"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_nidaj"]
+[ext_resource type="Texture2D" uid="uid://dea0qprnmi0yq" path="res://Art/UI/Atlas_UI_RightArrow.tres" id="3_fllob"]
+[ext_resource type="Script" uid="uid://cmkistblgtk5" path="res://Scripts/UISystem/UIs/Settings/Elements/UI_Settings_Element_LeftRightSelector.gd" id="3_hvjru"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="3_o4qur"]
+[ext_resource type="Texture2D" uid="uid://c7il01pocs2uk" path="res://Art/UI/Atlas_UI_LeftArrow.tres" id="3_vvc0y"]
+[ext_resource type="FontFile" uid="uid://rmn7xx0fpgtd" path="res://Themes/Fonts/Nunito/Nunito-ExtraBold.ttf" id="5_mk6vx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_td8bl"]
+texture = ExtResource("3_vvc0y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtbrq"]
+texture = ExtResource("3_vvc0y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8rc5"]
+texture = ExtResource("3_vvc0y")
+modulate_color = Color(0.541176, 0.541176, 0.541176, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xtgq6"]
+texture = ExtResource("3_vvc0y")
+modulate_color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6kvy"]
+texture = ExtResource("3_fllob")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1bgm"]
+texture = ExtResource("3_fllob")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nsjrl"]
+texture = ExtResource("3_fllob")
+modulate_color = Color(0.541176, 0.541176, 0.541176, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afd3d"]
+texture = ExtResource("3_fllob")
+modulate_color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="UI_InGamePause_LeftRightSelector" type="OptionButton" node_paths=PackedStringArray("_leftBtn", "_rightBtn", "_label", "_item")]
+custom_minimum_size = Vector2(536, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1371.0
+offset_bottom = -1040.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme = ExtResource("1_nidaj")
+theme_type_variation = &"Button_LeftRightSelector"
+script = ExtResource("3_hvjru")
+_leftBtn = NodePath("MarginContainer/HBoxContainer/AspectRatioContainer2/BTN_Left")
+_rightBtn = NodePath("MarginContainer/HBoxContainer/AspectRatioContainer/BTN_Right")
+_label = NodePath("MarginContainer/HBoxContainer/TXT_Label")
+_item = NodePath("MarginContainer/HBoxContainer/TXT_Item")
+_name = "Text"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nidaj")
+theme_type_variation = &"Entry_MarginCont"
+theme_override_constants/margin_left = 27
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TXT_Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_nidaj")
+theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("3_o4qur")
+text = "Text"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="BTN_Left" type="Button" parent="MarginContainer/HBoxContainer/AspectRatioContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_td8bl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rtbrq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o8rc5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_xtgq6")
+
+[node name="TXT_Item" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_nidaj")
+theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("5_mk6vx")
+theme_override_font_sizes/font_size = 18
+text = "1280 x 720"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="BTN_Right" type="Button" parent="MarginContainer/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_m6kvy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k1bgm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nsjrl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_afd3d")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

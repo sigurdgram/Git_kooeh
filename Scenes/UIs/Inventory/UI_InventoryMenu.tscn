@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7mi3h1rgcku"]
+
+[ext_resource type="Script" uid="uid://clbk8k2tfq8db" path="res://Scripts/UISystem/UIs/Inventory/UI_Inventory.gd" id="1_8l6v7"]
+[ext_resource type="PackedScene" uid="uid://davgct6uqki4k" path="res://Scenes/UIs/Inventory/UI_InventorySlot.tscn" id="2_8v8r2"]
+
+[sub_resource type="SystemFont" id="SystemFont_5ddpe"]
+font_names = PackedStringArray("RooneySans")
+
+[node name="InventoryMenu" type="Control" node_paths=PackedStringArray("itemGird")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8l6v7")
+slot = ExtResource("2_8v8r2")
+itemGird = NodePath("PanelContainer/MarginContainer/ScrollContainer/ItemGrid")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -794.0
+offset_top = -494.0
+offset_right = 794.0
+offset_bottom = 494.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemGrid" type="GridContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 23
+theme_override_constants/v_separation = 23
+columns = 9
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 65)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -71.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_fonts/font = SubResource("SystemFont_5ddpe")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

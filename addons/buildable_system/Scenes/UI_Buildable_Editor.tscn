@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ifjgcl4gnvj"]
+
+[ext_resource type="Script" uid="uid://03yddfdr7osx" path="res://addons/buildable_system/Scripts/UIs/UI_BuildableEditor.gd" id="1_rgkbf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qkb8"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="UI_BuildableEditor" type="Control" node_paths=PackedStringArray("_HBOXBuildableProcesses")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_rgkbf")
+_HBOXBuildableProcesses = NodePath("PNCont_BuildableProcesses/HBox_BuildableProcesses")
+
+[node name="PNCont_BuildableProcesses" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_right = 29.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4qkb8")
+
+[node name="HBox_BuildableProcesses" type="HBoxContainer" parent="PNCont_BuildableProcesses"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1

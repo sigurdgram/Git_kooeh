@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0dr4esotwumc"]
+
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="1_c3evh"]
+[ext_resource type="Script" uid="uid://c10phe0m0c86d" path="res://addons/buildable_system/Scripts/Node2Ds/BuildableCursor.gd" id="2_bm6by"]
+
+[node name="IsometricCursor" type="ShapeCast2D"]
+shape = ExtResource("1_c3evh")
+target_position = Vector2(0, 0)
+collision_mask = 0
+collide_with_areas = true
+script = ExtResource("2_bm6by")

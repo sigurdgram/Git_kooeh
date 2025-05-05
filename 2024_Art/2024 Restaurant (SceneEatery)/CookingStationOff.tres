@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://migeb5n4gxgc"]
+
+[ext_resource type="Texture2D" uid="uid://dnfp3ld3rxj20" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E000_OldRustyStoveOff.png" id="1_djxmj"]
+
+[resource]
+atlas = ExtResource("1_djxmj")
+region = Rect2(0, 0, 512, 512)

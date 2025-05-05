@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://h38lu5a3pfuh"]
+
+[ext_resource type="Script" uid="uid://bxd57c38nlmd1" path="res://Scripts/Buildable/Buildable_Table1.gd" id="1_bjus1"]
+[ext_resource type="Texture2D" uid="uid://fh8pr8t5t7hc" path="res://Art/Environment/T_Environment_Spritesheet_Furniture.png" id="2_nt6n7"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_pllb0"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="4_hvqqh"]
+[ext_resource type="Script" uid="uid://dhqmrcvillut0" path="res://Scripts/RestaurantSystems/UpgradableComponent.gd" id="6_5r8yg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjv02"]
+resource_local_to_scene = true
+shader = ExtResource("2_pllb0")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.008
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dia48"]
+atlas = ExtResource("2_nt6n7")
+region = Rect2(808, 264, 192, 184)
+
+[sub_resource type="Gradient" id="Gradient_il6c0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.227451, 0.219608, 0.290196, 0.54902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tp521"]
+gradient = SubResource("Gradient_il6c0")
+width = 50
+height = 70
+fill = 2
+
+[node name="Buildable_Asset_Table4_SW" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite")]
+script = ExtResource("1_bjus1")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+metadata/AttachmentSlots = {
+"Tabletop": NodePath("Tabletop"),
+"Tabletop_NE": NodePath("Tabletop_NE"),
+"Tabletop_SW": NodePath("Tabletop_SW")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_jjv02")
+texture = SubResource("AtlasTexture_dia48")
+offset = Vector2(-12.615, -51.03)
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
+position = Vector2(-2.085, -4.07)
+rotation = 0.553269
+scale = Vector2(2, 2)
+skew = 0.520108
+texture = SubResource("GradientTexture2D_tp521")
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(17, -63, -107, 4, -20, 56, 102, -12)
+
+[node name="Tabletop" type="Node2D" parent="."]
+position = Vector2(-13, -83)
+metadata/AttachmentSlots = {
+"Tabletop": NodePath(".")
+}
+
+[node name="Tabletop_NE" type="Node2D" parent="."]
+position = Vector2(23, -106)
+
+[node name="Tabletop_SW" type="Node2D" parent="."]
+position = Vector2(-54, -63)
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("4_hvqqh")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+process_mode = 4
+collision_mask = 0
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(17, -63, -107, 4, -20, 56, 102, -12)
+
+[node name="UpgradableComponent" type="Node" parent="."]
+script = ExtResource("6_5r8yg")

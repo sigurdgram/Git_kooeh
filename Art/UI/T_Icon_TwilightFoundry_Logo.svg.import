@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bp3aia2y0w5ie"
+path="res://.godot/imported/T_Icon_TwilightFoundry_Logo.svg-e73a2a876ba139d13517e4c11e9c046e.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Art/UI/T_Icon_TwilightFoundry_Logo.svg"
+dest_files=["res://.godot/imported/T_Icon_TwilightFoundry_Logo.svg-e73a2a876ba139d13517e4c11e9c046e.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

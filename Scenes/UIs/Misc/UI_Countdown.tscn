@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp40fdd3m3y7b"]
+
+[ext_resource type="Script" uid="uid://ihvuk2nnyqqb" path="res://Scripts/UISystem/UIs/Misc/UI_Countdown.gd" id="1_bp1ek"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_miyvp"]
+[ext_resource type="AudioStream" uid="uid://cr1btwcvx1oqh" path="res://Audio/SFX/AS_SFX_Ready.wav" id="2_sjpi3"]
+[ext_resource type="AudioStream" uid="uid://cjhu7fupsre2i" path="res://Audio/SFX/AS_SFX_Go.wav" id="3_nffep"]
+
+[node name="UI_Countdown" type="Control" node_paths=PackedStringArray("_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bp1ek")
+_text = NodePath("TXT_Text")
+_audioReady = ExtResource("2_sjpi3")
+_audioGo = ExtResource("3_nffep")
+
+[node name="TXT_Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_miyvp")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.690196, 0.47451, 0, 1)
+theme_override_colors/font_outline_color = Color(0.917647, 0.792157, 0.47451, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 300
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

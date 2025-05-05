@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputData" load_steps=4 format=3 uid="uid://dpxi4pfucbqrf"]
+
+[ext_resource type="Texture2D" uid="uid://bd4p8rll1hi87" path="res://2024_Art/2024 UI Assets/T_UI012_ArrowKeys.tres" id="1_qtvtl"]
+[ext_resource type="Script" uid="uid://cseyqynuc8rd5" path="res://Scripts/Resources/InputData.gd" id="1_xegqq"]
+[ext_resource type="Texture2D" uid="uid://d3h63xv24jdeo" path="res://2024_Art/2024 UI Assets/T_UI015_DPad.tres" id="2_fl51p"]
+
+[resource]
+resource_name = "InputData.Navigate"
+script = ExtResource("1_xegqq")
+displayName = "Navigate"
+inputLegends = {
+0: ExtResource("1_qtvtl"),
+1: ExtResource("2_fl51p")
+}

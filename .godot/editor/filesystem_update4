@@ -1,0 +1,21 @@
+res://Localization/translations.en.translation
+res://Localization/translations.zh_Hans.translation
+res://Scenes/Init.tscn
+res://Themes/Theme_Main.tres
+res://Art/Character/T_Character_Customer_Tapir/AnimLib_Character_Customer_Tapir.tres
+res://Art/Character/T_Character_Customer_Tapir/AnimStateMachine_Character_Customer.tres
+res://2024_Art/2024 Characters/Tiger/AnimLib_Character_Customer_Tiger.tres
+res://Art/Character/T_Character_AncestorPineapple/AnimLib_Character_Ancestor_Pineapple.tres
+res://Resources/Customer/CustomerData_S-1.tres
+res://Resources/FoodData/FoodData_KopiO.tres
+res://Resources/FoodData/FoodData_PineappleTart.tres
+res://Art/Character/T_Character_MCMale/T_Animation/AnimStateMachine_Character_MC_Male.tres
+res://Resources/Buildable/UpgradeBundle_Main.tres
+res://Tilesets/Grass_Tileset.tres
+res://Themes/Theme_WishBTN.tres
+res://Tilesets/Assets_Tileset.tres
+res://Tilesets/Beams_Tileset.tres
+res://Tilesets/Terrain_Tileset.tres
+res://Tilesets/Floor_Tileset.tres
+res://addons/fmod/FmodManager.gd
+res://addons/fmod/tool/performances/PerformancesDisplay.gd

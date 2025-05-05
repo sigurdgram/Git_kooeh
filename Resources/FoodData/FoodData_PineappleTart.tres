@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=23 format=3 uid="uid://bkthlppblp3sp"]
+
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_h04dn"]
+[ext_resource type="Script" uid="uid://c1cthqm2hg5pq" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_frwyb"]
+[ext_resource type="Script" uid="uid://c7yj15mgkcm4f" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="3_j8g38"]
+[ext_resource type="Script" uid="uid://4rogwn50mgyw" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="4_frwyb"]
+[ext_resource type="Script" uid="uid://dp8yjk5rwfi3g" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="5_frwyb"]
+[ext_resource type="Script" uid="uid://dhiw3jg8kcfp" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="6_frwyb"]
+[ext_resource type="Texture2D" uid="uid://cv053rug02wxk" path="res://Art/Food_Spritesheet/Atlas_PineappleTart.tres" id="7_6dd57"]
+[ext_resource type="Texture2D" uid="uid://bkfehnhm80glm" path="res://2024_Art/2024 Isometric F&B/T_Food_PineappleTart_Eating.png" id="11_frwyb"]
+[ext_resource type="Script" uid="uid://c5c3o7o67jtf3" path="res://Scripts/Resources/FoodData.gd" id="14_55cxo"]
+
+[sub_resource type="Resource" id="Resource_q7e8y"]
+script = ExtResource("3_frwyb")
+referenceCurve = ExtResource("2_h04dn")
+scale = 1.5
+difficulty = 2
+qteHitCount = 5
+qteSpeed = 0.5
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_fmw11"]
+script = ExtResource("3_j8g38")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_q7e8y")
+description = ""
+
+[sub_resource type="Resource" id="Resource_yeq8s"]
+script = ExtResource("4_frwyb")
+difficulty = 2
+numberOfExecutions = 5
+speed = 175.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_5fvbm"]
+script = ExtResource("3_j8g38")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_yeq8s")
+description = ""
+
+[sub_resource type="Resource" id="Resource_om4pu"]
+script = ExtResource("5_frwyb")
+difficulty = 2
+tapRange = 0.1
+interval = 0.8
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_6usr4"]
+script = ExtResource("3_j8g38")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_om4pu")
+description = ""
+
+[sub_resource type="Resource" id="Resource_5x41k"]
+script = ExtResource("6_frwyb")
+difficulty = 2
+speed = 0.7
+barLengthMultiplier = 1.0
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_a2fqu"]
+script = ExtResource("3_j8g38")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_5x41k")
+description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0it8"]
+atlas = ExtResource("11_frwyb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k12us"]
+atlas = ExtResource("11_frwyb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h04dn"]
+atlas = ExtResource("11_frwyb")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7e8y"]
+atlas = ExtResource("11_frwyb")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeq8s"]
+atlas = ExtResource("11_frwyb")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.PineappleTart"
+script = ExtResource("14_55cxo")
+name = "Pineapple Tart"
+type = 1
+difficulty = 2
+description = "It's always a fight during the holiday season for the jar of pineapple tarts. The hunger games, but for real."
+sprite = SubResource("AtlasTexture_yeq8s")
+journalSprite = ExtResource("7_6dd57")
+platelessSprite = SubResource("AtlasTexture_q7e8y")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_s0it8"), SubResource("AtlasTexture_k12us"), SubResource("AtlasTexture_h04dn")])
+cookTime = 15.0
+price = 30.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.Egg": 2,
+"IngredientData.IcingSugar": 5,
+"IngredientData.PineappleJam": 3,
+"IngredientData.PlainFlour": 5
+}
+cookInstructions = Array[ExtResource("3_j8g38")]([SubResource("Resource_fmw11"), SubResource("Resource_5fvbm"), SubResource("Resource_6usr4"), SubResource("Resource_a2fqu")])

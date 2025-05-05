@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://degrv5jjyxd14"]
+
+[ext_resource type="PackedScene" uid="uid://d1s2co24h0vmu" path="res://Scenes/UIs/Misc/UI_RequiredAmount_Frame.tscn" id="1_7uebp"]
+
+[node name="UI_Phase3_IngredientAmount_Frame" instance=ExtResource("1_7uebp")]
+custom_minimum_size = Vector2(140, 140)
+offset_top = -70.0
+offset_bottom = 70.0
+
+[node name="TXT_Amount" parent="HBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 36

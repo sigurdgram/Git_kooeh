@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://h8043hrwhb6h"]
+
+[ext_resource type="Script" uid="uid://bhprev0836jgf" path="res://Scripts/Buildable/Buildable_Base.gd" id="1_uovt0"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_hg1j0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1avg5"]
+resource_local_to_scene = true
+shader = ExtResource("2_hg1j0")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.04
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Base" type="StaticBody2D" node_paths=PackedStringArray("_sprite") groups=["Buildable"]]
+collision_layer = 7
+collision_mask = 7
+input_pickable = true
+script = ExtResource("1_uovt0")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1avg5")

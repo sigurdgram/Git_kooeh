@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://3p1lkinafa1n"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_ik2nk"]
+[ext_resource type="Texture2D" uid="uid://bv5axphgphq8t" path="res://Art/Ingredient_Spritesheet/T_Ingredient.png" id="2_7nwkv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4x4e"]
+atlas = ExtResource("2_7nwkv")
+region = Rect2(2048, 1024, 512, 512)
+
+[resource]
+resource_name = "IngredientData.CurryPowder"
+script = ExtResource("1_ik2nk")
+name = "Curry Powder"
+description = "Hey, it's curry powder! A little goes a long way!"
+rarity = 2
+stackable = true
+texture = SubResource("AtlasTexture_p4x4e")
+bundlePrice = 30
+bundlePurchaseAmount = 10
+metadata/_custom_type_script = "uid://xe1dkdghab3l"

@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://di6wm4x71ps81"]
+
+[ext_resource type="Script" uid="uid://gpqjlrkyc1gj" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_WishingTree.gd" id="1_mltam"]
+[ext_resource type="AudioStream" uid="uid://cqljunipisldy" path="res://Audio/SFX/AS_SFX_QTE_PingPong_Left.wav" id="2_63scd"]
+[ext_resource type="Shader" uid="uid://bcicosanqmj5q" path="res://Scripts/Shaders/QTEBars/Shad_QTEBar_WishingTree.gdshader" id="2_yakw6"]
+[ext_resource type="AudioStream" uid="uid://rl02jc6i00n1" path="res://Audio/SFX/AS_SFX_QTE_PingPong_Right.wav" id="3_3fegq"]
+[ext_resource type="Texture2D" uid="uid://jlqkwx6nbyqb" path="res://2024_Art/2024 UI Assets/T_WishUI_Bar_Front.png" id="4_wq3jy"]
+[ext_resource type="Texture2D" uid="uid://bo1dq30wovbko" path="res://2024_Art/2024 UI Assets/T_WishUI_Bar_Back.png" id="6_7urkk"]
+[ext_resource type="Texture2D" uid="uid://b61jtpdnpu383" path="res://2024_Art/2024 UI Assets/T_WishUI_Spatula.png" id="7_62fpo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f38yb"]
+resource_local_to_scene = true
+shader = ExtResource("2_yakw6")
+shader_parameter/fill = ExtResource("6_7urkk")
+shader_parameter/baseColor = Color(1, 0.972549, 0.909804, 1)
+shader_parameter/l1Color = Color(0.996078, 0.709804, 0.458824, 1)
+shader_parameter/l2Color = Color(0.333333, 0.635294, 0.521569, 1)
+shader_parameter/l1Limits = Vector2(0, 0)
+shader_parameter/l2Limits = Vector2(0, 0)
+
+[node name="QTEBar_WishingTree" type="AspectRatioContainer" node_paths=PackedStringArray("_zonesTextureRect", "_pointerTextureRect")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mltam")
+_zonesTextureRect = NodePath("Control/Frame/MarginContainer/Fill")
+_pointerTextureRect = NodePath("Control/Frame/MarginContainer2/Control/TEXTRECT_Pointer")
+_qteLeft = ExtResource("2_63scd")
+_qteRight = ExtResource("3_3fegq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Frame" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(540, 540)
+texture = ExtResource("4_wq3jy")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Frame"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Fill" type="TextureRect" parent="Control/Frame/MarginContainer"]
+material = SubResource("ShaderMaterial_f38yb")
+layout_mode = 2
+texture = ExtResource("6_7urkk")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Control/Frame/MarginContainer2"]
+layout_mode = 2
+
+[node name="TEXTRECT_Pointer" type="TextureRect" parent="Control/Frame/MarginContainer2/Control"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+anchor_left = 0.472
+anchor_top = 0.24
+anchor_right = 0.579
+anchor_bottom = 0.717
+offset_left = -0.320007
+offset_top = -0.400009
+offset_right = 3.25995
+offset_bottom = -0.0200195
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_62fpo")
+expand_mode = 4
+stretch_mode = 5

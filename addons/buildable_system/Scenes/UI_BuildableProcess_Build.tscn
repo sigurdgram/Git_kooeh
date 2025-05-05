@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7oetb32vjxv"]
+
+[ext_resource type="Script" uid="uid://cd0f1h15eo221" path="res://addons/buildable_system/Scripts/UIs/UI_BuildableProcess_Build/UI_BuildableProcess_Build.gd" id="1_10anj"]
+[ext_resource type="PackedScene" uid="uid://cklqb6gnx6fdy" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Build_Entry.tscn" id="2_whh8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vb3c"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="UI_BuildableProcess_Build" type="PanelContainer" node_paths=PackedStringArray("_hboxFrames")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vb3c")
+script = ExtResource("1_10anj")
+_buyFramePackedScene = ExtResource("2_whh8b")
+_hboxFrames = NodePath("ScrollContainer/HBox_Frames")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+follow_focus = true
+vertical_scroll_mode = 0
+
+[node name="HBox_Frames" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5

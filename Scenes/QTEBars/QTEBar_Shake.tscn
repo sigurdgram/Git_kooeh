@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cciqj0ipy5ncw"]
+
+[ext_resource type="Script" uid="uid://4n0kl1vu8a0" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Shake.gd" id="1_fjwi3"]
+[ext_resource type="Texture2D" uid="uid://7qgeidnr7amf" path="res://Art/UI/Cooking/T_CookUI_Shaker.png" id="2_fm8uf"]
+[ext_resource type="FontFile" uid="uid://rmn7xx0fpgtd" path="res://Themes/Fonts/Nunito/Nunito-ExtraBold.ttf" id="3_solou"]
+
+[node name="QTEBar_Shake" type="Control" node_paths=PackedStringArray("_bottleContainer", "_percentageLabel")]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fjwi3")
+_axisSensitivity = 10000.0
+_bottleContainer = NodePath("AspectRatioContainer")
+_percentageLabel = NodePath("AspectRatioContainer2/Percentage_lbl")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fill" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("2_fm8uf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Percentage_lbl" type="Label" parent="AspectRatioContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_solou")
+theme_override_font_sizes/font_size = 50
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1

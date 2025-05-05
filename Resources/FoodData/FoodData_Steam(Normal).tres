@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=11 format=3 uid="uid://b8cvnvnxdxypt"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_n8if2"]
+[ext_resource type="Script" uid="uid://brrlpfd302c4p" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="2_m82m6"]
+[ext_resource type="Texture2D" uid="uid://ceid88h8ttidw" path="res://2024_Art/2024 Isometric F&B/T_KopiO100.png" id="3_wuxi6"]
+[ext_resource type="Texture2D" uid="uid://cmfvsjg0y0mud" path="res://2024_Art/2024 Isometric F&B/T_KopiO50.png" id="4_btn52"]
+[ext_resource type="Texture2D" uid="uid://dd1l6bita0jod" path="res://2024_Art/2024 Isometric F&B/T_KopiO0.png" id="5_23y10"]
+[ext_resource type="Texture2D" uid="uid://d1poeef81tys2" path="res://Art/Food_Spritesheet/Atlas_KopiO.tres" id="6_7aq3q"]
+[ext_resource type="Texture2D" uid="uid://b7uw5uqiip2ar" path="res://2024_Art/2024 Isometric F&B/Plateless/T_KopiO.png" id="7_6vq8f"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="8_bqoot"]
+
+[sub_resource type="Resource" id="Resource_dexus"]
+script = ExtResource("2_m82m6")
+difficulty = 1
+speed = 0.6
+barLengthMultiplier = 1.15
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_ey6bc"]
+script = ExtResource("1_n8if2")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_dexus")
+description = "Add Coffee Powder"
+
+[resource]
+resource_name = "DebugFoodData.HoldToRange(Normal)"
+script = ExtResource("8_bqoot")
+name = "Steam(Normal)"
+type = 2
+difficulty = 0
+description = "Kopi O Coffee with sugar. The \"O\" derived from (烏) in Hokkien, which means \"black\"."
+sprite = ExtResource("7_6vq8f")
+journalSprite = ExtResource("6_7aq3q")
+platelessSprite = ExtResource("7_6vq8f")
+eatingSprites = Array[Texture2D]([ExtResource("3_wuxi6"), ExtResource("4_btn52"), ExtResource("5_23y10")])
+cookTime = 3.0
+price = 10.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.CoffeePowder": 1
+}
+cookInstructions = Array[ExtResource("1_n8if2")]([SubResource("Resource_ey6bc")])

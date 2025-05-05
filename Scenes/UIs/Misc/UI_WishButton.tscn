@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://boltuvl0exgul"]
+
+[ext_resource type="Script" uid="uid://bqt8o6e5x4r6r" path="res://Scripts/UISystem/UIs/Misc/UI_BasicButton.gd" id="1_pxrvj"]
+[ext_resource type="AudioStream" uid="uid://b2huwuu8arjdj" path="res://Audio/SFX/AS_SFX_ui_button-general.wav" id="2_qp8jx"]
+[ext_resource type="Theme" uid="uid://27ht8b7q8dny" path="res://Themes/Theme_WishBTN.tres" id="3_ytb0u"]
+
+[node name="UI_WishButton" type="AspectRatioContainer" node_paths=PackedStringArray("_button")]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1661.0
+offset_bottom = -1007.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+ratio = 3.535
+script = ExtResource("1_pxrvj")
+_button = NodePath("Button")
+_audio = ExtResource("2_qp8jx")
+_fontSize = 24
+text = "asdasd"
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_ytb0u")
+theme_type_variation = &"Button_Basic"
+theme_override_font_sizes/font_size = 24
+text = "asdasd"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

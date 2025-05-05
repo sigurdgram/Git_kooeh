@@ -1,0 +1,330 @@
+[gd_scene load_steps=11 format=3 uid="uid://bamdfw848a0qb"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_ltfn5"]
+[ext_resource type="Texture2D" uid="uid://bp8qoc2q0kmmw" path="res://2024_Art/2024 Scene1/T_Scene1_YellowTray_Full.png" id="3_bo07l"]
+[ext_resource type="Texture2D" uid="uid://cq60nvd3m7k0y" path="res://Art/UI/Atlas_UI_Money.tres" id="4_xki3o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chl8u"]
+bg_color = Color(0.259294, 0.259294, 0.259294, 0.870588)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qspla"]
+bg_color = Color(0.290196, 0.290196, 0.290196, 0.454902)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68qd6"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 0.901961)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b7v4d"]
+
+[sub_resource type="GDScript" id="GDScript_d0o4t"]
+resource_name = "UI_BuildableProcess_Upgrade_Entry"
+script/source = "extends Button
+
+@export var _itemNameTxt: Label
+@export var _itemTextRect: TextureRect
+@export var _costTxt: Label
+@export var _maxLevelReachedBanner: CenterContainer
+@export var _cPanel2VBox: VBoxContainer
+@export var _templateRTL: RichTextLabel
+
+var _buildableWeakRef: WeakRef
+var _upgradableComp: UpgradableComponent
+var _upgradeData: Dictionary
+var _baseSize: Vector2
+
+func setup(gameMode: GameplayGameMode, buildable: Buildable, onClick: Callable) -> void:
+	gameMode.onSelectedUpgradable.connect(_on_selected_upgradable)
+	_buildableWeakRef = weakref(buildable)
+	
+	var data: BuildableData = buildable.get_buildable_data().get_ref()
+	_itemNameTxt.text = data.displayName
+	_itemTextRect.texture = buildable.get_sprite().texture
+	
+	_upgradableComp = buildable.get_meta(\"Upgradable\") as UpgradableComponent
+	_upgradeData = data.customData[\"Upgrade\"]
+	evaluate_availability()
+	pressed.connect(onClick)
+	pass
+
+func _on_c_panel2_visibility_changed() -> void:
+	if $C_Panel2.visible:
+		_refresh_upgrade_info()
+		var tween: Tween = create_tween()
+		tween.set_parallel(true)
+		tween.tween_property(self, \"size\", _baseSize * Vector2(2, 1), 0.2)
+		tween.tween_property(self, \"custom_minimum_size\", _baseSize * Vector2(2, 1), 0.2)
+	else:
+		custom_minimum_size = _baseSize
+		size = custom_minimum_size
+	pass
+
+func _refresh_upgrade_info() -> void:
+	for i in _cPanel2VBox.get_children():
+		if is_instance_of(i, RichTextLabel):
+			i.queue_free()
+	
+	var level: int = _upgradableComp.get_level()
+	var desc: Array[RichTextLabel] = _buildableWeakRef.get_ref().get_upgrade_desc(level, _templateRTL)
+	for i in desc:
+		_cPanel2VBox.add_child(i)
+	pass
+	
+func evaluate_availability() -> void:
+	var error: BuildableTypes.EBuildableError = _upgradableComp.can_upgrade()
+	disabled = error != BuildableTypes.EBuildableError.OK
+	
+	if error & BuildableTypes.EBuildableError.MaxLevel:
+		_maxLevelReachedBanner.show()
+		return
+	
+	_maxLevelReachedBanner.hide()
+	
+	var level: int = _upgradableComp.get_level()
+	if not _upgradeData.has(level + 1):
+		return
+	
+	var d: Dictionary = _upgradeData[level + 1]
+	for i in d:
+		match i:
+			\"Price\":
+				_costTxt.text = _comma_per_thousands(d[i])
+	pass
+
+func _ready() -> void:
+	_baseSize = size
+	GameplayVariables.onEconomyUpdate.connect(_on_money_updated)
+	$C_Panel2.visibility_changed.connect(_on_c_panel2_visibility_changed)
+	pass
+
+func _on_money_updated(_money: float, _delta: float) -> void:
+	disabled = _upgradableComp.can_upgrade() != BuildableTypes.EBuildableError.OK
+	pass
+
+func _comma_per_thousands(number: int) -> String:
+	var numString: String = str(number)
+	var retVal: String = \"\"
+	
+	var mod = numString.length() % 3
+	for i in range(0, numString.length()):
+		if i != 0 && i % 3 == mod:
+			retVal += \",\"
+		retVal += numString[i]
+	
+	return retVal
+
+func _on_selected_upgradable(upgradable: Buildable) -> void:
+	if upgradable == _buildableWeakRef.get_ref():
+		$C_Panel1.hide()
+		$C_Panel2.show()
+	else:
+		$C_Panel1.show()
+		$C_Panel2.hide()
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wemyw"]
+resource_local_to_scene = true
+bg_color = Color(0.839216, 0.784314, 0.65098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xawlb"]
+content_margin_left = 5.0
+content_margin_top = 2.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(0.827451, 0.694118, 0, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="UI_BuildableProcess_Upgrade_Entry" type="Button" node_paths=PackedStringArray("_itemNameTxt", "_itemTextRect", "_costTxt", "_maxLevelReachedBanner", "_cPanel2VBox", "_templateRTL")]
+custom_minimum_size = Vector2(150, 190)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -95.0
+offset_right = 75.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_chl8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qspla")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_68qd6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b7v4d")
+disabled = true
+script = SubResource("GDScript_d0o4t")
+_itemNameTxt = NodePath("C_Panel1/PANELCONT_Rarity/VBoxContainer/TXT_Name")
+_itemTextRect = NodePath("C_Panel1/PANELCONT_Rarity/VBoxContainer/AspectRatioContainer/TEXTRECT_Item")
+_costTxt = NodePath("C_Panel1/PANELCONT_Rarity/VBoxContainer/PanelContainer/HBoxContainer/TXT_Cost")
+_maxLevelReachedBanner = NodePath("CENT_MaxLevelReached")
+_cPanel2VBox = NodePath("C_Panel2/PANELCONT/VBoxContainer")
+_templateRTL = NodePath("Template_RTL")
+
+[node name="C_Panel1" type="Control" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PANELCONT_Rarity" type="PanelContainer" parent="C_Panel1"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_wemyw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="C_Panel1/PANELCONT_Rarity"]
+layout_mode = 2
+
+[node name="TXT_Name" type="Label" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ltfn5")
+theme_type_variation = &"HeaderMedium"
+theme_override_font_sizes/font_size = 15
+text = "Food Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+ratio = 2.0
+stretch_mode = 0
+
+[node name="TEXTRECT_Item" type="TextureRect" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_bo07l")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xawlb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TEXTRECT_Currency" type="TextureRect" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_xki3o")
+expand_mode = 3
+
+[node name="TXT_Cost" type="Label" parent="C_Panel1/PANELCONT_Rarity/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_ltfn5")
+theme_type_variation = &"HeaderMedium"
+text = "---"
+horizontal_alignment = 1
+
+[node name="C_Panel2" type="Control" parent="."]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PANELCONT" type="PanelContainer" parent="C_Panel2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_wemyw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="C_Panel2/PANELCONT"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="C_Panel2/PANELCONT/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_ltfn5")
+theme_type_variation = &"HeaderLarge"
+text = "Click To Confirm
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CENT_MaxLevelReached" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.785398
+use_top_left = true
+
+[node name="Label" type="Label" parent="CENT_MaxLevelReached"]
+layout_mode = 2
+theme = ExtResource("2_ltfn5")
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+text = "Max level reached"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Template_RTL" type="RichTextLabel" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme = ExtResource("2_ltfn5")
+theme_override_colors/default_color = Color(0.243137, 0.172549, 0.117647, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

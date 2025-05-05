@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=12 format=3 uid="uid://dfo5cjeumgghw"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_38uba"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_vu7jy"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_2xwa7"]
+[ext_resource type="Texture2D" uid="uid://ceid88h8ttidw" path="res://2024_Art/2024 Isometric F&B/T_KopiO100.png" id="3_mkbxc"]
+[ext_resource type="Texture2D" uid="uid://cmfvsjg0y0mud" path="res://2024_Art/2024 Isometric F&B/T_KopiO50.png" id="4_2xwa7"]
+[ext_resource type="Texture2D" uid="uid://dd1l6bita0jod" path="res://2024_Art/2024 Isometric F&B/T_KopiO0.png" id="5_xmkwm"]
+[ext_resource type="Texture2D" uid="uid://d1poeef81tys2" path="res://Art/Food_Spritesheet/Atlas_KopiO.tres" id="6_ekhdf"]
+[ext_resource type="Texture2D" uid="uid://b7uw5uqiip2ar" path="res://2024_Art/2024 Isometric F&B/Plateless/T_KopiO.png" id="7_diw0b"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="8_h42ew"]
+
+[sub_resource type="Resource" id="Resource_xmkwm"]
+script = ExtResource("3_2xwa7")
+referenceCurve = ExtResource("2_vu7jy")
+scale = 1.5
+difficulty = 0
+qteHitCount = 3
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_ey6bc"]
+script = ExtResource("1_38uba")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_xmkwm")
+description = "Add Coffee Powder"
+
+[resource]
+resource_name = "DebugFoodData.Pour(Easy)"
+script = ExtResource("8_h42ew")
+name = "Pour(Easy)"
+type = 2
+difficulty = 0
+description = "Kopi O Coffee with sugar. The \"O\" derived from (烏) in Hokkien, which means \"black\"."
+sprite = ExtResource("7_diw0b")
+journalSprite = ExtResource("6_ekhdf")
+platelessSprite = ExtResource("7_diw0b")
+eatingSprites = Array[Texture2D]([ExtResource("3_mkbxc"), ExtResource("4_2xwa7"), ExtResource("5_xmkwm")])
+cookTime = 3.0
+price = 10.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.CoffeePowder": 1
+}
+cookInstructions = Array[ExtResource("1_38uba")]([SubResource("Resource_ey6bc")])

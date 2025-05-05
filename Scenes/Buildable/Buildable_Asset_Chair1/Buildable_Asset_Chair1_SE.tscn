@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://x37pwcmem754"]
+
+[ext_resource type="Texture2D" uid="uid://c4atagloqcxtk" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E000_OldWoodenStool.png" id="1_2l4np"]
+[ext_resource type="Script" uid="uid://dj5t1vh2wdo1m" path="res://Scripts/Buildable/Buildable_Chair1.gd" id="1_gmkps"]
+[ext_resource type="Texture2D" uid="uid://5hytpu87kup" path="res://2024_Art/T_ShadowRound.png" id="2_2k4sf"]
+
+[node name="Buildable_Asset_Chair1_SE" type="Area2D" node_paths=PackedStringArray("_sitPosition", "_clickablePolygon", "_sprite")]
+script = ExtResource("1_gmkps")
+_sitPosition = NodePath("SitPosition")
+_clickablePolygon = NodePath("CollisionPolygon2D")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2l4np")
+offset = Vector2(0, -40)
+
+[node name="TShadowRound" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_2k4sf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(0, -68, -40, -47, -41, 7, 2, 27, 43, 6, 41, -46)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+self_modulate = Color(0.282353, 1, 0, 1)
+z_index = 10
+scale = Vector2(5, 5)
+enabled = false
+target_position = Vector2(0, 15)
+collision_mask = 0
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, -68, -40, -47, -41, 7, 2, 27, 43, 6, 41, -46)
+
+[node name="SitPosition" type="Node2D" parent="."]
+position = Vector2(0, -42)

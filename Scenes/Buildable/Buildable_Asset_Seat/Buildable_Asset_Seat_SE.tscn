@@ -1,0 +1,198 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsdrp8pa3450d"]
+
+[ext_resource type="Script" uid="uid://bar4bwyyq6y3s" path="res://Scripts/Buildable/Buildable_Seat.gd" id="1_n7i4c"]
+[ext_resource type="Texture2D" uid="uid://uaqjbscfldrs" path="res://2024_Art/2024 Restaurant (SceneEatery)/Table1.tres" id="2_t4381"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_xgeis"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="4_xgeis"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="5_ej75e"]
+[ext_resource type="Script" uid="uid://dmetdck1lfjw0" path="res://Scripts/Buildable/Buildable_Attachment_Seat.gd" id="5_ldpy7"]
+[ext_resource type="Script" uid="uid://dhqmrcvillut0" path="res://Scripts/RestaurantSystems/UpgradableComponent.gd" id="6_mmsb0"]
+[ext_resource type="Texture2D" uid="uid://c46db4pp58vgw" path="res://2024_Art/2024 Restaurant (SceneEatery)/Chair1.tres" id="9_ldpy7"]
+[ext_resource type="Texture2D" uid="uid://5hytpu87kup" path="res://2024_Art/T_ShadowRound.png" id="10_ej75e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjv02"]
+resource_local_to_scene = true
+shader = ExtResource("2_xgeis")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.01
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Seat_SE" type="Area2D" node_paths=PackedStringArray("_chairs", "_interactableComp", "_staticBody", "_clickablePolygon", "_sprite")]
+script = ExtResource("1_n7i4c")
+_chairs = {
+1: NodePath("Buildable_Chair3"),
+3: NodePath("Buildable_Chair"),
+5: NodePath("Buildable_Chair4"),
+7: NodePath("Buildable_Chair2")
+}
+_interactableComp = NodePath("InteractableComponent")
+_staticBody = NodePath("StaticBody2D")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+metadata/AttachmentSlots = {
+"Tabletop_NE": NodePath("Tabletop_NE"),
+"Tabletop_NW": NodePath("Tabletop_NW"),
+"Tabletop_SE": NodePath("Tabletop_SE"),
+"Tabletop_SW": NodePath("Tabletop_SW")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jjv02")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_t4381")
+offset = Vector2(0, -75)
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+texture = ExtResource("4_xgeis")
+offset = Vector2(3, 10)
+
+[node name="Tabletop_NW" type="Node2D" parent="."]
+position = Vector2(-29, -103)
+
+[node name="Tabletop_NE" type="Node2D" parent="."]
+position = Vector2(37, -103)
+
+[node name="Tabletop_SE" type="Node2D" parent="."]
+position = Vector2(37, -59)
+
+[node name="Tabletop_SW" type="Node2D" parent="."]
+position = Vector2(-29, -59)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+process_mode = 4
+collision_mask = 0
+
+[node name="ClickablePolygon2" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(1, -67, -127, -139, -243, -74, -111, 0, -243, 74, -127, 139, -1, 66, 129, 139, 243, 73, 113, 0, 243, -75, 129, -139)
+
+[node name="Buildable_Chair" type="StaticBody2D" parent="." node_paths=PackedStringArray("_sprite", "_collisionPolygon", "_sitPosition")]
+process_mode = 4
+position = Vector2(128, 74)
+script = ExtResource("5_ldpy7")
+_sprite = NodePath("Sprite2D")
+_collisionPolygon = NodePath("CollisionPolygon2D")
+_sitPosition = NodePath("SitPosition")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildable_Chair"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_ldpy7")
+
+[node name="TShadowRound" type="Sprite2D" parent="Buildable_Chair/Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+position = Vector2(0, 45)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_ej75e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Buildable_Chair"]
+position = Vector2(256, 0)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-596, 54, -506, 98, -422, 52, -428, -40, -596, -40)
+
+[node name="SitPosition" type="Node2D" parent="Buildable_Chair"]
+position = Vector2(0, -20)
+
+[node name="Buildable_Chair2" type="StaticBody2D" parent="." node_paths=PackedStringArray("_sprite", "_collisionPolygon", "_sitPosition")]
+process_mode = 4
+show_behind_parent = true
+position = Vector2(-128, -74)
+script = ExtResource("5_ldpy7")
+_sprite = NodePath("Sprite2D")
+_collisionPolygon = NodePath("CollisionPolygon2D")
+_sitPosition = NodePath("SitPosition")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildable_Chair2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_ldpy7")
+
+[node name="TShadowRound" type="Sprite2D" parent="Buildable_Chair2/Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+position = Vector2(0, 45)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_ej75e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Buildable_Chair2"]
+position = Vector2(256, 0)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-596, 54, -506, 98, -422, 52, -428, -40, -596, -40)
+
+[node name="SitPosition" type="Node2D" parent="Buildable_Chair2"]
+position = Vector2(0, -20)
+
+[node name="Buildable_Chair3" type="StaticBody2D" parent="." node_paths=PackedStringArray("_sprite", "_collisionPolygon", "_sitPosition")]
+process_mode = 4
+show_behind_parent = true
+position = Vector2(128, -74)
+script = ExtResource("5_ldpy7")
+_sprite = NodePath("Sprite2D")
+_collisionPolygon = NodePath("CollisionPolygon2D")
+_sitPosition = NodePath("SitPosition")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildable_Chair3"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_ldpy7")
+
+[node name="TShadowRound" type="Sprite2D" parent="Buildable_Chair3/Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+position = Vector2(0, 45)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_ej75e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Buildable_Chair3"]
+position = Vector2(256, 0)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-596, 54, -506, 98, -422, 52, -428, -40, -596, -40)
+
+[node name="SitPosition" type="Node2D" parent="Buildable_Chair3"]
+position = Vector2(0, -20)
+
+[node name="Buildable_Chair4" type="StaticBody2D" parent="." node_paths=PackedStringArray("_sprite", "_collisionPolygon", "_sitPosition")]
+process_mode = 4
+position = Vector2(-128, 74)
+script = ExtResource("5_ldpy7")
+_sprite = NodePath("Sprite2D")
+_collisionPolygon = NodePath("CollisionPolygon2D")
+_sitPosition = NodePath("SitPosition")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildable_Chair4"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_ldpy7")
+
+[node name="TShadowRound" type="Sprite2D" parent="Buildable_Chair4/Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+position = Vector2(0, 45)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_ej75e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Buildable_Chair4"]
+position = Vector2(256, 0)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-596, 54, -506, 98, -422, 52, -428, -40, -596, -40)
+
+[node name="SitPosition" type="Node2D" parent="Buildable_Chair4"]
+position = Vector2(0, -20)
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(1, -67, -127, -139, -243, -74, -111, 0, -243, 74, -127, 139, -1, 66, 129, 139, 243, 73, 113, 0, 243, -75, 129, -139)
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("5_ej75e")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")
+metadata/_custom_type_script = "uid://d3kiqoy7qitty"
+
+[node name="UpgradableComponent" type="Node" parent="."]
+script = ExtResource("6_mmsb0")
+metadata/_custom_type_script = "uid://dhqmrcvillut0"

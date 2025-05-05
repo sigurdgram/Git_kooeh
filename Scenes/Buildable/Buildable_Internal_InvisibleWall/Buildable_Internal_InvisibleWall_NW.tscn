@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djli2sqem5h4j"]
+
+[ext_resource type="PackedScene" uid="uid://vomd31ymjpwu" path="res://Scenes/Buildable/Buildable_Internal_InvisibleWall/Buildable_Internal_InvisibleWall_SW.tscn" id="1_83rkm"]
+
+[node name="Buildable_Internal_InvisibleWall_NW" instance=ExtResource("1_83rkm")]
+
+[node name="StaticBody2D" parent="." index="1"]
+position = Vector2(128, -74)

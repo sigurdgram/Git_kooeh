@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc5r0bpq067n4"]
+
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="1_3jabv"]
+[ext_resource type="Script" uid="uid://ctddtxq7k8d0f" path="res://Scripts/Buildable/Buildable_WishingTree1.gd" id="1_sows1"]
+[ext_resource type="Texture2D" uid="uid://cd6ht37700oyb" path="res://2024_Art/2024 Scene1/T_Scene1_WishTree3.png" id="2_5f75k"]
+[ext_resource type="PackedScene" uid="uid://bvpwq10rbo3ia" path="res://Scenes/UIs/Phase1UI/UI_Phase1_WishingTree.tscn" id="2_h0tyh"]
+[ext_resource type="Texture2D" uid="uid://kfkiegsphjvu" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_WTree.png" id="3_p3878"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="6_c3oc0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w00ci"]
+resource_local_to_scene = true
+shader = ExtResource("1_3jabv")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.005
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Asset_WishingTree" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite")]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_sows1")
+_selectIngredientPrompt = ExtResource("2_h0tyh")
+_clickablePolygon = NodePath("CollisionPolygon2D")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(10, -103)
+texture = ExtResource("3_p3878")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_w00ci")
+position = Vector2(-72, -462)
+texture = ExtResource("2_5f75k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-85, -54)
+scale = Vector2(1, 1.172)
+polygon = PackedVector2Array(19, 238.293, 106, 233.173, 643.634, -42.4241, 643.634, -338, -453.366, -325, -453.366, -11.7073)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-85, -54)
+scale = Vector2(1, 1.172)
+polygon = PackedVector2Array(19, 238.293, 106, 233.173, 643.634, -42.4241, 643.634, -338, -453.366, -325, -453.366, -11.7073)
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("6_c3oc0")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")

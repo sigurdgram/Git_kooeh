@@ -1,0 +1,758 @@
+[gd_scene load_steps=25 format=3 uid="uid://bpsejd1j55lv5"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_6kak6"]
+[ext_resource type="Script" uid="uid://cn2rime2e4vxf" path="res://Scripts/UISystem/UIs/Journal/UI_Journal.gd" id="1_yvb23"]
+[ext_resource type="Texture2D" uid="uid://cxv06rvqucrh1" path="res://Art/UI/Atlas_UI_Button_X.tres" id="2_3y6y3"]
+[ext_resource type="PackedScene" uid="uid://bf6w2qh4ymovs" path="res://Scenes/UIs/Journal/UI_Journal_Entry.tscn" id="2_kb227"]
+[ext_resource type="PackedScene" uid="uid://d1s2co24h0vmu" path="res://Scenes/UIs/Misc/UI_RequiredAmount_Frame.tscn" id="3_5lwk0"]
+[ext_resource type="Texture2D" uid="uid://d1poeef81tys2" path="res://Art/Food_Spritesheet/Atlas_KopiO.tres" id="4_ov0au"]
+[ext_resource type="Texture2D" uid="uid://c18b5trl4u7c3" path="res://2024_Art/2024 Journal UI/T_Journal_Base00.png" id="7_6fuku"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="7_7ngfk"]
+[ext_resource type="FontFile" uid="uid://cv0i6mujau7fk" path="res://Themes/Fonts/RooneyPro/RooneyPro-Bold.ttf" id="8_r3snj"]
+[ext_resource type="Texture2D" uid="uid://heiwr6ptngsl" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_RecipeBG.png" id="9_gslt8"]
+[ext_resource type="Texture2D" uid="uid://cuql0douq6i22" path="res://2024_Art/2024 Journal UI/T_Customer Profile UI/T_Journal_PolaroidBase1.png" id="9_xk0lt"]
+[ext_resource type="Texture2D" uid="uid://c86ks27biqow0" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_RecipeNote.png" id="10_630g6"]
+[ext_resource type="Texture2D" uid="uid://bx54tbt7lkj60" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_PriceTag.png" id="11_cjbb1"]
+[ext_resource type="Texture2D" uid="uid://dkkuehldiey34" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_TypeBox.png" id="11_ex5om"]
+[ext_resource type="Texture2D" uid="uid://bblb3phi3vno4" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_UI_FoodIcon.png" id="12_y7edl"]
+[ext_resource type="Texture2D" uid="uid://bv8re0qqiw7u5" path="res://2024_Art/2024 Journal UI/T_Customer Profile UI/T_Journal_Star.png" id="14_5l77h"]
+[ext_resource type="Texture2D" uid="uid://dkftgtbnj4rc2" path="res://2024_Art/2024 Journal UI/T_Player Profile UI/T_Journal_CurrencyIcon.png" id="14_rkbm6"]
+[ext_resource type="Texture2D" uid="uid://b7heq8km74qci" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_DescriptionTab.png" id="16_l5syn"]
+[ext_resource type="Texture2D" uid="uid://c14lvudrvx5sj" path="res://2024_Art/2024 Journal UI/Recipe Catalogue/T_Journal_IngredientsTab.png" id="17_yxpsq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eiqrh"]
+texture = ExtResource("7_6fuku")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0fy0"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.984314, 0.960784, 0.843137, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_acx5c"]
+resource_name = "Journal_Popup"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Journal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ASPECTRECT_Close:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ASPECTRECT_InputLegend:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h1lni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Journal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ASPECTRECT_Close:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ASPECTRECT_InputLegend:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dcmcy"]
+_data = {
+&"Journal_Popup": SubResource("Animation_acx5c"),
+&"RESET": SubResource("Animation_h1lni")
+}
+
+[node name="UI_Phase1_Journal" type="Control" node_paths=PackedStringArray("animation", "_closeBtn", "_journalEntriesVBOX", "_starTexture1", "_starTexture2", "_starTexture3", "_rightPage", "_selectedFoodText", "_selectedFoodDescription", "_selectedFoodDate", "_selectedFoodTextureRect", "_requiredIngredients", "_selectedFoodPrice")]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvb23")
+animation = NodePath("ASPECTRECT_Journal/AnimationPlayer")
+_journalEntry = ExtResource("2_kb227")
+_requiredAmountFrame = ExtResource("3_5lwk0")
+_closeBtn = NodePath("ASPECTRECT_Close/BTN_Close")
+_journalEntriesVBOX = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_LEFT/VBoxContainer")
+_starTexture1 = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating/HFlow_Stars/TextureRect")
+_starTexture2 = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating/HFlow_Stars/TextureRect2")
+_starTexture3 = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating/HFlow_Stars/TextureRect3")
+star_texture = ExtResource("14_5l77h")
+_rightPage = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT")
+_selectedFoodText = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_NAME/TXT_Name")
+_selectedFoodDescription = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_Description/TXT_Description/TXT_FoodDescription")
+_selectedFoodDate = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_Description/TXT_Date")
+_selectedFoodTextureRect = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_FoodImage/AspectRatioContainer/TEXTRECT_Image")
+_requiredIngredients = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Ingredients/VBoxContainer/HFlow_Ingredients")
+_selectedFoodPrice = NodePath("ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Price/TXT_Price2")
+
+[node name="ASPECTRECT_Close" type="AspectRatioContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 50.0
+offset_bottom = 205.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="BTN_Close" type="Button" parent="ASPECTRECT_Close"]
+layout_mode = 2
+theme = ExtResource("1_6kak6")
+theme_type_variation = &"Button_X"
+icon = ExtResource("2_3y6y3")
+
+[node name="ASPECTRECT_Journal" type="AspectRatioContainer" parent="."]
+custom_minimum_size = Vector2(1926, 899)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 0
+ratio = 1.5
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Journal"]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_6fuku")
+expand_mode = 1
+
+[node name="PANEL_Journal" type="Panel" parent="ASPECTRECT_Journal"]
+modulate = Color(1, 1, 1, 0)
+clip_contents = true
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+theme = ExtResource("1_6kak6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_eiqrh")
+
+[node name="REFRECT_LEFT" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.223
+anchor_top = 0.101
+anchor_right = 0.486
+anchor_bottom = 0.845
+offset_left = 0.839996
+offset_top = -0.0800018
+offset_right = 0.879944
+offset_bottom = 0.399963
+grow_vertical = 2
+
+[node name="REFRECT_Title" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_LEFT"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+
+[node name="PANCONT_Title" type="PanelContainer" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_LEFT/REFRECT_Title"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p0fy0")
+
+[node name="TXT_RecipeCatalogue" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_LEFT/REFRECT_Title/PANCONT_Title"]
+layout_mode = 2
+theme = ExtResource("1_6kak6")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8_r3snj")
+theme_override_font_sizes/font_size = 30
+text = "Recipe Catalogue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_LEFT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.122
+anchor_right = 0.956
+anchor_bottom = 0.922
+offset_top = -55.088
+offset_right = 0.220032
+offset_bottom = 60.712
+texture = ExtResource("9_gslt8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_LEFT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.133
+anchor_right = 0.927
+anchor_bottom = 0.914
+offset_left = -0.159998
+offset_top = 0.0680008
+offset_right = -0.134979
+offset_bottom = 0.143982
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="REFRECT_RIGHT" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.516
+anchor_top = 0.101
+anchor_right = 0.778
+anchor_bottom = 0.845
+offset_left = -0.720093
+offset_top = -0.0800018
+offset_right = -0.760132
+offset_bottom = 0.399963
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="REFRECT_RecipePolaroid" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.001
+anchor_right = 0.557
+anchor_bottom = 0.353
+offset_left = -4.99988
+offset_top = 0.196
+offset_right = -6.1709
+offset_bottom = 0.187988
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipePolaroid"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_xk0lt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="REFRECT_RecipeNote" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.545
+anchor_top = 0.001
+anchor_right = 1.0
+anchor_bottom = 0.353
+offset_left = -0.13501
+offset_top = 0.196
+offset_bottom = 0.187988
+grow_horizontal = 2
+
+[node name="TEXTRECT_Note" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_right = 0.853
+anchor_bottom = 1.007
+offset_left = 0.0619984
+offset_right = 0.0246887
+offset_bottom = -0.981018
+texture = ExtResource("10_630g6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TEXTRECT_TypeBox" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.496
+anchor_top = 0.251
+anchor_right = 0.496
+anchor_bottom = 0.251
+offset_left = -42.5839
+offset_top = -50.033
+offset_right = 42.4161
+offset_bottom = 49.967
+texture = ExtResource("11_ex5om")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TEXTRECT_FoodType" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/TEXTRECT_TypeBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.141
+anchor_top = 0.19
+anchor_right = 0.871
+anchor_bottom = 0.81
+offset_left = 0.0149994
+offset_right = -0.0350037
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_y7edl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="REFRECT_Price" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = 0.424
+anchor_right = 0.825
+anchor_bottom = 0.661
+offset_left = -0.0600014
+offset_top = 0.00800323
+offset_right = 0.0749664
+offset_bottom = -0.0629883
+
+[node name="TEXTRECT_Price" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Price"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.096
+anchor_right = 0.907
+anchor_bottom = 0.985
+offset_left = -0.0718784
+offset_right = -0.0527344
+offset_bottom = 0.00499725
+texture = ExtResource("11_cjbb1")
+expand_mode = 3
+
+[node name="TXT_Price" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Price"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.223
+anchor_top = 0.03
+anchor_right = 0.478
+anchor_bottom = 0.328
+offset_left = -0.0108795
+offset_top = -0.00999999
+offset_right = -0.0458832
+offset_bottom = 0.0240002
+theme = ExtResource("1_6kak6")
+text = "Price"
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Price"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217
+anchor_top = 0.373
+anchor_right = 0.471
+anchor_bottom = 0.97
+offset_left = -0.0688782
+offset_top = 0.00899696
+offset_right = 0.0531158
+offset_bottom = 0.00999451
+texture = ExtResource("14_rkbm6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TXT_Price2" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Price"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.388
+anchor_right = 0.809
+anchor_bottom = 0.896
+offset_left = 2.50011
+offset_top = 0.00399971
+offset_right = -0.0129013
+offset_bottom = -1.032
+theme = ExtResource("1_6kak6")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 26
+text = "
+"
+
+[node name="REFRECT_Rating" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = 0.424
+anchor_right = 0.825
+anchor_bottom = 0.661
+offset_left = -0.0600014
+offset_top = 83.008
+offset_right = 0.0749664
+offset_bottom = 82.937
+
+[node name="TEXTRECT_Price" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.096
+anchor_right = 0.907
+anchor_bottom = 0.985
+offset_left = -0.0718784
+offset_right = -0.0527344
+offset_bottom = 0.00499725
+texture = ExtResource("11_cjbb1")
+expand_mode = 3
+
+[node name="TXT_Price" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.197
+anchor_top = 0.03
+anchor_right = 0.5
+anchor_bottom = 0.328
+offset_left = 0.0711193
+offset_top = -0.00999999
+offset_right = -0.49987
+offset_bottom = 0.0240002
+theme = ExtResource("1_6kak6")
+text = "Rating"
+
+[node name="HFlow_Stars" type="HFlowContainer" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.5
+anchor_right = 0.714
+anchor_bottom = 0.59
+offset_left = 0.0130005
+offset_top = -5.5
+offset_right = 1513.28
+offset_bottom = 84.47
+scale = Vector2(0.25, 0.25)
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating/HFlow_Stars"]
+visible = false
+layout_mode = 2
+texture = ExtResource("14_5l77h")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating/HFlow_Stars"]
+visible = false
+layout_mode = 2
+texture = ExtResource("14_5l77h")
+
+[node name="TextureRect3" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_RecipeNote/REFRECT_Rating/HFlow_Stars"]
+visible = false
+layout_mode = 2
+texture = ExtResource("14_5l77h")
+
+[node name="REFRECT_NAME" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.287
+anchor_right = 0.477
+anchor_bottom = 0.33
+offset_left = -1.18588
+offset_top = 0.251968
+offset_right = 0.0690918
+offset_bottom = -0.320007
+grow_horizontal = 2
+
+[node name="TXT_Name" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_NAME"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_r3snj")
+theme_override_font_sizes/font_size = 26
+text = "Kopi O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="REFRECT_Image&Description" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.196
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="REFRECT_FoodImage" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.082
+anchor_top = 0.04
+anchor_right = 0.467
+anchor_bottom = 0.257
+offset_left = -3.24588
+offset_top = -0.120005
+offset_right = -2.90088
+offset_bottom = -0.371033
+grow_horizontal = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_FoodImage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.067
+anchor_right = 0.933
+anchor_bottom = 0.933
+offset_left = -0.04
+offset_top = -0.04
+offset_right = 0.0399933
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEXTRECT_Image" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_FoodImage/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("4_ov0au")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="REFRECT_Description" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.366
+anchor_right = 1.0
+anchor_bottom = 1.037
+offset_left = -0.503
+offset_top = 0.10199
+offset_bottom = 0.28894
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.01
+anchor_bottom = 0.387
+offset_left = -2.99988
+offset_top = -48.0
+offset_right = -0.0298767
+offset_bottom = 50.407
+texture = ExtResource("16_l5syn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_Description" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_Description"]
+custom_minimum_size = Vector2(360, 20)
+layout_mode = 2
+anchor_left = 0.052
+anchor_top = 0.024
+anchor_right = 1.0
+anchor_bottom = 0.076
+offset_left = -0.156
+offset_top = 0.0640001
+offset_bottom = 0.0359955
+theme = ExtResource("1_6kak6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_r3snj")
+theme_override_font_sizes/font_size = 24
+text = "Description"
+autowrap_mode = 2
+
+[node name="TXT_FoodDescription" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_Description/TXT_Description"]
+custom_minimum_size = Vector2(360, 20)
+layout_mode = 2
+anchor_top = 1.247
+anchor_right = 0.954
+anchor_bottom = 2.247
+offset_left = -0.137901
+offset_top = -0.0119934
+offset_right = 9.15527e-05
+offset_bottom = -3.24799
+theme = ExtResource("1_6kak6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 7
+theme_override_font_sizes/font_size = 22
+text = "
+"
+autowrap_mode = 2
+
+[node name="TXT_Date" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Image&Description/REFRECT_Description"]
+custom_minimum_size = Vector2(360, 20)
+layout_mode = 2
+anchor_left = 0.05
+anchor_top = 0.416
+anchor_right = 1.0
+anchor_bottom = 0.462
+offset_left = -0.15
+offset_top = -0.223953
+offset_bottom = -0.0179443
+theme = ExtResource("1_6kak6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Date:
+"
+autowrap_mode = 2
+
+[node name="REFRECT_Ingredients" type="ReferenceRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.715
+anchor_right = 1.0
+anchor_bottom = 0.915
+offset_left = -0.00588
+offset_top = 0.139954
+offset_right = 1.00012
+offset_bottom = 0.339966
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Ingredients"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = 1.008
+anchor_bottom = 0.888
+offset_left = 0.0240002
+offset_top = -1.0
+offset_right = -0.0240173
+offset_bottom = 0.0319366
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_yxpsq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_Ingredients" type="Label" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Ingredients"]
+custom_minimum_size = Vector2(360, 20)
+layout_mode = 2
+anchor_left = 0.048
+anchor_right = 1.0
+anchor_bottom = 0.133
+offset_left = -0.144001
+offset_top = 7.0
+offset_bottom = 10.587
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_r3snj")
+theme_override_font_sizes/font_size = 24
+text = "Ingredients"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Ingredients"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.18
+anchor_right = 1.0
+anchor_bottom = 0.851
+offset_left = -0.102001
+offset_top = 0.0199986
+offset_bottom = -0.0110016
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlow_Ingredients" type="HFlowContainer" parent="ASPECTRECT_Journal/PANEL_Journal/REFRECT_RIGHT/REFRECT_Ingredients/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ASPECTRECT_Journal"]
+libraries = {
+"": SubResource("AnimationLibrary_dcmcy")
+}
+
+[node name="ASPECTRECT_InputLegend" type="ReferenceRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -60.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ASPECTRECT_InputLegend"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="UI_Up" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("7_7ngfk")]
+layout_mode = 2
+input = "ui_up"
+
+[node name="UI_Down" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("7_7ngfk")]
+layout_mode = 2
+input = "ui_down"
+
+[node name="UI_Left" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("7_7ngfk")]
+layout_mode = 2
+input = "ui_left"
+
+[node name="UI_Right" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("7_7ngfk")]
+layout_mode = 2
+input = "ui_right"
+
+[node name="UI_Accept" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("7_7ngfk")]
+layout_mode = 2
+input = "ui_accept"
+
+[node name="UI_Cancel" parent="ASPECTRECT_InputLegend/HBoxContainer" instance=ExtResource("7_7ngfk")]
+layout_mode = 2
+input = "ui_cancel"
+_translationContext = "back"

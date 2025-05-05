@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://dayltqsbiddby"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_6r7i1"]
+[ext_resource type="Texture2D" uid="uid://bv5axphgphq8t" path="res://Art/Ingredient_Spritesheet/T_Ingredient.png" id="2_2onle"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekpk0"]
+atlas = ExtResource("2_2onle")
+region = Rect2(3584, 1024, 512, 512)
+
+[resource]
+resource_name = "IngredientData.ChineseHerbs"
+script = ExtResource("1_6r7i1")
+name = "Chinese Herbs"
+description = "Hey, it's some chinese herbs! There's so much variety!"
+rarity = 2
+stackable = true
+texture = SubResource("AtlasTexture_ekpk0")
+bundlePrice = 30
+bundlePurchaseAmount = 10
+metadata/_custom_type_script = "uid://xe1dkdghab3l"

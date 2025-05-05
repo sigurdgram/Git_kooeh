@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=20 format=3 uid="uid://cl2oj7mypi4lu"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_oy6lt"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_bc5lb"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="2_o1pbs"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_x35di"]
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="4_x35di"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="5_cmrqf"]
+[ext_resource type="Texture2D" uid="uid://s3jruodg24vq" path="res://Art/Food_Spritesheet/Atlas_AmbraJuice.tres" id="6_kkfre"]
+[ext_resource type="Texture2D" uid="uid://0onq2asuwwai" path="res://2024_Art/2024 Isometric F&B/T_Food_AmbraJuice_Eating.png" id="8_fuuu4"]
+
+[sub_resource type="Resource" id="Resource_cmrqf"]
+script = ExtResource("3_x35di")
+referenceCurve = ExtResource("2_bc5lb")
+scale = 1.5
+difficulty = 1
+qteHitCount = 4
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_kkfre"]
+script = ExtResource("1_oy6lt")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_cmrqf")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_fuuu4"]
+script = ExtResource("4_x35di")
+difficulty = 1
+tapRange = 0.15
+interval = 1.0
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_qbs8e"]
+script = ExtResource("1_oy6lt")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_fuuu4")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_6p8yf"]
+script = ExtResource("5_cmrqf")
+difficulty = 1
+numberOfExecutions = 4
+speed = 150.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_wj83j"]
+script = ExtResource("1_oy6lt")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_6p8yf")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p8yf"]
+atlas = ExtResource("8_fuuu4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj83j"]
+atlas = ExtResource("8_fuuu4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g12gt"]
+atlas = ExtResource("8_fuuu4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuuu4"]
+atlas = ExtResource("8_fuuu4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbs8e"]
+atlas = ExtResource("8_fuuu4")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.AmbraJuice"
+script = ExtResource("2_o1pbs")
+name = "Ambra Juice"
+type = 2
+difficulty = 1
+description = "A tropical fruit juice with a combination of sweet and sour flavours, this tangy taste can't be beaten!"
+sprite = SubResource("AtlasTexture_qbs8e")
+journalSprite = ExtResource("6_kkfre")
+platelessSprite = SubResource("AtlasTexture_fuuu4")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_6p8yf"), SubResource("AtlasTexture_wj83j"), SubResource("AtlasTexture_g12gt")])
+cookTime = 8.0
+price = 20.0
+batchCookAmount = 1
+ingredients = {
+&"IngredientData.Ambarella": 3,
+&"IngredientData.Sugar": 1,
+&"IngredientData.Water": 3
+}
+cookInstructions = Array[ExtResource("1_oy6lt")]([SubResource("Resource_kkfre"), SubResource("Resource_qbs8e"), SubResource("Resource_wj83j")])
+metadata/_custom_type_script = "uid://c6u41cdmdxk78"

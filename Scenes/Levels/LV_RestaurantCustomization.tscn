@@ -1,0 +1,173 @@
+[gd_scene load_steps=22 format=3 uid="uid://ca2a0vq7463oa"]
+
+[ext_resource type="Script" uid="uid://cxgmeyn5tplht" path="res://Scripts/RestaurantCustomizationGameMode.gd" id="1_xv8ab"]
+[ext_resource type="Resource" uid="uid://ubs6lai42am2" path="res://Resources/Buildable/UpgradeBundle_Main.tres" id="2_02sq5"]
+[ext_resource type="TileSet" uid="uid://dtxakf36ey0l1" path="res://Tilesets/Grass_Tileset.tres" id="2_12o72"]
+[ext_resource type="Texture2D" uid="uid://bawuwllgcawxa" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush2.png" id="3_6c0b0"]
+[ext_resource type="PackedScene" uid="uid://byhx7apvqg6qt" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Upgrade.tscn" id="3_l0dke"]
+[ext_resource type="Texture2D" uid="uid://cl7tskevh7x63" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush5.png" id="4_6uka3"]
+[ext_resource type="Texture2D" uid="uid://vbgsubw6r3ds" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_BananaTree2.png" id="5_tou8b"]
+[ext_resource type="Texture2D" uid="uid://3bj42wbq7kxi" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Fern1.png" id="6_ryhli"]
+[ext_resource type="Texture2D" uid="uid://3u0x6b2ov0d0" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush3.png" id="7_qgyx3"]
+[ext_resource type="Texture2D" uid="uid://d2kj4202xe5er" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Grass6.png" id="8_k36t7"]
+[ext_resource type="Script" uid="uid://bqne0avpjy22a" path="res://addons/buildable_system/Scripts/Node2Ds/BuildableSystem.gd" id="9_mbejy"]
+[ext_resource type="Resource" uid="uid://suy3eyx6wmqh" path="res://Resources/Buildable/BuildableGridData.tres" id="10_1kenq"]
+[ext_resource type="PackedScene" uid="uid://c0dr4esotwumc" path="res://Scenes/IsometricCursor.tscn" id="11_i8174"]
+[ext_resource type="PackedScene" uid="uid://ca7oetb32vjxv" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Build.tscn" id="12_2f81d"]
+[ext_resource type="Script" uid="uid://defghthwqr7bn" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableBuild.gd" id="13_2jkxv"]
+[ext_resource type="Script" uid="uid://f3uop8ge1q7h" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableDelete.gd" id="14_ghehy"]
+[ext_resource type="Script" uid="uid://cqkpe42vlkqtt" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableMove.gd" id="15_jr8bb"]
+
+[sub_resource type="GDScript" id="GDScript_iat6u"]
+resource_name = "RTSCamera"
+script/source = "extends Camera2D
+
+@export_group(\"Zoom\")
+@export var _zoomStep: Vector2
+@export_group(\"Edge Pan\")
+@export var _enableEdgePan: bool = false
+@export var _edgePanSpeed: float = 2.0
+
+var _mouseStartPos: Vector2
+var _screenStartPos: Vector2
+var _dragging = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action(\"rmb\"):
+		if event.is_pressed():
+			_mouseStartPos = event.position
+			_screenStartPos = position
+			_dragging = true
+		else:
+			_dragging = false
+	elif event is InputEventMouseMotion and _dragging:
+		position = zoom * (_mouseStartPos - event.position) + _screenStartPos
+		
+	if event.is_action_pressed(\"zoom_in\"):
+		var mousePos = get_global_mouse_position()
+		zoom = clamp(zoom + _zoomStep, Vector2.ONE * 0.1, Vector2.ONE * 2)
+		position += mousePos - get_global_mouse_position()
+	elif event.is_action_pressed(\"zoom_out\"):
+		var mousePos = get_global_mouse_position()
+		zoom = clamp(zoom - _zoomStep, Vector2.ONE * 0.1, Vector2.ONE * 2)
+		position += mousePos - get_global_mouse_position()
+	pass
+
+func _physics_process(_delta: float) -> void:
+	if _dragging:
+		return
+	
+	if not _enableEdgePan:
+		return
+	
+	var vRect: Rect2 = get_viewport_rect()
+	var edgePanVector: Vector2 = (get_local_mouse_position() / vRect.size) * 2.0
+	var absVector: Vector2 = abs(edgePanVector)
+	
+	var adjustedZoom: Vector2 = Vector2.ONE * 0.99 / zoom
+	if absVector.x < adjustedZoom.x and absVector.y < adjustedZoom.y:
+		return
+		
+	var newDelta: Vector2 = zoom * edgePanVector * _edgePanSpeed
+	var newPos: Vector2 = position + newDelta
+	if newPos.x > limit_left and newPos.x < limit_right and newPos.y > limit_top and newPos.y < limit_right:
+		position += newDelta
+	pass
+"
+
+[sub_resource type="Resource" id="Resource_mkugu"]
+script = ExtResource("13_2jkxv")
+processMenu = ExtResource("12_2f81d")
+
+[sub_resource type="Resource" id="Resource_mdudo"]
+script = ExtResource("14_ghehy")
+
+[sub_resource type="Resource" id="Resource_3ajq6"]
+script = ExtResource("15_jr8bb")
+
+[node name="LV_RestaurantCustomization" type="Node2D" node_paths=PackedStringArray("_buildableSystem", "_camera", "_selectedSprite")]
+script = ExtResource("1_xv8ab")
+_restaurantUpgradeBundle = ExtResource("2_02sq5")
+_buildableSystem = NodePath("TileMapGrass/BuildableSystem")
+_camera = NodePath("Camera2D")
+_upgradeUI = ExtResource("3_l0dke")
+_selectedSprite = NodePath("CanvasLayer/Sprite_SelectedBuildable")
+metadata/_edit_horizontal_guides_ = [-583.0, 580.0]
+metadata/_edit_vertical_guides_ = [961.0, -960.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+editor_draw_limits = true
+script = SubResource("GDScript_iat6u")
+_zoomStep = Vector2(0.1, 0.1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.605274, 0.605274, 0.605274, 1)
+
+[node name="TileMapGrass" type="TileMap" parent="."]
+z_index = -5
+position = Vector2(962, 549)
+tile_set = ExtResource("2_12o72")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(131071, 0, 0, -720891, 0, 0, -917500, 0, 0, -1114110, 0, 0, -917503, 0, 0, -65538, 0, 0, -262145, 0, 0, -262148, 3, 0, -458757, 3, 0, -851970, 0, 0, -1048577, 0, 0, -1310719, 0, 0, -655367, 0, 0, -851973, 0, 0, -1048580, 0, 0, -1245186, 0, 0, -1441793, 0, 0, 917503, 0, 0, 65541, 0, 0, -131065, 0, 0, -327672, 0, 0, 131065, 0, 0, -65544, 0, 0, -262154, 0, 0, -65547, 0, 0, 131062, 0, 0, 1114110, 0, 0, 917500, 0, 0, 720891, 0, 0, 524281, 0, 0, 327672, 0, 0, 1048577, 0, 0, 851970, 0, 0, 655364, 0, 0, 458757, 0, 0, 262151, 0, 0, 65544, 0, 0, -131062, 0, 0, 1310719, 0, 0, 327678, 7, 0, 262145, 7, 65536, -458760, 7, 0, -262151, 7, 0, -65541, 7, 0, 131068, 7, 0, 65538, 7, 65536, -131068, 7, 65536, -327675, 7, 65536, -524281, 7, 65536, 524287, 8, 0, -655364, 3, 0, -458754, 3, 0, -524284, 4, 0, -327678, 5, 0, -131071, 5, 0, -720894, 5, 0, -655361, 6, 0, -524287, 6, 0, 327675, 6, 0, 655361, 6, 0, 524284, 5, 0, 720894, 4, 0, 458754, 4, 0, 262148, 1, 0, 131059, 2, 0, 327669, 2, 0, 524278, 2, 0, 720888, 2, 0, 917497, 2, 0, 1114107, 2, 0, 1310716, 2, 0, 1507326, 2, 0, 1703935, 2, 0, 1441793, 2, 0, 1245186, 2, 0, 1048580, 2, 0, 851973, 2, 0, 655367, 2, 0, 458760, 2, 0, 262154, 2, 0, 65547, 2, 0, -65550, 2, 0, -262157, 2, 0, -458763, 2, 0, -851976, 2, 0, -1048583, 2, 0, -1245189, 2, 0, -1441796, 2, 0, -1638402, 2, 0, -1835009, 2, 0, -1703935, 2, 0, -1507326, 2, 0, -1310716, 2, 0, -1114107, 2, 0, -917497, 2, 0, -524278, 2, 0, -327669, 2, 0, -131059, 2, 0, 131056, 2, 0, 327666, 2, 0, 524275, 2, 0, 720885, 2, 0, 917494, 2, 0, 1114104, 2, 0, 1310713, 2, 0, 1507323, 2, 0, 1703932, 2, 0, 1900542, 2, 0, 2097151, 2, 0, 1835009, 2, 0, 1638402, 2, 0, 1441796, 2, 0, 1245189, 2, 0, 1048583, 2, 0, 851976, 2, 0, 655370, 2, 0, 458763, 2, 0, 262157, 2, 0, 65550, 2, 0, -1048586, 2, 0, -1245192, 2, 0, -655373, 2, 0, -458766, 2, 0, -262160, 2, 0, -65553, 2, 0, -1441799, 2, 0, -1638405, 2, 0, -1835012, 2, 0, -2031618, 2, 0, -2228225, 2, 0, -2097151, 2, 0, -1900542, 2, 0, -1703932, 2, 0, -1507323, 2, 0, -1310713, 2, 0, -1114104, 2, 0, -720885, 2, 0, -524275, 2, 0, -327666, 2, 0, -131056, 2, 0, 131053, 2, 0, 327663, 2, 0, 524272, 2, 0, 720882, 2, 0, 917491, 2, 0, 1114101, 2, 0, 1310710, 2, 0, 1507320, 2, 0, 1703929, 2, 0, 1900539, 2, 0, 2097148, 2, 0, 2293758, 2, 0, 2490367, 2, 0, 2228225, 2, 0, 2031618, 2, 0, 1835012, 2, 0, 1638405, 2, 0, 1441799, 2, 0, 1245192, 2, 0, 1048586, 2, 0, 851979, 2, 0, 655373, 2, 0, 458766, 2, 0, 262160, 2, 0, 65553, 2, 0, -65556, 2, 0, -262163, 2, 0, -458769, 2, 0, -655376, 2, 0, -851982, 2, 0, -1245195, 2, 0, -1441802, 2, 0, -1638408, 2, 0, -1835015, 2, 0, -2031621, 2, 0, -2228228, 2, 0, -2424834, 2, 0, -2621441, 2, 0, -2490367, 2, 0, -2293758, 2, 0, -2097148, 2, 0, -1900539, 2, 0, -1703929, 2, 0, -1507320, 2, 0, -1310710, 2, 0, -917491, 2, 0, -720882, 2, 0, -524272, 2, 0, -327663, 2, 0, -131053, 2, 0, -720888, 7, 65536, -917494, 7, 65536, -1114101, 7, 65536, -655370, 7, 0, -851979, 7, 0, -1048589, 7, 0)
+
+[node name="Foliage" type="Node2D" parent="TileMapGrass"]
+position = Vector2(-761, 1410)
+scale = Vector2(0.5, 0.5)
+
+[node name="TScene1Bush2" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1420, -604)
+texture = ExtResource("3_6c0b0")
+
+[node name="TScene1Bush5" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(2612, -746)
+texture = ExtResource("4_6uka3")
+
+[node name="TScene1BananaTree2" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1116, -952)
+texture = ExtResource("5_tou8b")
+
+[node name="TScene1Fern1" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(166, -1628)
+texture = ExtResource("6_ryhli")
+
+[node name="TScene1Bush3" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(2626, -1632)
+texture = ExtResource("7_qgyx3")
+
+[node name="TScene1Grass6" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(198, -738)
+texture = ExtResource("8_k36t7")
+
+[node name="BuildableSystem" type="Node2D" parent="TileMapGrass" node_paths=PackedStringArray("_root2D", "_layerHolder") groups=["BuildableSystem"]]
+position = Vector2(-1660, -700)
+script = ExtResource("9_mbejy")
+_root2D = NodePath(".")
+_gridData = ExtResource("10_1kenq")
+_layerHolder = NodePath("LayerHolder")
+_cursor = ExtResource("11_i8174")
+_interactionMapping = {
+"Build": SubResource("Resource_mkugu"),
+"Delete": SubResource("Resource_mdudo"),
+"Move": SubResource("Resource_3ajq6")
+}
+
+[node name="LayerHolder" type="Node2D" parent="TileMapGrass/BuildableSystem"]
+
+[node name="Terrain" type="Node2D" parent="TileMapGrass/BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="Floor" type="Node2D" parent="TileMapGrass/BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="Asset" type="Node2D" parent="TileMapGrass/BuildableSystem/LayerHolder" groups=["BuildableLayer.Asset"]]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprite_SelectedBuildable" type="Sprite2D" parent="CanvasLayer"]

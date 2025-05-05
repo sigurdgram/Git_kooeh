@@ -1,0 +1,1364 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_q636o"]
+
+[resource]
+script = ExtResource("1_q636o")
+using_states = PackedStringArray()
+titles = {
+"Prologue10": "77",
+"Prologue11": "83",
+"Prologue11_2": "151",
+"Prologue12": "94",
+"Prologue13": "98",
+"Prologue14": "103",
+"Prologue15": "113",
+"Prologue16": "117",
+"Prologue17": "127",
+"Prologue18": "133",
+"Prologue19": "138",
+"Prologue2": "1",
+"Prologue20": "143",
+"Prologue21": "147",
+"Prologue2_1": "8",
+"Prologue2_2": "12",
+"Prologue3": "23",
+"Prologue4": "40",
+"Prologue5": "43",
+"Prologue6": "46",
+"Prologue7": "49",
+"Prologue8": "53",
+"Prologue9": "73"
+}
+character_names = PackedStringArray("Speaker0", "Speaker1")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "Speaker0",
+&"id": "1",
+&"next_id": "2",
+&"text": "[do emote.emit(\"Happy\")]Hello.",
+&"translation_key": "t6a00058d51",
+&"type": "dialogue"
+},
+"10": {
+&"id": "10",
+&"next_id": "11",
+&"type": ""
+},
+"100": {
+&"id": "100",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"101": {
+&"id": "101",
+&"next_id": "102",
+&"type": ""
+},
+"102": {
+&"id": "102",
+&"next_id": "103",
+&"type": "title"
+},
+"103": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "CampaignSystem"
+}, {
+&"i": 17,
+&"type": &"dot"
+}, {
+&"i": 18,
+&"type": &"variable",
+&"value": "contextString"
+}, {
+&"i": 32,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 35,
+&"type": &"string",
+&"value": "0"
+}])
+},
+&"id": "103",
+&"next_id": "104",
+&"next_id_after": "109",
+&"next_sibling_id": "105",
+&"type": "condition"
+},
+"104": {
+&"character": "Speaker1",
+&"id": "104",
+&"next_id": "109",
+&"text": "[do emote.emit(\"Awkward\")]Hmm. Maybe tomorrow'll be a better day for tossing.",
+&"translation_key": "tbd8c799c10",
+&"type": "dialogue"
+},
+"105": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 5,
+&"type": &"variable",
+&"value": "CampaignSystem"
+}, {
+&"i": 19,
+&"type": &"dot"
+}, {
+&"i": 20,
+&"type": &"variable",
+&"value": "contextString"
+}, {
+&"i": 34,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 37,
+&"type": &"string",
+&"value": "1"
+}])
+},
+&"id": "105",
+&"next_id": "106",
+&"next_id_after": "109",
+&"next_sibling_id": "107",
+&"type": "condition"
+},
+"106": {
+&"character": "Speaker1",
+&"id": "106",
+&"next_id": "109",
+&"text": "[do emote.emit(\"Happy\")]Nice toss!",
+&"translation_key": "tde057f0b7e",
+&"type": "dialogue"
+},
+"107": {
+&"condition": {},
+&"id": "107",
+&"next_id": "108",
+&"next_id_after": "109",
+&"type": "condition"
+},
+"108": {
+&"character": "Speaker1",
+&"id": "108",
+&"next_id": "109",
+&"text": "[do emote.emit(\"Excited\")]What a toss! Blessings be upon you!",
+&"translation_key": "t1ed0fc668f",
+&"type": "dialogue"
+},
+"109": {
+&"character": "Speaker1",
+&"id": "109",
+&"next_id": "110",
+&"text": "[do emote.emit(\"Shocked\")]Oh no! It's getting late. [do emote.emit(\"Neutral\")]We better get to the stall now.",
+&"translation_key": "t3425feecc7",
+&"type": "dialogue"
+},
+"11": {
+&"id": "11",
+&"next_id": "12",
+&"type": "title"
+},
+"110": {
+&"id": "110",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"111": {
+&"id": "111",
+&"next_id": "112",
+&"type": ""
+},
+"112": {
+&"id": "112",
+&"next_id": "113",
+&"type": "title"
+},
+"113": {
+&"id": "113",
+&"next_id": "114",
+&"text": "Interact with the [color=dark green]Sign Board[/color] to get to the stall.",
+&"translation_key": "t8a32ae4048",
+&"type": "dialogue"
+},
+"114": {
+&"id": "114",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"115": {
+&"id": "115",
+&"next_id": "116",
+&"type": ""
+},
+"116": {
+&"id": "116",
+&"next_id": "117",
+&"type": "title"
+},
+"117": {
+&"character": "Speaker1",
+&"id": "117",
+&"next_id": "118",
+&"text": "[do emote.emit(\"Neutral\")]This is it!",
+&"translation_key": "tb56f9365d2",
+&"type": "dialogue"
+},
+"118": {
+&"character": "Speaker1",
+&"id": "118",
+&"next_id": "119",
+&"text": "I'll spread the word around for people to drop by.",
+&"translation_key": "t09e968f244",
+&"type": "dialogue"
+},
+"119": {
+&"character": "Speaker1",
+&"id": "119",
+&"next_id": "120",
+&"text": "I'm sure someone will show up.",
+&"translation_key": "t1a9f2a4cea",
+&"type": "dialogue"
+},
+"12": {
+&"character": "Speaker0",
+&"id": "12",
+&"next_id": "13",
+&"text": "[do emote.emit(\"Happy\")]I'm Tana. Nice to meet you, stranger.",
+&"translation_key": "t799204122a",
+&"type": "dialogue"
+},
+"120": {
+&"character": "Speaker1",
+&"id": "120",
+&"next_id": "121",
+&"text": "Really.",
+&"translation_key": "t3571df0721",
+&"type": "dialogue"
+},
+"121": {
+&"character": "Speaker1",
+&"id": "121",
+&"next_id": "122",
+&"text": "So go prepare some dishes and drinks!",
+&"translation_key": "td45abfe5c7",
+&"type": "dialogue"
+},
+"122": {
+&"character": "Speaker1",
+&"id": "122",
+&"next_id": "123",
+&"text": "Especially some kuih lapis.",
+&"translation_key": "tcfeb3b0b56",
+&"type": "dialogue"
+},
+"123": {
+&"character": "Speaker1",
+&"id": "123",
+&"next_id": "124",
+&"text": "Better to have something to serve than nothing at all when a hungry person comes over!",
+&"translation_key": "te81a05eeec",
+&"type": "dialogue"
+},
+"124": {
+&"id": "124",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"125": {
+&"id": "125",
+&"next_id": "126",
+&"type": ""
+},
+"126": {
+&"id": "126",
+&"next_id": "127",
+&"type": "title"
+},
+"127": {
+&"id": "127",
+&"next_id": "128",
+&"text": "[color=dark green]Interact[/color] with the stove and select [color=dark green]Cook[/color] to start cooking.",
+&"translation_key": "tfcb963280d",
+&"type": "dialogue"
+},
+"128": {
+&"id": "128",
+&"next_id": "129",
+&"text": "Cook some kuih lapis.",
+&"translation_key": "t29bf1275d3",
+&"type": "dialogue"
+},
+"129": {
+&"id": "129",
+&"next_id": "130",
+&"text": "Wait for the cooking to complete.",
+&"translation_key": "tcb7bae1cea",
+&"type": "dialogue"
+},
+"13": {
+&"character": "Speaker1",
+&"id": "13",
+&"next_id": "14",
+&"text": "[do emote.emit(\"Confused\")]Oh! Do tapirs not talk where you're from? You must be a visitor from the Other World!",
+&"translation_key": "t0a06f13387",
+&"type": "dialogue"
+},
+"130": {
+&"id": "130",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"131": {
+&"id": "131",
+&"next_id": "132",
+&"type": ""
+},
+"132": {
+&"id": "132",
+&"next_id": "133",
+&"type": "title"
+},
+"133": {
+&"character": "Speaker1",
+&"id": "133",
+&"next_id": "134",
+&"text": "[do emote.emit(\"Bashful\")]Can I eat-",
+&"translation_key": "t76d7e7751a",
+&"type": "dialogue"
+},
+"134": {
+&"character": "Speaker1",
+&"id": "134",
+&"next_id": "135",
+&"text": "[do emote.emit(\"Happy\")]I mean, it looks so good! Why don't you set it over on the display counter for customers to see?",
+&"translation_key": "t50375fc140",
+&"type": "dialogue"
+},
+"135": {
+&"id": "135",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"136": {
+&"id": "136",
+&"next_id": "137",
+&"type": ""
+},
+"137": {
+&"id": "137",
+&"next_id": "138",
+&"type": "title"
+},
+"138": {
+&"id": "138",
+&"next_id": "139",
+&"text": "[color=dark green]Interact[/color] with the stove to pick up the dishes.",
+&"translation_key": "t7e6f32ac83",
+&"type": "dialogue"
+},
+"139": {
+&"id": "139",
+&"next_id": "140",
+&"text": "[color=dark green]Interact[/color] with the display tray to place the dishes.",
+&"translation_key": "t8ecf4ca9fe",
+&"type": "dialogue"
+},
+"14": {
+&"character": "Speaker1",
+&"id": "14",
+&"next_id": "15",
+&"text": "[do emote.emit(\"Neutral\")]Welcome to Kooeh, a land of delectable food and people. My home.",
+&"translation_key": "t5a02401241",
+&"type": "dialogue"
+},
+"140": {
+&"id": "140",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"141": {
+&"id": "141",
+&"next_id": "142",
+&"type": ""
+},
+"142": {
+&"id": "142",
+&"next_id": "143",
+&"type": "title"
+},
+"143": {
+&"character": "Speaker1",
+&"id": "143",
+&"next_id": "144",
+&"text": "[do emote.emit(\"Neutral\")]Think you could prepare a few more items, and you'll be ready to go!",
+&"translation_key": "tfa3dfcb66b",
+&"type": "dialogue"
+},
+"144": {
+&"id": "144",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"145": {
+&"id": "145",
+&"next_id": "146",
+&"type": ""
+},
+"146": {
+&"id": "146",
+&"next_id": "147",
+&"type": "title"
+},
+"147": {
+&"id": "147",
+&"next_id": "148",
+&"text": "Cook one more item.",
+&"translation_key": "t719b570226",
+&"type": "dialogue"
+},
+"148": {
+&"id": "148",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"149": {
+&"id": "149",
+&"next_id": "150",
+&"type": ""
+},
+"15": {
+&"character": "Speaker1",
+&"id": "15",
+&"next_id": "16",
+&"text": "Get back to yours?",
+&"translation_key": "ted19cf8fdd",
+&"type": "dialogue"
+},
+"150": {
+&"id": "150",
+&"next_id": "151",
+&"type": "title"
+},
+"151": {
+&"character": "Speaker1",
+&"id": "151",
+&"next_id": "152",
+&"text": "I'll let you in on a secret. The wishing tree over there is really good at granting wishes!",
+&"translation_key": "tb20c9c9d2d",
+&"type": "dialogue"
+},
+"152": {
+&"character": "Speaker1",
+&"id": "152",
+&"next_id": "153",
+&"text": "Why don't you go make a wish for more ingredients before we start the day?",
+&"translation_key": "t9e8a4d1d6a",
+&"type": "dialogue"
+},
+"153": {
+&"id": "153",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"154": {
+&"id": "154",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"16": {
+&"character": "Speaker1",
+&"id": "16",
+&"next_id": "17",
+&"text": "Visitors have to regain what they've lost in order to return to their world...",
+&"translation_key": "t94caa11834",
+&"type": "dialogue"
+},
+"17": {
+&"character": "Speaker1",
+&"id": "17",
+&"next_id": "18",
+&"text": "Pages from your family's recipe book?",
+&"translation_key": "t75458bef8a",
+&"type": "dialogue"
+},
+"18": {
+&"character": "Speaker1",
+&"id": "18",
+&"next_id": "19",
+&"text": "...",
+&"translation_key": "t0efbadecf8",
+&"type": "dialogue"
+},
+"19": {
+&"character": "Speaker1",
+&"id": "19",
+&"next_id": "20",
+&"text": "[do emote.emit(\"Excited\")]I have an idea! Come along!",
+&"translation_key": "t1089720ece",
+&"type": "dialogue"
+},
+"2": {
+&"character": "Speaker0",
+&"id": "2",
+&"next_id": "3",
+&"text": "[do emote.emit(\"Shocked\")]Woah there!",
+&"translation_key": "t842e0eabd1",
+&"type": "dialogue"
+},
+"20": {
+&"id": "20",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"21": {
+&"id": "21",
+&"next_id": "22",
+&"type": ""
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": "title"
+},
+"23": {
+&"character": "Speaker1",
+&"id": "23",
+&"next_id": "24",
+&"text": "[do emote.emit(\"Excited\")]Ta-da!",
+&"translation_key": "te59f41331a",
+&"type": "dialogue"
+},
+"24": {
+&"character": "Speaker1",
+&"id": "24",
+&"next_id": "25",
+&"text": "[do emote.emit(\"Neutral\")]I know, it doesn't look like much now.",
+&"translation_key": "t491bd9935d",
+&"type": "dialogue"
+},
+"25": {
+&"character": "Speaker1",
+&"id": "25",
+&"next_id": "26",
+&"text": "The last owner returned to their world, so you can have it if you'd like.",
+&"translation_key": "t57ba16ca67",
+&"type": "dialogue"
+},
+"26": {
+&"character": "Speaker1",
+&"id": "26",
+&"next_id": "27",
+&"text": "There are many in Kooeh who love to share notes on their favourite foods.",
+&"translation_key": "t2060a3987a",
+&"type": "dialogue"
+},
+"27": {
+&"character": "Speaker1",
+&"id": "27",
+&"next_id": "28",
+&"text": "If you serve food from your recipe book, maybe you'll come across people who know about the lost recipes.",
+&"translation_key": "t172b091dc9",
+&"type": "dialogue"
+},
+"28": {
+&"character": "Speaker1",
+&"id": "28",
+&"next_id": "29",
+&"text": "What's in it for me?",
+&"translation_key": "t02cba68a8e",
+&"type": "dialogue"
+},
+"29": {
+&"character": "Speaker1",
+&"id": "29",
+&"next_id": "30",
+&"text": "Can't a tapir help a non-tapir out?",
+&"translation_key": "td789d94d85",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Speaker0",
+&"id": "3",
+&"next_id": "4",
+&"text": "[do emote.emit(\"Neutral\")]Don't look so scared! I won't hurt you!",
+&"translation_key": "ta79ebee2de",
+&"type": "dialogue"
+},
+"30": {
+&"character": "Speaker1",
+&"id": "30",
+&"next_id": "31",
+&"text": "Well... I do live just behind here.",
+&"translation_key": "t58cc41dd87",
+&"type": "dialogue"
+},
+"31": {
+&"character": "Speaker1",
+&"id": "31",
+&"next_id": "32",
+&"text": "[do emote.emit(\"Awkward\")]It's been lonely since this place shut down.",
+&"translation_key": "tde947d959e",
+&"type": "dialogue"
+},
+"32": {
+&"character": "Speaker1",
+&"id": "32",
+&"next_id": "33",
+&"text": "And having food right next to home is great...",
+&"translation_key": "t86b262b6e9",
+&"type": "dialogue"
+},
+"33": {
+&"character": "Speaker1",
+&"id": "33",
+&"next_id": "34",
+&"text": "[do emote.emit(\"Excited\")]You'll do it?",
+&"translation_key": "td6f1b098e2",
+&"type": "dialogue"
+},
+"34": {
+&"character": "Speaker1",
+&"id": "34",
+&"next_id": "35",
+&"text": "Of course I'll help, let's get started!",
+&"translation_key": "tbb7a5964f5",
+&"type": "dialogue"
+},
+"35": {
+&"character": "Speaker1",
+&"id": "35",
+&"next_id": "36",
+&"text": "[do emote.emit(\"Happy\")]There are still some ingredients lying around. Why don't you whip up some stuff to serve?",
+&"translation_key": "tc81d8c4ddc",
+&"type": "dialogue"
+},
+"36": {
+&"character": "Speaker1",
+&"id": "36",
+&"next_id": "37",
+&"text": "I'll tidy up in the meantime.",
+&"translation_key": "t3895aaf4f4",
+&"type": "dialogue"
+},
+"37": {
+&"id": "37",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"38": {
+&"id": "38",
+&"next_id": "39",
+&"type": ""
+},
+"39": {
+&"id": "39",
+&"next_id": "40",
+&"type": "title"
+},
+"4": {
+&"character": "Speaker0",
+&"id": "4",
+&"next_id": "5",
+&"text": "[do emote.emit(\"Neutral\")]Are you hurt? Can you move?",
+&"translation_key": "tbf0b55ceeb",
+&"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"next_id": "42",
+&"text": "To prepare a dish or drink, you'll need a recipe.",
+&"translation_key": "t4a8a3ad64d",
+&"type": "dialogue"
+},
+"41": {
+&"id": "41",
+&"next_id": "42",
+&"type": ""
+},
+"42": {
+&"id": "42",
+&"next_id": "43",
+&"type": "title"
+},
+"43": {
+&"id": "43",
+&"next_id": "45",
+&"text": "Select [color=dark green]Kuih Lapis[/color].",
+&"translation_key": "tb3227f9d9a",
+&"type": "dialogue"
+},
+"44": {
+&"id": "44",
+&"next_id": "45",
+&"type": ""
+},
+"45": {
+&"id": "45",
+&"next_id": "46",
+&"type": "title"
+},
+"46": {
+&"id": "46",
+&"next_id": "48",
+&"text": "Learn the recipe by selecting [color=dark green]Cook[/color].",
+&"translation_key": "tb29cea40e4",
+&"type": "dialogue"
+},
+"47": {
+&"id": "47",
+&"next_id": "48",
+&"type": ""
+},
+"48": {
+&"id": "48",
+&"next_id": "49",
+&"type": "title"
+},
+"49": {
+&"id": "49",
+&"next_id": "50",
+&"text": "Follow the steps as accurately as you can for the recipe to turn out well!",
+&"translation_key": "tbda3908ce3",
+&"type": "dialogue"
+},
+"5": {
+&"id": "5",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"50": {
+&"id": "50",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"51": {
+&"id": "51",
+&"next_id": "52",
+&"type": ""
+},
+"52": {
+&"id": "52",
+&"next_id": "53",
+&"type": "title"
+},
+"53": {
+&"character": "Speaker1",
+&"id": "53",
+&"next_id": "54",
+&"text": "[do emote.emit(\"Excited\")]Something smells nice!",
+&"translation_key": "td710b5481e",
+&"type": "dialogue"
+},
+"54": {
+&"character": "Speaker1",
+&"id": "54",
+&"next_id": "55",
+&"text": "[do emote.emit(\"Intrigued\")]Kuih lapis?",
+&"translation_key": "tad6f1f01b7",
+&"type": "dialogue"
+},
+"55": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 3,
+&"type": &"variable",
+&"value": "CampaignSystem"
+}, {
+&"i": 17,
+&"type": &"dot"
+}, {
+&"i": 18,
+&"type": &"variable",
+&"value": "contextString"
+}, {
+&"i": 32,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 35,
+&"type": &"string",
+&"value": "0"
+}])
+},
+&"id": "55",
+&"next_id": "56",
+&"next_id_after": "69",
+&"next_sibling_id": "59",
+&"type": "condition"
+},
+"56": {
+&"character": "Speaker1",
+&"id": "56",
+&"next_id": "57",
+&"text": "[do emote.emit(\"Bashful\")]Smell nice but the taste doesn't taste quite the same...",
+&"translation_key": "t9229fe0782",
+&"type": "dialogue"
+},
+"57": {
+&"character": "Speaker1",
+&"id": "57",
+&"next_id": "58",
+&"text": "You can try cooking it again another time to improve the taste.",
+&"translation_key": "t01423be487",
+&"type": "dialogue"
+},
+"58": {
+&"character": "Speaker1",
+&"id": "58",
+&"next_id": "69",
+&"text": "People pay more for good food!",
+&"translation_key": "td9359b0a00",
+&"type": "dialogue"
+},
+"59": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 5,
+&"type": &"variable",
+&"value": "CampaignSystem"
+}, {
+&"i": 19,
+&"type": &"dot"
+}, {
+&"i": 20,
+&"type": &"variable",
+&"value": "contextString"
+}, {
+&"i": 34,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 37,
+&"type": &"string",
+&"value": "1"
+}])
+},
+&"id": "59",
+&"next_id": "60",
+&"next_id_after": "69",
+&"next_sibling_id": "63",
+&"type": "condition"
+},
+"6": {
+&"id": "6",
+&"next_id": "7",
+&"type": ""
+},
+"60": {
+&"character": "Speaker1",
+&"id": "60",
+&"next_id": "61",
+&"text": "[do emote.emit(\"Bashful\")]Not bad. Some practice will make it better.",
+&"translation_key": "tc634f35f04",
+&"type": "dialogue"
+},
+"61": {
+&"character": "Speaker1",
+&"id": "61",
+&"next_id": "62",
+&"text": "You can try cooking it again another time to improve the taste.",
+&"translation_key": "t07906bd1b1",
+&"type": "dialogue"
+},
+"62": {
+&"character": "Speaker1",
+&"id": "62",
+&"next_id": "69",
+&"text": "People pay more for good food!",
+&"translation_key": "t0004fb6103",
+&"type": "dialogue"
+},
+"63": {
+&"condition": {
+&"expression": Array[Dictionary]([{
+&"i": 5,
+&"type": &"variable",
+&"value": "CampaignSystem"
+}, {
+&"i": 19,
+&"type": &"dot"
+}, {
+&"i": 20,
+&"type": &"variable",
+&"value": "contextString"
+}, {
+&"i": 34,
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"i": 37,
+&"type": &"string",
+&"value": "2"
+}])
+},
+&"id": "63",
+&"next_id": "64",
+&"next_id_after": "69",
+&"next_sibling_id": "67",
+&"type": "condition"
+},
+"64": {
+&"character": "Speaker1",
+&"id": "64",
+&"next_id": "65",
+&"text": "[do emote.emit(\"Excited\")]Tasty!",
+&"translation_key": "t36f8cff01a",
+&"type": "dialogue"
+},
+"65": {
+&"character": "Speaker1",
+&"id": "65",
+&"next_id": "66",
+&"text": "If you want to perfect it, you can try cooking it again.",
+&"translation_key": "t9bd81fd03e",
+&"type": "dialogue"
+},
+"66": {
+&"character": "Speaker1",
+&"id": "66",
+&"next_id": "69",
+&"text": "People pay more for good food!",
+&"translation_key": "tcc1bb59ad2",
+&"type": "dialogue"
+},
+"67": {
+&"condition": {},
+&"id": "67",
+&"next_id": "68",
+&"next_id_after": "69",
+&"type": "condition"
+},
+"68": {
+&"character": "Speaker1",
+&"id": "68",
+&"next_id": "69",
+&"text": "[do emote.emit(\"Neutral\")]Tastes perfect!",
+&"translation_key": "t1548cfb0b8",
+&"type": "dialogue"
+},
+"69": {
+&"character": "Speaker1",
+&"id": "69",
+&"next_id": "70",
+&"text": "[do emote.emit(\"Happy\")]If you can master the other recipes, I think we can give this thing a trial run!",
+&"translation_key": "t1018f1ce7e",
+&"type": "dialogue"
+},
+"7": {
+&"id": "7",
+&"next_id": "8",
+&"type": "title"
+},
+"70": {
+&"id": "70",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"71": {
+&"id": "71",
+&"next_id": "72",
+&"type": ""
+},
+"72": {
+&"id": "72",
+&"next_id": "73",
+&"type": "title"
+},
+"73": {
+&"id": "73",
+&"next_id": "74",
+&"text": "Learn the other recipes.",
+&"translation_key": "t13e2b602ca",
+&"type": "dialogue"
+},
+"74": {
+&"id": "74",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"75": {
+&"id": "75",
+&"next_id": "76",
+&"type": ""
+},
+"76": {
+&"id": "76",
+&"next_id": "77",
+&"type": "title"
+},
+"77": {
+&"character": "Speaker1",
+&"id": "77",
+&"next_id": "78",
+&"text": "[do emote.emit(\"Neutral\")]It's getting late, why don't you get some rest?",
+&"translation_key": "t3acf7df65d",
+&"type": "dialogue"
+},
+"78": {
+&"character": "Speaker1",
+&"id": "78",
+&"next_id": "79",
+&"text": "I'll see you first thing in the morning.",
+&"translation_key": "taf0f12441d",
+&"type": "dialogue"
+},
+"79": {
+&"character": "Speaker1",
+&"id": "79",
+&"next_id": "80",
+&"text": "[do emote.emit(\"Happy\")]Nighty night!",
+&"translation_key": "t3477d7e88a",
+&"type": "dialogue"
+},
+"8": {
+&"id": "8",
+&"next_id": "9",
+&"text": "Use [input]act_up[/input][input]act_down[/input][input]act_left[/input][input]act_right[/input] to move your character.",
+&"translation_key": "t2be6d6951a",
+&"type": "dialogue"
+},
+"80": {
+&"id": "80",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"81": {
+&"id": "81",
+&"next_id": "82",
+&"type": ""
+},
+"82": {
+&"id": "82",
+&"next_id": "83",
+&"type": "title"
+},
+"83": {
+&"character": "Speaker1",
+&"id": "83",
+&"next_id": "84",
+&"text": "[do emote.emit(\"Happy\")]Rise and shine!",
+&"translation_key": "tf2fc563f80",
+&"type": "dialogue"
+},
+"84": {
+&"character": "Speaker1",
+&"id": "84",
+&"next_id": "85",
+&"text": "[do emote.emit(\"Neutral\")]We're here to get ingredients for the day.",
+&"translation_key": "t97a35a16c4",
+&"type": "dialogue"
+},
+"85": {
+&"character": "Speaker1",
+&"id": "85",
+&"next_id": "86",
+&"text": "I gave some of the kuih lapis you made to the temple's owner. They have their own kitchen but it gets overstocked sometimes.",
+&"translation_key": "t84400d2446",
+&"type": "dialogue"
+},
+"86": {
+&"character": "Speaker1",
+&"id": "86",
+&"next_id": "87",
+&"text": "He offered to pass those ingredients to you...",
+&"translation_key": "t6becbc04fc",
+&"type": "dialogue"
+},
+"87": {
+&"character": "Speaker1",
+&"id": "87",
+&"next_id": "88",
+&"text": "And hopes you'll help out with the food during festive days.",
+&"translation_key": "td2ca2bc549",
+&"type": "dialogue"
+},
+"88": {
+&"character": "Speaker1",
+&"id": "88",
+&"next_id": "89",
+&"text": "Anyway, you can grab the ingredients of the tray!",
+&"translation_key": "t4e2ee5f351",
+&"type": "dialogue"
+},
+"89": {
+&"character": "Speaker1",
+&"id": "89",
+&"next_id": "90",
+&"text": "Sweet!",
+&"translation_key": "tee085e1571",
+&"type": "dialogue"
+},
+"9": {
+&"id": "9",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"90": {
+&"character": "Speaker1",
+&"id": "90",
+&"next_id": "91",
+&"text": "When you have earnings to spend, you can get extra ingredients as well.",
+&"translation_key": "tc1a72791b2",
+&"type": "dialogue"
+},
+"91": {
+&"id": "91",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"92": {
+&"id": "92",
+&"next_id": "93",
+&"type": ""
+},
+"93": {
+&"id": "93",
+&"next_id": "94",
+&"type": "title"
+},
+"94": {
+&"id": "94",
+&"next_id": "95",
+&"text": "Walk up to the Wishing Tree and [color=dark green]Interact[/color] with it.",
+&"translation_key": "t986f0f0149",
+&"type": "dialogue"
+},
+"95": {
+&"id": "95",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"96": {
+&"id": "96",
+&"next_id": "97",
+&"type": ""
+},
+"97": {
+&"id": "97",
+&"next_id": "98",
+&"type": "title"
+},
+"98": {
+&"character": "Speaker1",
+&"id": "98",
+&"next_id": "99",
+&"text": "[do emote.emit(\"Neutral\")]Give it your best throw!",
+&"translation_key": "t1ba10e774d",
+&"type": "dialogue"
+},
+"99": {
+&"character": "Speaker1",
+&"id": "99",
+&"next_id": "100",
+&"text": "The higher it goes, the greater the blessings!",
+&"translation_key": "ta7127acf39",
+&"type": "dialogue"
+}
+}
+raw_text = "~ Prologue2
+Speaker0: [do emote.emit(\"Happy\")]Hello. [ID:t6a00058d51]
+Speaker0: [do emote.emit(\"Shocked\")]Woah there! [ID:t842e0eabd1]
+Speaker0: [do emote.emit(\"Neutral\")]Don't look so scared! I won't hurt you! [ID:ta79ebee2de]
+Speaker0: [do emote.emit(\"Neutral\")]Are you hurt? Can you move? [ID:tbf0b55ceeb]
+=> END
+
+~ Prologue2_1
+Use [input]act_up[/input][input]act_down[/input][input]act_left[/input][input]act_right[/input] to move your character. [ID:t2be6d6951a]
+=> END
+
+~ Prologue2_2
+Speaker0: [do emote.emit(\"Happy\")]I'm Tana. Nice to meet you, stranger. [ID:t799204122a]
+Speaker1: [do emote.emit(\"Confused\")]Oh! Do tapirs not talk where you're from? You must be a visitor from the Other World! [ID:t0a06f13387]
+Speaker1: [do emote.emit(\"Neutral\")]Welcome to Kooeh, a land of delectable food and people. My home. [ID:t5a02401241]
+Speaker1: Get back to yours? [ID:ted19cf8fdd]
+Speaker1: Visitors have to regain what they've lost in order to return to their world... [ID:t94caa11834]
+Speaker1: Pages from your family's recipe book? [ID:t75458bef8a]
+Speaker1: ... [ID:t0efbadecf8]
+Speaker1: [do emote.emit(\"Excited\")]I have an idea! Come along! [ID:t1089720ece]
+=> END
+
+~ Prologue3
+Speaker1: [do emote.emit(\"Excited\")]Ta-da! [ID:te59f41331a]
+Speaker1: [do emote.emit(\"Neutral\")]I know, it doesn't look like much now. [ID:t491bd9935d]
+Speaker1: The last owner returned to their world, so you can have it if you'd like. [ID:t57ba16ca67]
+Speaker1: There are many in Kooeh who love to share notes on their favourite foods. [ID:t2060a3987a]
+Speaker1: If you serve food from your recipe book, maybe you'll come across people who know about the lost recipes. [ID:t172b091dc9]
+Speaker1: What's in it for me? [ID:t02cba68a8e]
+Speaker1: Can't a tapir help a non-tapir out? [ID:td789d94d85]
+Speaker1: Well... I do live just behind here. [ID:t58cc41dd87]
+Speaker1: [do emote.emit(\"Awkward\")]It's been lonely since this place shut down. [ID:tde947d959e]
+Speaker1: And having food right next to home is great... [ID:t86b262b6e9]
+Speaker1: [do emote.emit(\"Excited\")]You'll do it? [ID:td6f1b098e2]
+Speaker1: Of course I'll help, let's get started! [ID:tbb7a5964f5]
+Speaker1: [do emote.emit(\"Happy\")]There are still some ingredients lying around. Why don't you whip up some stuff to serve? [ID:tc81d8c4ddc]
+Speaker1: I'll tidy up in the meantime. [ID:t3895aaf4f4]
+=> END
+
+~ Prologue4
+To prepare a dish or drink, you'll need a recipe. [ID:t4a8a3ad64d]
+
+~ Prologue5
+Select [color=dark green]Kuih Lapis[/color]. [ID:tb3227f9d9a]
+
+~ Prologue6
+Learn the recipe by selecting [color=dark green]Cook[/color]. [ID:tb29cea40e4]
+
+~ Prologue7
+Follow the steps as accurately as you can for the recipe to turn out well! [ID:tbda3908ce3]
+=> END
+
+~ Prologue8
+Speaker1: [do emote.emit(\"Excited\")]Something smells nice! [ID:td710b5481e]
+Speaker1: [do emote.emit(\"Intrigued\")]Kuih lapis? [ID:tad6f1f01b7]
+if CampaignSystem.contextString == \"0\":
+	Speaker1: [do emote.emit(\"Bashful\")]Smell nice but the taste doesn't taste quite the same... [ID:t9229fe0782]
+	Speaker1: You can try cooking it again another time to improve the taste. [ID:t01423be487]
+	Speaker1: People pay more for good food! [ID:td9359b0a00]
+elif CampaignSystem.contextString == \"1\":
+	Speaker1: [do emote.emit(\"Bashful\")]Not bad. Some practice will make it better. [ID:tc634f35f04]
+	Speaker1: You can try cooking it again another time to improve the taste. [ID:t07906bd1b1]
+	Speaker1: People pay more for good food! [ID:t0004fb6103]
+elif CampaignSystem.contextString == \"2\":
+	Speaker1: [do emote.emit(\"Excited\")]Tasty! [ID:t36f8cff01a]
+	Speaker1: If you want to perfect it, you can try cooking it again. [ID:t9bd81fd03e]
+	Speaker1: People pay more for good food! [ID:tcc1bb59ad2]
+else:
+	Speaker1: [do emote.emit(\"Neutral\")]Tastes perfect! [ID:t1548cfb0b8]
+Speaker1: [do emote.emit(\"Happy\")]If you can master the other recipes, I think we can give this thing a trial run! [ID:t1018f1ce7e]
+=> END
+
+~ Prologue9
+Learn the other recipes. [ID:t13e2b602ca]
+=> END
+
+~ Prologue10
+Speaker1: [do emote.emit(\"Neutral\")]It's getting late, why don't you get some rest? [ID:t3acf7df65d]
+Speaker1: I'll see you first thing in the morning. [ID:taf0f12441d]
+Speaker1: [do emote.emit(\"Happy\")]Nighty night! [ID:t3477d7e88a]
+=> END
+
+~ Prologue11
+Speaker1: [do emote.emit(\"Happy\")]Rise and shine! [ID:tf2fc563f80]
+Speaker1: [do emote.emit(\"Neutral\")]We're here to get ingredients for the day. [ID:t97a35a16c4]
+Speaker1: I gave some of the kuih lapis you made to the temple's owner. They have their own kitchen but it gets overstocked sometimes. [ID:t84400d2446]
+Speaker1: He offered to pass those ingredients to you... [ID:t6becbc04fc]
+Speaker1: And hopes you'll help out with the food during festive days. [ID:td2ca2bc549]
+Speaker1: Anyway, you can grab the ingredients of the tray! [ID:t4e2ee5f351]
+Speaker1: Sweet! [ID:tee085e1571]
+Speaker1: When you have earnings to spend, you can get extra ingredients as well. [ID:tc1a72791b2]
+=> END
+
+~ Prologue12
+Walk up to the Wishing Tree and [color=dark green]Interact[/color] with it. [ID:t986f0f0149]
+=> END
+
+~ Prologue13
+Speaker1: [do emote.emit(\"Neutral\")]Give it your best throw! [ID:t1ba10e774d]
+Speaker1: The higher it goes, the greater the blessings! [ID:ta7127acf39]
+=> END
+
+~ Prologue14
+if CampaignSystem.contextString == \"0\":
+	Speaker1: [do emote.emit(\"Awkward\")]Hmm. Maybe tomorrow'll be a better day for tossing. [ID:tbd8c799c10]
+elif CampaignSystem.contextString == \"1\":
+	Speaker1: [do emote.emit(\"Happy\")]Nice toss! [ID:tde057f0b7e]
+else:
+	Speaker1: [do emote.emit(\"Excited\")]What a toss! Blessings be upon you! [ID:t1ed0fc668f]
+Speaker1: [do emote.emit(\"Shocked\")]Oh no! It's getting late. [do emote.emit(\"Neutral\")]We better get to the stall now. [ID:t3425feecc7]
+=> END
+
+~ Prologue15
+Interact with the [color=dark green]Sign Board[/color] to get to the stall. [ID:t8a32ae4048]
+=> END
+
+~ Prologue16
+Speaker1: [do emote.emit(\"Neutral\")]This is it! [ID:tb56f9365d2]
+Speaker1: I'll spread the word around for people to drop by. [ID:t09e968f244]
+Speaker1: I'm sure someone will show up. [ID:t1a9f2a4cea]
+Speaker1: Really. [ID:t3571df0721]
+Speaker1: So go prepare some dishes and drinks! [ID:td45abfe5c7]
+Speaker1: Especially some kuih lapis. [ID:tcfeb3b0b56]
+Speaker1: Better to have something to serve than nothing at all when a hungry person comes over! [ID:te81a05eeec]
+=> END
+
+~ Prologue17
+[color=dark green]Interact[/color] with the stove and select [color=dark green]Cook[/color] to start cooking. [ID:tfcb963280d]
+Cook some kuih lapis. [ID:t29bf1275d3]
+Wait for the cooking to complete. [ID:tcb7bae1cea]
+=> END
+
+~ Prologue18
+Speaker1: [do emote.emit(\"Bashful\")]Can I eat- [ID:t76d7e7751a]
+Speaker1: [do emote.emit(\"Happy\")]I mean, it looks so good! Why don't you set it over on the display counter for customers to see? [ID:t50375fc140]
+=> END
+
+~ Prologue19
+[color=dark green]Interact[/color] with the stove to pick up the dishes. [ID:t7e6f32ac83]
+[color=dark green]Interact[/color] with the display tray to place the dishes. [ID:t8ecf4ca9fe]
+=> END
+
+~ Prologue20
+Speaker1: [do emote.emit(\"Neutral\")]Think you could prepare a few more items, and you'll be ready to go! [ID:tfa3dfcb66b]
+=> END
+
+~ Prologue21
+Cook one more item. [ID:t719b570226]
+=> END
+
+~ Prologue11_2
+Speaker1: I'll let you in on a secret. The wishing tree over there is really good at granting wishes! [ID:tb20c9c9d2d]
+Speaker1: Why don't you go make a wish for more ingredients before we start the day? [ID:t9e8a4d1d6a]
+=> END"
+metadata/dialogue_manager_version = "3.4.0"

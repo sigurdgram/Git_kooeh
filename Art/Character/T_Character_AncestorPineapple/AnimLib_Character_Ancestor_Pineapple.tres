@@ -1,0 +1,402 @@
+[gd_resource type="AnimationLibrary" load_steps=32 format=3 uid="uid://trrgsnkeybku"]
+
+[ext_resource type="Texture2D" uid="uid://bae3hdfw8rs43" path="res://Art/Character/T_Character_AncestorPineapple/Idle/T_Character_AncestorPineapple_FrontIdle.png" id="1_l6ltq"]
+[ext_resource type="Texture2D" uid="uid://jbw0urhgrc8i" path="res://Art/Character/T_Character_AncestorPineapple/Idle/T_Character_AncestorPineapple_BackIdle.png" id="2_dsph5"]
+[ext_resource type="Texture2D" uid="uid://dyt0jxhfjg570" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat1.png" id="3_3p28a"]
+[ext_resource type="Texture2D" uid="uid://bs6qorsq0vpwp" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat2.png" id="4_e54h4"]
+[ext_resource type="Texture2D" uid="uid://bnmew205t3rig" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat3.png" id="5_n1tna"]
+[ext_resource type="Texture2D" uid="uid://co1xhrq3dyls7" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat4.png" id="6_d478j"]
+[ext_resource type="Texture2D" uid="uid://dsera6ibxdkk8" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat1.png" id="7_dubvx"]
+[ext_resource type="Texture2D" uid="uid://dd16k238fq83x" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat2.png" id="8_pu06v"]
+[ext_resource type="Texture2D" uid="uid://bry2hrpt36stm" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat3.png" id="9_0snxo"]
+[ext_resource type="Texture2D" uid="uid://bkk8ovt3j86dt" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat4.png" id="10_jg7k6"]
+[ext_resource type="Texture2D" uid="uid://ch30s8cqy36vi" path="res://Art/Character/T_Character_AncestorPineapple/Sit/T_Character_AncestorPineapple_FrontSit.png" id="11_65sl2"]
+[ext_resource type="Texture2D" uid="uid://dj1mr81508i5n" path="res://Art/Character/T_Character_AncestorPineapple/Sit/T_Character_AncestorPineapple_BackSit.png" id="11_i2be0"]
+[ext_resource type="Texture2D" uid="uid://d3f2n4p221nhr" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_Walk1.png" id="12_3wwve"]
+[ext_resource type="Texture2D" uid="uid://bs6764ndppfdk" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_Walk2.png" id="13_kun57"]
+[ext_resource type="Texture2D" uid="uid://b20mx3irynotd" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_Walk3.png" id="14_6gsjd"]
+[ext_resource type="Texture2D" uid="uid://bx3m2rsc1d0ao" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_Walk4.png" id="15_317gy"]
+[ext_resource type="Texture2D" uid="uid://ddglwpt5552yl" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_BackWalk1.png" id="16_68ipp"]
+[ext_resource type="Texture2D" uid="uid://doln0f1myawig" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_BackWalk2.png" id="17_vlew3"]
+[ext_resource type="Texture2D" uid="uid://btbccjvbv3mpa" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_BackWalk3.png" id="18_qu6ph"]
+[ext_resource type="Texture2D" uid="uid://d1vwete1va34s" path="res://Art/Character/T_Character_AncestorPineapple/Walk/T_Character_AncestorPineapple_BackWalk4.png" id="19_7go2w"]
+
+[sub_resource type="Animation" id="Animation_g1pfp"]
+resource_name = "Character_Eat_Back_Left"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_3p28a"), ExtResource("4_e54h4"), ExtResource("5_n1tna"), ExtResource("6_d478j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-1.5, -86), Vector2(-5.5, -86), Vector2(-7.5, -86), Vector2(-5.5, -86)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bvt0i"]
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_3p28a"), ExtResource("4_e54h4"), ExtResource("5_n1tna"), ExtResource("6_d478j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-1.5, -84.45), Vector2(2.5, -84.45), Vector2(4.5, -84.45), Vector2(2.5, -84.45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5txr4"]
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_dubvx"), ExtResource("8_pu06v"), ExtResource("9_0snxo"), ExtResource("10_jg7k6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(14.335, -77.375), Vector2(15, -77.375), Vector2(17, -77.375), Vector2(15.135, -77.375)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vq8w3"]
+resource_name = "Character_Eat_Front_Right"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_dubvx"), ExtResource("8_pu06v"), ExtResource("9_0snxo"), ExtResource("10_jg7k6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-13, -77.375), Vector2(-14, -77.375), Vector2(-16, -77.375), Vector2(-14, -77.375)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_brkgy"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_dsph5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -116)]
+}
+
+[sub_resource type="Animation" id="Animation_0liif"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_l6ltq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, -116)]
+}
+
+[sub_resource type="Animation" id="Animation_yvvr4"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_i2be0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -110)]
+}
+
+[sub_resource type="Animation" id="Animation_diaoq"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_65sl2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.5, -95.5)]
+}
+
+[sub_resource type="Animation" id="Animation_kf8o0"]
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_68ipp"), ExtResource("17_vlew3"), ExtResource("18_qu6ph"), ExtResource("19_7go2w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -116)]
+}
+
+[sub_resource type="Animation" id="Animation_g8ynu"]
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_3wwve"), ExtResource("13_kun57"), ExtResource("14_6gsjd"), ExtResource("15_317gy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -116)]
+}
+
+[sub_resource type="Animation" id="Animation_b3lnv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("1_l6ltq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, -116)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[resource]
+_data = {
+&"Character_Eat_Back_Left": SubResource("Animation_g1pfp"),
+&"Character_Eat_Back_Right": SubResource("Animation_bvt0i"),
+&"Character_Eat_Front_Left": SubResource("Animation_5txr4"),
+&"Character_Eat_Front_Right": SubResource("Animation_vq8w3"),
+&"Character_Idle_Back": SubResource("Animation_brkgy"),
+&"Character_Idle_Front": SubResource("Animation_0liif"),
+&"Character_Sit_Back": SubResource("Animation_yvvr4"),
+&"Character_Sit_Front": SubResource("Animation_diaoq"),
+&"Character_Walk_Back": SubResource("Animation_kf8o0"),
+&"Character_Walk_Front": SubResource("Animation_g8ynu"),
+&"RESET": SubResource("Animation_b3lnv")
+}

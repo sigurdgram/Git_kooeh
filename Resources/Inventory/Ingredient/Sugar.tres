@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://b68tq0tdekck8"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_3yaqw"]
+[ext_resource type="Texture2D" uid="uid://cxg00j336t5k6" path="res://Art/Ingredient_Spritesheet/T_I002_WSugar.tres" id="2_t0sjo"]
+
+[resource]
+resource_name = "IngredientData.Sugar"
+script = ExtResource("1_3yaqw")
+name = "Sugar"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_t0sjo")
+bundlePrice = 10
+bundlePurchaseAmount = 10

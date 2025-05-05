@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=9 format=3 uid="uid://hkfkslwxipxx"]
+
+[ext_resource type="Script" uid="uid://c5c8oojstqwwm" path="res://Scripts/Resources/ConditionalRandomizer/ConditionalRandomizer_Base.gd" id="1_d788w"]
+[ext_resource type="PackedScene" uid="uid://fsxc6kptwktf" path="res://Scenes/Customers/Customer_B.tscn" id="2_yp7rd"]
+[ext_resource type="Script" uid="uid://chasj45xrtms1" path="res://Scripts/Resources/CustomerData.gd" id="3_c0hrv"]
+[ext_resource type="Script" uid="uid://dwsqttbhnyrlh" path="res://Scripts/Resources/ConditionalRandomizer/CondRand_IngredientRarity.gd" id="4_7bepa"]
+[ext_resource type="Script" uid="uid://1478kv0t2icv" path="res://Scripts/Resources/Conditions/Condition_Base.gd" id="5_tgxis"]
+[ext_resource type="Script" uid="uid://0utnjd1am8ki" path="res://Scripts/Resources/Conditions/Condition_Time.gd" id="6_ckpbb"]
+
+[sub_resource type="Resource" id="Resource_fc154"]
+script = ExtResource("4_7bepa")
+rarity = 0
+probability = 0.5
+
+[sub_resource type="Resource" id="Resource_s564e"]
+script = ExtResource("6_ckpbb")
+fromTime = "00:00:00"
+toTime = "12:00:00"
+
+[resource]
+script = ExtResource("3_c0hrv")
+identifier = "C-T1"
+name = "Twin 1"
+scene = ExtResource("2_yp7rd")
+customerRarity = 0
+weight = 0.0
+foodOrderRate = {
+"FoodData.KuihLapis": 1,
+"FoodData.OndehOndeh": 1,
+"FoodData.PineappleTart": 1
+}
+patience = 30.0
+spawnTrigger = Array[ExtResource("5_tgxis")]([SubResource("Resource_s564e")])
+paymentBonus = Array[ExtResource("1_d788w")]([SubResource("Resource_fc154")])
+customerSize = 150.0

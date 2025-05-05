@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bsc1ym8k60jrs"]
+
+[ext_resource type="Texture2D" uid="uid://b0p7g5qiey0su" path="res://2024_Art/2024 Scene1/T_WishingTree_Cutscene.png" id="1_t2rbt"]
+
+[resource]
+atlas = ExtResource("1_t2rbt")
+region = Rect2(847, 2756, 2361, 1340)

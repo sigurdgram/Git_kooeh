@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://bl8a6y1ni0psw"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_37871"]
+[ext_resource type="Texture2D" uid="uid://blgdv7im1343l" path="res://Art/Ingredient_Spritesheet/T_I011_Lime.tres" id="2_84k8e"]
+
+[resource]
+resource_name = "IngredientData.Lime"
+script = ExtResource("1_37871")
+name = "Lime"
+description = ""
+rarity = 1
+stackable = true
+texture = ExtResource("2_84k8e")
+bundlePrice = 20
+bundlePurchaseAmount = 10

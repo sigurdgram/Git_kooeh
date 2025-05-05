@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=16 format=3 uid="uid://ba872pvp0brqt"]
+
+[ext_resource type="PackedScene" uid="uid://tvjursuybmn5" path="res://Scenes/Buildable/Buildable_DisplayCounter.tscn" id="1_rkl08"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_w3ykt"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_lpe1u"]
+[ext_resource type="PackedScene" uid="uid://cnsp5j051rejg" path="res://Scenes/Buildable/Buildable_Attachment_DisplayCounter/Buildable_Attachment_DisplayCounter_SE.tscn" id="4_4lq1o"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_i0s1a"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="5_4enni"]
+[ext_resource type="PackedScene" uid="uid://cie0fdw8b76bj" path="res://Scenes/Buildable/Buildable_Attachment_DisplayCounter/Buildable_Attachment_DisplayCounter_SW.tscn" id="6_a2cdb"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="7_f7bvy"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="8_i5iwa"]
+[ext_resource type="Script" uid="uid://bbe6eeumkkgy8" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Minimum.gd" id="9_fqppl"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="10_pipqf"]
+[ext_resource type="Texture2D" uid="uid://bp8qoc2q0kmmw" path="res://2024_Art/2024 Scene1/T_Scene1_YellowTray_Full.png" id="11_drai2"]
+
+[sub_resource type="Resource" id="Resource_sfgsr"]
+script = ExtResource("5_4enni")
+buildable = ExtResource("4_4lq1o")
+buildReqs = Array[ExtResource("2_w3ykt")]([ExtResource("3_lpe1u"), ExtResource("4_i0s1a")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_lpeq4"]
+script = ExtResource("5_4enni")
+buildable = ExtResource("6_a2cdb")
+buildReqs = Array[ExtResource("2_w3ykt")]([ExtResource("3_lpe1u"), ExtResource("4_i0s1a")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_anoub"]
+script = ExtResource("9_fqppl")
+_minAmount = 1
+restrictionMessage = "At least 1 Display Counter needed!"
+
+[resource]
+resource_name = "BuildableData.DisplayCounter"
+script = ExtResource("10_pipqf")
+name = "Display Counter"
+buildableScene = ExtResource("1_rkl08")
+texture = ExtResource("11_drai2")
+category = 4
+price = 100
+layer = 0
+customData = {
+&"Upgrade": {
+1: {
+&"Desc": [{
+&"Change": 1,
+&"Subject": "Display Counter"
+}],
+&"Price": 70.0
+}
+}
+}
+tileSetID = 2
+tileExtensions = Array[ExtResource("7_f7bvy")]([])
+flippedTileExtensions = Array[ExtResource("7_f7bvy")]([])
+restrictions = Array[ExtResource("8_i5iwa")]([SubResource("Resource_anoub")])
+id = "BuildableData.DisplayCounter"
+displayName = "DisplayCounter"
+layer2 = 2
+collisionPriority = 2
+collisionLayer = 128
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: null,
+2: null,
+3: SubResource("Resource_sfgsr"),
+4: null,
+5: SubResource("Resource_lpeq4"),
+6: null,
+7: null
+}

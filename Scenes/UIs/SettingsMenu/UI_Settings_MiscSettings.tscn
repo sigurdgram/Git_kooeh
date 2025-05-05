@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj0snbfs664pp"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_cmnc5"]
+[ext_resource type="Script" uid="uid://8varw0n50iu8" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_MiscSettings.gd" id="2_rrv8r"]
+[ext_resource type="PackedScene" uid="uid://b8tycbcne0q2u" path="res://Scenes/UIs/SettingsMenu/Elements/UI_Settings_Element_DropdownOption.tscn" id="3_tgge3"]
+
+[node name="UI_Settings_MiscSettings" type="PanelContainer" node_paths=PackedStringArray("_language")]
+custom_minimum_size = Vector2(450, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = -45.0
+offset_right = 278.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_cmnc5")
+theme_type_variation = &"PanelCont_SubSetting"
+script = ExtResource("2_rrv8r")
+_language = NodePath("VBOX_MiscSettings/Dropdown_Language")
+
+[node name="VBOX_MiscSettings" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PANCONT_Title" type="PanelContainer" parent="VBOX_MiscSettings"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_cmnc5")
+theme_type_variation = &"PanelCont_SubSettingTitle"
+
+[node name="TXT_Title" type="Label" parent="VBOX_MiscSettings/PANCONT_Title"]
+layout_mode = 2
+theme = ExtResource("2_cmnc5")
+theme_type_variation = &"Label_SubSettingTitle"
+text = "Miscellaneous"
+
+[node name="Dropdown_Language" parent="VBOX_MiscSettings" instance=ExtResource("3_tgge3")]
+layout_mode = 2
+_text = "Language"

@@ -1,0 +1,149 @@
+[gd_scene load_steps=21 format=3 uid="uid://d3tkjtby3olbs"]
+
+[ext_resource type="Script" uid="uid://ca57dsaerh6d6" path="res://Scripts/UISystem/UIs/Phase1UI/UI_Phase1_Temple_Gather.gd" id="1_wkaci"]
+[ext_resource type="PackedScene" uid="uid://cmdjiqcs7v4nt" path="res://Scenes/UIs/Misc/UI_Item_Frame.tscn" id="2_36mfq"]
+[ext_resource type="Texture2D" uid="uid://dk1s5wq1m6jyp" path="res://Art/UI/Wishing/Atlas_WishingTree_Frame_Fill.tres" id="3_7g6xi"]
+[ext_resource type="AudioStream" uid="uid://7q0nic053bc5" path="res://Audio/SFX/AS_SFX_ui_select_1.wav" id="3_o67cf"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="3_vjruc"]
+[ext_resource type="Texture2D" uid="uid://be6rptqv8kv4" path="res://Art/UI/Wishing/Atlas_WishingTree_Frame.tres" id="4_5lly3"]
+[ext_resource type="AudioStream" uid="uid://cxp7vm83aqq38" path="res://Audio/SFX/AS_SFX_ui_select_2.wav" id="4_ld0yd"]
+[ext_resource type="AudioStream" uid="uid://he14x2y1cb23" path="res://Audio/SFX/AS_SFX_ui_select_3.wav" id="5_l0e3d"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="5_qq5bb"]
+[ext_resource type="Script" uid="uid://wpeyog2djkvv" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabel.gd" id="10_ojtq7"]
+[ext_resource type="Script" uid="uid://dwcf1rariwikr" path="res://addons/advanced_rich_text_label/src/AdvancedRichTextLabelParser.gd" id="11_ti61y"]
+[ext_resource type="Script" uid="uid://0epvqwsjm5e" path="res://Scripts/UISystem/UIs/Dialogue/AdvancedRichTextLabelParser_Input.gd" id="12_7ork2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14b3t"]
+shader = ExtResource("3_vjruc")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_wkma6"]
+offsets = PackedFloat32Array(0.487465)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ns36k"]
+gradient = SubResource("Gradient_wkma6")
+width = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whpi8"]
+texture = ExtResource("3_7g6xi")
+region_rect = Rect2(-13, -10, 2951, 500)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qj455"]
+texture = ExtResource("4_5lly3")
+texture_margin_left = 52.0
+texture_margin_top = 50.0
+texture_margin_right = 42.0
+texture_margin_bottom = 47.0
+region_rect = Rect2(0, 0, 2330, 1337)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jed8m"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.72549, 0.654902, 0.521569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bm6vw"]
+
+[sub_resource type="Resource" id="Resource_ud4qd"]
+script = ExtResource("12_7ork2")
+_imageScale = 2.0
+
+[node name="UI_Temple_Gather" type="Control" node_paths=PackedStringArray("_artl", "_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkaci")
+_artl = NodePath("MarginContainer/PANELCONT_Frame/VBoxContainer/AdvancedRichTextLabel")
+_container = NodePath("MarginContainer/PANELCONT_Frame/VBoxContainer/MarginContainer/ScrollContainer/HFlowContainer")
+_slot = ExtResource("2_36mfq")
+_audioRewardDrop1 = ExtResource("3_o67cf")
+_audioRewardDrop2 = ExtResource("4_ld0yd")
+_audioRewardDrop3 = ExtResource("5_l0e3d")
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_14b3t")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = SubResource("GradientTexture1D_ns36k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 150
+
+[node name="PANELCONT_BG" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_whpi8")
+
+[node name="PANELCONT_Frame" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qj455")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PANELCONT_Frame"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PANELCONT_Frame/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_qq5bb")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 60
+text = "You have received"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PANELCONT_Frame/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PANELCONT_Frame/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jed8m")
+horizontal_scroll_mode = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/PANELCONT_Frame/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PANELCONT_Frame/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bm6vw")
+
+[node name="AdvancedRichTextLabel" type="RichTextLabel" parent="MarginContainer/PANELCONT_Frame/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme = ExtResource("5_qq5bb")
+theme_override_colors/default_color = Color(0.294118, 0.160784, 0.0980392, 1)
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]asd[/center]"
+script = ExtResource("10_ojtq7")
+_parsers = Array[ExtResource("11_ti61y")]([SubResource("Resource_ud4qd")])

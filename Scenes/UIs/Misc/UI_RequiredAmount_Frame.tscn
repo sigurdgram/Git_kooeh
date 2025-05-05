@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1s2co24h0vmu"]
+
+[ext_resource type="Script" uid="uid://bgbjodeiq1e5t" path="res://Scripts/UISystem/UIs/Misc/UI_RequiredAmount_Frame.gd" id="1_qnpna"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_h6udh"]
+[ext_resource type="Texture2D" uid="uid://c4fq4wg13bygu" path="res://Art/Ingredient_Spritesheet/T_I007_NutMilk.tres" id="2_nkvb8"]
+
+[node name="UI_RequiredAmount_Frame" type="Control" node_paths=PackedStringArray("_itemTextureRect", "_amountTxt")]
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -25.0
+offset_right = 70.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_qnpna")
+_itemTextureRect = NodePath("HBoxContainer/AspectRatioContainer/TEXTRECT_Item")
+_amountTxt = NodePath("HBoxContainer/TXT_Amount")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 0
+
+[node name="TEXTRECT_Item" type="TextureRect" parent="HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_nkvb8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_Amount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_h6udh")
+theme_type_variation = &"HeaderMedium"
+text = "99/10"
+vertical_alignment = 1
+text_overrun_behavior = 3

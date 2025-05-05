@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputData" load_steps=4 format=3 uid="uid://sgbgeyqhvcbo"]
+
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="1_2u887"]
+[ext_resource type="Script" uid="uid://cseyqynuc8rd5" path="res://Scripts/Resources/InputData.gd" id="1_3kf7i"]
+[ext_resource type="Texture2D" uid="uid://dibsukmxabd6a" path="res://addons/controller_icons/assets/xboxseries/b.png" id="2_tlerg"]
+
+[resource]
+resource_name = "InputData.Cancel"
+script = ExtResource("1_3kf7i")
+displayName = "Cancel"
+inputLegends = {
+0: ExtResource("1_2u887"),
+1: ExtResource("2_tlerg")
+}

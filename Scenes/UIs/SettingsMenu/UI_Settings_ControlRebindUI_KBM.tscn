@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=3 uid="uid://rvaa4jhhi38a"]
+
+[ext_resource type="Script" uid="uid://kjbd2hx3sqin" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_ControlRebindUI_KBM.gd" id="1_jd3v7"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_6gauj"]
+[ext_resource type="Texture2D" uid="uid://dmd1nd0i7wed" path="res://Art/UI/Atlas_UI_Prompt_Panel.tres" id="3_r76t1"]
+[ext_resource type="Texture2D" uid="uid://dfblsc2jyww1e" path="res://Art/UI/Atlas_UI_Button_Normal.tres" id="4_5857k"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="5_3olo0"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="6_jmyfy"]
+[ext_resource type="Texture2D" uid="uid://cnubx8s4k3oqn" path="res://Art/Kenney Input Prompts/Keyboard & Mouse/Default/keyboard_escape.png" id="6_rygwf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eck3w"]
+shader = ExtResource("2_6gauj")
+shader_parameter/tint = Color(0.258824, 0.258824, 0.258824, 1)
+shader_parameter/strength = 0.707
+
+[sub_resource type="Gradient" id="Gradient_0638o"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e4ocr"]
+gradient = SubResource("Gradient_0638o")
+width = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvlcw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2f1rd"]
+resource_local_to_scene = true
+shader = ExtResource("6_jmyfy")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.07
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 20
+shader_parameter/enabled = true
+
+[node name="UI_RebindControls_KB" type="Control" node_paths=PackedStringArray("_keyTexture")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_jd3v7")
+_keyTexture = NodePath("CenterContainer/PANEL_PromptBox/Panel/CenterContainer/TEXTRECT_Rebind")
+
+[node name="TEXTRECT_BG" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_eck3w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_e4ocr")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(700, 700)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PANEL_PromptBox" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+texture = ExtResource("3_r76t1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TEXTRECT_Header" type="TextureRect" parent="CenterContainer/PANEL_PromptBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = 0.126
+anchor_right = 0.856
+anchor_bottom = 0.386
+offset_left = 0.092865
+offset_right = -0.232239
+texture = ExtResource("4_5857k")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TXT_WarningHeader" type="Label" parent="CenterContainer/PANEL_PromptBox/TEXTRECT_Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+mouse_filter = 1
+theme = ExtResource("5_3olo0")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "PRESS A KEY TO BIND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CenterContainer/PANEL_PromptBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.171
+anchor_top = 0.54
+anchor_right = 0.827
+anchor_bottom = 0.889
+offset_left = 0.313431
+offset_right = -0.0514526
+offset_bottom = 0.499969
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bvlcw")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterContainer/PANEL_PromptBox/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = -56.0
+offset_right = -74.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="TXT_Esc" type="Label" parent="CenterContainer/PANEL_PromptBox/Panel/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_3olo0")
+theme_type_variation = &"HeaderLarge"
+text = "PRESS ESC TO EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/PANEL_PromptBox/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 22.12
+offset_bottom = 82.12
+grow_horizontal = 2
+
+[node name="TEXTRECT_Rebind" type="TextureRect" parent="CenterContainer/PANEL_PromptBox/Panel/CenterContainer"]
+material = SubResource("ShaderMaterial_2f1rd")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("6_rygwf")
+expand_mode = 5
+stretch_mode = 5

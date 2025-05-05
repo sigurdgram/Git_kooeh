@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn4ettksnnuv0"]
+
+[ext_resource type="PackedScene" uid="uid://d11o5m8mcawbd" path="res://Scenes/Buildable/Buildable_Asset_CookingStation/Buildable_Asset_CookingStation_SE.tscn" id="1_n0r7f"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_gorvr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqahm"]
+resource_local_to_scene = true
+shader = ExtResource("2_gorvr")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0.367889, 0.614951, 1.15514e-06, 1)
+shader_parameter/line_thickness = 0.02
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Asset_CookingStation_SE" instance=ExtResource("1_n0r7f")]
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_fqahm")
+flip_h = true

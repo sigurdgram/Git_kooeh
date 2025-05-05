@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpfqc17cnd84l"]
+
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="1_h6ceb"]
+[ext_resource type="Script" uid="uid://cdm840jf3ifuk" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Pour.gd" id="1_otbfs"]
+[ext_resource type="Texture2D" uid="uid://8iemx4nyuckj" path="res://Art/UI/Cooking/T_CookingSystem_DirectionIndicator.png" id="2_uwv6r"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="4_0ghl4"]
+[ext_resource type="AudioStream" uid="uid://he14x2y1cb23" path="res://Audio/SFX/AS_SFX_ui_select_3.wav" id="4_v054r"]
+[ext_resource type="Texture2D" uid="uid://cp50htbxat0px" path="res://Art/UI/Cooking/T_Icon_Circle.png" id="5_47240"]
+[ext_resource type="AudioStream" uid="uid://7q0nic053bc5" path="res://Audio/SFX/AS_SFX_ui_select_1.wav" id="5_ss3n5"]
+[ext_resource type="Texture2D" uid="uid://dposrjfc4sgsl" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Halo_Progress.png" id="7_qq75k"]
+
+[sub_resource type="Gradient" id="Gradient_4lc66"]
+colors = PackedColorArray(0.988281, 0.714844, 0.457031, 1, 0.996094, 0.898438, 0.566406, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywu2t"]
+shader = ExtResource("4_0ghl4")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0.15625, 0.0625, 0.00390625, 1)
+shader_parameter/line_thickness = 0.038
+shader_parameter/uvRescale = 1.088
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = true
+
+[node name="QTEBar_Pour" type="Control" node_paths=PackedStringArray("path", "border", "line", "hint", "_knob", "_ring", "_knobGroup")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_otbfs")
+path = NodePath("Path2D")
+border = NodePath("Path2D/L2D_Border")
+line = NodePath("Path2D/L2D_Fill")
+hint = NodePath("Path2D/L2D_Hint")
+_knob = NodePath("TEXTRECT_Knob")
+_ring = NodePath("TEXTRECT_Ring")
+lineWidth = 40.0
+knobSize = 20.0
+_knobGroup = NodePath("Group_Knobs")
+_passAudio = ExtResource("4_v054r")
+_failAudio = ExtResource("5_ss3n5")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, -185)
+curve = ExtResource("1_h6ceb")
+
+[node name="L2D_Border" type="Line2D" parent="Path2D"]
+width = 65.0
+default_color = Color(0.175781, 0.0859375, 0.0625, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="L2D_Fill" type="Line2D" parent="Path2D"]
+width = 60.0
+default_color = Color(0.980469, 0.953125, 0.847656, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="L2D_Hint" type="Line2D" parent="Path2D"]
+texture_repeat = 2
+width = 40.0
+gradient = SubResource("Gradient_4lc66")
+texture = ExtResource("2_uwv6r")
+texture_mode = 1
+
+[node name="Group_Knobs" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEXTRECT_Knob" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.996094, 0.933594, 0.683594, 1)
+material = SubResource("ShaderMaterial_ywu2t")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -525.0
+offset_right = -15.0
+offset_bottom = -475.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+mouse_filter = 2
+texture = ExtResource("5_47240")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TEXTRECT_Ring" type="TextureRect" parent="."]
+modulate = Color(0.619608, 0.2, 0.00784314, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_qq75k")
+expand_mode = 1
+stretch_mode = 5

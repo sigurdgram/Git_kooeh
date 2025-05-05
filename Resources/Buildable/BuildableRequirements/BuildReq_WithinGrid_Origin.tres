@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BuildReq_WithinGrid" load_steps=2 format=3 uid="uid://dhmieb3sqsuwr"]
+
+[ext_resource type="Script" uid="uid://dkwo5dj4gvhk6" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildReq_WithinGrid.gd" id="1_xcfk6"]
+
+[resource]
+script = ExtResource("1_xcfk6")
+_scanLocations = Array[Vector2]([Vector2(0, 0)])

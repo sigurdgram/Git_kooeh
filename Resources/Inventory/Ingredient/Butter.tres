@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://fdwh7vsaxcc3"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_ba1q8"]
+[ext_resource type="Texture2D" uid="uid://bu26oda3dy224" path="res://Art/Ingredient_Spritesheet/T_I018_Butter.tres" id="2_o6n22"]
+
+[resource]
+resource_name = "IngredientData.Butter"
+script = ExtResource("1_ba1q8")
+name = "Butter"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_o6n22")
+bundlePrice = 10
+bundlePurchaseAmount = 10

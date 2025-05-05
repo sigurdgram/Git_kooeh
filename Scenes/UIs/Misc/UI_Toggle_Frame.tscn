@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg27m4hq7s6hx"]
+
+[ext_resource type="Script" uid="uid://d1s3piksm1r1j" path="res://Scripts/UISystem/UIs/Misc/UI_Toggle_Frame.gd" id="1_03xx1"]
+[ext_resource type="PackedScene" uid="uid://v7ulhrdc3fs4" path="res://Scenes/UIs/Misc/UI_Button_Frame.tscn" id="1_s6qii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqkem"]
+resource_local_to_scene = true
+bg_color = Color(0.839216, 0.784314, 0.65098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxkaw"]
+resource_local_to_scene = true
+bg_color = Color(0.721569, 0.658824, 0.498039, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.996094, 0.996094, 0.996094, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro7c6"]
+resource_local_to_scene = true
+bg_color = Color(0.482353, 0.431373, 0.294118, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrqvn"]
+resource_local_to_scene = true
+bg_color = Color(0.407843, 0.407843, 0.407843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j0nm"]
+resource_local_to_scene = true
+bg_color = Color(0.839216, 0.784314, 0.65098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Gradient" id="Gradient_p5565"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3cik4"]
+gradient = SubResource("Gradient_p5565")
+width = 1
+
+[node name="UI_Toggle_Frame" node_paths=PackedStringArray("_checkBox") instance=ExtResource("1_s6qii")]
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqkem")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dxkaw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ro7c6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yrqvn")
+script = ExtResource("1_03xx1")
+_checkBox = NodePath("CheckBox")
+
+[node name="PANELCONT_Rarity" parent="." index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_0j0nm")
+
+[node name="CheckBox" type="CheckBox" parent="." index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.955
+anchor_top = 0.034
+anchor_right = 0.955
+anchor_bottom = 0.034
+offset_left = -21.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 21.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(12, 12)
+theme_override_icons/unchecked = SubResource("GradientTexture1D_3cik4")
+button_pressed = true

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwyfyh8287yk3"]
+
+[ext_resource type="Texture2D" uid="uid://cc441y87s8idh" path="res://2024_Art/2024 UI Assets/T_UI_CookingProgressBubble.png" id="1_sp5u6"]
+[ext_resource type="Texture2D" uid="uid://cc0rx0ue6wxmk" path="res://2024_Art/2024 UI Assets/T_UI_CookingProgressCircle.png" id="3_eqc7g"]
+
+[node name="UI_RadialProgressBar" type="TextureProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+fill_mode = 4
+texture_under = ExtResource("1_sp5u6")
+texture_over = ExtResource("3_eqc7g")
+texture_progress = ExtResource("3_eqc7g")
+texture_progress_offset = Vector2(0, -6)
+tint_over = Color(0.941176, 0.866667, 0.705882, 0)
+tint_progress = Color(0.996078, 0.709804, 0.458824, 1)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci4aen1swuqaf"]
+
+[ext_resource type="Texture2D" uid="uid://c4h2sactj481v" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Signboard.png" id="1_2jjco"]
+[ext_resource type="Script" uid="uid://bm8pwamdliart" path="res://Scripts/Buildable/Buildable_Signboard1.gd" id="1_b1jf1"]
+[ext_resource type="PackedScene" uid="uid://ovl5nn7xt2eb" path="res://Scenes/Levels/Submission_1_Scene.tscn" id="2_nq0jr"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_b4hm8"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="3_x78pv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icnqa"]
+resource_local_to_scene = true
+shader = ExtResource("3_b4hm8")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.02
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Asset_Signboard" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite")]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_b1jf1")
+_levelToLoad = ExtResource("2_nq0jr")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_icnqa")
+texture = ExtResource("1_2jjco")
+offset = Vector2(100, -180)
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-65, 41, 36, 45, 41, -38, -64, -40)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-65, 41, 36, 45, 41, -38, -64, -40)
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("3_x78pv")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")

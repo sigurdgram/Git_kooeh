@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c76rou3tpc6no"]
+
+[ext_resource type="Script" uid="uid://ceiidopb1c1fh" path="res://addons/buildable_system/Scripts/Node2Ds/Buildable.gd" id="1_dyawp"]
+[ext_resource type="Texture2D" uid="uid://ba18ftjsxw8lm" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Support_FloorLEFT.png" id="2_gfwbb"]
+[ext_resource type="Script" uid="uid://cp2neomp1mnxl" path="res://addons/buildable_system/Scripts/Node2Ds/CollisionPolygonShape.gd" id="3_eqr7a"]
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="4_5b4w4"]
+
+[node name="Buildable_Internal_Beam_SE" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite")]
+script = ExtResource("1_dyawp")
+_clickablePolygon = NodePath("CollisionPolygonShape2D")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gfwbb")
+offset = Vector2(20, -47.51)
+
+[node name="CollisionPolygonShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("3_eqr7a")
+shape = ExtResource("4_5b4w4")

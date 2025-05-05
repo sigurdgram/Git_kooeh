@@ -1,0 +1,366 @@
+[gd_scene load_steps=70 format=3 uid="uid://b6gpusygd5ehf"]
+
+[ext_resource type="Script" uid="uid://cbr8d8t7x8kdy" path="res://Scripts/GameModes/Phase1GameMode.gd" id="1_vcf8u"]
+[ext_resource type="PackedScene" uid="uid://hoen7uclq2dg" path="res://Scenes/UIs/UI_Essentials.tscn" id="2_yq8ru"]
+[ext_resource type="AudioStream" uid="uid://b33uci6i1tgno" path="res://Audio/Music/AS_Music_courtyard_loop.wav" id="3_2y8dr"]
+[ext_resource type="Texture2D" uid="uid://dxmvqouvtq6vw" path="res://Art/Environment/T_Environment_Outside_FloorConcrete.png" id="3_xleld"]
+[ext_resource type="Script" uid="uid://cblhjtgfivht6" path="res://Scripts/Isometric2DTilemap.gd" id="6_p25up"]
+[ext_resource type="Texture2D" uid="uid://dke452wr5747h" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_7.png" id="6_q2678"]
+[ext_resource type="Texture2D" uid="uid://bfy0v2e5t7wd" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_8.png" id="7_3fkx3"]
+[ext_resource type="Texture2D" uid="uid://dkffkksjnrsr7" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_0.png" id="8_tqkc6"]
+[ext_resource type="Texture2D" uid="uid://kfkiegsphjvu" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_WTree.png" id="9_b7b0k"]
+[ext_resource type="Texture2D" uid="uid://35vs7h5b7wlb" path="res://2024_Art/2024 Scene1/T_Scene1_Flower_WTree.png" id="10_1wiwa"]
+[ext_resource type="Texture2D" uid="uid://dc652ybv11ef3" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_1.png" id="10_fsj68"]
+[ext_resource type="Texture2D" uid="uid://daaii0pc36mx3" path="res://2024_Art/2024 Scene1/T__Scene1_Pond0.png" id="11_5bwey"]
+[ext_resource type="Texture2D" uid="uid://br2k6uncjc0xd" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_2.png" id="11_jqyle"]
+[ext_resource type="Texture2D" uid="uid://dmxjomcnlof5t" path="res://2024_Art/2024 Scene1/T__Scene1_Pond1.png" id="12_757t1"]
+[ext_resource type="Texture2D" uid="uid://bkb4i0p6clcwo" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_3.png" id="12_dnisk"]
+[ext_resource type="Texture2D" uid="uid://qw7ufg4h58o7" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_4.png" id="13_hsntk"]
+[ext_resource type="Texture2D" uid="uid://w7s811vhqbp" path="res://2024_Art/2024 Scene1/T__Scene1_Pond2.png" id="13_j2c6j"]
+[ext_resource type="Texture2D" uid="uid://ck88j3jqd48wk" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_5.png" id="14_ffhds"]
+[ext_resource type="Texture2D" uid="uid://ps5tvfgjysu7" path="res://2024_Art/2024 Scene1/T__Scene1_Pond4.png" id="15_3bl52"]
+[ext_resource type="Texture2D" uid="uid://cspb70uqvsg2j" path="res://2024_Art/2024 Scene1/T_Scene1_Grass_6.png" id="15_uq5l8"]
+[ext_resource type="Script" uid="uid://55ah301w3w7v" path="res://Scripts/RestaurantSystems/InteractionSystem.gd" id="17_1u70x"]
+[ext_resource type="Texture2D" uid="uid://cg3ay5jthlftf" path="res://2024_Art/2024 Scene1/T__Scene1_Pond3A.png" id="17_4jyt4"]
+[ext_resource type="Texture2D" uid="uid://c20y7au5jm361" path="res://2024_Art/2024 Scene1/T__Scene1_Pond3B.png" id="18_x461o"]
+[ext_resource type="Texture2D" uid="uid://b0tmg6csrx0oc" path="res://2024_Art/2024 Scene1/T__Scene1_Pond5.png" id="19_tvocc"]
+[ext_resource type="PackedScene" uid="uid://jna1kay5l443" path="res://Character/Character_Main.tscn" id="22_gsryl"]
+[ext_resource type="PackedScene" uid="uid://bm3suljr7pxxu" path="res://Scenes/UIs/Misc/UI_InteractContextButton.tscn" id="36_xp5k4"]
+[ext_resource type="Texture2D" uid="uid://p75itefadc54" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_BananaTree1.png" id="39_jw0k3"]
+[ext_resource type="Texture2D" uid="uid://vbgsubw6r3ds" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_BananaTree2.png" id="40_gdde3"]
+[ext_resource type="Texture2D" uid="uid://3u0x6b2ov0d0" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush3.png" id="41_fpt4h"]
+[ext_resource type="Texture2D" uid="uid://bmy20t3mh4uv3" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush4.png" id="42_d2bpo"]
+[ext_resource type="Texture2D" uid="uid://cl7tskevh7x63" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush5.png" id="43_vxo6f"]
+[ext_resource type="Texture2D" uid="uid://bg1bdq4ydlfn" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush6.png" id="44_jpchm"]
+[ext_resource type="Texture2D" uid="uid://3bj42wbq7kxi" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Fern1.png" id="45_lcxsf"]
+[ext_resource type="Texture2D" uid="uid://corehruepukmj" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Fern2.png" id="46_iivuw"]
+[ext_resource type="Texture2D" uid="uid://bu6n670q7rhcg" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Stones1.png" id="47_p7qmo"]
+[ext_resource type="Texture2D" uid="uid://dloulcytfm03a" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Stones2.png" id="48_nda4m"]
+[ext_resource type="Texture2D" uid="uid://bqtqrswfjaj4l" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Stones3.png" id="49_ilub4"]
+[ext_resource type="Texture2D" uid="uid://v6blm328jtch" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Stones4.png" id="50_ca4rh"]
+[ext_resource type="Texture2D" uid="uid://b45pc27wnimwr" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Stump1.png" id="51_4wc46"]
+[ext_resource type="PackedScene" uid="uid://ci4aen1swuqaf" path="res://Scenes/Buildable/Buildable_Asset_Signboard.tscn" id="52_0wcf2"]
+[ext_resource type="Texture2D" uid="uid://buuup7adr6bv8" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_FallenLog1.png" id="52_68rde"]
+[ext_resource type="PackedScene" uid="uid://dnvsu166uumua" path="res://Scenes/Buildable/Buildable_Asset_Temple.tscn" id="53_k668f"]
+[ext_resource type="PackedScene" uid="uid://bc5r0bpq067n4" path="res://Scenes/Buildable/Buildable_Asset_WishingTree.tscn" id="53_ub7dg"]
+[ext_resource type="Texture2D" uid="uid://b7b3t57yrgkov" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Grass2.png" id="54_p2jlw"]
+[ext_resource type="Texture2D" uid="uid://lb25r418qvpk" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Grass4.png" id="56_gg47a"]
+[ext_resource type="Texture2D" uid="uid://b7ttx8c37wurn" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Grass10.png" id="57_7lfms"]
+[ext_resource type="Texture2D" uid="uid://c17ljq5jacl85" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Seedling1.png" id="58_bnxdr"]
+[ext_resource type="Texture2D" uid="uid://v6fmy71tkyh4" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Seedling2.png" id="59_031st"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_if6ec"]
+vertices = PackedVector2Array(62.5, 0, 0, 36, -62.5, 0, 0, -36)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -36, -62.5, 0, 0, 36, 62.5, 0)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wb3nh"]
+texture = ExtResource("3_xleld")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/z_index = -10
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_if6ec")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_402l5"]
+texture = ExtResource("6_q2678")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0j2by"]
+texture = ExtResource("7_3fkx3")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3vx7"]
+texture = ExtResource("8_tqkc6")
+texture_region_size = Vector2i(764, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ybi8"]
+texture = ExtResource("9_b7b0k")
+texture_region_size = Vector2i(1025, 592)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb3o6"]
+texture = ExtResource("10_1wiwa")
+texture_region_size = Vector2i(888, 404)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_egxa8"]
+texture = ExtResource("11_5bwey")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3r5d"]
+texture = ExtResource("12_757t1")
+texture_region_size = Vector2i(765, 443)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6p2m"]
+texture = ExtResource("13_j2c6j")
+texture_region_size = Vector2i(765, 443)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ti38b"]
+texture = ExtResource("15_3bl52")
+texture_region_size = Vector2i(765, 443)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56g5p"]
+texture = ExtResource("17_4jyt4")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sqk4"]
+texture = ExtResource("18_x461o")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7xv3"]
+texture = ExtResource("19_tvocc")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfjsm"]
+texture = ExtResource("10_fsj68")
+texture_region_size = Vector2i(764, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_orksf"]
+texture = ExtResource("11_jqyle")
+texture_region_size = Vector2i(764, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4p62"]
+texture = ExtResource("12_dnisk")
+texture_region_size = Vector2i(764, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xbey"]
+texture = ExtResource("13_hsntk")
+texture_region_size = Vector2i(764, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_athhp"]
+texture = ExtResource("14_ffhds")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cuwk"]
+texture = ExtResource("15_uq5l8")
+texture_region_size = Vector2i(765, 443)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b4xbo"]
+tile_shape = 1
+tile_size = Vector2i(254, 146)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 2
+sources/0 = SubResource("TileSetAtlasSource_wb3nh")
+sources/4 = SubResource("TileSetAtlasSource_cfjsm")
+sources/5 = SubResource("TileSetAtlasSource_orksf")
+sources/6 = SubResource("TileSetAtlasSource_i4p62")
+sources/7 = SubResource("TileSetAtlasSource_0xbey")
+sources/8 = SubResource("TileSetAtlasSource_athhp")
+sources/9 = SubResource("TileSetAtlasSource_5cuwk")
+sources/10 = SubResource("TileSetAtlasSource_402l5")
+sources/11 = SubResource("TileSetAtlasSource_0j2by")
+sources/12 = SubResource("TileSetAtlasSource_k3vx7")
+sources/13 = SubResource("TileSetAtlasSource_0ybi8")
+sources/14 = SubResource("TileSetAtlasSource_rb3o6")
+sources/15 = SubResource("TileSetAtlasSource_egxa8")
+sources/16 = SubResource("TileSetAtlasSource_c3r5d")
+sources/17 = SubResource("TileSetAtlasSource_e6p2m")
+sources/19 = SubResource("TileSetAtlasSource_ti38b")
+sources/20 = SubResource("TileSetAtlasSource_56g5p")
+sources/21 = SubResource("TileSetAtlasSource_8sqk4")
+sources/22 = SubResource("TileSetAtlasSource_p7xv3")
+
+[node name="LV_Prologue_Phase1" type="Node2D" node_paths=PackedStringArray("_interactionSystem")]
+process_mode = 1
+script = ExtResource("1_vcf8u")
+_essentialsUI = ExtResource("2_yq8ru")
+_phase1Music = ExtResource("3_2y8dr")
+_interactionSystem = NodePath("InteractionSystem")
+metadata/_edit_vertical_guides_ = [-962.0]
+metadata/_edit_horizontal_guides_ = [-541.0]
+
+[node name="TileMap" type="TileMap" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+tile_set = SubResource("TileSet_b4xbo")
+rendering_quadrant_size = 128
+navigation_visibility_mode = 2
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(65534, 9, 0, 262143, 11, 0, 1, 7, 0, 196610, 6, 0, 4, 10, 0, 196613, 8, 0, 393220, 6, 0, 589826, 10, 0, 262140, 5, 0, 65531, 5, 0, -327685, 5, 0, -131079, 5, 0, 458747, 5, 0, 262137, 5, 0, 65528, 5, 0, 655356, 5, 0, 851963, 5, 0, 655353, 5, 0, 458744, 5, 0, 262134, 5, 0, 458750, 6, 0, -131073, 17, 0, -393215, 19, 0, -589822, 22, 0, -327682, 16, 0, -524292, 15, 0, -720898, 21, 0, -524289, 21, 0, -786431, 21, 0, -917505, 21, 0, -196606, 4, 0, -393212, 4, 0, 655359, 6, 0, 1048572, 5, 0, 851966, 5, 0, 1048575, 5, 0, 786433, 5, 0, 1245182, 5, 0, 1441791, 5, 0, 1179649, 5, 0, 983042, 5, 0, 786436, 5, 0, 589829, 5, 0, 393223, 5, 0, -196603, 5, 0, 7, 5, 0, 196616, 5, 0, 65525, 5, 0, -11, 5, 0, -131082, 5, 0, -327688, 5, 0, -524295, 5, 0, -720901, 5, 0, 10, 5, 0, -196600, 5, 0, -393209, 5, 0, -589819, 5, 0, -917508, 5, 0, -1114114, 5, 0, -1310721, 5, 0, -1179647, 5, 0, -983038, 5, 0, -786428, 5, 0, -131076, 9, 0, 393217, 8, 0)
+script = ExtResource("6_p25up")
+
+[node name="Character_Main" parent="TileMap" groups=["PlayerCharacter"] instance=ExtResource("22_gsryl")]
+y_sort_enabled = true
+position = Vector2(-163, 202)
+
+[node name="Spawnpoint_Tana" type="Node2D" parent="TileMap" groups=["Tana"]]
+position = Vector2(37, 276)
+
+[node name="Buildable_Asset_Temple" parent="TileMap" groups=["Buildable_Temple"] instance=ExtResource("53_k668f")]
+position = Vector2(-639.5, -124)
+_ingredientsToPickup = {
+"IngredientData.BlackTeaLeaves": 50,
+"IngredientData.CoconutMilk": 50,
+"IngredientData.CoffeePowder": 50,
+"IngredientData.CondensedMilk": 50,
+"IngredientData.Egg": 50,
+"IngredientData.GlutinousRiceFlour": 30,
+"IngredientData.IcingSugar": 50,
+"IngredientData.Lime": 50,
+"IngredientData.Oil": 50,
+"IngredientData.PineappleJam": 30,
+"IngredientData.PlainFlour": 50,
+"IngredientData.RoseSyrup": 20,
+"IngredientData.Salt": 50,
+"IngredientData.Sugar": 50,
+"IngredientData.Water": 110
+}
+
+[node name="BTN_ProceedToTown" parent="TileMap" instance=ExtResource("36_xp5k4")]
+visible = false
+offset_left = -867.0
+offset_top = 413.0
+offset_right = -667.0
+offset_bottom = 488.0
+disabled = true
+text = "Proceed To Town"
+
+[node name="Foliage" type="Node2D" parent="TileMap"]
+y_sort_enabled = true
+position = Vector2(-403, -203)
+scale = Vector2(0.5, 0.5)
+
+[node name="TScene1BananaTree1" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-1110, 1652)
+texture = ExtResource("39_jw0k3")
+
+[node name="TScene1BananaTree2" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-706, 1816)
+texture = ExtResource("40_gdde3")
+
+[node name="TScene1Bush3" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-1864, 228)
+texture = ExtResource("41_fpt4h")
+
+[node name="TScene1Bush4" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-1742, 772)
+texture = ExtResource("42_d2bpo")
+
+[node name="TScene1Bush5" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-1714, 1402)
+texture = ExtResource("43_vxo6f")
+
+[node name="TScene1Bush6" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(3596, 424)
+texture = ExtResource("44_jpchm")
+
+[node name="TScene1Fern1" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(2288, 1882)
+texture = ExtResource("45_lcxsf")
+
+[node name="TScene1Fern2" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-1030, 1108)
+texture = ExtResource("46_iivuw")
+
+[node name="TScene1Stones1" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(3332, 1756)
+texture = ExtResource("47_p7qmo")
+
+[node name="TScene1Stones2" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(2796, 706)
+texture = ExtResource("48_nda4m")
+
+[node name="TScene1Stones3" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(1142, -18)
+texture = ExtResource("49_ilub4")
+
+[node name="TScene1Stones4" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(3452, 1124)
+texture = ExtResource("50_ca4rh")
+
+[node name="TScene1Stump1" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(3348, 952)
+texture = ExtResource("51_4wc46")
+
+[node name="TScene1FallenLog1" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(3304, 690)
+texture = ExtResource("52_68rde")
+
+[node name="TScene1Grass2" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(1416, 1682)
+texture = ExtResource("54_p2jlw")
+
+[node name="TScene1Grass4" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(1496, 878)
+texture = ExtResource("56_gg47a")
+
+[node name="TScene1Grass10" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(3266, 1082)
+texture = ExtResource("57_7lfms")
+
+[node name="TScene1Seedling1" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-514, 1498)
+texture = ExtResource("58_bnxdr")
+
+[node name="TScene1Seedling2" type="Sprite2D" parent="TileMap/Foliage"]
+y_sort_enabled = true
+position = Vector2(-784, 1522)
+texture = ExtResource("59_031st")
+
+[node name="Invisible Barriers" type="Node2D" parent="TileMap"]
+z_index = 1
+position = Vector2(33.5, 49)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap/Invisible Barriers"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Invisible Barriers/StaticBody2D"]
+polygon = PackedVector2Array(1263.5, -541, 1238.5, 659, -1339.5, 645, -963, 41, -837, 119, -914.5, 214, -1052.5, 284, -640.5, 591, 1150.5, 616, 1157.5, 374, -322.5, -308, -325, -539)
+
+[node name="Buildable_Asset_WishingTree" parent="TileMap" groups=["Tutorial_WishingTree"] instance=ExtResource("53_ub7dg")]
+z_as_relative = false
+position = Vector2(832, 10)
+
+[node name="Buildable_Asset_Signboard" parent="TileMap" groups=["Tutorial_Signboard"] instance=ExtResource("52_0wcf2")]
+y_sort_enabled = true
+position = Vector2(1007, 620)
+scale = Vector2(0.75, 0.75)
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+scale = Vector2(20.1777, 23.08)
+zoom = Vector2(0.7, 0.7)
+limit_smoothed = true
+
+[node name="InteractionSystem" type="Node" parent="." groups=["Tutorial_InteractionSystem"]]
+script = ExtResource("17_1u70x")
+
+[editable path="TileMap/Character_Main"]

@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b2mednuk4sy47"]
+
+[ext_resource type="PackedScene" uid="uid://btw2ufgj2x22x" path="res://Scenes/UIs/Build/HighlightTest_Red.tscn" id="1_vk172"]
+[ext_resource type="PackedScene" uid="uid://bbgo6rv4if5pg" path="res://Scenes/UIs/Build/HighlightTest_Green.tscn" id="2_jj1e5"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0cddf"]
+resource_name = "Highlights"
+scenes/1/scene = ExtResource("1_vk172")
+scenes/2/scene = ExtResource("2_jj1e5")
+
+[resource]
+tile_shape = 1
+tile_layout = 1
+tile_size = Vector2i(254, 146)
+sources/1 = SubResource("TileSetScenesCollectionSource_0cddf")

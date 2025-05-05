@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=16 format=3 uid="uid://cnurv66x1ya11"]
+
+[ext_resource type="PackedScene" uid="uid://bcpisoshe5rlq" path="res://Scenes/Buildable/Buildable_CookingStation.tscn" id="1_1c7we"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_1dgi7"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_7py50"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_6fac7"]
+[ext_resource type="PackedScene" uid="uid://d11o5m8mcawbd" path="res://Scenes/Buildable/Buildable_Asset_CookingStation/Buildable_Asset_CookingStation_SE.tscn" id="5_yvafi"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="6_d5gsb"]
+[ext_resource type="PackedScene" uid="uid://cn4ettksnnuv0" path="res://Scenes/Buildable/Buildable_Asset_CookingStation/Buildable_Asset_CookingStation_SW.tscn" id="7_s10gt"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="8_52rrf"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="9_un0m8"]
+[ext_resource type="Script" uid="uid://bbe6eeumkkgy8" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Minimum.gd" id="10_4w6eh"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="11_pn463"]
+[ext_resource type="Texture2D" uid="uid://migeb5n4gxgc" path="res://2024_Art/2024 Restaurant (SceneEatery)/CookingStationOff.tres" id="12_m8n6j"]
+
+[sub_resource type="Resource" id="Resource_abo3a"]
+script = ExtResource("6_d5gsb")
+buildable = ExtResource("5_yvafi")
+buildReqs = Array[ExtResource("2_1dgi7")]([ExtResource("3_7py50"), ExtResource("4_6fac7")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_rgas1"]
+script = ExtResource("6_d5gsb")
+buildable = ExtResource("7_s10gt")
+buildReqs = Array[ExtResource("2_1dgi7")]([ExtResource("3_7py50"), ExtResource("4_6fac7")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_vyox5"]
+script = ExtResource("10_4w6eh")
+_minAmount = 1
+restrictionMessage = "At least 1 Cooking Station needed!"
+
+[resource]
+resource_name = "BuildableData.CookingStation"
+script = ExtResource("11_pn463")
+name = "Cooking Station"
+buildableScene = ExtResource("1_1c7we")
+texture = ExtResource("12_m8n6j")
+category = 4
+price = 100
+layer = 0
+customData = {
+"Upgrade": {
+1: {
+&"Desc": [{
+&"Change": 1,
+&"Subject": "Stove"
+}],
+&"Price": 70.0
+}
+}
+}
+tileSetID = 1
+tileExtensions = Array[ExtResource("8_52rrf")]([])
+flippedTileExtensions = Array[ExtResource("8_52rrf")]([])
+restrictions = Array[ExtResource("9_un0m8")]([SubResource("Resource_vyox5")])
+id = "BuildableData.CookingStation"
+displayName = "Cooking Station"
+layer2 = 2
+collisionPriority = 2
+collisionLayer = 257
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: null,
+2: null,
+3: SubResource("Resource_abo3a"),
+4: null,
+5: SubResource("Resource_rgas1"),
+6: null,
+7: null
+}

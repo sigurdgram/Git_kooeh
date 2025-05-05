@@ -1,0 +1,322 @@
+[gd_scene load_steps=25 format=3 uid="uid://bjfuemwvpw2rx"]
+
+[ext_resource type="PackedScene" uid="uid://c02yk6l5jfai6" path="res://Scenes/QTEBars/QTEBar_Radial_TapInRange.tscn" id="1_muamy"]
+[ext_resource type="Script" uid="uid://ddofcl23rd3b0" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_TestScene.gd" id="1_nrj7p"]
+[ext_resource type="Script" uid="uid://b2vgpxbfy04l0" path="res://Scripts/Resources/QTEDatas/QTEData_Hori.gd" id="4_2q1f2"]
+[ext_resource type="Script" uid="uid://dm2o6h0g5px28" path="res://Scripts/Resources/QTEDatas/QTEData_Radial.gd" id="4_hoe04"]
+[ext_resource type="Curve2D" uid="uid://df4b0plq2wgn5" path="res://Resources/QTEData_Drag/QTECurve_Straight.tres" id="5_6dnfo"]
+[ext_resource type="PackedScene" uid="uid://csnoqq4e5pq71" path="res://Scenes/QTEBars/QTEBar_Hori_TapInRange.tscn" id="5_q0kk4"]
+[ext_resource type="Script" uid="uid://b4cml3q2h08h3" path="res://Scripts/Resources/QTEDatas/QTEData_Drag.gd" id="6_gne4b"]
+[ext_resource type="Curve2D" uid="uid://bg6mhqlovpxrl" path="res://Resources/QTEData_Drag/QTECurve_C.tres" id="7_uw7en"]
+[ext_resource type="Curve2D" uid="uid://cynylwfbge2cl" path="res://Resources/QTEData_Drag/QTECurve_SemicircleC.tres" id="8_wc1ai"]
+[ext_resource type="Curve2D" uid="uid://b4tcnwu8yb5ed" path="res://Resources/QTEData_Drag/QTECurve_CircleClockwise.tres" id="9_5cabl"]
+[ext_resource type="PackedScene" uid="uid://d36sxoo7yshfm" path="res://Scenes/QTEBars/QTEBar_Drag.tscn" id="9_5i0ns"]
+[ext_resource type="Curve2D" uid="uid://d25nglw87rtab" path="res://Resources/QTEData_Drag/QTECurve_CircleAntiClockwise.tres" id="10_n6rcy"]
+
+[sub_resource type="Resource" id="Resource_fyqc2"]
+script = ExtResource("4_hoe04")
+zones = Array[Vector2]([Vector2(0, 60), Vector2(90, 120), Vector2(210, 330)])
+interval = 5.0
+processMode = 0
+
+[sub_resource type="Resource" id="Resource_p1ujc"]
+script = ExtResource("4_hoe04")
+zones = Array[Vector2]([Vector2(0, 90), Vector2(120, 210), Vector2(270, 330)])
+interval = 1.0
+processMode = 1
+
+[sub_resource type="Resource" id="Resource_bdcdt"]
+script = ExtResource("4_2q1f2")
+zones = Array[Vector2]([Vector2(0, 0.3), Vector2(0.5, 0.6), Vector2(0.8, 1)])
+interval = 1.0
+processMode = 0
+
+[sub_resource type="Resource" id="Resource_vim5d"]
+script = ExtResource("4_2q1f2")
+zones = Array[Vector2]([Vector2(0, 0.3), Vector2(0.4, 0.5), Vector2(0.65, 0.8)])
+interval = 1.0
+processMode = 1
+
+[sub_resource type="Resource" id="Resource_v6epl"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("5_6dnfo")
+scale = 150.0
+rotation_degrees = 0.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_1fwmr"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("5_6dnfo")
+scale = 150.0
+rotation_degrees = 270.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_e2lci"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("7_uw7en")
+scale = 150.0
+rotation_degrees = 0.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_7tx3r"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("8_wc1ai")
+scale = 150.0
+rotation_degrees = 0.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_8lhwc"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("9_5cabl")
+scale = 150.0
+rotation_degrees = 0.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_xpegn"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("10_n6rcy")
+scale = 150.0
+rotation_degrees = 0.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_pmnfc"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("5_6dnfo")
+scale = 150.0
+rotation_degrees = 315.0
+qteHint = ""
+
+[sub_resource type="Resource" id="Resource_tgtjg"]
+script = ExtResource("6_gne4b")
+difficulty = 0
+referenceCurve = ExtResource("5_6dnfo")
+scale = 150.0
+rotation_degrees = 45.0
+qteHint = ""
+
+[node name="QTEBar_TestScene" type="Control" node_paths=PackedStringArray("radialQTEBar_OneShot", "radialQTEBar_PingPong", "horiQTEBar_OneShot", "horiQTEBar_PingPong", "dragQTEBar_StraightVertical", "dragQTEBar_StraightHorizontal", "dragQTEBar_C", "dragQTEBar_SemicircleC", "dragQTEBar_CircleClockwise", "dragQTEBar_CircleAnticlockwise", "dragQTEBar_StraightForwardSlash", "dragQTEBar_StraightBackSlash")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrj7p")
+radialQTEBar_OneShot = NodePath("QTEBar_Radial_TapInRange_OneShot")
+radialQTEBar_PingPong = NodePath("QTEBar_Radial_TapInRange_PingPong")
+radialQTEData_OneShot = SubResource("Resource_fyqc2")
+radialQTEData_PingPong = SubResource("Resource_p1ujc")
+horiQTEBar_OneShot = NodePath("QTEBar_Hori_TapInRange_OneShot")
+horiQTEBar_PingPong = NodePath("QTEBar_Hori_TapInRange_PingPong")
+horiQTEData_OneShot = SubResource("Resource_bdcdt")
+horiQTEData_PingPong = SubResource("Resource_vim5d")
+dragQTEData_StraightVertical = SubResource("Resource_v6epl")
+dragQTEBar_StraightVertical = NodePath("Drag_StraightVertical/QTEBar_Drag_StraightVertical")
+dragQTEData_StraightHorizontal = SubResource("Resource_1fwmr")
+dragQTEBar_StraightHorizontal = NodePath("Drag_StraightHorizontal/QTEBar_Drag_StraightHorizontal")
+dragQTEData_C = SubResource("Resource_e2lci")
+dragQTEBar_C = NodePath("Drag_C/QTEBar_Drag_C")
+dragQTEData_SemicircleC = SubResource("Resource_7tx3r")
+dragQTEBar_SemicircleC = NodePath("Drag_SemicircleC/QTEBar_Drag_SemicircleC")
+dragQTEData_CircleClockwise = SubResource("Resource_8lhwc")
+dragQTEBar_CircleClockwise = NodePath("Drag_CircleClockwise/QTEBar_Drag_CircleClockwise")
+dragQTEData_CircleAnticlockwise = SubResource("Resource_xpegn")
+dragQTEBar_CircleAnticlockwise = NodePath("Drag_CircleAnticlockwise/QTEBar_Drag_CircleAnticlockwise")
+dragQTEData_StraightForwardSlash = SubResource("Resource_pmnfc")
+dragQTEBar_StraightForwardSlash = NodePath("Drag_StraightForwardSlash/QTEBar_Drag_StraightForwardSlash")
+dragQTEData_StraightBackSlash = SubResource("Resource_tgtjg")
+dragQTEBar_StraightBackSlash = NodePath("Drag_StraightBackSlash/QTEBar_Drag_StraightBackSlash")
+
+[node name="QTEBar_Radial_TapInRange_OneShot" parent="." instance=ExtResource("1_muamy")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -935.0
+offset_top = -540.0
+offset_right = -665.0
+offset_bottom = -239.0
+
+[node name="QTEBar_Radial_TapInRange_PingPong" parent="." instance=ExtResource("1_muamy")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -665.0
+offset_top = -540.0
+offset_right = -402.0
+offset_bottom = -237.0
+
+[node name="QTEBar_Hori_TapInRange_OneShot" parent="." instance=ExtResource("5_q0kk4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -685.0
+offset_right = -159.0
+offset_bottom = -442.0
+scale = Vector2(2, 2)
+
+[node name="QTEBar_Hori_TapInRange_PingPong" parent="." instance=ExtResource("5_q0kk4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -685.0
+offset_right = 344.0
+offset_bottom = -443.0
+scale = Vector2(2, 2)
+
+[node name="Drag_StraightVertical" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 159.0
+offset_top = 552.0
+offset_right = 199.0
+offset_bottom = 592.0
+
+[node name="QTEBar_Drag_StraightVertical" parent="Drag_StraightVertical" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_StraightHorizontal" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 817.0
+offset_top = 244.0
+offset_right = 857.0
+offset_bottom = 284.0
+
+[node name="QTEBar_Drag_StraightHorizontal" parent="Drag_StraightHorizontal" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_C" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 423.0
+offset_top = 555.0
+offset_right = 463.0
+offset_bottom = 595.0
+
+[node name="QTEBar_Drag_C" parent="Drag_C" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_SemicircleC" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 813.0
+offset_top = 561.0
+offset_right = 853.0
+offset_bottom = 601.0
+
+[node name="QTEBar_Drag_SemicircleC" parent="Drag_SemicircleC" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_CircleClockwise" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1206.0
+offset_top = 412.0
+offset_right = 1246.0
+offset_bottom = 452.0
+
+[node name="QTEBar_Drag_CircleClockwise" parent="Drag_CircleClockwise" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_CircleAnticlockwise" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1650.0
+offset_top = 413.0
+offset_right = 1690.0
+offset_bottom = 453.0
+
+[node name="QTEBar_Drag_CircleAnticlockwise" parent="Drag_CircleAnticlockwise" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_StraightForwardSlash" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1207.0
+offset_top = 883.0
+offset_right = 1247.0
+offset_bottom = 923.0
+
+[node name="QTEBar_Drag_StraightForwardSlash" parent="Drag_StraightForwardSlash" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Drag_StraightBackSlash" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1649.0
+offset_top = 884.0
+offset_right = 1689.0
+offset_bottom = 924.0
+
+[node name="QTEBar_Drag_StraightBackSlash" parent="Drag_StraightBackSlash" instance=ExtResource("9_5i0ns")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

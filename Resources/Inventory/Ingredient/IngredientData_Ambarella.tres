@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://t8lj52xda80x"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_p68i0"]
+[ext_resource type="Texture2D" uid="uid://bv5axphgphq8t" path="res://Art/Ingredient_Spritesheet/T_Ingredient.png" id="2_d1h5j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvni1"]
+atlas = ExtResource("2_d1h5j")
+region = Rect2(2560, 1024, 512, 512)
+
+[resource]
+resource_name = "IngredientData.Ambarella"
+script = ExtResource("1_p68i0")
+name = "Ambarella"
+description = "Hey, it's ambarella! Will it keep you dry on a rainy day?"
+rarity = 2
+stackable = true
+texture = SubResource("AtlasTexture_dvni1")
+bundlePrice = 30
+bundlePurchaseAmount = 10
+metadata/_custom_type_script = "uid://xe1dkdghab3l"

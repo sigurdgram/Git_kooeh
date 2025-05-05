@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputData" load_steps=4 format=3 uid="uid://7nrvfl3v2xoe"]
+
+[ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="1_lyky3"]
+[ext_resource type="Script" uid="uid://cseyqynuc8rd5" path="res://Scripts/Resources/InputData.gd" id="1_spj1i"]
+[ext_resource type="Texture2D" uid="uid://cn8ot71as8p80" path="res://addons/controller_icons/assets/xboxseries/a.png" id="2_5pfac"]
+
+[resource]
+resource_name = "InputData.Confirm"
+script = ExtResource("1_spj1i")
+displayName = "Confirm"
+inputLegends = {
+0: ExtResource("1_lyky3"),
+1: ExtResource("2_5pfac")
+}

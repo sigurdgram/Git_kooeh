@@ -1,0 +1,245 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdmmmcjq6kotj"]
+
+[ext_resource type="Script" uid="uid://u8dam431o84i" path="res://Scripts/UISystem/UIs/Phase2UI/UI_Phase2_OperationHours.gd" id="1_agvuq"]
+[ext_resource type="Texture2D" uid="uid://bo5a4u1myg8ia" path="res://Art/UI/Atlas_UI_Clock.tres" id="2_5l8sg"]
+[ext_resource type="Texture2D" uid="uid://c1cg5v70820ga" path="res://Art/UI/Atlas_UI_ClockHandle.tres" id="3_d67hs"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="4_2r661"]
+[ext_resource type="Texture2D" uid="uid://dhi5u1njm2uvb" path="res://2024_Art/2024 UI Assets/T_UI_MenuSet1.png" id="5_4lu2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_356ou"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eq13"]
+atlas = ExtResource("5_4lu2a")
+region = Rect2(1224, 20, 553, 255)
+
+[sub_resource type="Animation" id="Animation_gxvh6"]
+resource_name = "Anim_Overtime"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle/TXT_Overtime:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 0.8),
+"transitions": PackedFloat32Array(2, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1, 1), Vector2(1.4, 1.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AspectRatioContainer/TEXTRECT_Clock:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.282353, 0.282353, 0.282353, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t0xhm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle/TXT_Overtime:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AspectRatioContainer/TEXTRECT_Clock:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qcrbl"]
+_data = {
+&"Anim_Overtime": SubResource("Animation_gxvh6"),
+&"RESET": SubResource("Animation_t0xhm")
+}
+
+[node name="UI_Phase2_OperationHours" type="Control" node_paths=PackedStringArray("_dayTxt", "_handleControl", "_animOvertime")]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_agvuq")
+_dayTxt = NodePath("AspectRatioContainer/TEXTRECT_Clock/REFRECT_Day/TXT_Day")
+_handleControl = NodePath("AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle/ReferenceRect")
+_animOvertime = NodePath("Anim_Overtime")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEXTRECT_Clock" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("2_5l8sg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="REFRECT_Handle" type="ReferenceRect" parent="AspectRatioContainer/TEXTRECT_Clock"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.395
+anchor_right = 0.5
+anchor_bottom = 0.395
+offset_left = -79.0
+offset_top = -62.0
+offset_right = 79.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(79, 79)
+border_width = 0.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -79.0
+offset_right = 79.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(79, 79)
+border_width = 0.0
+
+[node name="ASPECTRECT_Handle" type="AspectRatioContainer" parent="AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle/ReferenceRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506
+anchor_top = 0.589
+anchor_right = 0.506
+anchor_bottom = 0.589
+offset_left = -30.948
+offset_top = -45.062
+offset_right = 9.05196
+offset_bottom = -5.06226
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(9, 35)
+
+[node name="TEXTRECT_Handle" type="TextureRect" parent="AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle/ReferenceRect/ASPECTRECT_Handle"]
+custom_minimum_size = Vector2(0.29, 0)
+layout_mode = 2
+texture = ExtResource("3_d67hs")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Overtime" type="Label" parent="AspectRatioContainer/TEXTRECT_Clock/REFRECT_Handle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -18.5
+offset_right = 60.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.453786
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(60, 18)
+theme = ExtResource("4_2r661")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_356ou")
+text = "OVERTIME"
+vertical_alignment = 1
+
+[node name="REFRECT_Day" type="ReferenceRect" parent="AspectRatioContainer/TEXTRECT_Clock"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -2.0
+offset_right = 56.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/TEXTRECT_Clock/REFRECT_Day"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.352
+anchor_right = 0.5
+anchor_bottom = 1.352
+offset_left = -97.5
+offset_top = -48.191
+offset_right = 455.5
+offset_bottom = 206.807
+scale = Vector2(0.35, 0.35)
+texture = SubResource("AtlasTexture_3eq13")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Day" type="Label" parent="AspectRatioContainer/TEXTRECT_Clock/REFRECT_Day"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.906
+anchor_right = 1.0
+anchor_bottom = 1.906
+offset_top = -0.00800133
+offset_bottom = -0.00798798
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_2r661")
+theme_type_variation = &"HeaderLarge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anim_Overtime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qcrbl")
+}

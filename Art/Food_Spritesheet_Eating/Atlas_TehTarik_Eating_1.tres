@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://5cj3i2lgxrvy"]
+
+[ext_resource type="Texture2D" uid="uid://c8wi8st20i4xy" path="res://Art/Food_Spritesheet_Eating/T_Food_Spritesheet_Eating.png" id="1_7xyc6"]
+
+[resource]
+atlas = ExtResource("1_7xyc6")
+region = Rect2(329, 196, 41, 43)

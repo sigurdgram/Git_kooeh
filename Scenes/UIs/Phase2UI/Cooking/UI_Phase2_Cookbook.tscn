@@ -1,0 +1,432 @@
+[gd_scene load_steps=19 format=3 uid="uid://ca1gfxk8dikj2"]
+
+[ext_resource type="Script" uid="uid://boos620nen5b4" path="res://Scripts/UISystem/UIs/Phase2UI/Cooking/UI_Phase2_Cookbook.gd" id="1_fuhaa"]
+[ext_resource type="PackedScene" uid="uid://b1kilhuidbyi1" path="res://Scenes/UIs/Phase2UI/Cooking/UI_Phase2_Cookbook_Entry.tscn" id="2_1xtdr"]
+[ext_resource type="Texture2D" uid="uid://ch7iuuxmc8nu4" path="res://Art/UI/Atlas_UI_Book2.tres" id="2_a8ubw"]
+[ext_resource type="PackedScene" uid="uid://d1s2co24h0vmu" path="res://Scenes/UIs/Misc/UI_RequiredAmount_Frame.tscn" id="3_b2xo3"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="3_w2h2f"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="4_o0kv4"]
+[ext_resource type="Texture2D" uid="uid://8w8ncjr2s2ll" path="res://Art/Food_Spritesheet/Atlas_SirapLimau.tres" id="5_ekuxa"]
+[ext_resource type="Texture2D" uid="uid://8lly5edd42cc" path="res://Art/UI/Atlas_UI_Icon_Clock.tres" id="6_8ufuj"]
+[ext_resource type="Texture2D" uid="uid://dkmanpqx4okbh" path="res://Art/UI/Atlas_UI_Icon_Difficulty.tres" id="6_m2u1g"]
+[ext_resource type="Script" uid="uid://dqmkui6kjmwjw" path="res://Scripts/UISystem/UIs/Misc/UI_ResizableLabel.gd" id="7_wmdo0"]
+[ext_resource type="Texture2D" uid="uid://cyvk4234dqkvd" path="res://Art/UI/Atlas_UI_Icon_Amount.tres" id="8_783yd"]
+[ext_resource type="Texture2D" uid="uid://brubkklce5xxp" path="res://Art/UI/Atlas_UI_Icon_Paper.tres" id="9_2k6ge"]
+[ext_resource type="PackedScene" uid="uid://d3l8mt377bxbu" path="res://Scenes/UIs/Misc/UI_BasicButton.tscn" id="10_ejpbu"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="14_brf44"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lrp0p"]
+shader = ExtResource("4_o0kv4")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_k5mw0"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4nmac"]
+gradient = SubResource("Gradient_k5mw0")
+width = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ed6t"]
+texture = ExtResource("2_a8ubw")
+
+[node name="UI_Phase2_Cookbook" type="Control" node_paths=PackedStringArray("_cookBookEntriesVBox", "_cookBtn", "_rightPage", "_selectedFoodText", "_selectedFoodDescription", "_selectedFoodTextureRect", "_selectedFoodDifficulty", "_selectedFoodCookingTime", "_selectedFoodCookAmount", "_selectedFoodPrice", "_requiredIngredientsHFlow")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fuhaa")
+_cookBookEntry = ExtResource("2_1xtdr")
+_requiredAmountFrame = ExtResource("3_b2xo3")
+_cookBookEntriesVBox = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Left/VBoxContainer/VBOX_CookbookEntries")
+_cookBtn = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/UI_InGamePause_BasicButton")
+_rightPage = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right")
+_selectedFoodText = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Name/TXT_Name")
+_selectedFoodDescription = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients/TXT_Description")
+_selectedFoodTextureRect = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_FoodImage/MarginContainer/TEXTRECT_FoodImage")
+_selectedFoodDifficulty = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Difficulty/RTL_Difficulty_Value")
+_selectedFoodCookingTime = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookingTime/TXT_CookingTime_Value")
+_selectedFoodCookAmount = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookAmount/TXT_CookAmount_Value")
+_selectedFoodPrice = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Price/TXT_Price_Value")
+_requiredIngredientsHFlow = NodePath("ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients/REFRECT_RequiredIngredients/VBoxContainer/HFLOW_RequiredIngredients")
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_lrp0p")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_4nmac")
+
+[node name="ASPECTRECT_Book" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.53
+alignment_vertical = 2
+
+[node name="PANEL_Book" type="Panel" parent="ASPECTRECT_Book"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3ed6t")
+
+[node name="REFRECT_Left" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195
+anchor_top = 0.085
+anchor_right = 0.465
+anchor_bottom = 0.894
+offset_left = 0.197174
+offset_top = -0.279999
+offset_right = -0.683655
+offset_bottom = -0.392029
+border_width = 5.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_Title" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Left/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 45
+text = "Cookbook"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSEP_Divider" type="HSeparator" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Left/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w2h2f")
+
+[node name="VBOX_CookbookEntries" type="VBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Left/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="REFRECT_Right" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.531
+anchor_top = 0.085
+anchor_right = 0.803
+anchor_bottom = 0.893
+offset_left = -0.432312
+offset_top = -0.279999
+offset_right = -0.275146
+offset_bottom = -0.424072
+
+[node name="REFRECT_Name" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.092
+offset_bottom = 0.0559921
+grow_horizontal = 2
+
+[node name="HSeparator" type="HSeparator" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Name"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -13.0
+offset_bottom = -8.99996
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_w2h2f")
+
+[node name="TXT_Name" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 60
+text = "Kopi O"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_wmdo0")
+_maxFontSize = 50
+
+[node name="REFRECT_Image&Details" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.092
+anchor_right = 1.0
+anchor_bottom = 0.331
+offset_top = 0.0559921
+offset_bottom = 0.15799
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="REFRECT_FoodImage" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details"]
+layout_mode = 2
+anchor_right = 0.501
+anchor_bottom = 1.0
+offset_right = 0.0969849
+
+[node name="MarginContainer" type="AspectRatioContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_FoodImage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEXTRECT_FoodImage" type="TextureRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_FoodImage/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_ekuxa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="REFRECT_Details" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBOX_Difficulty" type="HBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Difficulty"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("6_m2u1g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_Difficulty" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Difficulty"]
+layout_mode = 2
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "Difficulty:"
+vertical_alignment = 1
+
+[node name="RTL_Difficulty_Value" type="RichTextLabel" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_colors/default_color = Color(0.253906, 0.179688, 0.125, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Easy"
+fit_content = true
+scroll_active = false
+
+[node name="HBOX_CookingTime" type="HBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="TEXTRECT_CookingTime" type="TextureRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookingTime"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("6_8ufuj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_CookingTime" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookingTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "Cooking Time:"
+vertical_alignment = 1
+
+[node name="TXT_CookingTime_Value" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookingTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "NNs"
+vertical_alignment = 1
+
+[node name="HBOX_CookAmount" type="HBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="TEXTRECT_CookAmount" type="TextureRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookAmount"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("8_783yd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_CookAmount" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookAmount"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "Cook Amount:"
+vertical_alignment = 1
+
+[node name="TXT_CookAmount_Value" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_CookAmount"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "N"
+vertical_alignment = 1
+
+[node name="HBOX_Price" type="HBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="TEXTRECT_Price" type="TextureRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Price"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("9_2k6ge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TXT_Price" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Price"]
+layout_mode = 2
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "Price:"
+vertical_alignment = 1
+
+[node name="TXT_Price_Value" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Image&Details/REFRECT_Details/VBoxContainer/HBOX_Price"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "RM N"
+vertical_alignment = 1
+
+[node name="REFRECT_Description&RequiredIngredients" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.344
+anchor_right = 1.0
+anchor_bottom = 0.789
+offset_top = -0.00799561
+offset_bottom = 0.0020752
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_Description" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.324
+offset_bottom = 0.00800323
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "Description"
+autowrap_mode = 3
+
+[node name="REFRECT_RequiredIngredients" type="ReferenceRect" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.324
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.00800323
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients/REFRECT_RequiredIngredients"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients/REFRECT_RequiredIngredients/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w2h2f")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 16
+text = "Required Ingredients:"
+
+[node name="HFLOW_RequiredIngredients" type="HFlowContainer" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right/REFRECT_Description&RequiredIngredients/REFRECT_RequiredIngredients/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/v_separation = 20
+
+[node name="UI_InGamePause_BasicButton" parent="ASPECTRECT_Book/PANEL_Book/REFRECT_Right" instance=ExtResource("10_ejpbu")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.138
+anchor_top = 0.859248
+anchor_right = 0.85
+anchor_bottom = 0.936248
+offset_left = -0.0940475
+offset_top = 0.0679932
+offset_right = -0.0300598
+offset_bottom = -0.146057
+text = "Cook"
+metadata/_edit_use_anchors_ = true
+
+[node name="REFRECT_InputLegend" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.931
+anchor_right = 1.0
+anchor_bottom = 0.968
+offset_top = -0.480042
+offset_bottom = -0.440063
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="REFRECT_InputLegend"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI_InputLegend3" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("14_brf44")]
+layout_mode = 2
+input = "ui_cancel"

@@ -1,0 +1,878 @@
+[gd_resource type="AnimationLibrary" load_steps=328 format=3 uid="uid://cw06ffu8b12j3"]
+
+[ext_resource type="Texture2D" uid="uid://cfjhh041wn6pd" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (1).png" id="72_e80vu"]
+[ext_resource type="Texture2D" uid="uid://d020vq4xdgbqq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (2).png" id="73_d8s2v"]
+[ext_resource type="Texture2D" uid="uid://djm40hn03k6da" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (3).png" id="74_wt2na"]
+[ext_resource type="Texture2D" uid="uid://dvb8orwttgyei" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (4).png" id="75_jv0qo"]
+[ext_resource type="Texture2D" uid="uid://df2vt7xngpqxf" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (5).png" id="76_k7e64"]
+[ext_resource type="Texture2D" uid="uid://bmqn4pqa7ny3g" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (6).png" id="77_f0xpu"]
+[ext_resource type="Texture2D" uid="uid://crcsanbls65eg" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (7).png" id="78_0g7wn"]
+[ext_resource type="Texture2D" uid="uid://dmy58886am5oh" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (8).png" id="79_t8ol7"]
+[ext_resource type="Texture2D" uid="uid://bdjpey4wgb6xt" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (9).png" id="80_1qjnw"]
+[ext_resource type="Texture2D" uid="uid://oq3oyoudacbh" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (10).png" id="81_c1ypa"]
+[ext_resource type="Texture2D" uid="uid://cxmmlxurgyjlo" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (11).png" id="82_okdsw"]
+[ext_resource type="Texture2D" uid="uid://cnqipki3ntj2g" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (12).png" id="83_rkmvx"]
+[ext_resource type="Texture2D" uid="uid://d3moakpqbutcv" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (13).png" id="84_erkko"]
+[ext_resource type="Texture2D" uid="uid://cd8qcnqqtl5w8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (14).png" id="85_5j83j"]
+[ext_resource type="Texture2D" uid="uid://c0a1bjmminf7o" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (15).png" id="86_60ypp"]
+[ext_resource type="Texture2D" uid="uid://iuje5yiee6ug" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (16).png" id="87_vatnh"]
+[ext_resource type="Texture2D" uid="uid://cpccg0cesiy6j" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (17).png" id="88_g6j5u"]
+[ext_resource type="Texture2D" uid="uid://de33jtcpqlgeu" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (18).png" id="89_xxavp"]
+[ext_resource type="Texture2D" uid="uid://dfwd0uaj7dtwu" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (19).png" id="90_agmay"]
+[ext_resource type="Texture2D" uid="uid://dusi4m4yxuqgs" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (20).png" id="91_k25le"]
+[ext_resource type="Texture2D" uid="uid://bovdxufafq5yj" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (21).png" id="92_p0ui1"]
+[ext_resource type="Texture2D" uid="uid://cbo2uyjnyvlxo" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (22).png" id="93_g1bwt"]
+[ext_resource type="Texture2D" uid="uid://dt3s45vohnifu" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (23).png" id="94_2r01n"]
+[ext_resource type="Texture2D" uid="uid://dfwpf6ot2u5xf" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (24).png" id="95_r04o4"]
+[ext_resource type="Texture2D" uid="uid://ywnawexfoxab" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (25).png" id="96_cmxf7"]
+[ext_resource type="Texture2D" uid="uid://d38ehn6ais26s" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (26).png" id="97_w08ni"]
+[ext_resource type="Texture2D" uid="uid://c7jri2ygg6x1e" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (27).png" id="98_remq2"]
+[ext_resource type="Texture2D" uid="uid://dsalnlv6bnlia" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (28).png" id="99_jn4jo"]
+[ext_resource type="Texture2D" uid="uid://cwhkg3njthof1" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (29).png" id="100_oybm5"]
+[ext_resource type="Texture2D" uid="uid://cyixflvw8deya" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (30).png" id="101_r1agh"]
+[ext_resource type="Texture2D" uid="uid://36m673qyq3b6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (31).png" id="102_2jnuu"]
+[ext_resource type="Texture2D" uid="uid://ba7ptbfpsoy5t" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (32).png" id="103_pw4re"]
+[ext_resource type="Texture2D" uid="uid://bdbpy0s75oj7w" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (33).png" id="104_6phtp"]
+[ext_resource type="Texture2D" uid="uid://n5a4h1l8gsim" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (34).png" id="105_2wlth"]
+[ext_resource type="Texture2D" uid="uid://c0ounjsxruih6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_EatBack/T_Kooeh_NPC_Bear_EatBack_ (35).png" id="106_2pjbn"]
+[ext_resource type="Texture2D" uid="uid://c4xmknae4plfn" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (1).png" id="108_6hl1a"]
+[ext_resource type="Texture2D" uid="uid://bfoa2cd5b0iw6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (1).png" id="108_hln6v"]
+[ext_resource type="Texture2D" uid="uid://dtw7uuvdkb17h" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (2).png" id="109_8mhnn"]
+[ext_resource type="Texture2D" uid="uid://b7o6ce6j6g020" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (2).png" id="109_rhdu1"]
+[ext_resource type="Texture2D" uid="uid://ba5sa6xmy603e" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (3).png" id="110_loo6l"]
+[ext_resource type="Texture2D" uid="uid://bdjae65s0pw2n" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (3).png" id="110_odc46"]
+[ext_resource type="Texture2D" uid="uid://h8ef6p03bdur" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (4).png" id="111_2gi5p"]
+[ext_resource type="Texture2D" uid="uid://cgaapwp22djfd" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (4).png" id="111_a0gj1"]
+[ext_resource type="Texture2D" uid="uid://dhlnfoe8wi4u6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (5).png" id="112_opeqm"]
+[ext_resource type="Texture2D" uid="uid://reqnh8xwt5c" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (5).png" id="112_pv504"]
+[ext_resource type="Texture2D" uid="uid://drsnfvdonnu0y" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (6).png" id="113_bp7n3"]
+[ext_resource type="Texture2D" uid="uid://fp7h6hloe8gi" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (6).png" id="113_qaf23"]
+[ext_resource type="Texture2D" uid="uid://ccidl3vfqgt78" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (7).png" id="114_c8ta7"]
+[ext_resource type="Texture2D" uid="uid://dm117433oiut8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (7).png" id="114_x88v1"]
+[ext_resource type="Texture2D" uid="uid://cfwph6ck0mbl3" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (8).png" id="115_m02oo"]
+[ext_resource type="Texture2D" uid="uid://rofwsdf5av64" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (8).png" id="115_tv3q1"]
+[ext_resource type="Texture2D" uid="uid://cflmmhh56ixil" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (9).png" id="116_81bhk"]
+[ext_resource type="Texture2D" uid="uid://130w0jfc2o70" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (9).png" id="116_oedws"]
+[ext_resource type="Texture2D" uid="uid://xspftb3wjs0e" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (10).png" id="117_7vkfs"]
+[ext_resource type="Texture2D" uid="uid://bdvikmo3eem74" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (10).png" id="117_pgfht"]
+[ext_resource type="Texture2D" uid="uid://cnx5w11nxgkcf" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (11).png" id="118_8nins"]
+[ext_resource type="Texture2D" uid="uid://cihdh2t82sc5j" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (11).png" id="118_p83ba"]
+[ext_resource type="Texture2D" uid="uid://bl3xihxearfgr" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (12).png" id="119_38r6c"]
+[ext_resource type="Texture2D" uid="uid://dj2fobeoxudya" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (12).png" id="119_hcsix"]
+[ext_resource type="Texture2D" uid="uid://bpdm5nr2xn7eb" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (13).png" id="120_jd7ko"]
+[ext_resource type="Texture2D" uid="uid://bpprbfluagvx8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (13).png" id="120_ydrn1"]
+[ext_resource type="Texture2D" uid="uid://b0vdxk0p0hrm4" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (14).png" id="121_7ntke"]
+[ext_resource type="Texture2D" uid="uid://donexa3x331gt" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (14).png" id="121_omw2m"]
+[ext_resource type="Texture2D" uid="uid://boey6kx5obbvy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (15).png" id="122_r1u0q"]
+[ext_resource type="Texture2D" uid="uid://d11s1ca3cub4f" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (15).png" id="122_yhstx"]
+[ext_resource type="Texture2D" uid="uid://dh8hrag3y8ybr" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (16).png" id="123_8whan"]
+[ext_resource type="Texture2D" uid="uid://b4hl6j8uhoxvo" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (16).png" id="123_qg07w"]
+[ext_resource type="Texture2D" uid="uid://b4df3tt325til" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (17).png" id="124_38s7y"]
+[ext_resource type="Texture2D" uid="uid://b1hogq2jwcmwq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (17).png" id="124_gwv4g"]
+[ext_resource type="Texture2D" uid="uid://8glgd3levjgo" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (18).png" id="125_4tu2i"]
+[ext_resource type="Texture2D" uid="uid://bumrgrfxujt60" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (18).png" id="125_20qj2"]
+[ext_resource type="Texture2D" uid="uid://d1vf0cbp7ybrw" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (19).png" id="126_33roe"]
+[ext_resource type="Texture2D" uid="uid://omwopdrieyve" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (19).png" id="126_rlkgj"]
+[ext_resource type="Texture2D" uid="uid://3qcmdsrub10r" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (20).png" id="127_3jsav"]
+[ext_resource type="Texture2D" uid="uid://7q2cbiwpvomc" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (20).png" id="127_nikvx"]
+[ext_resource type="Texture2D" uid="uid://bv87o5mpskvj2" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (21).png" id="128_cdjqe"]
+[ext_resource type="Texture2D" uid="uid://br1ndkgjjkuk" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (21).png" id="128_dlqq0"]
+[ext_resource type="Texture2D" uid="uid://mujegbr4ny06" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (22).png" id="129_6v1gl"]
+[ext_resource type="Texture2D" uid="uid://dugsved4i5d8d" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (22).png" id="129_pwu6m"]
+[ext_resource type="Texture2D" uid="uid://c53kk67jxxsq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (23).png" id="130_eb4n3"]
+[ext_resource type="Texture2D" uid="uid://biwa8ew1i4lpy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (23).png" id="130_qcdec"]
+[ext_resource type="Texture2D" uid="uid://cu8c8hce6g7wc" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (24).png" id="131_jbnye"]
+[ext_resource type="Texture2D" uid="uid://bdxupbls48asi" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (24).png" id="131_kickw"]
+[ext_resource type="Texture2D" uid="uid://bbxvh50eo5m8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (25).png" id="132_5ceb0"]
+[ext_resource type="Texture2D" uid="uid://v8yy7gdj0e7g" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (25).png" id="132_uwpmj"]
+[ext_resource type="Texture2D" uid="uid://bbafkrgs1cc4t" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (26).png" id="133_ac7b4"]
+[ext_resource type="Texture2D" uid="uid://br1dxctrjikh5" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (26).png" id="133_n2u71"]
+[ext_resource type="Texture2D" uid="uid://xq0g3ffspath" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (27).png" id="134_838s3"]
+[ext_resource type="Texture2D" uid="uid://busehxgwu7jxv" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (27).png" id="134_yhsk6"]
+[ext_resource type="Texture2D" uid="uid://c8efxsnprlsb4" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (28).png" id="135_la8aq"]
+[ext_resource type="Texture2D" uid="uid://b0bcrsnuq4f7p" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (28).png" id="135_xb4bf"]
+[ext_resource type="Texture2D" uid="uid://dr354xfgg502b" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (29).png" id="136_btipo"]
+[ext_resource type="Texture2D" uid="uid://d3vfwdn2cdkrt" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (29).png" id="136_mg3ql"]
+[ext_resource type="Texture2D" uid="uid://f4ri0wujrcih" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_IdleBack/T_Kooeh_NPC_Bear_IdleBack_ (30).png" id="137_hign5"]
+[ext_resource type="Texture2D" uid="uid://ddgnn0grxqwmy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (30).png" id="137_w1afg"]
+[ext_resource type="Texture2D" uid="uid://d20xig7v3xaub" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (31).png" id="138_jvhku"]
+[ext_resource type="Texture2D" uid="uid://c8fuj0vdo8vpx" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (1).png" id="138_m3h6f"]
+[ext_resource type="Texture2D" uid="uid://clampmux4fua5" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (32).png" id="139_2e4ky"]
+[ext_resource type="Texture2D" uid="uid://c0gk3el6pf1a1" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (2).png" id="139_mmtei"]
+[ext_resource type="Texture2D" uid="uid://pn2l1kiv7a3n" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (33).png" id="140_0mvqr"]
+[ext_resource type="Texture2D" uid="uid://dn7gqsywv0mmi" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (3).png" id="140_oab55"]
+[ext_resource type="Texture2D" uid="uid://b06lyentatexs" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (4).png" id="141_hje3n"]
+[ext_resource type="Texture2D" uid="uid://dodtkvqupqvmy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (34).png" id="141_hro1n"]
+[ext_resource type="Texture2D" uid="uid://bkfw0ssabx64f" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Eat/T_Kooeh_A001_NPC_Bear_Eating_ (35).png" id="142_7wwtj"]
+[ext_resource type="Texture2D" uid="uid://ciqs504q8e4wx" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (5).png" id="142_m2oip"]
+[ext_resource type="Texture2D" uid="uid://bw0m1n6ap754k" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (6).png" id="143_dr60b"]
+[ext_resource type="Texture2D" uid="uid://chcaelmt5ev2p" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (7).png" id="144_38ot1"]
+[ext_resource type="Texture2D" uid="uid://tpy8ls66tbis" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (8).png" id="145_jgtxh"]
+[ext_resource type="Texture2D" uid="uid://8rob3sjt643e" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (9).png" id="146_ywwcp"]
+[ext_resource type="Texture2D" uid="uid://dswcqjlgp8h7b" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (10).png" id="147_uhuty"]
+[ext_resource type="Texture2D" uid="uid://drcuta4tjxvyb" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (11).png" id="148_tcajk"]
+[ext_resource type="Texture2D" uid="uid://b8uyuy5vc5f8u" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (12).png" id="149_alvdi"]
+[ext_resource type="Texture2D" uid="uid://c76iwx3m3hwj" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (13).png" id="150_cpc2v"]
+[ext_resource type="Texture2D" uid="uid://dbcqi2gwng7mf" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (14).png" id="151_c1aeo"]
+[ext_resource type="Texture2D" uid="uid://yqyrue2gadky" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (15).png" id="152_cfxst"]
+[ext_resource type="Texture2D" uid="uid://b7cxqj5arggfv" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (16).png" id="153_w4kth"]
+[ext_resource type="Texture2D" uid="uid://c4dvpctu2gk58" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (17).png" id="154_6b8xj"]
+[ext_resource type="Texture2D" uid="uid://bms8dtlgda6fm" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (18).png" id="155_2yh27"]
+[ext_resource type="Texture2D" uid="uid://cjau02r0lompk" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (19).png" id="156_7g7a0"]
+[ext_resource type="Texture2D" uid="uid://bu7p8mm101f51" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (20).png" id="157_q2m8e"]
+[ext_resource type="Texture2D" uid="uid://bftjl6jnnmno3" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (21).png" id="158_jj84c"]
+[ext_resource type="Texture2D" uid="uid://cfixec8vs5nk0" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (22).png" id="159_afbwc"]
+[ext_resource type="Texture2D" uid="uid://odhopqyn7qqq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (23).png" id="160_ueq27"]
+[ext_resource type="Texture2D" uid="uid://ms078auy2nx1" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (24).png" id="161_s0kwj"]
+[ext_resource type="Texture2D" uid="uid://b68clb18cabyv" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (25).png" id="162_5yoiu"]
+[ext_resource type="Texture2D" uid="uid://bx4yxv4ftfwea" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (26).png" id="163_7vqp1"]
+[ext_resource type="Texture2D" uid="uid://ce4aronvhyw58" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (27).png" id="164_tgbmq"]
+[ext_resource type="Texture2D" uid="uid://b6lx467h7ae43" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (28).png" id="165_qpxho"]
+[ext_resource type="Texture2D" uid="uid://cphoop81m1j4d" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (29).png" id="166_kj72n"]
+[ext_resource type="Texture2D" uid="uid://6u7nht34xb1e" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (30).png" id="167_cencn"]
+[ext_resource type="Texture2D" uid="uid://bcjyhdw17oawa" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (31).png" id="168_7riyb"]
+[ext_resource type="Texture2D" uid="uid://wwf4gqtheql" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (32).png" id="169_gwewh"]
+[ext_resource type="Texture2D" uid="uid://ck0uymw8go7bt" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (33).png" id="170_og5kq"]
+[ext_resource type="Texture2D" uid="uid://77y7x5mq4kqe" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (34).png" id="171_8srqq"]
+[ext_resource type="Texture2D" uid="uid://bby7ibd2np0bg" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (35).png" id="172_jmnjw"]
+[ext_resource type="Texture2D" uid="uid://dlcno6p5em522" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (36).png" id="173_wpp4w"]
+[ext_resource type="Texture2D" uid="uid://cp7v2jucxr1um" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (37).png" id="174_o3n16"]
+[ext_resource type="Texture2D" uid="uid://bf57b30dns4yw" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (38).png" id="175_sacva"]
+[ext_resource type="Texture2D" uid="uid://dbwg41ra2wpbl" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (39).png" id="176_iyttp"]
+[ext_resource type="Texture2D" uid="uid://cvpvq88tu1s7a" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (40).png" id="177_0dg58"]
+[ext_resource type="Texture2D" uid="uid://b3wh3ul0pypvd" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (41).png" id="178_uxj60"]
+[ext_resource type="Texture2D" uid="uid://lctop13b2y6h" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (42).png" id="179_hgtwk"]
+[ext_resource type="Texture2D" uid="uid://ro1tjwkvveid" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (43).png" id="180_35aff"]
+[ext_resource type="Texture2D" uid="uid://bfhhfpnois0vd" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (44).png" id="181_whftm"]
+[ext_resource type="Texture2D" uid="uid://css6yce5wyqk1" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (45).png" id="182_4uu5f"]
+[ext_resource type="Texture2D" uid="uid://csxp7rea2vg63" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (46).png" id="183_0afou"]
+[ext_resource type="Texture2D" uid="uid://cybwrj4mwyl70" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (47).png" id="184_1u3hh"]
+[ext_resource type="Texture2D" uid="uid://dgiyt0out3dpd" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (48).png" id="185_ygnbo"]
+[ext_resource type="Texture2D" uid="uid://bh6kfl60wbj6j" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (49).png" id="186_uegrl"]
+[ext_resource type="Texture2D" uid="uid://7iv34eu5cltt" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (50).png" id="187_ft4ja"]
+[ext_resource type="Texture2D" uid="uid://qooxhur6eqfr" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (51).png" id="188_nyw0d"]
+[ext_resource type="Texture2D" uid="uid://6f3v0rk5lw3w" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (52).png" id="189_ln8ci"]
+[ext_resource type="Texture2D" uid="uid://k0mf8qh1j57x" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (53).png" id="190_rky0e"]
+[ext_resource type="Texture2D" uid="uid://br1pxlev5doud" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (54).png" id="191_gi6e1"]
+[ext_resource type="Texture2D" uid="uid://rlb3y0scp86w" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (55).png" id="192_rqqke"]
+[ext_resource type="Texture2D" uid="uid://dc4usayq7m14l" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (56).png" id="193_r2wut"]
+[ext_resource type="Texture2D" uid="uid://bhbynsi1hc6gr" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (57).png" id="194_sfyyp"]
+[ext_resource type="Texture2D" uid="uid://op33dhbvsxdi" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (58).png" id="195_kmeaq"]
+[ext_resource type="Texture2D" uid="uid://ctrdkpp0nxrk5" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (59).png" id="196_q5q3n"]
+[ext_resource type="Texture2D" uid="uid://c3lhrpiedhgu" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (60).png" id="197_av7wx"]
+[ext_resource type="Texture2D" uid="uid://10wsdcj4wpcr" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (1).png" id="198_drfsb"]
+[ext_resource type="Texture2D" uid="uid://0pn3sjc8k1r4" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (61).png" id="198_erc36"]
+[ext_resource type="Texture2D" uid="uid://rg7e5iiq4wx6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (62).png" id="199_d21l4"]
+[ext_resource type="Texture2D" uid="uid://kxb5urqaa32q" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (2).png" id="199_wac5f"]
+[ext_resource type="Texture2D" uid="uid://byu6uu7pkbqde" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (3).png" id="200_eqhjt"]
+[ext_resource type="Texture2D" uid="uid://ghewv2ablqo6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (63).png" id="200_nn3xf"]
+[ext_resource type="Texture2D" uid="uid://beqvc1wwvcr7u" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (4).png" id="201_417xh"]
+[ext_resource type="Texture2D" uid="uid://5er4rsy2ng4" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (64).png" id="201_jema2"]
+[ext_resource type="Texture2D" uid="uid://mqenejlxo7ri" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (5).png" id="202_ojpge"]
+[ext_resource type="Texture2D" uid="uid://jjpg6lhirkoo" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (65).png" id="202_qy7sa"]
+[ext_resource type="Texture2D" uid="uid://b70j5b3sprdy7" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (6).png" id="203_1nkgn"]
+[ext_resource type="Texture2D" uid="uid://cnle3ipjgea5f" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (66).png" id="203_rjp87"]
+[ext_resource type="Texture2D" uid="uid://bjlg4088er8g3" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (67).png" id="204_fycbq"]
+[ext_resource type="Texture2D" uid="uid://bm2vk180w4oxv" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (7).png" id="204_ude2n"]
+[ext_resource type="Texture2D" uid="uid://b6gvmr3wisuu5" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (8).png" id="205_5wh8w"]
+[ext_resource type="Texture2D" uid="uid://cgb0f1td87ck8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (68).png" id="205_l7bf3"]
+[ext_resource type="Texture2D" uid="uid://bmqxcw68jriu2" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (69).png" id="206_lnkt2"]
+[ext_resource type="Texture2D" uid="uid://11mrli741txr" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (9).png" id="206_lrdeq"]
+[ext_resource type="Texture2D" uid="uid://dl8ibavkqxl8c" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (10).png" id="207_2f3t5"]
+[ext_resource type="Texture2D" uid="uid://dkvdnitte1yir" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (70).png" id="207_xkrc7"]
+[ext_resource type="Texture2D" uid="uid://cdjhqf1qjov15" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (11).png" id="208_fv3hb"]
+[ext_resource type="Texture2D" uid="uid://ohl0akge1a2h" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (71).png" id="208_l82te"]
+[ext_resource type="Texture2D" uid="uid://cayown3r0b47" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (12).png" id="209_dh5pe"]
+[ext_resource type="Texture2D" uid="uid://ng04ndwcljfy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (72).png" id="209_k5s12"]
+[ext_resource type="Texture2D" uid="uid://ksrhxqnj6dhs" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (73).png" id="210_db17n"]
+[ext_resource type="Texture2D" uid="uid://cjbbmbqsp51y8" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (13).png" id="210_l4jrb"]
+[ext_resource type="Texture2D" uid="uid://bkua3el4ncf44" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (74).png" id="211_0co1q"]
+[ext_resource type="Texture2D" uid="uid://ddfqf8o8ftegf" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (14).png" id="211_8wtun"]
+[ext_resource type="Texture2D" uid="uid://duvpsn2414c2u" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (15).png" id="212_b6lu5"]
+[ext_resource type="Texture2D" uid="uid://cdhmlprkfktrs" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (75).png" id="212_u6yb7"]
+[ext_resource type="Texture2D" uid="uid://d62dnktsxnet" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (76).png" id="213_cuywi"]
+[ext_resource type="Texture2D" uid="uid://dwtn24b12m7gs" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (16).png" id="213_ueldf"]
+[ext_resource type="Texture2D" uid="uid://xsxhbv25176n" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (77).png" id="214_4c41n"]
+[ext_resource type="Texture2D" uid="uid://bdbhw43rxiw4p" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (17).png" id="214_ytjjf"]
+[ext_resource type="Texture2D" uid="uid://bu53cur0bp36y" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (78).png" id="215_0dmar"]
+[ext_resource type="Texture2D" uid="uid://d3lve65t5ywn1" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (18).png" id="215_4qlf4"]
+[ext_resource type="Texture2D" uid="uid://bi55pkhvvn3xa" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (79).png" id="216_0n0m8"]
+[ext_resource type="Texture2D" uid="uid://by2sv522lj8ir" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (19).png" id="216_lcd1k"]
+[ext_resource type="Texture2D" uid="uid://f7c0oqwr626h" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (80).png" id="217_awfn1"]
+[ext_resource type="Texture2D" uid="uid://qo68sj2fnyjl" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (20).png" id="217_v801e"]
+[ext_resource type="Texture2D" uid="uid://ca45k0cevx5ng" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (81).png" id="218_4epqd"]
+[ext_resource type="Texture2D" uid="uid://digf4gtyw4nso" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (21).png" id="218_gfxso"]
+[ext_resource type="Texture2D" uid="uid://c6y8r517ls6at" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (82).png" id="219_hy77o"]
+[ext_resource type="Texture2D" uid="uid://1grqhs2y1j4i" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (22).png" id="219_jqclt"]
+[ext_resource type="Texture2D" uid="uid://j3rm4xwik6cb" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (23).png" id="220_a1j3c"]
+[ext_resource type="Texture2D" uid="uid://brhhfdu8md4lm" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (83).png" id="220_e74es"]
+[ext_resource type="Texture2D" uid="uid://csvohfocg2jb7" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (24).png" id="221_h1nh3"]
+[ext_resource type="Texture2D" uid="uid://d2hy63xi3evx1" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (84).png" id="221_qpnuk"]
+[ext_resource type="Texture2D" uid="uid://bcd3qunroanvq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (85).png" id="222_ddxap"]
+[ext_resource type="Texture2D" uid="uid://ckicbjf4q6xvv" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (25).png" id="222_u7ktm"]
+[ext_resource type="Texture2D" uid="uid://y4d0l4movt7w" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (86).png" id="223_mami5"]
+[ext_resource type="Texture2D" uid="uid://b2c0d2lntes0c" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (26).png" id="223_q78um"]
+[ext_resource type="Texture2D" uid="uid://bbtt7xxaxmsjy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (87).png" id="224_rbtmh"]
+[ext_resource type="Texture2D" uid="uid://cmeqneppup7s2" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (27).png" id="224_umb34"]
+[ext_resource type="Texture2D" uid="uid://dn4mnn15i3xhd" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (88).png" id="225_vr6yk"]
+[ext_resource type="Texture2D" uid="uid://cbm4mglsib1lu" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (28).png" id="225_wrbpv"]
+[ext_resource type="Texture2D" uid="uid://fxdyckfglmrq" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (29).png" id="226_5pgcj"]
+[ext_resource type="Texture2D" uid="uid://blco64dio7kqk" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (89).png" id="226_5rysu"]
+[ext_resource type="Texture2D" uid="uid://bhuue6t30re1i" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (90).png" id="227_jkaxq"]
+[ext_resource type="Texture2D" uid="uid://c1u1i8e8oau4t" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (30).png" id="227_ta7w6"]
+[ext_resource type="Texture2D" uid="uid://8ewn42c5pl8s" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (31).png" id="228_1asci"]
+[ext_resource type="Texture2D" uid="uid://bx0j8kekbvudx" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (32).png" id="229_nefhx"]
+[ext_resource type="Texture2D" uid="uid://d2p0e3ekrmp10" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (33).png" id="230_c65hc"]
+[ext_resource type="Texture2D" uid="uid://v44564wy21na" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (1).png" id="230_h2fek"]
+[ext_resource type="Texture2D" uid="uid://pmjc64ssgoow" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (2).png" id="231_b623o"]
+[ext_resource type="Texture2D" uid="uid://serv2f3gqg4w" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (34).png" id="231_wvli4"]
+[ext_resource type="Texture2D" uid="uid://cdd4j6s0r3w86" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (3).png" id="232_hlhcn"]
+[ext_resource type="Texture2D" uid="uid://i71n3wuu8fbh" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (35).png" id="232_qbkpg"]
+[ext_resource type="Texture2D" uid="uid://caidfaj3m3yt1" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (36).png" id="233_usfl4"]
+[ext_resource type="Texture2D" uid="uid://3b6dduf0xkyo" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (4).png" id="233_ww4do"]
+[ext_resource type="Texture2D" uid="uid://8chdexmoo86m" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (37).png" id="234_1hsl6"]
+[ext_resource type="Texture2D" uid="uid://bqbo3c7uoai70" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (5).png" id="234_atjci"]
+[ext_resource type="Texture2D" uid="uid://ccarq8sg0fj0t" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (38).png" id="235_oc8c2"]
+[ext_resource type="Texture2D" uid="uid://b1levj51dtqik" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (6).png" id="235_v2c52"]
+[ext_resource type="Texture2D" uid="uid://qtpu1m4ur2kk" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (39).png" id="236_8rm16"]
+[ext_resource type="Texture2D" uid="uid://b6ik74tadhpea" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (7).png" id="236_gt3hn"]
+[ext_resource type="Texture2D" uid="uid://cka4bwteg3bql" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (40).png" id="237_4qlud"]
+[ext_resource type="Texture2D" uid="uid://cfnj2yqkn0edk" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (8).png" id="237_blovf"]
+[ext_resource type="Texture2D" uid="uid://bpmeklx7y8m7e" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (41).png" id="238_ixehe"]
+[ext_resource type="Texture2D" uid="uid://bh5d7h8ks0d8j" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (9).png" id="238_qhly3"]
+[ext_resource type="Texture2D" uid="uid://b433531uqxcwy" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (42).png" id="239_ahtc5"]
+[ext_resource type="Texture2D" uid="uid://yp2pnyrqas81" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (10).png" id="239_cf0th"]
+[ext_resource type="Texture2D" uid="uid://cwy8vdycyne1q" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (11).png" id="240_r1bs8"]
+[ext_resource type="Texture2D" uid="uid://bidobo2olsail" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (43).png" id="240_rovxx"]
+[ext_resource type="Texture2D" uid="uid://bh8sw0ba2fqeu" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (12).png" id="241_l4ywv"]
+[ext_resource type="Texture2D" uid="uid://cjgrvps0147j8" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (44).png" id="241_wvjk1"]
+[ext_resource type="Texture2D" uid="uid://ca6fnwg7lpcby" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (45).png" id="242_ihi1n"]
+[ext_resource type="Texture2D" uid="uid://bdyw00plmal3b" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (13).png" id="242_t3bhj"]
+[ext_resource type="Texture2D" uid="uid://jvmcqwh8mtpy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (14).png" id="243_alvna"]
+[ext_resource type="Texture2D" uid="uid://dsrq5rpwwmcyf" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (46).png" id="243_uw6p2"]
+[ext_resource type="Texture2D" uid="uid://b274eb1cwguq8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (15).png" id="244_b6cpd"]
+[ext_resource type="Texture2D" uid="uid://be3nefr5sg7ka" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (47).png" id="244_e62x7"]
+[ext_resource type="Texture2D" uid="uid://41fs5k0iwkd1" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (48).png" id="245_6s2kw"]
+[ext_resource type="Texture2D" uid="uid://cq726w2mvg434" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (16).png" id="245_8y5nf"]
+[ext_resource type="Texture2D" uid="uid://bf37x5gjcsot6" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (17).png" id="246_80e4a"]
+[ext_resource type="Texture2D" uid="uid://vuqog15vak8" path="res://2024_Art/2024 Characters/Tapir/Walk/T_Kooeh_A001_Tapir_WalkDrink/T_Kooeh_AR001_Tapir_WalkDrink_ (49).png" id="246_bjksj"]
+[ext_resource type="Texture2D" uid="uid://bojf8tf7vmv2f" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (18).png" id="247_2yd2v"]
+[ext_resource type="Texture2D" uid="uid://c84yw1latk73g" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (19).png" id="248_vomnx"]
+[ext_resource type="Texture2D" uid="uid://cvfpujdwqekcq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (20).png" id="249_hgk54"]
+[ext_resource type="Texture2D" uid="uid://c7m8dmib36mbq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (21).png" id="250_jb5bv"]
+[ext_resource type="Texture2D" uid="uid://ygs070pghiro" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (22).png" id="251_rrlbd"]
+[ext_resource type="Texture2D" uid="uid://bjsf4w1jw7bik" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (23).png" id="252_gnugr"]
+[ext_resource type="Texture2D" uid="uid://d3lgda4fccidq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (24).png" id="253_h302n"]
+[ext_resource type="Texture2D" uid="uid://l45id317q7yr" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_WalkBack/T_Kooeh_NPC_Bear_WalkBack_ (25).png" id="254_ypk3q"]
+[ext_resource type="Texture2D" uid="uid://bphal6jwq5852" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (1).png" id="265_wk6jm"]
+[ext_resource type="Texture2D" uid="uid://nblt1u83sa4d" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (2).png" id="266_wkkqh"]
+[ext_resource type="Texture2D" uid="uid://bj5xaw5aqsie" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (3).png" id="267_bi13b"]
+[ext_resource type="Texture2D" uid="uid://bgdafhuj122js" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (4).png" id="268_huiy6"]
+[ext_resource type="Texture2D" uid="uid://ckaybuyv8uejh" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (5).png" id="269_sstcc"]
+[ext_resource type="Texture2D" uid="uid://chj8ei6f6x4sk" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (6).png" id="270_hinbd"]
+[ext_resource type="Texture2D" uid="uid://6rvkgj4jq032" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (7).png" id="271_72cdr"]
+[ext_resource type="Texture2D" uid="uid://dykw88km1h105" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (8).png" id="272_xp6bu"]
+[ext_resource type="Texture2D" uid="uid://kq17ik06wnsi" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (9).png" id="273_vk6dg"]
+[ext_resource type="Texture2D" uid="uid://21fqslico24y" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (10).png" id="274_gof2c"]
+[ext_resource type="Texture2D" uid="uid://bne83iecj7fx8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (11).png" id="275_8gvkd"]
+[ext_resource type="Texture2D" uid="uid://nhaysbwmmo2v" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (12).png" id="276_krfbs"]
+[ext_resource type="Texture2D" uid="uid://jaf0p0qn5m4u" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (13).png" id="277_hrpxq"]
+[ext_resource type="Texture2D" uid="uid://bmol1a5sstojb" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (14).png" id="278_qi3s0"]
+[ext_resource type="Texture2D" uid="uid://by4q6c17s40f5" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (15).png" id="279_dj2wg"]
+[ext_resource type="Texture2D" uid="uid://d1pabsbymvd6a" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (16).png" id="280_4gii0"]
+[ext_resource type="Texture2D" uid="uid://dtrd1d55c28ym" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (17).png" id="281_uur2s"]
+[ext_resource type="Texture2D" uid="uid://h1jemht8eig7" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (18).png" id="282_syxi5"]
+[ext_resource type="Texture2D" uid="uid://bq0jg5nj8igy8" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (19).png" id="283_swl0j"]
+[ext_resource type="Texture2D" uid="uid://rn644v0pc1p" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (20).png" id="284_b4kui"]
+[ext_resource type="Texture2D" uid="uid://ceem502lvneac" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (21).png" id="285_ny706"]
+[ext_resource type="Texture2D" uid="uid://dujh6rvk32csy" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (22).png" id="286_s2b2w"]
+[ext_resource type="Texture2D" uid="uid://chfqxib38ar7h" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (23).png" id="287_2ks3i"]
+[ext_resource type="Texture2D" uid="uid://biqvqyt5j1p2l" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (24).png" id="288_0y5rh"]
+[ext_resource type="Texture2D" uid="uid://pw4owq4ee5ib" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A002_NPC_Bear_Walk(fixed)/T_Kooeh_NPC_Bear_Walk_ (25).png" id="289_r48k5"]
+[ext_resource type="Texture2D" uid="uid://dr02yofuq4tcf" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (1).png" id="329_8flsn"]
+[ext_resource type="Texture2D" uid="uid://uwfjkaxt44pl" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (2).png" id="330_tc2es"]
+[ext_resource type="Texture2D" uid="uid://dxdc5yb85qpak" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (3).png" id="331_cm5ia"]
+[ext_resource type="Texture2D" uid="uid://b3sqdegugsm66" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (4).png" id="332_wy8q1"]
+[ext_resource type="Texture2D" uid="uid://duqxra5qd8twh" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (5).png" id="333_44vqc"]
+[ext_resource type="Texture2D" uid="uid://drphwqaa38dya" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (6).png" id="334_68hji"]
+[ext_resource type="Texture2D" uid="uid://ub8c23j1tcq" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (7).png" id="335_4fssy"]
+[ext_resource type="Texture2D" uid="uid://dnf8rv001qqnj" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (8).png" id="336_l0n2m"]
+[ext_resource type="Texture2D" uid="uid://ccfifcdd2kmvv" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (9).png" id="337_78ytb"]
+[ext_resource type="Texture2D" uid="uid://d0f6bsvap3iws" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (10).png" id="338_vxj5x"]
+[ext_resource type="Texture2D" uid="uid://c030lsl2akqs7" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (11).png" id="339_vac13"]
+[ext_resource type="Texture2D" uid="uid://ck88oqkd1eibv" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (12).png" id="340_aqvuh"]
+[ext_resource type="Texture2D" uid="uid://jxrygd8v6hda" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (13).png" id="341_i2tca"]
+[ext_resource type="Texture2D" uid="uid://cbju6bh43q88q" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (14).png" id="342_4df0q"]
+[ext_resource type="Texture2D" uid="uid://m8gq8k7hfinu" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (15).png" id="343_jsqfb"]
+[ext_resource type="Texture2D" uid="uid://cnr54nmuuno4p" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (16).png" id="344_nln3d"]
+[ext_resource type="Texture2D" uid="uid://bojx3sk7v1agw" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (17).png" id="345_opfls"]
+[ext_resource type="Texture2D" uid="uid://db225wi1cme13" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (18).png" id="346_ipqla"]
+[ext_resource type="Texture2D" uid="uid://dl0jxnacv6rs4" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (19).png" id="347_0fkab"]
+[ext_resource type="Texture2D" uid="uid://cpmad50p8dfh7" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (20).png" id="348_ihkch"]
+[ext_resource type="Texture2D" uid="uid://ndlupryxbglf" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (21).png" id="349_ta5np"]
+[ext_resource type="Texture2D" uid="uid://bvxfwe87sfo75" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (22).png" id="350_je4uv"]
+[ext_resource type="Texture2D" uid="uid://qmhw7oboqqd3" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (23).png" id="351_ewnyq"]
+[ext_resource type="Texture2D" uid="uid://bdwhsty1mh7ht" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (24).png" id="352_bxgio"]
+[ext_resource type="Texture2D" uid="uid://5qxcx72teke4" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_TiffinWalk/T_Kooeh_NPC_Bear_TiffinWalk_ (25).png" id="353_g7c4w"]
+
+[sub_resource type="Animation" id="Animation_dmrxu"]
+resource_name = "Character_Eat_Back_Left"
+length = 1.70001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("72_e80vu"), ExtResource("73_d8s2v"), ExtResource("74_wt2na"), ExtResource("75_jv0qo"), ExtResource("76_k7e64"), ExtResource("77_f0xpu"), ExtResource("78_0g7wn"), ExtResource("79_t8ol7"), ExtResource("80_1qjnw"), ExtResource("81_c1ypa"), ExtResource("82_okdsw"), ExtResource("83_rkmvx"), ExtResource("84_erkko"), ExtResource("85_5j83j"), ExtResource("86_60ypp"), ExtResource("87_vatnh"), ExtResource("88_g6j5u"), ExtResource("89_xxavp"), ExtResource("90_agmay"), ExtResource("91_k25le"), ExtResource("92_p0ui1"), ExtResource("93_g1bwt"), ExtResource("94_2r01n"), ExtResource("95_r04o4"), ExtResource("96_cmxf7"), ExtResource("97_w08ni"), ExtResource("98_remq2"), ExtResource("99_jn4jo"), ExtResource("100_oybm5"), ExtResource("101_r1agh"), ExtResource("102_2jnuu"), ExtResource("103_pw4re"), ExtResource("104_6phtp"), ExtResource("105_2wlth"), ExtResource("106_2pjbn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-19, -94.645)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../TShadowRound:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0rsv6"]
+length = 1.70001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("72_e80vu"), ExtResource("73_d8s2v"), ExtResource("74_wt2na"), ExtResource("75_jv0qo"), ExtResource("76_k7e64"), ExtResource("77_f0xpu"), ExtResource("78_0g7wn"), ExtResource("79_t8ol7"), ExtResource("80_1qjnw"), ExtResource("81_c1ypa"), ExtResource("82_okdsw"), ExtResource("83_rkmvx"), ExtResource("84_erkko"), ExtResource("85_5j83j"), ExtResource("86_60ypp"), ExtResource("87_vatnh"), ExtResource("88_g6j5u"), ExtResource("89_xxavp"), ExtResource("90_agmay"), ExtResource("91_k25le"), ExtResource("92_p0ui1"), ExtResource("93_g1bwt"), ExtResource("94_2r01n"), ExtResource("95_r04o4"), ExtResource("96_cmxf7"), ExtResource("97_w08ni"), ExtResource("98_remq2"), ExtResource("99_jn4jo"), ExtResource("100_oybm5"), ExtResource("101_r1agh"), ExtResource("102_2jnuu"), ExtResource("103_pw4re"), ExtResource("104_6phtp"), ExtResource("105_2wlth"), ExtResource("106_2pjbn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(19, -94.645)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../TShadowRound:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yy1ro"]
+length = 1.70001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("108_hln6v"), ExtResource("109_rhdu1"), ExtResource("110_loo6l"), ExtResource("111_2gi5p"), ExtResource("112_pv504"), ExtResource("113_bp7n3"), ExtResource("114_x88v1"), ExtResource("115_m02oo"), ExtResource("116_81bhk"), ExtResource("117_pgfht"), ExtResource("118_p83ba"), ExtResource("119_hcsix"), ExtResource("120_ydrn1"), ExtResource("121_7ntke"), ExtResource("122_yhstx"), ExtResource("123_qg07w"), ExtResource("124_38s7y"), ExtResource("125_4tu2i"), ExtResource("126_33roe"), ExtResource("127_3jsav"), ExtResource("128_cdjqe"), ExtResource("129_6v1gl"), ExtResource("130_eb4n3"), ExtResource("131_jbnye"), ExtResource("132_uwpmj"), ExtResource("133_ac7b4"), ExtResource("134_yhsk6"), ExtResource("135_la8aq"), ExtResource("136_btipo"), ExtResource("137_w1afg"), ExtResource("138_jvhku"), ExtResource("139_2e4ky"), ExtResource("140_0mvqr"), ExtResource("141_hro1n"), ExtResource("142_7wwtj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-26.18, -80)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../TShadowRound:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2l6q1"]
+resource_name = "Character_Eat_Front_Right"
+length = 1.70001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("108_hln6v"), ExtResource("109_rhdu1"), ExtResource("110_loo6l"), ExtResource("111_2gi5p"), ExtResource("112_pv504"), ExtResource("113_bp7n3"), ExtResource("114_x88v1"), ExtResource("115_m02oo"), ExtResource("116_81bhk"), ExtResource("117_pgfht"), ExtResource("118_p83ba"), ExtResource("119_hcsix"), ExtResource("120_ydrn1"), ExtResource("121_7ntke"), ExtResource("122_yhstx"), ExtResource("123_qg07w"), ExtResource("124_38s7y"), ExtResource("125_4tu2i"), ExtResource("126_33roe"), ExtResource("127_3jsav"), ExtResource("128_cdjqe"), ExtResource("129_6v1gl"), ExtResource("130_eb4n3"), ExtResource("131_jbnye"), ExtResource("132_uwpmj"), ExtResource("133_ac7b4"), ExtResource("134_yhsk6"), ExtResource("135_la8aq"), ExtResource("136_btipo"), ExtResource("137_w1afg"), ExtResource("138_jvhku"), ExtResource("139_2e4ky"), ExtResource("140_0mvqr"), ExtResource("141_hro1n"), ExtResource("142_7wwtj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(25.54, -80)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../TShadowRound:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_l6avr"]
+length = 1.45001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("108_6hl1a"), ExtResource("109_8mhnn"), ExtResource("110_odc46"), ExtResource("111_a0gj1"), ExtResource("112_opeqm"), ExtResource("113_qaf23"), ExtResource("114_c8ta7"), ExtResource("115_tv3q1"), ExtResource("116_oedws"), ExtResource("117_7vkfs"), ExtResource("118_8nins"), ExtResource("119_38r6c"), ExtResource("120_jd7ko"), ExtResource("121_omw2m"), ExtResource("122_r1u0q"), ExtResource("123_8whan"), ExtResource("124_gwv4g"), ExtResource("125_20qj2"), ExtResource("126_rlkgj"), ExtResource("127_nikvx"), ExtResource("128_dlqq0"), ExtResource("129_pwu6m"), ExtResource("130_qcdec"), ExtResource("131_kickw"), ExtResource("132_5ceb0"), ExtResource("133_n2u71"), ExtResource("134_838s3"), ExtResource("135_xb4bf"), ExtResource("136_mg3ql"), ExtResource("137_hign5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-9, -150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TShadowRound:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jsveg"]
+length = 2.96667
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53343, 1.56667, 1.6, 1.63333, 1.66667, 1.7, 1.73333, 1.76667, 1.8, 1.83333, 1.86667, 1.9, 1.93333, 1.96667, 2, 2.03333, 2.06667, 2.1, 2.13333, 2.16667, 2.2, 2.23333, 2.26667, 2.3, 2.33333, 2.36667, 2.4, 2.43333, 2.46667, 2.5, 2.53333, 2.56667, 2.6, 2.63333, 2.66667, 2.7, 2.73333, 2.76667, 2.8, 2.83333, 2.86667, 2.9, 2.93333, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("138_m3h6f"), ExtResource("139_mmtei"), ExtResource("140_oab55"), ExtResource("141_hje3n"), ExtResource("142_m2oip"), ExtResource("143_dr60b"), ExtResource("144_38ot1"), ExtResource("145_jgtxh"), ExtResource("146_ywwcp"), ExtResource("147_uhuty"), ExtResource("148_tcajk"), ExtResource("149_alvdi"), ExtResource("150_cpc2v"), ExtResource("151_c1aeo"), ExtResource("152_cfxst"), ExtResource("153_w4kth"), ExtResource("154_6b8xj"), ExtResource("155_2yh27"), ExtResource("156_7g7a0"), ExtResource("157_q2m8e"), ExtResource("158_jj84c"), ExtResource("159_afbwc"), ExtResource("160_ueq27"), ExtResource("161_s0kwj"), ExtResource("162_5yoiu"), ExtResource("163_7vqp1"), ExtResource("164_tgbmq"), ExtResource("165_qpxho"), ExtResource("166_kj72n"), ExtResource("167_cencn"), ExtResource("168_7riyb"), ExtResource("169_gwewh"), ExtResource("170_og5kq"), ExtResource("171_8srqq"), ExtResource("172_jmnjw"), ExtResource("173_wpp4w"), ExtResource("174_o3n16"), ExtResource("175_sacva"), ExtResource("176_iyttp"), ExtResource("177_0dg58"), ExtResource("178_uxj60"), ExtResource("179_hgtwk"), ExtResource("180_35aff"), ExtResource("181_whftm"), ExtResource("182_4uu5f"), ExtResource("183_0afou"), ExtResource("184_1u3hh"), ExtResource("185_ygnbo"), ExtResource("186_uegrl"), ExtResource("187_ft4ja"), ExtResource("188_nyw0d"), ExtResource("189_ln8ci"), ExtResource("190_rky0e"), ExtResource("191_gi6e1"), ExtResource("192_rqqke"), ExtResource("193_r2wut"), ExtResource("194_sfyyp"), ExtResource("195_kmeaq"), ExtResource("196_q5q3n"), ExtResource("197_av7wx"), ExtResource("198_erc36"), ExtResource("199_d21l4"), ExtResource("200_nn3xf"), ExtResource("201_jema2"), ExtResource("202_qy7sa"), ExtResource("203_rjp87"), ExtResource("204_fycbq"), ExtResource("205_l7bf3"), ExtResource("206_lnkt2"), ExtResource("207_xkrc7"), ExtResource("208_l82te"), ExtResource("209_k5s12"), ExtResource("210_db17n"), ExtResource("211_0co1q"), ExtResource("212_u6yb7"), ExtResource("213_cuywi"), ExtResource("214_4c41n"), ExtResource("215_0dmar"), ExtResource("216_0n0m8"), ExtResource("217_awfn1"), ExtResource("218_4epqd"), ExtResource("219_hy77o"), ExtResource("220_e74es"), ExtResource("221_qpnuk"), ExtResource("222_ddxap"), ExtResource("223_mami5"), ExtResource("224_rbtmh"), ExtResource("225_vr6yk"), ExtResource("226_5rysu"), ExtResource("227_jkaxq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-9, -150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TShadowRound:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dcrpk"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("72_e80vu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -117)]
+}
+
+[sub_resource type="Animation" id="Animation_r7lip"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("108_hln6v")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-10, -90)]
+}
+
+[sub_resource type="Animation" id="Animation_mhema"]
+length = 0.800003
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("230_h2fek"), ExtResource("231_b623o"), ExtResource("232_hlhcn"), ExtResource("233_ww4do"), ExtResource("234_atjci"), ExtResource("235_v2c52"), ExtResource("236_gt3hn"), ExtResource("237_blovf"), ExtResource("238_qhly3"), ExtResource("239_cf0th"), ExtResource("240_r1bs8"), ExtResource("241_l4ywv"), ExtResource("242_t3bhj"), ExtResource("243_alvna"), ExtResource("244_b6cpd"), ExtResource("245_8y5nf"), ExtResource("246_80e4a"), ExtResource("247_2yd2v"), ExtResource("248_vomnx"), ExtResource("249_hgk54"), ExtResource("250_jb5bv"), ExtResource("251_rrlbd"), ExtResource("252_gnugr"), ExtResource("253_h302n"), ExtResource("254_ypk3q")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-9, -150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TShadowRound:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3ppej"]
+resource_name = "Character_Walk_Drink"
+length = 1.6
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("198_drfsb"), ExtResource("199_wac5f"), ExtResource("200_eqhjt"), ExtResource("201_417xh"), ExtResource("202_ojpge"), ExtResource("203_1nkgn"), ExtResource("204_ude2n"), ExtResource("205_5wh8w"), ExtResource("206_lrdeq"), ExtResource("207_2f3t5"), ExtResource("208_fv3hb"), ExtResource("209_dh5pe"), ExtResource("210_l4jrb"), ExtResource("211_8wtun"), ExtResource("212_b6lu5"), ExtResource("213_ueldf"), ExtResource("214_ytjjf"), ExtResource("215_4qlf4"), ExtResource("216_lcd1k"), ExtResource("217_v801e"), ExtResource("218_gfxso"), ExtResource("219_jqclt"), ExtResource("220_a1j3c"), ExtResource("221_h1nh3"), ExtResource("222_u7ktm"), ExtResource("223_q78um"), ExtResource("224_umb34"), ExtResource("225_wrbpv"), ExtResource("226_5pgcj"), ExtResource("227_ta7w6"), ExtResource("228_1asci"), ExtResource("229_nefhx"), ExtResource("230_c65hc"), ExtResource("231_wvli4"), ExtResource("232_qbkpg"), ExtResource("233_usfl4"), ExtResource("234_1hsl6"), ExtResource("235_oc8c2"), ExtResource("236_8rm16"), ExtResource("237_4qlud"), ExtResource("238_ixehe"), ExtResource("239_ahtc5"), ExtResource("240_rovxx"), ExtResource("241_wvjk1"), ExtResource("242_ihi1n"), ExtResource("243_uw6p2"), ExtResource("244_e62x7"), ExtResource("245_6s2kw"), ExtResource("246_bjksj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ro7kq"]
+length = 0.800003
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("265_wk6jm"), ExtResource("266_wkkqh"), ExtResource("267_bi13b"), ExtResource("268_huiy6"), ExtResource("269_sstcc"), ExtResource("270_hinbd"), ExtResource("271_72cdr"), ExtResource("272_xp6bu"), ExtResource("273_vk6dg"), ExtResource("274_gof2c"), ExtResource("275_8gvkd"), ExtResource("276_krfbs"), ExtResource("277_hrpxq"), ExtResource("278_qi3s0"), ExtResource("279_dj2wg"), ExtResource("280_4gii0"), ExtResource("281_uur2s"), ExtResource("282_syxi5"), ExtResource("283_swl0j"), ExtResource("284_b4kui"), ExtResource("285_ny706"), ExtResource("286_s2b2w"), ExtResource("287_2ks3i"), ExtResource("288_0y5rh"), ExtResource("289_r48k5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-9, -150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TShadowRound:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1qvxd"]
+resource_name = "Character_Walk_Tiffin"
+length = 0.800003
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("329_8flsn"), ExtResource("330_tc2es"), ExtResource("331_cm5ia"), ExtResource("332_wy8q1"), ExtResource("333_44vqc"), ExtResource("334_68hji"), ExtResource("335_4fssy"), ExtResource("336_l0n2m"), ExtResource("337_78ytb"), ExtResource("338_vxj5x"), ExtResource("339_vac13"), ExtResource("340_aqvuh"), ExtResource("341_i2tca"), ExtResource("342_4df0q"), ExtResource("343_jsqfb"), ExtResource("344_nln3d"), ExtResource("345_opfls"), ExtResource("346_ipqla"), ExtResource("347_0fkab"), ExtResource("348_ihkch"), ExtResource("349_ta5np"), ExtResource("350_je4uv"), ExtResource("351_ewnyq"), ExtResource("352_bxgio"), ExtResource("353_g7c4w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-10, -150)]
+}
+
+[sub_resource type="Animation" id="Animation_h5nmp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("138_m3h6f")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-10, -150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../TShadowRound:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[resource]
+_data = {
+&"Character_Eat_Back_Left": SubResource("Animation_dmrxu"),
+&"Character_Eat_Back_Right": SubResource("Animation_0rsv6"),
+&"Character_Eat_Front_Left": SubResource("Animation_yy1ro"),
+&"Character_Eat_Front_Right": SubResource("Animation_2l6q1"),
+&"Character_Idle_Back": SubResource("Animation_l6avr"),
+&"Character_Idle_Front": SubResource("Animation_jsveg"),
+&"Character_Sit_Back": SubResource("Animation_dcrpk"),
+&"Character_Sit_Front": SubResource("Animation_r7lip"),
+&"Character_Walk_Back": SubResource("Animation_mhema"),
+&"Character_Walk_Drink": SubResource("Animation_3ppej"),
+&"Character_Walk_Front": SubResource("Animation_ro7kq"),
+&"Character_Walk_Tiffin": SubResource("Animation_1qvxd"),
+&"RESET": SubResource("Animation_h5nmp")
+}

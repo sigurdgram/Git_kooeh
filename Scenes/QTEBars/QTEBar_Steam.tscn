@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://crbxcd1luvvs8"]
+
+[ext_resource type="Script" uid="uid://d106608w07bgy" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Steam.gd" id="1_0xtah"]
+[ext_resource type="Texture2D" uid="uid://c2cf4luvg48bq" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Horizontal_Over.png" id="2_gnhp4"]
+[ext_resource type="AudioStream" uid="uid://he14x2y1cb23" path="res://Audio/SFX/AS_SFX_ui_select_3.wav" id="2_kfyfa"]
+[ext_resource type="Shader" uid="uid://c4wvtbfjqyda0" path="res://Scripts/Shaders/QTEBars/Shad_QTEBar_Hori.gdshader" id="3_wjho6"]
+[ext_resource type="Texture2D" uid="uid://bth08ewqyqmcf" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Horizontal_Progress.png" id="4_2bewg"]
+[ext_resource type="Texture2D" uid="uid://xd1jebwmio0c" path="res://Art/UI/Cooking/T_Icon_Spatula.png" id="5_palkv"]
+[ext_resource type="Texture2D" uid="uid://biqjhnet6mlou" path="res://Art/Kenney Input Prompts/Flairs/Default/flair_circle_8.png" id="9_371pc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usg8c"]
+resource_local_to_scene = true
+shader = ExtResource("3_wjho6")
+shader_parameter/sectorLimits = PackedVector2Array(0.1, 0.2, 0.3, 0.435)
+shader_parameter/processMode = 0
+shader_parameter/progress = 0.0
+shader_parameter/baseColor = Color(0.980392, 0.952941, 0.847059, 1)
+shader_parameter/tapZoneColor = Color(0.996078, 0.729412, 0.407843, 1)
+shader_parameter/progressColor = Color(0.894118, 0.509804, 0.0980392, 1)
+
+[node name="QTEBar_Steam" type="Control" node_paths=PackedStringArray("_qteTexture", "_pointerTexture", "_progressBar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xtah")
+_qteTexture = NodePath("QTEBar_Hori_WishingTree/Frame/Fill")
+_pointerTexture = NodePath("QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control/TEXTRECT_Pointer")
+_progressBar = NodePath("QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control/TextureProgressBar")
+_passAudio = ExtResource("2_kfyfa")
+
+[node name="QTEBar_Hori_WishingTree" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="TextureRect" parent="QTEBar_Hori_WishingTree"]
+layout_mode = 2
+texture = ExtResource("2_gnhp4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Fill" type="TextureRect" parent="QTEBar_Hori_WishingTree/Frame"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_usg8c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2bewg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="QTEBar_Hori_WishingTree/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.426
+anchor_top = 0.558
+anchor_right = 0.574
+anchor_bottom = 0.706
+offset_left = 0.440002
+offset_top = -0.480042
+offset_right = -0.440002
+offset_bottom = -0.359985
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("9_371pc")
+texture_progress = ExtResource("9_371pc")
+tint_progress = Color(0.878431, 0.588235, 0.34902, 1)
+
+[node name="TEXTRECT_Pointer" type="TextureRect" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control"]
+layout_mode = 2
+anchor_left = 0.472
+anchor_top = 0.411
+anchor_right = 0.528
+anchor_bottom = 0.589
+offset_left = -0.320038
+offset_top = 0.339996
+offset_right = 0.320007
+offset_bottom = -0.340027
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_palkv")
+expand_mode = 4
+stretch_mode = 5

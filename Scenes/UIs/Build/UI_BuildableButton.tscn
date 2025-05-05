@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://g13gij4sm5q5"]
+
+[ext_resource type="Script" uid="uid://c6bh85ps55b3b" path="res://Scripts/UISystem/UIs/Buildable/UI_BuildableButton.gd" id="1_6ikwu"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_5wlwi"]
+[ext_resource type="Texture2D" uid="uid://c46db4pp58vgw" path="res://2024_Art/2024 Restaurant (SceneEatery)/Chair1.tres" id="2_nljvv"]
+[ext_resource type="Texture2D" uid="uid://caida32xtqjew" path="res://2024_Art/2024 UI Assets/T_UI024_Economy.tres" id="3_nnkqq"]
+[ext_resource type="FontFile" uid="uid://rmn7xx0fpgtd" path="res://Themes/Fonts/Nunito/Nunito-ExtraBold.ttf" id="5_0g413"]
+
+[node name="Obj" type="VBoxContainer" node_paths=PackedStringArray("_textureRect", "_btnFurniture", "_furniturePrice")]
+custom_minimum_size = Vector2(150, 150)
+size_flags_vertical = 4
+script = ExtResource("1_6ikwu")
+_textureRect = NodePath("Texture")
+_btnFurniture = NodePath("ObjName")
+_furniturePrice = NodePath("PANEL_WoodenFrame/HBoxContainer/TXT_Money")
+
+[node name="Texture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_nljvv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PANEL_WoodenFrame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("3_nnkqq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PANEL_WoodenFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245
+anchor_right = 0.686
+anchor_bottom = 1.0
+offset_left = -0.130005
+offset_top = 1.0
+offset_right = 0.0359802
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TXT_Money" type="Label" parent="PANEL_WoodenFrame/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_5wlwi")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.176471, 0.054902, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("5_0g413")
+theme_override_font_sizes/font_size = 20
+text = "100
+"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ObjName" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 1
+theme = ExtResource("2_5wlwi")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "Test Object"

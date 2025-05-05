@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputData" load_steps=4 format=3 uid="uid://cfc3swuq75pyn"]
+
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="1_4dh37"]
+[ext_resource type="Script" uid="uid://cseyqynuc8rd5" path="res://Scripts/Resources/InputData.gd" id="1_dph0s"]
+[ext_resource type="Texture2D" uid="uid://wa2ghqrikdkw" path="res://addons/controller_icons/assets/xboxseries/menu.png" id="2_vfwrf"]
+
+[resource]
+resource_name = "InputData.Pause"
+script = ExtResource("1_dph0s")
+displayName = "Pause"
+inputLegends = {
+0: ExtResource("1_4dh37"),
+1: ExtResource("2_vfwrf")
+}

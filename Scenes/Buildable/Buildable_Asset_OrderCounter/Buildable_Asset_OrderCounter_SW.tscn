@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm4qcgjyjr4e0"]
+
+[ext_resource type="PackedScene" uid="uid://ddhxmhmif8hom" path="res://Scenes/Buildable/Buildable_Asset_OrderCounter/Buildable_Asset_OrderCounter_SE.tscn" id="1_p3k8g"]
+
+[node name="Buildable_Asset_CookingStation_SE" instance=ExtResource("1_p3k8g")]
+
+[node name="Sprite2D" parent="." index="0"]
+flip_h = false

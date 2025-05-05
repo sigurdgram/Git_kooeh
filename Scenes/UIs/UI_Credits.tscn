@@ -1,0 +1,632 @@
+[gd_scene load_steps=23 format=3 uid="uid://coidncv6hv7ls"]
+
+[ext_resource type="Script" uid="uid://bw1dhibp8444w" path="res://Scripts/UISystem/UIs/UI_Credits.gd" id="1_bkvjx"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_6j8c8"]
+[ext_resource type="Texture2D" uid="uid://bsne7k8bu41m" path="res://Art/UI/Atlas_UI_InGamePausePanel_Hand.tres" id="3_knqh8"]
+[ext_resource type="Texture2D" uid="uid://wni77l8cavmp" path="res://Art/UI/Atlas_UI_InGamePausePanel.tres" id="4_kjvtf"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="5_7e178"]
+[ext_resource type="FontFile" uid="uid://dr37x3lu53xhy" path="res://Themes/Fonts/Font_RooneySansHv.OTF" id="6_hineq"]
+[ext_resource type="Texture2D" uid="uid://bumgvcqnhfib" path="res://2024_Art/2024 Credits/T_Credits_Azmyr.png" id="7_wddci"]
+[ext_resource type="FontFile" uid="uid://c74y45mr6b4kr" path="res://Themes/Fonts/RooneySans/RooneySansHv.OTF" id="8_8fi47"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="8_k6kmg"]
+[ext_resource type="Texture2D" uid="uid://bb4w7nbxoqf5c" path="res://2024_Art/2024 Credits/T_Credits_Sam.png" id="9_50dd3"]
+[ext_resource type="Texture2D" uid="uid://cefqcmk2yqqxn" path="res://2024_Art/2024 Credits/T_Credits_Weiyin.png" id="10_0svjs"]
+[ext_resource type="Texture2D" uid="uid://7i1ehv6t8cdp" path="res://2024_Art/2024 Credits/T_Credits_Shawna.png" id="11_kvg7q"]
+[ext_resource type="Texture2D" uid="uid://b2fx2gnycghcf" path="res://2024_Art/2024 Credits/T_Credits_William.png" id="12_tuxse"]
+[ext_resource type="Texture2D" uid="uid://bqj4yr0rnq14d" path="res://Art/UI/Atlas_UI_InGamePausePanel_Hand2.tres" id="13_638lq"]
+[ext_resource type="Texture2D" uid="uid://ctcqg78b0fk8l" path="res://2024_Art/2024 Credits/T_Credits_X.png" id="13_st0d7"]
+[ext_resource type="Texture2D" uid="uid://d6u5eusbl457" path="res://2024_Art/2024 Credits/T_Credits_Chini.png" id="14_bjshj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmp3v"]
+shader = ExtResource("2_6j8c8")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_jyb0g"]
+offsets = PackedFloat32Array(0.487465)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k6qw6"]
+gradient = SubResource("Gradient_jyb0g")
+width = 1
+
+[sub_resource type="Animation" id="Animation_o84uk"]
+resource_name = "NotebookGroup_In"
+length = 0.52
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0745098, 0.0745098, 0.0745098, 0.764706), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 500), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dgjem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bj84h"]
+_data = {
+&"Anim_In": SubResource("Animation_o84uk"),
+&"RESET": SubResource("Animation_dgjem")
+}
+
+[node name="UI_Credits" type="Control" node_paths=PackedStringArray("_animPlayer", "_scrollCont")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_bkvjx")
+_animPlayer = NodePath("AnimationPlayer_In")
+_scrollCont = NodePath("Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits")
+_scrollSpeedPerSeconds = 30.0
+metadata/_edit_vertical_guides_ = [954.0]
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dmp3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = SubResource("GradientTexture1D_k6qw6")
+
+[node name="Control_NotebookGroup" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 1080)
+
+[node name="TextRect_Hand" type="TextureRect" parent="Control_NotebookGroup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1653.0
+offset_top = -503.363
+offset_right = -1020.0
+offset_bottom = 48.6396
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.00574507
+texture = ExtResource("3_knqh8")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextRect_Notebook" type="TextureRect" parent="Control_NotebookGroup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1467.0
+offset_top = -1037.0
+offset_right = -463.32
+offset_bottom = -35.48
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kjvtf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="REFRECT_Title" type="ReferenceRect" parent="Control_NotebookGroup/TextRect_Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202
+anchor_top = 0.132991
+anchor_right = 0.803
+anchor_bottom = 0.189991
+offset_left = 0.199997
+offset_top = -0.193047
+offset_right = 0.299988
+offset_bottom = -0.279694
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator" type="HSeparator" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Title"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme = ExtResource("5_7e178")
+
+[node name="TXT_Credits" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/REFRECT_Title"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 45
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginCont" type="MarginContainer" parent="Control_NotebookGroup/TextRect_Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.197
+anchor_top = 0.189991
+anchor_right = 0.803
+anchor_bottom = 0.819017
+offset_left = -0.300003
+offset_top = -0.279694
+offset_right = 0.299988
+offset_bottom = -0.261658
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="SCROLLCONT_Credits" type="ScrollContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RTL_CreditText1" type="RichTextLabel" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.242188, 0.171875, 0.117188, 1)
+theme_override_fonts/normal_font = ExtResource("6_hineq")
+theme_override_fonts/bold_font = ExtResource("6_hineq")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[center]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[b]Brought To You By[/b]
+[img=300]res://Art/UI/T_Icon_TwilightFoundry_Logo.svg[/img]
+[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="GridContainer" type="GridContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="VBOX_CreditEntry" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("7_wddci")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "Khairil Azmyr Bin Azizan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "Game Programmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBOX_CreditEntry2" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry2"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("9_50dd3")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry2"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "Sam Lee"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry2"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "Game Programmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBOX_CreditEntry3" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry3"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("10_0svjs")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry3"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "Chuan Wei Yin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry3"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "2D Game Artist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="VBOX_CreditEntry4" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry4"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("11_kvg7q")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry4"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "Shawna Lim Jie Yi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry4"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "2D Game Art Generalist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="VBOX_CreditEntry5" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry5"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("12_tuxse")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry5"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "William Chong"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry5"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "Studio Director 
+Lead Game Designer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBOX_CreditEntry6" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry6"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("13_st0d7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry6"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "Xynan Lee Choon Meng"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry6"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "Technical Director 
+Lead Programmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBOX_CreditEntry7" type="VBoxContainer" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TEXTRECT_Portrait" type="TextureRect" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry7"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("14_bjshj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TXT_Name" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry7"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("8_8fi47")
+text = "Choong Chi Ni"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title" type="Label" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer/MarginContainer/GridContainer/VBOX_CreditEntry7"]
+layout_mode = 2
+theme = ExtResource("5_7e178")
+theme_type_variation = &"HeaderSmall"
+text = "Art Director 
+Lead Artist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RTL_CreditText2" type="RichTextLabel" parent="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.242188, 0.171875, 0.117188, 1)
+theme_override_fonts/normal_font = ExtResource("6_hineq")
+theme_override_fonts/bold_font = ExtResource("6_hineq")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[center]
+
+
+
+
+[b]Special Thanks[/b]
+
+
+
+
+[b]Music & SFX[/b]
+
+Avik Chari
+www.avikchari.com
+
+
+
+
+
+[b]Narrative Design[/b]
+Sophie Azlan
+www.makewithfriends.com
+
+
+
+
+
+[img=154x142]res://Art/UI/T_Icon_KomodoRange_Logo.png[/img]
+www.komodorange.com
+
+[b]Studio Manager[/b]
+Bryann Orion
+
+[b]Creative Director[/b]
+Felysia Chew
+
+[b]Game Artists[/b]
+Saeraawesome
+Shi Jiii
+Mintchi
+
+
+
+
+
+Lydia Ho
+Audrey Lee Jia En
+Yap Jing Heng
+Tay Khai Feng
+Diviyan A/L Rajan
+
+
+
+
+
+
+
+
+
+
+
+
+
+[b]Thanks For Playing[/b]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="TextRect_Hand2" type="TextureRect" parent="Control_NotebookGroup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1454.5
+offset_top = -335.362
+offset_right = -1218.5
+offset_bottom = -119.362
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.435118
+texture = ExtResource("13_638lq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer_In" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Control_NotebookGroup")
+libraries = {
+"": SubResource("AnimationLibrary_bj84h")
+}
+
+[node name="REFRECT_InputLegend" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.931
+anchor_right = 1.0
+anchor_bottom = 0.968
+offset_top = -0.480042
+offset_bottom = -0.440063
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="REFRECT_InputLegend"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI_InputLegend3" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("8_k6kmg")]
+layout_mode = 2
+input = "ui_cancel"
+
+[node name="UI_InputLegend" parent="REFRECT_InputLegend/HBoxContainer" instance=ExtResource("8_k6kmg")]
+layout_mode = 2
+_inputAsset = "Navigate"
+input = "ui_down"
+
+[connection signal="gui_input" from="Control_NotebookGroup/TextRect_Notebook/MarginCont/SCROLLCONT_Credits" to="." method="_on_scrollcont_credits_gui_input"]

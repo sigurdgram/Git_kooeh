@@ -1,0 +1,453 @@
+[gd_scene load_steps=13 format=3 uid="uid://bb4t1a2ek7rg7"]
+
+[ext_resource type="Script" uid="uid://b507h4xgjytmx" path="res://Scripts/UISystem/UIs/Misc/UI_RewardPrompt.gd" id="1_widgi"]
+[ext_resource type="Texture2D" uid="uid://dl7jknsiqnsex" path="res://Art/UI/Reward/Atlas_UI_RecipeUnlock_HorizontalBanner.tres" id="2_2p3ao"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="3_y1ps1"]
+[ext_resource type="Texture2D" uid="uid://crteqencjkm4q" path="res://Art/UI/Reward/Atlas_UI_RecipeUnlock_Confetti_Left.tres" id="6_5j286"]
+[ext_resource type="Texture2D" uid="uid://c8pomhyt24byp" path="res://Art/UI/Reward/Atlas_UI_RecipeUnlock_RewardFrame.tres" id="6_nex82"]
+[ext_resource type="Texture2D" uid="uid://cv053rug02wxk" path="res://Art/Food_Spritesheet/Atlas_PineappleTart.tres" id="7_7kqml"]
+[ext_resource type="Texture2D" uid="uid://b06an2yejbhw1" path="res://Art/UI/Reward/Atlas_UI_RecipeUnlock_Confetti_Right.tres" id="7_kef7d"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="8_a1k4u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8604i"]
+texture = ExtResource("6_nex82")
+
+[sub_resource type="Animation" id="Animation_i4mft"]
+resource_name = "Anim_In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Background/TEXTRECT_HorizontalBanner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PANEL_Background/TXT_Title1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PANEL_Background/TXT_Title2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PANEL_Background/Control_ContentGroup:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PANEL_Background/TXT_ClickToContinue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"unblock_input"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Left:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Right:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sat5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Background/TEXTRECT_HorizontalBanner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PANEL_Background/TXT_Title1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PANEL_Background/TXT_Title2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PANEL_Background/Control_ContentGroup:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PANEL_Background/TXT_ClickToContinue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Left:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Right:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnyr0"]
+_data = {
+&"Anim_In": SubResource("Animation_i4mft"),
+&"RESET": SubResource("Animation_sat5f")
+}
+
+[node name="UI_RewardPrompt" type="Control" node_paths=PackedStringArray("_title1", "_titleEmphasis", "_rewardName", "_rtl1", "_rtl2", "_textureRect", "_animIn", "_descriptionTxt")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_widgi")
+_title1 = NodePath("PANEL_Background/TXT_Title1")
+_titleEmphasis = NodePath("PANEL_Background/TXT_Title2")
+_rewardName = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer/TXT_RewardName")
+_rtl1 = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer/RTL_1")
+_rtl2 = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer/RTL_2")
+_textureRect = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer/AspectRatioContainer/TEXTRECT_RewardImg")
+_animIn = NodePath("AnimationPlayer")
+_descriptionTxt = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer/TXT_RewardName")
+
+[node name="PANEL_Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TEXTRECT_HorizontalBanner" type="TextureRect" parent="PANEL_Background"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.079
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 235.804
+offset_bottom = -320.808
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_2p3ao")
+expand_mode = 2
+
+[node name="TXT_Title1" type="Label" parent="PANEL_Background"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.079
+anchor_right = 0.5
+anchor_bottom = 0.123
+offset_left = -960.0
+offset_top = -0.320007
+offset_right = 960.0
+offset_bottom = 0.160004
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_y1ps1")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "YOU'VE UNLOCKED A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TXT_Title2" type="Label" parent="PANEL_Background"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.123
+anchor_right = 0.5
+anchor_bottom = 0.204
+offset_left = -960.0
+offset_top = -3.34
+offset_right = 960.0
+offset_bottom = 0.179993
+theme = ExtResource("3_y1ps1")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 70
+text = "NEW RECIPE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control_ContentGroup" type="Control" parent="PANEL_Background"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TEXTRECT_Confetti_Left" type="TextureRect" parent="PANEL_Background/Control_ContentGroup"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -526.0
+offset_top = 362.0
+offset_right = -129.0
+offset_bottom = -262.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(397, 397)
+mouse_filter = 2
+texture = ExtResource("6_5j286")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TEXTRECT_Confetti_Right" type="TextureRect" parent="PANEL_Background/Control_ContentGroup"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 170.0
+offset_top = 362.0
+offset_right = 567.0
+offset_bottom = -262.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(0, 397)
+mouse_filter = 2
+texture = ExtResource("7_kef7d")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ASPECTRECT_Content" type="AspectRatioContainer" parent="PANEL_Background/Control_ContentGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 0.85
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8604i")
+
+[node name="REFRECT_RewardContent" type="ReferenceRect" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.292
+anchor_top = 0.227
+anchor_right = 0.731
+anchor_bottom = 0.769
+offset_left = -0.412231
+offset_top = 0.233002
+offset_right = -0.398438
+offset_bottom = -0.149048
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TXT_RewardName" type="Label" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme = ExtResource("3_y1ps1")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/line_spacing = -10
+theme_override_font_sizes/font_size = 41
+text = "Pineapple Tart"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+
+[node name="TEXTRECT_RewardImg" type="TextureRect" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("7_7kqml")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="RTL_1" type="RichTextLabel" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_y1ps1")
+theme_type_variation = &"RTL_Dialogue_VN"
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Difficulty: [color=dark green]Hard[/color]"
+fit_content = true
+scroll_active = false
+
+[node name="RTL_2" type="RichTextLabel" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_y1ps1")
+theme_type_variation = &"RTL_Dialogue_VN"
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Cooking Time: 15s"
+fit_content = true
+scroll_active = false
+
+[node name="TXT_ClickToContinue" parent="PANEL_Background" instance=ExtResource("8_a1k4u")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -72.0
+offset_right = -43.0
+offset_bottom = -36.9988
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+input = "act_interact"
+_translationContext = "Continue"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fnyr0")
+}

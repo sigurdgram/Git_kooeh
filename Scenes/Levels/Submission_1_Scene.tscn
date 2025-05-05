@@ -1,0 +1,261 @@
+[gd_scene load_steps=49 format=3 uid="uid://ovl5nn7xt2eb"]
+
+[ext_resource type="Script" uid="uid://dwl2xiuojlumd" path="res://Scripts/GameModes/GameplayGameMode.gd" id="1_coyay"]
+[ext_resource type="Resource" uid="uid://ubs6lai42am2" path="res://Resources/Buildable/UpgradeBundle_Main.tres" id="2_hdjig"]
+[ext_resource type="AudioStream" uid="uid://b33uci6i1tgno" path="res://Audio/Music/AS_Music_courtyard_loop.wav" id="2_ja5ia"]
+[ext_resource type="PackedScene" uid="uid://bnosq0d5qho86" path="res://Scenes/UIs/Phase2UI/UI_Phase2_GamePlay.tscn" id="3_f7uqk"]
+[ext_resource type="Script" uid="uid://c1rdrc307qoot" path="res://Scripts/RestaurantSystems/OrderSystem.gd" id="4_12oie"]
+[ext_resource type="Script" uid="uid://8qtsadf2ue2c" path="res://Scripts/RestaurantSystems/CustomerManagement/CustomerSpawner.gd" id="4_d8wog"]
+[ext_resource type="PackedScene" uid="uid://hoen7uclq2dg" path="res://Scenes/UIs/UI_Essentials.tscn" id="4_kvmd4"]
+[ext_resource type="Script" uid="uid://0x1vqgb4cwss" path="res://Scripts/RestaurantSystems/CookSystem.gd" id="4_mbbrg"]
+[ext_resource type="PackedScene" uid="uid://cp40fdd3m3y7b" path="res://Scenes/UIs/Misc/UI_Countdown.tscn" id="4_tqn1n"]
+[ext_resource type="PackedScene" uid="uid://cocmumacemymc" path="res://Scenes/UIs/Phase2UI/UI_Phase2_Phase3Selector.tscn" id="5_b4reu"]
+[ext_resource type="PackedScene" uid="uid://3bqp7iw8ffeu" path="res://Scenes/UIs/Phase3UI/Cooking/UI_Phase3_CookingUI.tscn" id="6_getw1"]
+[ext_resource type="PackedScene" uid="uid://cnbhcky25a6wp" path="res://Scenes/UIs/Phase3UI/Cooking/UI_Phase3_Cookbook.tscn" id="7_fjwje"]
+[ext_resource type="Script" uid="uid://cwiyytmfv8748" path="res://Scripts/RestaurantSystems/ServeSystem.gd" id="10_pj6pg"]
+[ext_resource type="PackedScene" uid="uid://byhx7apvqg6qt" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Upgrade.tscn" id="11_nh50r"]
+[ext_resource type="PackedScene" uid="uid://cxtxywikptpw1" path="res://Scenes/UIs/Phase2UI/UI_Phase2_EndDayReport.tscn" id="11_rg77w"]
+[ext_resource type="Script" uid="uid://drduau727ni14" path="res://Scripts/RestaurantSystems/TimeSystem.gd" id="12_fy4kc"]
+[ext_resource type="Script" uid="uid://xquwy6cfoxin" path="res://Scripts/Phase3Systems/Phase3CookSystem.gd" id="13_1g0t4"]
+[ext_resource type="Script" uid="uid://b4j723gbmg3r7" path="res://Scripts/RestaurantSystems/EconomySystem.gd" id="14_k8mwn"]
+[ext_resource type="PackedScene" uid="uid://d36sxoo7yshfm" path="res://Scenes/QTEBars/QTEBar_Drag.tscn" id="14_lsq5j"]
+[ext_resource type="AudioStream" uid="uid://c6qw80xaaepbt" path="res://Audio/SFX/AS_SFX_QTEComplete.wav" id="15_ai30i"]
+[ext_resource type="PackedScene" uid="uid://csnoqq4e5pq71" path="res://Scenes/QTEBars/QTEBar_Hori_TapInRange.tscn" id="15_g7it4"]
+[ext_resource type="PackedScene" uid="uid://c02yk6l5jfai6" path="res://Scenes/QTEBars/QTEBar_Radial_TapInRange.tscn" id="16_42ka0"]
+[ext_resource type="PackedScene" uid="uid://40uqrucu7hv2" path="res://Scenes/UIs/Misc/UI_RatingPrompt.tscn" id="19_vuq0a"]
+[ext_resource type="Script" uid="uid://55ah301w3w7v" path="res://Scripts/RestaurantSystems/InteractionSystem.gd" id="20_1blhh"]
+[ext_resource type="PackedScene" uid="uid://cciqj0ipy5ncw" path="res://Scenes/QTEBars/QTEBar_Shake.tscn" id="20_i0hlg"]
+[ext_resource type="PackedScene" uid="uid://bhnbjaxwyagu3" path="res://Scenes/QTEBars/QTEBar_HoldToRange.tscn" id="21_h4c3o"]
+[ext_resource type="PackedScene" uid="uid://6l2rf4oijtc5" path="res://Scenes/QTEBars/QTEBar_Stir.tscn" id="22_rbks7"]
+[ext_resource type="PackedScene" uid="uid://bpfqc17cnd84l" path="res://Scenes/QTEBars/QTEBar_Pour.tscn" id="23_e3u1j"]
+[ext_resource type="PackedScene" uid="uid://crbxcd1luvvs8" path="res://Scenes/QTEBars/QTEBar_Steam.tscn" id="23_ufs4w"]
+[ext_resource type="TileSet" uid="uid://dtxakf36ey0l1" path="res://Tilesets/Grass_Tileset.tres" id="24_m4o3j"]
+[ext_resource type="Texture2D" uid="uid://bawuwllgcawxa" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush2.png" id="42_xoevp"]
+[ext_resource type="Texture2D" uid="uid://cl7tskevh7x63" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush5.png" id="43_xsln6"]
+[ext_resource type="Texture2D" uid="uid://vbgsubw6r3ds" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_BananaTree2.png" id="46_4omhv"]
+[ext_resource type="Script" uid="uid://bqne0avpjy22a" path="res://addons/buildable_system/Scripts/Node2Ds/BuildableSystem.gd" id="46_cf011"]
+[ext_resource type="Resource" uid="uid://suy3eyx6wmqh" path="res://Resources/Buildable/BuildableGridData.tres" id="47_y3hyh"]
+[ext_resource type="PackedScene" uid="uid://c0dr4esotwumc" path="res://Scenes/IsometricCursor.tscn" id="48_hb6rj"]
+[ext_resource type="Texture2D" uid="uid://3bj42wbq7kxi" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Fern1.png" id="48_iwon0"]
+[ext_resource type="PackedScene" uid="uid://ca7oetb32vjxv" path="res://addons/buildable_system/Scenes/UI_BuildableProcess_Build.tscn" id="49_k8qbp"]
+[ext_resource type="Texture2D" uid="uid://3u0x6b2ov0d0" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush3.png" id="49_r3g8o"]
+[ext_resource type="Texture2D" uid="uid://d2kj4202xe5er" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Grass6.png" id="50_7xtnm"]
+[ext_resource type="Script" uid="uid://defghthwqr7bn" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableBuild.gd" id="50_ko25o"]
+[ext_resource type="Script" uid="uid://f3uop8ge1q7h" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableDelete.gd" id="51_at4o8"]
+[ext_resource type="Script" uid="uid://cqkpe42vlkqtt" path="res://addons/buildable_system/Scripts/Resources/BuildableProcess/BuildableMove.gd" id="52_ux1i0"]
+[ext_resource type="PackedScene" uid="uid://jna1kay5l443" path="res://Character/Character_Main.tscn" id="52_vquif"]
+
+[sub_resource type="GDScript" id="GDScript_3rhqw"]
+resource_name = "RTSCamera"
+script/source = "extends Camera2D
+
+@export_group(\"Zoom\")
+@export var _zoomStep: Vector2
+@export_group(\"Edge Pan\")
+@export var _enableEdgePan: bool = false
+@export var _edgePanSpeed: float = 2.0
+
+var _mouseStartPos: Vector2
+var _screenStartPos: Vector2
+var _dragging = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action(\"rmb\"):
+		if event.is_pressed():
+			_mouseStartPos = event.position
+			_screenStartPos = position
+			_dragging = true
+		else:
+			_dragging = false
+	elif event is InputEventMouseMotion and _dragging:
+		position = zoom * (_mouseStartPos - event.position) + _screenStartPos
+		
+	if event.is_action_pressed(\"zoom_in\"):
+		var mousePos = get_global_mouse_position()
+		zoom = clamp(zoom + _zoomStep, Vector2.ONE * 0.1, Vector2.ONE * 2)
+		position += mousePos - get_global_mouse_position()
+	elif event.is_action_pressed(\"zoom_out\"):
+		var mousePos = get_global_mouse_position()
+		zoom = clamp(zoom - _zoomStep, Vector2.ONE * 0.1, Vector2.ONE * 2)
+		position += mousePos - get_global_mouse_position()
+	pass
+
+func _physics_process(_delta: float) -> void:
+	if _dragging:
+		return
+	
+	if not _enableEdgePan:
+		return
+	
+	var vRect: Rect2 = get_viewport_rect()
+	var edgePanVector: Vector2 = (get_local_mouse_position() / vRect.size) * 2.0
+	var absVector: Vector2 = abs(edgePanVector)
+	
+	var adjustedZoom: Vector2 = Vector2.ONE * 0.99 / zoom
+	if absVector.x < adjustedZoom.x and absVector.y < adjustedZoom.y:
+		return
+		
+	var newDelta: Vector2 = zoom * edgePanVector * _edgePanSpeed
+	var newPos: Vector2 = position + newDelta
+	if newPos.x > limit_left and newPos.x < limit_right and newPos.y > limit_top and newPos.y < limit_right:
+		position += newDelta
+	pass
+"
+
+[sub_resource type="Resource" id="Resource_mkugu"]
+script = ExtResource("50_ko25o")
+processMenu = ExtResource("49_k8qbp")
+
+[sub_resource type="Resource" id="Resource_mdudo"]
+script = ExtResource("51_at4o8")
+
+[sub_resource type="Resource" id="Resource_3ajq6"]
+script = ExtResource("52_ux1i0")
+
+[node name="Submission1Scene" type="Node2D" node_paths=PackedStringArray("customerSpawner", "orderSystem", "cookSystem", "serveSystem", "timeSystem", "phase3CookSystem", "interactionSystem", "_buildableSystem", "_selectedSprite")]
+process_mode = 1
+script = ExtResource("1_coyay")
+_restaurantUpgradeBundle = ExtResource("2_hdjig")
+customerSpawner = NodePath("CustomerSpawner")
+orderSystem = NodePath("OrderSystem")
+cookSystem = NodePath("CookSystem")
+serveSystem = NodePath("ServeSystem")
+timeSystem = NodePath("TimeSystem")
+phase3CookSystem = NodePath("Phase3CookSystem")
+interactionSystem = NodePath("InteractionSystem")
+_audioPhase2 = ExtResource("2_ja5ia")
+_buildableSystem = NodePath("BuildableSystem")
+_selectedSprite = NodePath("CanvasLayer/Sprite_SelectedBuildable")
+_gamePlayUI = ExtResource("3_f7uqk")
+_essentialsUI = ExtResource("4_kvmd4")
+_countdownUI = ExtResource("4_tqn1n")
+_phase3SelectorUI = ExtResource("5_b4reu")
+_phase3CookbookUI = ExtResource("7_fjwje")
+_playerScene = ExtResource("52_vquif")
+_customizationUI = ExtResource("11_nh50r")
+_endDayUI = ExtResource("11_rg77w")
+metadata/_edit_horizontal_guides_ = [-583.0, 580.0]
+metadata/_edit_vertical_guides_ = [961.0, -960.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+editor_draw_limits = true
+script = SubResource("GDScript_3rhqw")
+_zoomStep = Vector2(0.1, 0.1)
+
+[node name="CustomerSpawner" type="Node" parent="." node_paths=PackedStringArray("_layer")]
+script = ExtResource("4_d8wog")
+_layer = NodePath("../BuildableSystem/LayerHolder/Asset")
+
+[node name="OrderSystem" type="Node" parent="."]
+script = ExtResource("4_12oie")
+
+[node name="CookSystem" type="Node" parent="."]
+script = ExtResource("4_mbbrg")
+
+[node name="ServeSystem" type="Node" parent="."]
+script = ExtResource("10_pj6pg")
+
+[node name="EconomySystem" type="Node" parent="."]
+script = ExtResource("14_k8mwn")
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("12_fy4kc")
+_endingUnixTime = 120
+
+[node name="Phase3CookSystem" type="Node" parent="."]
+script = ExtResource("13_1g0t4")
+_audioQTEComplete = ExtResource("15_ai30i")
+qteBar_Drag = ExtResource("14_lsq5j")
+qteBar_Hori_TapInRange = ExtResource("15_g7it4")
+qteBar_Radial_TapInRange = ExtResource("16_42ka0")
+qteBar_Shake = ExtResource("20_i0hlg")
+qteBar_HoldToRange = ExtResource("21_h4c3o")
+qteBar_Stir = ExtResource("22_rbks7")
+qteBar_Steam = ExtResource("23_ufs4w")
+qteBar_Pour = ExtResource("23_e3u1j")
+_phase3CookingUI = ExtResource("6_getw1")
+_learnedRecipePrompt = ExtResource("19_vuq0a")
+_countdownUI = ExtResource("4_tqn1n")
+
+[node name="InteractionSystem" type="Node" parent="." groups=["Tutorial_InteractionSystem"]]
+script = ExtResource("20_1blhh")
+
+[node name="Invisible Barriers" type="Node2D" parent="."]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Invisible Barriers"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Invisible Barriers/StaticBody2D"]
+polygon = PackedVector2Array(-2, 325, -1054, -279, -1051, -759, -520, -1074, -509, -590, -1022, -299, -3, 291, 507, -3, 0.779541, -296.049, -507, -590, -515, -1073, 536, -463, 542, 8)
+
+[node name="TileMapGrass" type="TileMap" parent="."]
+z_index = -5
+y_sort_enabled = true
+position = Vector2(0, -45)
+tile_set = ExtResource("24_m4o3j")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(131071, 0, 0, -720891, 0, 0, -917500, 0, 0, -1114110, 0, 0, -917503, 0, 0, -65538, 0, 0, -262145, 0, 0, -262148, 3, 0, -458757, 3, 0, -851970, 0, 0, -1048577, 0, 0, -1310719, 0, 0, -655367, 0, 0, -851973, 0, 0, -1048580, 0, 0, -1245186, 0, 0, -1441793, 0, 0, 917503, 0, 0, 65541, 0, 0, -131065, 0, 0, -327672, 0, 0, 131065, 0, 0, -65544, 0, 0, -262154, 0, 0, -65547, 0, 0, 131062, 0, 0, 1114110, 0, 0, 917500, 0, 0, 720891, 0, 0, 524281, 0, 0, 327672, 0, 0, 1048577, 0, 0, 851970, 0, 0, 655364, 0, 0, 458757, 0, 0, 262151, 0, 0, 65544, 0, 0, -131062, 0, 0, 1310719, 0, 0, 327678, 7, 0, 262145, 7, 65536, -458760, 7, 0, -262151, 7, 0, -65541, 7, 0, 131068, 7, 0, 65538, 7, 65536, -131068, 7, 65536, -327675, 7, 65536, -524281, 7, 65536, 524287, 8, 0, -655364, 3, 0, -458754, 3, 0, -524284, 4, 0, -327678, 5, 0, -131071, 5, 0, -720894, 5, 0, -655361, 6, 0, -524287, 6, 0, 327675, 6, 0, 655361, 6, 0, 524284, 5, 0, 720894, 4, 0, 458754, 4, 0, 262148, 1, 0, 131059, 2, 0, 327669, 2, 0, 524278, 2, 0, 720888, 2, 0, 917497, 2, 0, 1114107, 2, 0, 1310716, 2, 0, 1507326, 2, 0, 1703935, 2, 0, 1441793, 2, 0, 1245186, 2, 0, 1048580, 2, 0, 851973, 2, 0, 655367, 2, 0, 458760, 2, 0, 262154, 2, 0, 65547, 2, 0, -65550, 2, 0, -262157, 2, 0, -458763, 2, 0, -851976, 2, 0, -1048583, 2, 0, -1245189, 2, 0, -1441796, 2, 0, -1638402, 2, 0, -1835009, 2, 0, -1703935, 2, 0, -1507326, 2, 0, -1310716, 2, 0, -1114107, 2, 0, -917497, 2, 0, -524278, 2, 0, -327669, 2, 0, -131059, 2, 0, 131056, 2, 0, 327666, 2, 0, 524275, 2, 0, 720885, 2, 0, 917494, 2, 0, 1114104, 2, 0, 1310713, 2, 0, 1507323, 2, 0, 1703932, 2, 0, 1900542, 2, 0, 2097151, 2, 0, 1835009, 2, 0, 1638402, 2, 0, 1441796, 2, 0, 1245189, 2, 0, 1048583, 2, 0, 851976, 2, 0, 655370, 2, 0, 458763, 2, 0, 262157, 2, 0, 65550, 2, 0, -1048586, 2, 0, -1245192, 2, 0, -655373, 2, 0, -458766, 2, 0, -262160, 2, 0, -65553, 2, 0, -1441799, 2, 0, -1638405, 2, 0, -1835012, 2, 0, -2031618, 2, 0, -2228225, 2, 0, -2097151, 2, 0, -1900542, 2, 0, -1703932, 2, 0, -1507323, 2, 0, -1310713, 2, 0, -1114104, 2, 0, -720885, 2, 0, -524275, 2, 0, -327666, 2, 0, -131056, 2, 0, 131053, 2, 0, 327663, 2, 0, 524272, 2, 0, 720882, 2, 0, 917491, 2, 0, 1114101, 2, 0, 1310710, 2, 0, 1507320, 2, 0, 1703929, 2, 0, 1900539, 2, 0, 2097148, 2, 0, 2293758, 2, 0, 2490367, 2, 0, 2228225, 2, 0, 2031618, 2, 0, 1835012, 2, 0, 1638405, 2, 0, 1441799, 2, 0, 1245192, 2, 0, 1048586, 2, 0, 851979, 2, 0, 655373, 2, 0, 458766, 2, 0, 262160, 2, 0, 65553, 2, 0, -65556, 2, 0, -262163, 2, 0, -458769, 2, 0, -655376, 2, 0, -851982, 2, 0, -1245195, 2, 0, -1441802, 2, 0, -1638408, 2, 0, -1835015, 2, 0, -2031621, 2, 0, -2228228, 2, 0, -2424834, 2, 0, -2621441, 2, 0, -2490367, 2, 0, -2293758, 2, 0, -2097148, 2, 0, -1900539, 2, 0, -1703929, 2, 0, -1507320, 2, 0, -1310710, 2, 0, -917491, 2, 0, -720882, 2, 0, -524272, 2, 0, -327663, 2, 0, -131053, 2, 0, -720888, 7, 65536, -917494, 7, 65536, -1114101, 7, 65536, -655370, 7, 0, -851979, 7, 0, -1048589, 7, 0)
+
+[node name="Foliage" type="Node2D" parent="TileMapGrass"]
+position = Vector2(-761, 1410)
+scale = Vector2(0.5, 0.5)
+
+[node name="TScene1Bush2" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1420, -604)
+texture = ExtResource("42_xoevp")
+
+[node name="TScene1Bush5" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(2612, -746)
+texture = ExtResource("43_xsln6")
+
+[node name="TScene1BananaTree2" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1116, -952)
+texture = ExtResource("46_4omhv")
+
+[node name="TScene1Fern1" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(166, -1628)
+texture = ExtResource("48_iwon0")
+
+[node name="TScene1Bush3" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(2626, -1632)
+texture = ExtResource("49_r3g8o")
+
+[node name="TScene1Grass6" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(198, -738)
+texture = ExtResource("50_7xtnm")
+
+[node name="BuildableSystem" type="Node2D" parent="." node_paths=PackedStringArray("_root2D", "_layerHolder") groups=["BuildableSystem"]]
+position = Vector2(-1660, -740)
+script = ExtResource("46_cf011")
+_root2D = NodePath(".")
+_gridData = ExtResource("47_y3hyh")
+_layerHolder = NodePath("LayerHolder")
+_cursor = ExtResource("48_hb6rj")
+_interactionMapping = {
+"Build": SubResource("Resource_mkugu"),
+"Delete": SubResource("Resource_mdudo"),
+"Move": SubResource("Resource_3ajq6")
+}
+
+[node name="LayerHolder" type="Node2D" parent="BuildableSystem"]
+
+[node name="Terrain" type="Node2D" parent="BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="Floor" type="Node2D" parent="BuildableSystem/LayerHolder"]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="Asset" type="Node2D" parent="BuildableSystem/LayerHolder" groups=["BuildableLayer.Asset"]]
+y_sort_enabled = true
+metadata/IsLayer = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Sprite_SelectedBuildable" type="Sprite2D" parent="CanvasLayer"]

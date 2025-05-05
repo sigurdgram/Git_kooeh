@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://dnvsu166uumua"]
+
+[ext_resource type="Script" uid="uid://chobbtnq4lvc8" path="res://Scripts/Buildable/Buildable_Temple1.gd" id="1_ee7cv"]
+[ext_resource type="Texture2D" uid="uid://drwxlymgsuk54" path="res://2024_Art/2024 Scene1/T_Scene1_Temple.png" id="1_yneb1"]
+[ext_resource type="Texture2D" uid="uid://kdqshtadi0ys" path="res://2024_Art/2024 Scene1/T_Scene1_IngredientBag.png" id="2_kpb5o"]
+[ext_resource type="PackedScene" uid="uid://d3tkjtby3olbs" path="res://Scenes/UIs/Phase1UI/UI_Phase1_Temple_Gather.tscn" id="2_ne0xb"]
+[ext_resource type="AudioStream" uid="uid://bntlqcx816bln" path="res://Audio/SFX/AS_SFX_Pickup.wav" id="4_gl0r0"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="5_6iies"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="7_4jlmb"]
+[ext_resource type="Texture2D" uid="uid://c6x1876ufkef7" path="res://2024_Art/2024 Scene1/T_Scene1_StoneLion_1.png" id="8_0vt3o"]
+[ext_resource type="Texture2D" uid="uid://chre1lc55djlj" path="res://2024_Art/2024 Scene1/T_Scene1_StoneLion_2.png" id="9_te38i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dnnc"]
+resource_local_to_scene = true
+shader = ExtResource("5_6iies")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.003
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Asset_Temple" type="Area2D" node_paths=PackedStringArray("_ingredientBag", "_clickablePolygon", "_sprite")]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_ee7cv")
+_ingredientsToPickup = {
+"IngredientData.BlackTeaLeaves": 10,
+"IngredientData.CoconutMilk": 20,
+"IngredientData.CoffeePowder": 10,
+"IngredientData.CondensedMilk": 10,
+"IngredientData.Egg": 20,
+"IngredientData.GlutinousRiceFlour": 30,
+"IngredientData.IcingSugar": 50,
+"IngredientData.Lime": 30,
+"IngredientData.Oil": 10,
+"IngredientData.PineappleJam": 30,
+"IngredientData.PlainFlour": 50,
+"IngredientData.RoseSyrup": 20,
+"IngredientData.Salt": 10,
+"IngredientData.Sugar": 20,
+"IngredientData.Water": 110
+}
+_collectionUI = ExtResource("2_ne0xb")
+_ingredientBag = NodePath("Sprite_IngredientBag")
+_audioPickup = ExtResource("4_gl0r0")
+_clickablePolygon = NodePath("CollisionPolygon2D")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1dnnc")
+texture = ExtResource("1_yneb1")
+offset = Vector2(-233, -266)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(11.0522, -6.57483)
+scale = Vector2(1.01857, 1.01258)
+polygon = PackedVector2Array(-98.2281, 247.462, 279.753, 42.0459, 345.531, 52.9092, 398.547, 7.48072, 393.638, -252.252, 207.102, -445.818, -374, -330, -535.115, 152.654, -294.582, 300.791, -194.441, 365.971, -105.1, 310.667)
+
+[node name="Sprite_IngredientBag" type="Sprite2D" parent="."]
+position = Vector2(78, -88)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_kpb5o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(11.0522, -6.57483)
+scale = Vector2(1.01857, 1.01258)
+polygon = PackedVector2Array(-98.2281, 247.462, 279.753, 42.0459, 345.531, 52.9092, 398.547, 7.48072, 393.638, -252.252, 207.102, -445.818, -374, -330, -535.115, 152.654, -294.582, 300.791, -194.441, 365.971, -105.1, 310.667)
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("7_4jlmb")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")
+
+[node name="TLion1" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-55, 276.5)
+texture = ExtResource("8_0vt3o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TLion1"]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TLion1/StaticBody2D"]
+position = Vector2(8, 136)
+polygon = PackedVector2Array(135.5, -24, -6.5, 58, -136.5, -19, -134.5, -58, 19.5, -169, 144.5, -89)
+
+[node name="TLion2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(463, -33.5)
+texture = ExtResource("9_te38i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TLion2"]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TLion2/StaticBody2D"]
+polygon = PackedVector2Array(9.5, 188, -125.5, 105, -125.5, 70, 11.5, -24, 192.5, 59, 142.5, 114)

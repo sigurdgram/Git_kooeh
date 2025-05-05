@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=15 format=3 uid="uid://28ad7sova4cg"]
+
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="1_2lf6g"]
+[ext_resource type="PackedScene" uid="uid://c76rou3tpc6no" path="res://Scenes/Buildable/Buildable_Internal_Beam/Buildable_Internal_Beam_SE.tscn" id="1_lqt5g"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="2_pqx5h"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_qiwpm"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="3_acnwm"]
+[ext_resource type="PackedScene" uid="uid://cunolv8jabvek" path="res://Scenes/Buildable/Buildable_Internal_Beam/Buildable_Internal_Beam_NE.tscn" id="3_b3pe3"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="3_wsbry"]
+[ext_resource type="PackedScene" uid="uid://dxmxsw847gveq" path="res://Scenes/Buildable/Buildable_Internal_Beam/Buildable_Internal_Beam_SW.tscn" id="4_exex1"]
+[ext_resource type="Texture2D" uid="uid://ba18ftjsxw8lm" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Support_FloorLEFT.png" id="5_bnmlp"]
+[ext_resource type="PackedScene" uid="uid://came3aelvj6jn" path="res://Scenes/Buildable/Buildable_Internal_Beam/Buildable_Internal_Beam_NW.tscn" id="6_vr73y"]
+
+[sub_resource type="Resource" id="Resource_njkc1"]
+script = ExtResource("3_wsbry")
+buildable = ExtResource("3_b3pe3")
+buildReqs = Array[ExtResource("2_qiwpm")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[sub_resource type="Resource" id="Resource_cm6st"]
+script = ExtResource("3_wsbry")
+buildable = ExtResource("1_lqt5g")
+buildReqs = Array[ExtResource("2_qiwpm")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[sub_resource type="Resource" id="Resource_dia2c"]
+script = ExtResource("3_wsbry")
+buildable = ExtResource("4_exex1")
+buildReqs = Array[ExtResource("2_qiwpm")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[sub_resource type="Resource" id="Resource_r3f1s"]
+script = ExtResource("3_wsbry")
+buildable = ExtResource("6_vr73y")
+buildReqs = Array[ExtResource("2_qiwpm")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[resource]
+resource_name = "BuildableData.Beam"
+script = ExtResource("3_acnwm")
+name = "Beam"
+buildableScene = ExtResource("1_lqt5g")
+texture = ExtResource("5_bnmlp")
+category = 0
+price = 100
+layer = 0
+customData = {}
+tileSetID = 0
+tileExtensions = Array[ExtResource("1_2lf6g")]([])
+flippedTileExtensions = Array[ExtResource("1_2lf6g")]([])
+restrictions = Array[ExtResource("2_pqx5h")]([])
+id = "BuildableData.Beam"
+displayName = "Beam"
+layer2 = 0
+collisionPriority = 0
+collisionLayer = 32
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: SubResource("Resource_njkc1"),
+2: null,
+3: SubResource("Resource_cm6st"),
+4: null,
+5: SubResource("Resource_dia2c"),
+6: null,
+7: SubResource("Resource_r3f1s")
+}

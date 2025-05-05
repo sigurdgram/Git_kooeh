@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://c8im1xlwk1grm"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_0fnpk"]
+[ext_resource type="Texture2D" uid="uid://bv5axphgphq8t" path="res://Art/Ingredient_Spritesheet/T_Ingredient.png" id="2_n6h0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xe3q"]
+atlas = ExtResource("2_n6h0d")
+region = Rect2(512, 1536, 512, 512)
+
+[resource]
+resource_name = "IngredientData.Onion"
+script = ExtResource("1_0fnpk")
+name = "Onion"
+description = "Hey, it's onion! Hi onion!"
+rarity = 0
+stackable = true
+texture = SubResource("AtlasTexture_7xe3q")
+bundlePrice = 0
+bundlePurchaseAmount = 10
+metadata/_custom_type_script = "uid://xe1dkdghab3l"

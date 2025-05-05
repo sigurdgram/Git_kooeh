@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnu3jghfoa7qq"]
+
+[ext_resource type="PackedScene" uid="uid://m6m5jlbnyg7o" path="res://Scenes/Customers/Customer_Base.tscn" id="1_qeowm"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_bj85l"]
+[ext_resource type="Texture2D" uid="uid://c8fuj0vdo8vpx" path="res://2024_Art/2024 Characters/Bear/T_Kooeh_A001_NPC_Bear_Idle/T_Kooeh_A001_NPC_Bear_Idle_ (1).png" id="2_o3sbc"]
+[ext_resource type="AnimationLibrary" uid="uid://cw06ffu8b12j3" path="res://2024_Art/2024 Characters/Bear/AnimLib_Character_Customer_Sunbear.tres" id="3_lx2vy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ybfw"]
+resource_local_to_scene = true
+shader = ExtResource("2_bj85l")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.014
+shader_parameter/uvRescale = 1.085
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Customer_D" instance=ExtResource("1_qeowm")]
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_o3sbc")
+offset = Vector2(-10, -150)
+
+[node name="Label" parent="CenterContainer" index="0"]
+text = "B
+"
+
+[node name="PANCONT_OrderPopup" parent="." index="5"]
+material = SubResource("ShaderMaterial_2ybfw")
+offset_top = -235.0
+offset_bottom = -5.0
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": ExtResource("3_lx2vy")
+}

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueSet" load_steps=5 format=3 uid="uid://doupla72nhimh"]
+
+[ext_resource type="Resource" uid="uid://bnrt8fuadfawp" path="res://Resources/CharacterProfiles/CharacterProfile_TanahTapir_NameObscured.tres" id="1_qdi5a"]
+[ext_resource type="Resource" uid="uid://djq3iifidm5o0" path="res://Resources/CharacterProfiles/CharacterProfile_TanahTapir.tres" id="2_7gl2n"]
+[ext_resource type="Resource" uid="uid://b37o8k82tr5a" path="res://Resources/Dialogue/Prologue/Dialogue_Prologue.dialogue" id="2_cy5uw"]
+[ext_resource type="Script" uid="uid://bskwd2c31ps8" path="res://Scripts/Resources/DialogueSet.gd" id="3_68vf0"]
+
+[resource]
+script = ExtResource("3_68vf0")
+dialogueResource = ExtResource("2_cy5uw")
+characterProfiles = {
+"Speaker0": ExtResource("1_qdi5a"),
+"Speaker1": ExtResource("2_7gl2n")
+}

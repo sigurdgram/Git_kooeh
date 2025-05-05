@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=10 format=3 uid="uid://dn8bl6trt8pqy"]
+
+[ext_resource type="PackedScene" uid="uid://dt2lfmtem6og6" path="res://Scenes/Buildable/Buildable_Floor_RedTile/Buildable_Floor_RedTile_N.tscn" id="1_0bdxm"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="1_nrjnc"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_2jr2y"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="2_mofa5"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_3lx4k"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="3_awye2"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="3_spsvl"]
+[ext_resource type="Texture2D" uid="uid://b4r8v675r0062" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Tile001_Red1.png" id="4_tc8t5"]
+
+[sub_resource type="Resource" id="Resource_vnrh7"]
+script = ExtResource("3_spsvl")
+buildable = ExtResource("1_0bdxm")
+buildReqs = Array[ExtResource("2_2jr2y")]([ExtResource("3_3lx4k")])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[resource]
+resource_name = "BuildableData.RedTile"
+script = ExtResource("3_awye2")
+name = "RedTile"
+buildableScene = ExtResource("1_0bdxm")
+texture = ExtResource("4_tc8t5")
+category = 0
+price = 100
+layer = 0
+customData = {}
+tileSetID = 0
+tileExtensions = Array[ExtResource("1_nrjnc")]([])
+flippedTileExtensions = Array[ExtResource("1_nrjnc")]([])
+restrictions = Array[ExtResource("2_mofa5")]([])
+id = "BuildableData.RedTile"
+displayName = "Red Tile"
+layer2 = 1
+collisionPriority = 1
+collisionLayer = 64
+defaultDirection = 0
+directionalVariants = {
+0: SubResource("Resource_vnrh7"),
+1: null,
+2: null,
+3: null,
+4: null,
+5: null,
+6: null,
+7: null
+}

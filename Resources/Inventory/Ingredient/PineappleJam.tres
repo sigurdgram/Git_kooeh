@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://rebyxnt6u6h3"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_dt6gb"]
+[ext_resource type="Texture2D" uid="uid://0htxl1gqx4h7" path="res://Art/Ingredient_Spritesheet/T_I009_PJam.tres" id="2_1exah"]
+
+[resource]
+resource_name = "IngredientData.PineappleJam"
+script = ExtResource("1_dt6gb")
+name = "Pineapple Jam"
+description = ""
+rarity = 2
+stackable = true
+texture = ExtResource("2_1exah")
+bundlePrice = 40
+bundlePurchaseAmount = 10

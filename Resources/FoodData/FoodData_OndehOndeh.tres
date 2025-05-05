@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=23 format=3 uid="uid://1q81i2aqgr0o"]
+
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_abd26"]
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="3_3irgu"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_hhdn4"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="4_abd26"]
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="5_hhdn4"]
+[ext_resource type="Script" uid="uid://brrlpfd302c4p" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="6_hhdn4"]
+[ext_resource type="Texture2D" uid="uid://b0ulpbrwe5n2k" path="res://Art/Food_Spritesheet/Atlas_OndehOndeh.tres" id="7_6tg5j"]
+[ext_resource type="Texture2D" uid="uid://chqw10vmvqitn" path="res://2024_Art/2024 Isometric F&B/T_Food_OndehOndeh_Eating.png" id="13_g1quv"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="13_vjsfb"]
+
+[sub_resource type="Resource" id="Resource_g1quv"]
+script = ExtResource("3_hhdn4")
+referenceCurve = ExtResource("2_abd26")
+scale = 1.5
+difficulty = 1
+qteHitCount = 4
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_eaa38"]
+script = ExtResource("3_3irgu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_g1quv")
+description = ""
+
+[sub_resource type="Resource" id="Resource_hhdn4"]
+script = ExtResource("4_abd26")
+difficulty = 1
+numberOfExecutions = 4
+speed = 150.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_bxph4"]
+script = ExtResource("3_3irgu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_hhdn4")
+description = ""
+
+[sub_resource type="Resource" id="Resource_aky38"]
+script = ExtResource("5_hhdn4")
+difficulty = 1
+tapRange = 0.15
+interval = 1.0
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_cnobn"]
+script = ExtResource("3_3irgu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_aky38")
+description = ""
+
+[sub_resource type="Resource" id="Resource_8outv"]
+script = ExtResource("6_hhdn4")
+difficulty = 1
+speed = 0.6
+barLengthMultiplier = 1.15
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_w8u2q"]
+script = ExtResource("3_3irgu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_8outv")
+description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up8nm"]
+atlas = ExtResource("13_g1quv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od06n"]
+atlas = ExtResource("13_g1quv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abd26"]
+atlas = ExtResource("13_g1quv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhdn4"]
+atlas = ExtResource("13_g1quv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aky38"]
+atlas = ExtResource("13_g1quv")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.OndehOndeh"
+script = ExtResource("13_vjsfb")
+name = "Ondeh-Ondeh"
+type = 1
+difficulty = 1
+description = "A type of sweet rice ball with a cake-like texture, filled with liquified palm sugar. With the coconut on top, it has a great mix of textures!"
+sprite = SubResource("AtlasTexture_aky38")
+journalSprite = ExtResource("7_6tg5j")
+platelessSprite = SubResource("AtlasTexture_hhdn4")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_up8nm"), SubResource("AtlasTexture_od06n"), SubResource("AtlasTexture_abd26")])
+cookTime = 7.0
+price = 20.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.GlutinousRiceFlour": 3,
+"IngredientData.Oil": 1,
+"IngredientData.Sugar": 2,
+"IngredientData.Water": 1
+}
+cookInstructions = Array[ExtResource("3_3irgu")]([SubResource("Resource_eaa38"), SubResource("Resource_bxph4"), SubResource("Resource_cnobn"), SubResource("Resource_w8u2q")])

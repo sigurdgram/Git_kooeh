@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://pp11xafiwpvx"]
+
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="1_8ka3b"]
+[ext_resource type="Script" uid="uid://bdwckdhtg0bqv" path="res://Scripts/UISystem/UIs/Misc/UI_DemoEnd.gd" id="1_bvsq4"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_rrgyy"]
+[ext_resource type="Texture2D" uid="uid://b6byyga0c2oe7" path="res://Art/UI/T_Kooeh_QR Code.png" id="4_qoxx8"]
+[ext_resource type="PackedScene" uid="uid://d3l8mt377bxbu" path="res://Scenes/UIs/Misc/UI_BasicButton.tscn" id="4_w5ple"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5deee"]
+shader = ExtResource("1_8ka3b")
+shader_parameter/tint = Color(0.25098, 0.25098, 0.25098, 1)
+shader_parameter/strength = 0.738
+
+[sub_resource type="Gradient" id="Gradient_jyb0g"]
+offsets = PackedFloat32Array(0.487465)
+colors = PackedColorArray(0, 0, 0, 0.686275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xkx4e"]
+gradient = SubResource("Gradient_jyb0g")
+width = 1
+
+[node name="UI_DemoEnd" type="Control" node_paths=PackedStringArray("_mainMenuBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bvsq4")
+_mainMenuBtn = NodePath("VBoxContainer/UI_BasicButton")
+
+[node name="TEXTRECT_BlackFadeBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_5deee")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = SubResource("GradientTexture1D_xkx4e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="TXT_Description" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_rrgyy")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Thanks for playing.
+Follow us and give us a feedback!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="TEXTRECT_QR" type="TextureRect" parent="VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("4_qoxx8")
+expand_mode = 1
+
+[node name="UI_BasicButton" parent="VBoxContainer" instance=ExtResource("4_w5ple")]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+ratio = 4.5849
+_fontSize = 40
+text = "Return to Main Menu"

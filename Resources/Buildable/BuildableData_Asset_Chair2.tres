@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=14 format=3 uid="uid://bjxskwm2mi8t4"]
+
+[ext_resource type="PackedScene" uid="uid://csn6r4r2g13qy" path="res://Scenes/Buildable/Buildable_Chair2.tscn" id="1_f6uqw"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_d4klp"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_j717j"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_fr8bp"]
+[ext_resource type="PackedScene" uid="uid://cqapc3x2trvwa" path="res://Scenes/Buildable/Buildable_Asset_Chair2/Buildable_Asset_Chair2_SE.tscn" id="5_dmu4r"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="6_vn760"]
+[ext_resource type="PackedScene" uid="uid://d1w6igl0c084" path="res://Scenes/Buildable/Buildable_Asset_Chair2/Buildable_Asset_Chair2_SW.tscn" id="7_ni5m6"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="8_ysopv"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="9_by56h"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="10_mun5b"]
+[ext_resource type="Texture2D" uid="uid://c58ww7pqfd716" path="res://2024_Art/2024 Restaurant (SceneEatery)/Chair2.tres" id="11_lnbnq"]
+
+[sub_resource type="Resource" id="Resource_63iou"]
+script = ExtResource("6_vn760")
+buildable = ExtResource("5_dmu4r")
+buildReqs = Array[ExtResource("2_d4klp")]([ExtResource("3_j717j"), ExtResource("4_fr8bp")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_pncy5"]
+script = ExtResource("6_vn760")
+buildable = ExtResource("7_ni5m6")
+buildReqs = Array[ExtResource("2_d4klp")]([ExtResource("3_j717j"), ExtResource("4_fr8bp")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[resource]
+resource_name = "BuildableData.Chair2"
+script = ExtResource("10_mun5b")
+name = "Chair 2"
+buildableScene = ExtResource("1_f6uqw")
+texture = ExtResource("11_lnbnq")
+category = 2
+price = 100
+layer = 0
+customData = {}
+tileSetID = 9
+tileExtensions = Array[ExtResource("8_ysopv")]([])
+flippedTileExtensions = Array[ExtResource("8_ysopv")]([])
+restrictions = Array[ExtResource("9_by56h")]([])
+id = "BuildableData.Chair2"
+displayName = "Chair2"
+layer2 = 2
+collisionPriority = 2
+collisionLayer = 129
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: null,
+2: null,
+3: SubResource("Resource_63iou"),
+4: null,
+5: SubResource("Resource_pncy5"),
+6: null,
+7: null
+}

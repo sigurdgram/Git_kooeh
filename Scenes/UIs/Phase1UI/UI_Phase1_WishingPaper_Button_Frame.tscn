@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddhtot5hkrmg8"]
+
+[ext_resource type="Script" uid="uid://chpt8wtqimgv7" path="res://Scripts/UISystem/UIs/Misc/UI_Button_Frame.gd" id="1_hrj1e"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_us60e"]
+[ext_resource type="Texture2D" uid="uid://b0etjjsmfyhfj" path="res://Art/Ingredient_Spritesheet/T_I003_WFlour.tres" id="3_d4fju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ka6it"]
+
+[node name="UI_Phase1_WishingPaper_Button_Frame" type="Button" node_paths=PackedStringArray("_nameTxt", "_textRect")]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -57.0
+offset_right = 187.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_us60e")
+theme_type_variation = &"Button_Frame"
+script = ExtResource("1_hrj1e")
+_nameTxt = NodePath("PANELCONT_Rarity/MarginContainer/VBoxContainer/TXT_Name")
+_textRect = NodePath("PANELCONT_Rarity/MarginContainer/VBoxContainer/AspectRatioContainer/TEXTRECT_Item")
+
+[node name="PANELCONT_Rarity" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ka6it")
+
+[node name="MarginContainer" type="MarginContainer" parent="PANELCONT_Rarity"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PANELCONT_Rarity/MarginContainer"]
+layout_mode = 2
+
+[node name="TXT_Name" type="Label" parent="PANELCONT_Rarity/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_us60e")
+theme_type_variation = &"HeaderMedium"
+text = "Food Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PANELCONT_Rarity/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TEXTRECT_Item" type="TextureRect" parent="PANELCONT_Rarity/MarginContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_d4fju")
+expand_mode = 1
+stretch_mode = 5

@@ -1,0 +1,8 @@
+[gd_resource type="Curve2D" format=3 uid="uid://dbbtpldotwy1i"]
+
+[resource]
+bake_interval = 0.1
+_data = {
+"points": PackedVector2Array(98.5301, -1.11893, -100, 0, 0, 0, 0, 0, 0, 0, -100, 223)
+}
+point_count = 2

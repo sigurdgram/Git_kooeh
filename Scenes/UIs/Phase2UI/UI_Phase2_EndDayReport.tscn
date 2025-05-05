@@ -1,0 +1,164 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxtxywikptpw1"]
+
+[ext_resource type="Script" uid="uid://d0srcykikc03g" path="res://Scripts/UISystem/UIs/Phase2UI/UI_Phase2_EndDayReport.gd" id="1_tihyl"]
+[ext_resource type="Shader" uid="uid://du6ccokev2k23" path="res://Scripts/Shaders/Shad_SimpleBlur.gdshader" id="2_ty0dm"]
+[ext_resource type="Texture2D" uid="uid://cmerolbar30v8" path="res://2024_Art/2024 UI Assets/T_UI_PopupMenuWindow.png" id="3_dt1r7"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="4_snxbo"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="5_3lm7p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dt1r7"]
+shader = ExtResource("2_ty0dm")
+shader_parameter/tint = Color(0.360784, 0.360784, 0.360784, 1)
+shader_parameter/strength = 0.806
+
+[sub_resource type="Gradient" id="Gradient_xwdb8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_snxbo"]
+gradient = SubResource("Gradient_xwdb8")
+width = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snxbo"]
+atlas = ExtResource("3_dt1r7")
+region = Rect2(26, 740, 1995, 2615)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snxbo"]
+bg_color = Color(0.780392, 0.654902, 0.47451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3lm7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aleva"]
+
+[node name="UI_Phase2_EndDayReport" type="Control" node_paths=PackedStringArray("_tree", "_finalTree", "_continueBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tihyl")
+_tree = NodePath("MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer/Tree")
+_finalTree = NodePath("MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer/ResultTree")
+_continueBtn = NodePath("MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer/Button")
+_fontSize1 = 25
+_fontSize2 = 30
+
+[node name="TEXTRECT_Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dt1r7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_snxbo")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TEXTRECT_Notebook" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_snxbo")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ReferenceRect" type="ReferenceRect" parent="MarginContainer/TEXTRECT_Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.493
+anchor_top = 0.126
+anchor_right = 0.493
+anchor_bottom = 0.923
+offset_left = -295.98
+offset_top = 0.479996
+offset_right = 295.02
+offset_bottom = -0.460022
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 2.4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TEXTRECT_Notebook/ReferenceRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("4_snxbo")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 40
+text = "Daily Report"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snxbo")
+
+[node name="Tree" type="Tree" parent="MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_colors/title_button_color = Color(0.243137, 0.172549, 0.117647, 1)
+theme_override_colors/font_color = Color(0.243137, 0.172549, 0.117647, 1)
+theme_override_constants/inner_item_margin_left = 5
+theme_override_constants/inner_item_margin_right = 5
+theme_override_constants/item_margin = 0
+theme_override_constants/draw_guides = 0
+theme_override_fonts/font = ExtResource("5_3lm7p")
+theme_override_fonts/title_button_font = ExtResource("5_3lm7p")
+theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/title_button_font_size = 30
+theme_override_styles/title_button_normal = SubResource("StyleBoxFlat_snxbo")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3lm7p")
+columns = 3
+column_titles_visible = true
+allow_search = false
+enable_recursive_folding = false
+scroll_horizontal_enabled = false
+auto_tooltip = false
+
+[node name="ResultTree" type="Tree" parent="MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.254902, 0.184314, 0.12549, 1)
+theme_override_constants/inner_item_margin_left = 5
+theme_override_constants/inner_item_margin_right = 5
+theme_override_constants/item_margin = 0
+theme_override_constants/draw_guides = 0
+theme_override_fonts/font = ExtResource("5_3lm7p")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/panel = SubResource("StyleBoxEmpty_aleva")
+columns = 3
+allow_search = false
+enable_recursive_folding = false
+scroll_horizontal_enabled = false
+scroll_vertical_enabled = false
+auto_tooltip = false
+
+[node name="Button" type="Button" parent="MarginContainer/TEXTRECT_Notebook/ReferenceRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_snxbo")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 25
+text = "Continue"

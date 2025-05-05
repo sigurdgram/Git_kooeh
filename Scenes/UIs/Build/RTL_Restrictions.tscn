@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdb725y8qhh31"]
+
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_32kkb"]
+
+[node name="RTL_Restrictions" type="RichTextLabel"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+theme = ExtResource("1_32kkb")
+theme_type_variation = &"RTL_Restrictions"
+theme_override_colors/default_color = Color(0.196078, 0.0862745, 0.0470588, 1)
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true

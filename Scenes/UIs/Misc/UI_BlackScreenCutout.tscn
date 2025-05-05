@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://jkati7vtcv8t"]
+
+[ext_resource type="Shader" uid="uid://b7n55kor75co4" path="res://Scripts/Shaders/Shad_BlackScreenCutout.gdshader" id="1_u3kvv"]
+[ext_resource type="Script" uid="uid://b71ntslrvv3k5" path="res://Scripts/UISystem/UIs/Misc/UI_BlackScreenCutout.gd" id="1_x0fod"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43cma"]
+resource_local_to_scene = true
+shader = ExtResource("1_u3kvv")
+shader_parameter/size = Vector2(0, 0)
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/aa = 0.05
+
+[sub_resource type="Gradient" id="Gradient_55c28"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5kfdj"]
+gradient = SubResource("Gradient_55c28")
+width = 1
+
+[node name="UI_BlackScreenCutout" type="Control" node_paths=PackedStringArray("_cutout")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_x0fod")
+_cutout = NodePath("TEXTRECT_Cutout")
+
+[node name="TEXTRECT_Cutout" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_43cma")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_5kfdj")
+expand_mode = 1

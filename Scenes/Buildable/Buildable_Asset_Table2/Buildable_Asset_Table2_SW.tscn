@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpd42373tpgk5"]
+
+[ext_resource type="PackedScene" uid="uid://bp6q6gmbfkmjf" path="res://Scenes/Buildable/Buildable_Asset_Table2/Buildable_Asset_Table2_SE.tscn" id="1_2qpo7"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_2u438"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jc1lw"]
+resource_local_to_scene = true
+shader = ExtResource("2_2u438")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.03
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Table2_SE" instance=ExtResource("1_2qpo7")]
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_jc1lw")
+flip_h = true

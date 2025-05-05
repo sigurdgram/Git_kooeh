@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckqg53o6o2qkc"]
+
+[ext_resource type="PackedScene" uid="uid://h38lu5a3pfuh" path="res://Scenes/Buildable/Buildable_Asset_Table4/Buildable_Asset_Table4_SW.tscn" id="1_ogf1e"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_pllb0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yxke"]
+resource_local_to_scene = true
+shader = ExtResource("2_pllb0")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.008
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Buildable_Asset_Table4_SE" instance=ExtResource("1_ogf1e")]
+metadata/AttachmentSlots = {
+"Tabletop": NodePath("Tabletop"),
+"Tabletop_NW": NodePath("Tabletop_NW"),
+"Tabletop_SE": NodePath("Tabletop_SE")
+}
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_7yxke")
+offset = Vector2(10, -51.03)
+flip_h = true
+
+[node name="Shadow" parent="Sprite2D" index="0"]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+rotation = -0.553269
+skew = -0.520108
+
+[node name="ClickablePolygon" parent="." index="1"]
+polygon = PackedVector2Array(-19, -59, -103, -7, 19, 60, 103, 7)
+
+[node name="Tabletop" parent="." index="2"]
+position = Vector2(9, -83)
+
+[node name="Tabletop_NE" parent="." index="3"]
+visible = false
+
+[node name="Tabletop_SE" type="Node2D" parent="." index="4"]
+position = Vector2(49, -64)
+
+[node name="Tabletop_NW" type="Node2D" parent="." index="5"]
+position = Vector2(-25, -106)
+
+[node name="Tabletop_SW" parent="." index="6"]
+visible = false
+
+[node name="SeatArrangement" parent="." index="7"]
+_possibleSeatLocationsi = Array[Vector2i]([Vector2i(0, -1), Vector2i(0, 1)])
+
+[node name="ClickablePolygon" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-19, -59, -103, -7, 19, 60, 103, 7)

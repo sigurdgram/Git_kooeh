@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddm1627o32bdn"]
+
+[ext_resource type="Script" uid="uid://bj8i2g55xs5jy" path="res://Scripts/UISystem/UIs/Order/UI_OrderBubble.gd" id="1_u65gq"]
+[ext_resource type="Texture2D" uid="uid://c6ntk43rkrog0" path="res://Art/Food_Spritesheet/Atlas_TehTarik.tres" id="2_4qs0l"]
+
+[node name="UI_OrderBubble" type="HBoxContainer" node_paths=PackedStringArray("_itemImg")]
+custom_minimum_size = Vector2(100, 80)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u65gq")
+_itemImg = NodePath("AspectRatioContainer/IMG_Item")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IMG_Item" type="TextureRect" parent="AspectRatioContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("2_4qs0l")
+expand_mode = 2
+stretch_mode = 5

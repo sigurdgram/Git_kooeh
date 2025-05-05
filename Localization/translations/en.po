@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+msgid "act_pause"
+msgstr "Pause"
+
+msgctxt "skip"
+msgid "act_pause"
+msgstr "Skip"
+
+msgctxt "cancel"
+msgid "act_pause"
+msgstr "Cancel"
+
+msgid "act_up"
+msgstr "Up"
+
+msgid "act_down"
+msgstr "Down"
+
+msgid "act_left"
+msgstr "Left"
+
+msgid "act_right"
+msgstr "Right"
+
+msgid "act_interact"
+msgstr "Interact"
+
+msgid "ui_up"
+msgstr "Up"
+
+msgid "ui_down"
+msgstr "Down"
+
+msgid "ui_left"
+msgstr "Left"
+
+msgid "ui_right"
+msgstr "Right"
+
+msgid "ui_accept"
+msgstr "Confirm"
+
+msgctxt "select"
+msgid "ui_accept"
+msgstr "Select"
+
+msgid "ui_cancel"
+msgstr "Cancel"
+
+msgctxt "back"
+msgid "ui_cancel"
+msgstr "Back"
+
+msgid "MAIN_MENU-START"
+msgstr "Start"
+
+msgid "MAIN_MENU-LOAD"
+msgstr "Load"
+
+msgid "MAIN_MENU-SETTINGS"
+msgstr "Settings"
+
+msgid "MAIN_MENU-CREDITS"
+msgstr "Credits"
+
+msgid "MAIN_MENU-QUIT"
+msgstr "Quit"
+
+msgid "PROMPT-WARNING"
+msgstr "Warning"
+
+msgid "PROMPT-QUIT_WARNING"
+msgstr ""
+"Are you sure you want to quit? \n"
+" Unsaved progress will be lost."
+
+msgid "PROMPT-YES"
+msgstr "Yes"
+
+msgid "PROMPT-NO"
+msgstr "No"
+
+msgid "en"
+msgstr "English"
+
+msgid "zh-Hans"
+msgstr "中文（简体）"

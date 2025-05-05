@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://db48h4ajrmue8"
+path="res://.godot/imported/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (23).png-19ff67b5ab1aa7ed50908d2b2ec8e4c5.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (23).png"
+dest_files=["res://.godot/imported/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (23).png-19ff67b5ab1aa7ed50908d2b2ec8e4c5.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

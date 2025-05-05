@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj14b5u76ryui"]
+
+[ext_resource type="Script" uid="uid://dyhd11j4hvc2s" path="res://Scripts/UISystem/UIs/Settings/UI_Settings_ControlRebindEntry_Gamepad.gd" id="1_2vi06"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_8ey8u"]
+[ext_resource type="PackedScene" uid="uid://cadwlyt3r20xm" path="res://Scenes/UIs/SettingsMenu/UI_Settings_ControlRebindUI_Gamepad.tscn" id="2_wuivn"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_qxpbg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jhwn0"]
+resource_local_to_scene = true
+shader = ExtResource("3_qxpbg")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.07
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 20
+shader_parameter/enabled = true
+
+[node name="UI_Settings_ControlRebindEntry_Gamepad" type="MarginContainer" node_paths=PackedStringArray("_actionTxt", "_rebindBtn", "_rebindTexture")]
+custom_minimum_size = Vector2(450, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -25.0
+offset_right = 156.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vi06")
+_keyRebindUITemplate = ExtResource("2_wuivn")
+_actionTxt = NodePath("HBox_Entry/PANCONT_Action/TXT_Action")
+_rebindBtn = NodePath("HBox_Entry/BTN_Rebind")
+_rebindTexture = NodePath("HBox_Entry/BTN_Rebind/CenterContainer/TextureRect")
+
+[node name="HBox_Entry" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PANCONT_Action" type="PanelContainer" parent="HBox_Entry"]
+layout_mode = 2
+theme = ExtResource("2_8ey8u")
+theme_type_variation = &"PanelCont_SubSetting"
+
+[node name="TXT_Action" type="Label" parent="HBox_Entry/PANCONT_Action"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8ey8u")
+theme_type_variation = &"HeaderMedium"
+text = "Action"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="HBox_Entry"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BTN_Rebind" type="Button" parent="HBox_Entry"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8ey8u")
+theme_type_variation = &"Button_SubSetting"
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="CenterContainer" type="CenterContainer" parent="HBox_Entry/BTN_Rebind"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBox_Entry/BTN_Rebind/CenterContainer"]
+material = SubResource("ShaderMaterial_jhwn0")
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 5
+stretch_mode = 5

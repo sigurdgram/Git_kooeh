@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://c6cldeug8qxpa"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_nu3cl"]
+[ext_resource type="Texture2D" uid="uid://dmy253uai50rs" path="res://Art/Ingredient_Spritesheet/T_I000_Water.tres" id="2_w5a5y"]
+
+[resource]
+resource_name = "IngredientData.Water"
+script = ExtResource("1_nu3cl")
+name = "Water"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_w5a5y")
+bundlePrice = 10
+bundlePurchaseAmount = 10

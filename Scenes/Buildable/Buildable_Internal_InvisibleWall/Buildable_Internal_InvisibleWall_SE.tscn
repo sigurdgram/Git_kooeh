@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2miq6wrq2eu"]
+
+[ext_resource type="PackedScene" uid="uid://vomd31ymjpwu" path="res://Scenes/Buildable/Buildable_Internal_InvisibleWall/Buildable_Internal_InvisibleWall_SW.tscn" id="1_b2tsn"]
+[ext_resource type="Shape2D" uid="uid://cxa27ytb3simw" path="res://Resources/Buildable/CVShape_IsoGrid_4x1.tres" id="2_2lalj"]
+
+[node name="Buildable_Internal_InvisibleWall_SE" instance=ExtResource("1_b2tsn")]
+
+[node name="StaticBody2D" parent="." index="0"]
+position = Vector2(128, 74)
+
+[node name="CollisionPolygonShape2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(-127, 139, 371, -149, 257, -213, -243, 74)
+shape = ExtResource("2_2lalj")

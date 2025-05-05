@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://chv7mph3wnfnd"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_0dqq5"]
+[ext_resource type="Texture2D" uid="uid://bh5qwla7nimb8" path="res://Art/Ingredient_Spritesheet/T_I001_Salt.tres" id="2_m42jn"]
+
+[resource]
+resource_name = "IngredientData.Salt"
+script = ExtResource("1_0dqq5")
+name = "Salt"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_m42jn")
+bundlePrice = 10
+bundlePurchaseAmount = 10

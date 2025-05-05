@@ -1,0 +1,634 @@
+[gd_resource type="AnimationLibrary" load_steps=228 format=3 uid="uid://gk1aff766abk"]
+
+[ext_resource type="Texture2D" uid="uid://dyt0jxhfjg570" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat1.png" id="1_oxdx7"]
+[ext_resource type="Texture2D" uid="uid://bs6qorsq0vpwp" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat2.png" id="2_mhe8m"]
+[ext_resource type="Texture2D" uid="uid://bnmew205t3rig" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat3.png" id="3_iht0y"]
+[ext_resource type="Texture2D" uid="uid://co1xhrq3dyls7" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_BackEat4.png" id="4_1ifsa"]
+[ext_resource type="Texture2D" uid="uid://dsera6ibxdkk8" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat1.png" id="5_evao3"]
+[ext_resource type="Texture2D" uid="uid://cvso6aso61xn8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00000.png" id="5_gcaiv"]
+[ext_resource type="Texture2D" uid="uid://crvj1dg33ir2l" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00001.png" id="6_2edjg"]
+[ext_resource type="Texture2D" uid="uid://dd16k238fq83x" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat2.png" id="6_bhvsg"]
+[ext_resource type="Texture2D" uid="uid://bry2hrpt36stm" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat3.png" id="7_bjp8e"]
+[ext_resource type="Texture2D" uid="uid://bt3i2vagokiwi" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00002.png" id="7_ewsbw"]
+[ext_resource type="Texture2D" uid="uid://bkk8ovt3j86dt" path="res://Art/Character/T_Character_AncestorPineapple/Eat/T_Character_AncestorPineapple_FrontEat4.png" id="8_as4in"]
+[ext_resource type="Texture2D" uid="uid://dnutunc25kbho" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00003.png" id="8_xc6tc"]
+[ext_resource type="Texture2D" uid="uid://bm0r1nbuaschv" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00004.png" id="9_o5kb1"]
+[ext_resource type="Texture2D" uid="uid://cvtb6an1hqbes" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00005.png" id="10_erf11"]
+[ext_resource type="Texture2D" uid="uid://dj1mr81508i5n" path="res://Art/Character/T_Character_AncestorPineapple/Sit/T_Character_AncestorPineapple_BackSit.png" id="11_11whi"]
+[ext_resource type="Texture2D" uid="uid://cqa230001ew8h" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00006.png" id="11_16kqa"]
+[ext_resource type="Texture2D" uid="uid://cr3tcwcfk2y1x" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00007.png" id="12_i2ifg"]
+[ext_resource type="Texture2D" uid="uid://ch30s8cqy36vi" path="res://Art/Character/T_Character_AncestorPineapple/Sit/T_Character_AncestorPineapple_FrontSit.png" id="12_tj7xp"]
+[ext_resource type="Texture2D" uid="uid://bv6h3oy0dacg6" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00008.png" id="13_d2d6h"]
+[ext_resource type="Texture2D" uid="uid://dkgr7p0c0d5b1" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (1).png" id="13_xgvlw"]
+[ext_resource type="Texture2D" uid="uid://cylk0dq3nkv6e" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (2).png" id="14_3fffo"]
+[ext_resource type="Texture2D" uid="uid://qp40sclvxe1g" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00009.png" id="14_hr7jp"]
+[ext_resource type="Texture2D" uid="uid://1axnlpcwo1cl" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00010.png" id="15_m0ile"]
+[ext_resource type="Texture2D" uid="uid://cum15vigoyl4" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (3).png" id="15_wta65"]
+[ext_resource type="Texture2D" uid="uid://di6ps2o3jkwwn" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00011.png" id="16_btdwm"]
+[ext_resource type="Texture2D" uid="uid://dpjjwhxmx0ijy" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (4).png" id="16_nx4fo"]
+[ext_resource type="Texture2D" uid="uid://chx6jfiabr06q" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00012.png" id="17_cl85x"]
+[ext_resource type="Texture2D" uid="uid://bpjek2sttwgk" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (5).png" id="17_xpycg"]
+[ext_resource type="Texture2D" uid="uid://bp2agfw6ssqwo" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00013.png" id="18_8jxpn"]
+[ext_resource type="Texture2D" uid="uid://ctcp2sgpjfsgf" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (6).png" id="18_ium58"]
+[ext_resource type="Texture2D" uid="uid://cru52tpwckfvc" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00014.png" id="19_gvraq"]
+[ext_resource type="Texture2D" uid="uid://b76inlw0f33l8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (7).png" id="19_i0jl5"]
+[ext_resource type="Texture2D" uid="uid://ds7epqleup03y" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (8).png" id="20_0sgyp"]
+[ext_resource type="Texture2D" uid="uid://clsrfpl56naoj" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00015.png" id="20_02wrv"]
+[ext_resource type="Texture2D" uid="uid://b1v0e7xs05lp8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (9).png" id="21_h6vlh"]
+[ext_resource type="Texture2D" uid="uid://b0omjj3sqmik7" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00016.png" id="21_nklwa"]
+[ext_resource type="Texture2D" uid="uid://b7wsn4joik07l" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (10).png" id="22_e766b"]
+[ext_resource type="Texture2D" uid="uid://c1f1t70pn0vjk" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00017.png" id="22_my8wx"]
+[ext_resource type="Texture2D" uid="uid://cbraq5776mb1h" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00018.png" id="23_kbpwr"]
+[ext_resource type="Texture2D" uid="uid://cxerawuqbekbn" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (11).png" id="23_qmo8p"]
+[ext_resource type="Texture2D" uid="uid://dnw46gko3u8aw" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (12).png" id="24_eq0r6"]
+[ext_resource type="Texture2D" uid="uid://d4oneeyfwg3c" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00019.png" id="24_iggps"]
+[ext_resource type="Texture2D" uid="uid://t84cookdvuce" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00020.png" id="25_kxsjg"]
+[ext_resource type="Texture2D" uid="uid://bsrdqjrgsmdme" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (13).png" id="25_qjmip"]
+[ext_resource type="Texture2D" uid="uid://b4sxvn6wohumv" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (14).png" id="26_j3njx"]
+[ext_resource type="Texture2D" uid="uid://twels8ai10mg" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00021.png" id="26_o1gai"]
+[ext_resource type="Texture2D" uid="uid://0wsyutbwdht3" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (15).png" id="27_26xmn"]
+[ext_resource type="Texture2D" uid="uid://cq4rfleel8ykd" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00022.png" id="27_bat17"]
+[ext_resource type="Texture2D" uid="uid://bbqbvwogpqxqi" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00023.png" id="28_1n8nl"]
+[ext_resource type="Texture2D" uid="uid://bswsa5ulmoblb" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (16).png" id="28_w5bkk"]
+[ext_resource type="Texture2D" uid="uid://d37y7ujopn2qc" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00024.png" id="29_6aidf"]
+[ext_resource type="Texture2D" uid="uid://b8fjuk5fbudju" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (17).png" id="29_scxgc"]
+[ext_resource type="Texture2D" uid="uid://cxc3g3oyxcyil" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (18).png" id="30_2gs3f"]
+[ext_resource type="Texture2D" uid="uid://b1lqq64vwkn62" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00025.png" id="30_lld5r"]
+[ext_resource type="Texture2D" uid="uid://0wj41r62khqv" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00026.png" id="31_dhla6"]
+[ext_resource type="Texture2D" uid="uid://bw2jdeyw58r4v" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (19).png" id="31_gq7sf"]
+[ext_resource type="Texture2D" uid="uid://cndsm51bsyslq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00027.png" id="32_0v330"]
+[ext_resource type="Texture2D" uid="uid://c1gk0a6a6b1ld" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (20).png" id="32_pxx4g"]
+[ext_resource type="Texture2D" uid="uid://flfxedsqlj7i" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (21).png" id="33_3ib7d"]
+[ext_resource type="Texture2D" uid="uid://v5lhxubs57h0" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00028.png" id="33_6plci"]
+[ext_resource type="Texture2D" uid="uid://cgtjbit5a675u" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00029.png" id="34_dwvlm"]
+[ext_resource type="Texture2D" uid="uid://docs1qf6rkx0e" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (22).png" id="34_rgdcc"]
+[ext_resource type="Texture2D" uid="uid://dyww7dap0vgoj" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (23).png" id="35_dfkld"]
+[ext_resource type="Texture2D" uid="uid://cwle5xflw748g" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00031.png" id="35_wc7cu"]
+[ext_resource type="Texture2D" uid="uid://c1flhdeh0ul33" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (24).png" id="36_33df6"]
+[ext_resource type="Texture2D" uid="uid://derwy1g4smt6w" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00032.png" id="36_uef7y"]
+[ext_resource type="Texture2D" uid="uid://efvelmk2l3wu" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (25).png" id="37_3uh7k"]
+[ext_resource type="Texture2D" uid="uid://cjjc0xihu8bum" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00033.png" id="37_5yr0b"]
+[ext_resource type="Texture2D" uid="uid://duoj2atwtygh5" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (26).png" id="38_07mgn"]
+[ext_resource type="Texture2D" uid="uid://dyhjdo4wvbaxg" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00034.png" id="38_vysq8"]
+[ext_resource type="Texture2D" uid="uid://coakh64qkfxur" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00035.png" id="39_ifn7d"]
+[ext_resource type="Texture2D" uid="uid://cy5l25i4wfopr" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (27).png" id="39_leo7i"]
+[ext_resource type="Texture2D" uid="uid://be411o7nimin" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (28).png" id="40_133q1"]
+[ext_resource type="Texture2D" uid="uid://ouvi4kmsy80i" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00036.png" id="40_x8bj6"]
+[ext_resource type="Texture2D" uid="uid://jumwohrcgec0" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (29).png" id="41_aix4x"]
+[ext_resource type="Texture2D" uid="uid://ddd8pknuu1llx" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00037.png" id="41_xfy07"]
+[ext_resource type="Texture2D" uid="uid://d0hme8van3u56" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (30).png" id="42_0pdnn"]
+[ext_resource type="Texture2D" uid="uid://c6u2iwmv0alys" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00038.png" id="42_1j0xr"]
+[ext_resource type="Texture2D" uid="uid://bs84t35nfk5s7" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00039.png" id="43_4sguk"]
+[ext_resource type="Texture2D" uid="uid://8h6ap72nf04e" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (31).png" id="43_yxqvv"]
+[ext_resource type="Texture2D" uid="uid://dtdijjpwq4nvh" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti/T_Kooeh_A001_NPC_Tiger_IdleBreathingBackOpti_ (32).png" id="44_517oa"]
+[ext_resource type="Texture2D" uid="uid://58hrv7t6u07q" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00040.png" id="44_my6tq"]
+[ext_resource type="Texture2D" uid="uid://ljox63jpgf8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00041.png" id="45_mlvfe"]
+[ext_resource type="Texture2D" uid="uid://ce1a2fo5o7t4m" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00042.png" id="46_q0nku"]
+[ext_resource type="Texture2D" uid="uid://11hili24pmkc" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00043.png" id="47_2qfof"]
+[ext_resource type="Texture2D" uid="uid://douk666cl3ayk" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00044.png" id="48_ie6v1"]
+[ext_resource type="Texture2D" uid="uid://bgp1hjq83xlyc" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00045.png" id="49_kdqfq"]
+[ext_resource type="Texture2D" uid="uid://ccj7u63262iy3" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00046.png" id="50_2s4tu"]
+[ext_resource type="Texture2D" uid="uid://cv0cxj2pdm8gm" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00047.png" id="51_nrnav"]
+[ext_resource type="Texture2D" uid="uid://s25j2dfh5w6" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00048.png" id="52_gxt8p"]
+[ext_resource type="Texture2D" uid="uid://dhxbdhsucub7a" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00049.png" id="53_od7n3"]
+[ext_resource type="Texture2D" uid="uid://c48ax7k0et8er" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00050.png" id="54_h1cni"]
+[ext_resource type="Texture2D" uid="uid://btq6108sm83ra" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00051.png" id="55_1q1i5"]
+[ext_resource type="Texture2D" uid="uid://4itse5bc68oj" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00052.png" id="56_qxd6p"]
+[ext_resource type="Texture2D" uid="uid://b7gd7qi5oaji8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00053.png" id="57_o58o6"]
+[ext_resource type="Texture2D" uid="uid://dpltrlmcq0l7w" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00054.png" id="58_33at5"]
+[ext_resource type="Texture2D" uid="uid://brtwfg3s33wyw" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00055.png" id="59_nbgce"]
+[ext_resource type="Texture2D" uid="uid://c8uy03ittond8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00056.png" id="60_ghypt"]
+[ext_resource type="Texture2D" uid="uid://dgiopkebsq5of" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00057.png" id="61_p1no0"]
+[ext_resource type="Texture2D" uid="uid://btgf6a4p2i7x2" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00058.png" id="62_atc27"]
+[ext_resource type="Texture2D" uid="uid://dbvh8uh8kypn6" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00059.png" id="63_vw2q5"]
+[ext_resource type="Texture2D" uid="uid://bom13t8oa1gwa" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00060.png" id="64_hf6go"]
+[ext_resource type="Texture2D" uid="uid://bqcc7opj6k81h" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00062.png" id="65_77euc"]
+[ext_resource type="Texture2D" uid="uid://b2m70jqyrbwwj" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00063.png" id="66_jmc52"]
+[ext_resource type="Texture2D" uid="uid://cu7hb4s6nhrix" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00064.png" id="67_ewc3o"]
+[ext_resource type="Texture2D" uid="uid://cteeqm5kwsns4" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00065.png" id="68_qdiqr"]
+[ext_resource type="Texture2D" uid="uid://dcek6ucvbegoy" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00066.png" id="69_x77r7"]
+[ext_resource type="Texture2D" uid="uid://dn1bq216ggxdt" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00067.png" id="70_j8og1"]
+[ext_resource type="Texture2D" uid="uid://dyyrehjgbxoyi" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00068.png" id="71_7xjfi"]
+[ext_resource type="Texture2D" uid="uid://dw6w7ap8f81xo" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00069.png" id="72_e10hs"]
+[ext_resource type="Texture2D" uid="uid://cakkfvor8bbtr" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_Eating/T_Kooeh_A001_NPC_Tiger_00070.png" id="73_pl8dg"]
+[ext_resource type="Texture2D" uid="uid://fi3yjs5l06vw" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (1).png" id="76_egop2"]
+[ext_resource type="Texture2D" uid="uid://b2lmmvi8g50un" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (2).png" id="77_3eamq"]
+[ext_resource type="Texture2D" uid="uid://b1i5g212o1405" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (3).png" id="78_comqj"]
+[ext_resource type="Texture2D" uid="uid://vl3ix108w3ob" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (4).png" id="79_bdsai"]
+[ext_resource type="Texture2D" uid="uid://ofx0rtwkbpa1" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (5).png" id="80_rysd6"]
+[ext_resource type="Texture2D" uid="uid://cj27ovsckxovg" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (6).png" id="81_lk045"]
+[ext_resource type="Texture2D" uid="uid://gn4078wk1pud" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (7).png" id="82_qlpda"]
+[ext_resource type="Texture2D" uid="uid://dsopy6d8tvj4o" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (8).png" id="83_vugu4"]
+[ext_resource type="Texture2D" uid="uid://dhf4572g7b7s3" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (9).png" id="84_vfj02"]
+[ext_resource type="Texture2D" uid="uid://dbhva1jcr8cgu" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (10).png" id="85_pitwa"]
+[ext_resource type="Texture2D" uid="uid://boqsc7yxwrl3b" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (11).png" id="86_cqkmx"]
+[ext_resource type="Texture2D" uid="uid://c6ewi8uodrj7x" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (12).png" id="87_cuq33"]
+[ext_resource type="Texture2D" uid="uid://vo16jq7c5x0b" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (13).png" id="88_grlmi"]
+[ext_resource type="Texture2D" uid="uid://midqme1w2xfi" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (14).png" id="89_1ukqn"]
+[ext_resource type="Texture2D" uid="uid://c0oceowlgt3xa" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (15).png" id="90_4x51t"]
+[ext_resource type="Texture2D" uid="uid://cuhkdri7mwbes" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (16).png" id="91_gv2o0"]
+[ext_resource type="Texture2D" uid="uid://mtem13gundde" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (17).png" id="92_32oxs"]
+[ext_resource type="Texture2D" uid="uid://c6cxpref24v2t" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (18).png" id="93_2nqug"]
+[ext_resource type="Texture2D" uid="uid://cm76fot05awm3" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (19).png" id="94_2e3ge"]
+[ext_resource type="Texture2D" uid="uid://cph87vvu7hfdy" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (20).png" id="95_bduw2"]
+[ext_resource type="Texture2D" uid="uid://bdhl1irmou7ec" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (21).png" id="96_2wuln"]
+[ext_resource type="Texture2D" uid="uid://c5a4dj5g5p87q" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (22).png" id="97_1bgpl"]
+[ext_resource type="Texture2D" uid="uid://l63mfrpwvxtn" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (23).png" id="98_b2248"]
+[ext_resource type="Texture2D" uid="uid://b3ysgm2vi66gq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (24).png" id="99_mkp1e"]
+[ext_resource type="Texture2D" uid="uid://dqa4qxydowi1w" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (25).png" id="100_7rw12"]
+[ext_resource type="Texture2D" uid="uid://dca2kxbi0f528" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (26).png" id="101_xy4x6"]
+[ext_resource type="Texture2D" uid="uid://dvxo8tqraxm6b" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (27).png" id="102_v1bgw"]
+[ext_resource type="Texture2D" uid="uid://bex331hhci3ee" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (28).png" id="103_nlefd"]
+[ext_resource type="Texture2D" uid="uid://vdk0y7dseovm" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (29).png" id="104_jppey"]
+[ext_resource type="Texture2D" uid="uid://bmw8c476qobrg" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (30).png" id="105_xbsyk"]
+[ext_resource type="Texture2D" uid="uid://ct5bd2hedmp60" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (31).png" id="106_5xpyj"]
+[ext_resource type="Texture2D" uid="uid://d0stixeplcfra" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_IdleBreathingOpti/T_Kooeh_A001_NPC_Tiger_BreathingOpti_ (32).png" id="107_wfkg0"]
+[ext_resource type="Texture2D" uid="uid://bpg8gt6ftagjd" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (1).png" id="127_5v73f"]
+[ext_resource type="Texture2D" uid="uid://dtnpa73oms7p0" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (2).png" id="128_rl76u"]
+[ext_resource type="Texture2D" uid="uid://du5bnhm7pxoev" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (3).png" id="129_302ty"]
+[ext_resource type="Texture2D" uid="uid://bxsxb2x1yhdms" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (4).png" id="130_i538r"]
+[ext_resource type="Texture2D" uid="uid://dfl217rf5tnwq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (5).png" id="131_qw16b"]
+[ext_resource type="Texture2D" uid="uid://r7kotegojrd4" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (6).png" id="132_ixgec"]
+[ext_resource type="Texture2D" uid="uid://be2k58jlvg7tq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (7).png" id="133_q1che"]
+[ext_resource type="Texture2D" uid="uid://ckap2gj8lp7si" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (8).png" id="134_ivulo"]
+[ext_resource type="Texture2D" uid="uid://c4p6ntjagbbqn" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (9).png" id="135_6mujk"]
+[ext_resource type="Texture2D" uid="uid://iobvgpm01osh" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (10).png" id="136_o70fj"]
+[ext_resource type="Texture2D" uid="uid://dqclsvf5oywxq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (11).png" id="137_c7hk2"]
+[ext_resource type="Texture2D" uid="uid://v6vcvyefgsj8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (12).png" id="138_8dvyt"]
+[ext_resource type="Texture2D" uid="uid://cqcfyluj46c37" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (13).png" id="139_qj3o8"]
+[ext_resource type="Texture2D" uid="uid://7ncucu5drubv" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (14).png" id="140_hmpma"]
+[ext_resource type="Texture2D" uid="uid://81vmad62xm27" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (15).png" id="141_68st0"]
+[ext_resource type="Texture2D" uid="uid://3kgmo3kehmoo" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (1).png" id="142_ix7jd"]
+[ext_resource type="Texture2D" uid="uid://cc4pl0qsy2b7j" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (16).png" id="142_swmie"]
+[ext_resource type="Texture2D" uid="uid://3nlmi6jwaksq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (2).png" id="143_8qxw4"]
+[ext_resource type="Texture2D" uid="uid://bfiq227a7d7am" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (17).png" id="143_vpbdv"]
+[ext_resource type="Texture2D" uid="uid://bhimts0ydeh66" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (3).png" id="144_wodqk"]
+[ext_resource type="Texture2D" uid="uid://bgi63b66e4nnn" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (18).png" id="144_ydf8v"]
+[ext_resource type="Texture2D" uid="uid://bdmxk3sbr34cu" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (4).png" id="145_538rm"]
+[ext_resource type="Texture2D" uid="uid://j7bvofsctg7p" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (19).png" id="145_t0epl"]
+[ext_resource type="Texture2D" uid="uid://bqf4hhm4ps00u" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (20).png" id="146_43mld"]
+[ext_resource type="Texture2D" uid="uid://dl8bxvxx34ove" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (5).png" id="146_iufq7"]
+[ext_resource type="Texture2D" uid="uid://bwyopctium6fo" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (6).png" id="147_87guu"]
+[ext_resource type="Texture2D" uid="uid://co5rgs6vatveu" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (21).png" id="147_mgh0t"]
+[ext_resource type="Texture2D" uid="uid://dgw6thyabbwg8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (7).png" id="148_al00c"]
+[ext_resource type="Texture2D" uid="uid://brw60a080bqsq" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (22).png" id="148_egs4j"]
+[ext_resource type="Texture2D" uid="uid://due5dwcttmlyx" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (8).png" id="149_5ojcx"]
+[ext_resource type="Texture2D" uid="uid://ckq5sploukoom" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (23).png" id="149_ndbct"]
+[ext_resource type="Texture2D" uid="uid://dsyqormn60mpc" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_TiffinWalkOpti/T_Kooeh_A001_NPC_Tiger_ (24).png" id="150_cqhu3"]
+[ext_resource type="Texture2D" uid="uid://jhu6odd3xrnl" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (9).png" id="150_fucix"]
+[ext_resource type="Texture2D" uid="uid://bpt66s61sv74t" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (10).png" id="151_wvki8"]
+[ext_resource type="Texture2D" uid="uid://bsxs4fanxbigy" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (11).png" id="152_s723g"]
+[ext_resource type="Texture2D" uid="uid://ssrv4axk0tt8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (12).png" id="153_j2so4"]
+[ext_resource type="Texture2D" uid="uid://iml5led2p8sd" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (13).png" id="154_wfy6p"]
+[ext_resource type="Texture2D" uid="uid://dro0vjo758asy" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (14).png" id="155_xavhj"]
+[ext_resource type="Texture2D" uid="uid://c55pfjhglbppf" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (15).png" id="156_ff7so"]
+[ext_resource type="Texture2D" uid="uid://dmjy8dgwbppx3" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (16).png" id="157_oxe8l"]
+[ext_resource type="Texture2D" uid="uid://cv2x5pkio6cm7" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (17).png" id="158_1r2aa"]
+[ext_resource type="Texture2D" uid="uid://f654nb3vrxe4" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (18).png" id="159_tqrff"]
+[ext_resource type="Texture2D" uid="uid://cmfx885y47i87" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (19).png" id="160_nrh3e"]
+[ext_resource type="Texture2D" uid="uid://b2cjdfc72ygf6" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (20).png" id="161_j2ign"]
+[ext_resource type="Texture2D" uid="uid://du78785wd5imk" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (21).png" id="162_knm68"]
+[ext_resource type="Texture2D" uid="uid://pewowmltuo2u" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (22).png" id="163_dwq75"]
+[ext_resource type="Texture2D" uid="uid://dgxm2p2uvmf6m" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (23).png" id="164_jwmde"]
+[ext_resource type="Texture2D" uid="uid://cj3ynid6l61fk" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkBackOpti/T_Kooeh_A001_NPC_Tiger_WalkBackOpti_ (24).png" id="165_ywscm"]
+[ext_resource type="Texture2D" uid="uid://bk0q6bilxwbcd" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (1).png" id="190_pvgte"]
+[ext_resource type="Texture2D" uid="uid://batlnbsndpojs" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (2).png" id="191_ydlea"]
+[ext_resource type="Texture2D" uid="uid://bgvne1p7g2pa1" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (3).png" id="192_m1ubl"]
+[ext_resource type="Texture2D" uid="uid://cw5bgse7rbs3b" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (4).png" id="193_r10uj"]
+[ext_resource type="Texture2D" uid="uid://6hpfj4nntxdi" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (5).png" id="194_lhls0"]
+[ext_resource type="Texture2D" uid="uid://bmwdvuhpl6qo1" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (6).png" id="195_ruep5"]
+[ext_resource type="Texture2D" uid="uid://x7c2m3isxfhb" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (7).png" id="196_23b6p"]
+[ext_resource type="Texture2D" uid="uid://cyjn5lh3ugnyh" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (8).png" id="197_qjvak"]
+[ext_resource type="Texture2D" uid="uid://2f0pkr57xkxc" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (9).png" id="198_ukvcu"]
+[ext_resource type="Texture2D" uid="uid://w5ihbvhpdsvr" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (10).png" id="199_t7tef"]
+[ext_resource type="Texture2D" uid="uid://dc3rb2tmcbytv" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (11).png" id="200_q30ot"]
+[ext_resource type="Texture2D" uid="uid://caab5iieb6shp" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (12).png" id="201_qru5n"]
+[ext_resource type="Texture2D" uid="uid://c5l7u26tscdsi" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (13).png" id="202_aldhd"]
+[ext_resource type="Texture2D" uid="uid://bkregkoyv5imo" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (14).png" id="203_nxkxg"]
+[ext_resource type="Texture2D" uid="uid://l17wfdx1p3wy" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (15).png" id="204_civ2m"]
+[ext_resource type="Texture2D" uid="uid://cpad0od05pffh" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (16).png" id="205_jf4l3"]
+[ext_resource type="Texture2D" uid="uid://syjoe7n4rkb5" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (17).png" id="206_453en"]
+[ext_resource type="Texture2D" uid="uid://b3cqawkx2jgx1" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (18).png" id="207_p7uhj"]
+[ext_resource type="Texture2D" uid="uid://bmraxc6cgy0c5" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (19).png" id="208_sn3pp"]
+[ext_resource type="Texture2D" uid="uid://bw8pbnf3kpp1u" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (20).png" id="209_gvfa0"]
+[ext_resource type="Texture2D" uid="uid://5uj12i3tup55" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (21).png" id="210_0phli"]
+[ext_resource type="Texture2D" uid="uid://blibvdithkq5h" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (22).png" id="211_ap2nk"]
+[ext_resource type="Texture2D" uid="uid://db48h4ajrmue8" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (23).png" id="212_gtdbr"]
+[ext_resource type="Texture2D" uid="uid://tbucdloxq84y" path="res://2024_Art/2024 Characters/Tiger/T_Kooeh_A001_NPC_Tiger_WalkOpti/T_Kooeh_A001_NPC_Tiger_WalkOpti_ (24).png" id="213_ck32k"]
+
+[sub_resource type="Animation" id="Animation_g1pfp"]
+resource_name = "Character_Eat_Back_Left"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_oxdx7"), ExtResource("2_mhe8m"), ExtResource("3_iht0y"), ExtResource("4_1ifsa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-1.5, -86), Vector2(-5.5, -86), Vector2(-7.5, -86), Vector2(-5.5, -86)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bvt0i"]
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_oxdx7"), ExtResource("2_mhe8m"), ExtResource("3_iht0y"), ExtResource("4_1ifsa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-1.5, -84.45), Vector2(2.5, -84.45), Vector2(4.5, -84.45), Vector2(2.5, -84.45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5txr4"]
+length = 2.33334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6, 1.63333, 1.66667, 1.7, 1.73333, 1.76667, 1.8, 1.83333, 1.86667, 1.9, 1.93333, 1.96667, 2, 2.03333, 2.06667, 2.1, 2.13333, 2.16667, 2.2, 2.23333, 2.26667, 2.3, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_gcaiv"), ExtResource("6_2edjg"), ExtResource("7_ewsbw"), ExtResource("8_xc6tc"), ExtResource("9_o5kb1"), ExtResource("10_erf11"), ExtResource("11_16kqa"), ExtResource("12_i2ifg"), ExtResource("13_d2d6h"), ExtResource("14_hr7jp"), ExtResource("15_m0ile"), ExtResource("16_btdwm"), ExtResource("17_cl85x"), ExtResource("18_8jxpn"), ExtResource("19_gvraq"), ExtResource("20_02wrv"), ExtResource("21_nklwa"), ExtResource("22_my8wx"), ExtResource("23_kbpwr"), ExtResource("24_iggps"), ExtResource("25_kxsjg"), ExtResource("26_o1gai"), ExtResource("27_bat17"), ExtResource("28_1n8nl"), ExtResource("29_6aidf"), ExtResource("30_lld5r"), ExtResource("31_dhla6"), ExtResource("32_0v330"), ExtResource("33_6plci"), ExtResource("34_dwvlm"), ExtResource("35_wc7cu"), ExtResource("32_0v330"), ExtResource("36_uef7y"), ExtResource("37_5yr0b"), ExtResource("38_vysq8"), ExtResource("39_ifn7d"), ExtResource("40_x8bj6"), ExtResource("41_xfy07"), ExtResource("42_1j0xr"), ExtResource("43_4sguk"), ExtResource("44_my6tq"), ExtResource("45_mlvfe"), ExtResource("46_q0nku"), ExtResource("47_2qfof"), ExtResource("48_ie6v1"), ExtResource("49_kdqfq"), ExtResource("50_2s4tu"), ExtResource("51_nrnav"), ExtResource("52_gxt8p"), ExtResource("53_od7n3"), ExtResource("54_h1cni"), ExtResource("55_1q1i5"), ExtResource("56_qxd6p"), ExtResource("57_o58o6"), ExtResource("58_33at5"), ExtResource("59_nbgce"), ExtResource("60_ghypt"), ExtResource("61_p1no0"), ExtResource("62_atc27"), ExtResource("63_vw2q5"), ExtResource("64_hf6go"), ExtResource("65_77euc"), ExtResource("63_vw2q5"), ExtResource("66_jmc52"), ExtResource("67_ewc3o"), ExtResource("68_qdiqr"), ExtResource("69_x77r7"), ExtResource("70_j8og1"), ExtResource("71_7xjfi"), ExtResource("72_e10hs"), ExtResource("73_pl8dg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -60)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vq8w3"]
+resource_name = "Character_Eat_Front_Right"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_evao3"), ExtResource("6_bhvsg"), ExtResource("7_bjp8e"), ExtResource("8_as4in")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-13, -77.375), Vector2(-14, -77.375), Vector2(-16, -77.375), Vector2(-14, -77.375)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_brkgy"]
+length = 1.55001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_xgvlw"), ExtResource("14_3fffo"), ExtResource("15_wta65"), ExtResource("16_nx4fo"), ExtResource("17_xpycg"), ExtResource("18_ium58"), ExtResource("19_i0jl5"), ExtResource("20_0sgyp"), ExtResource("21_h6vlh"), ExtResource("22_e766b"), ExtResource("23_qmo8p"), ExtResource("24_eq0r6"), ExtResource("25_qjmip"), ExtResource("26_j3njx"), ExtResource("27_26xmn"), ExtResource("28_w5bkk"), ExtResource("29_scxgc"), ExtResource("30_2gs3f"), ExtResource("31_gq7sf"), ExtResource("32_pxx4g"), ExtResource("33_3ib7d"), ExtResource("34_rgdcc"), ExtResource("35_dfkld"), ExtResource("36_33df6"), ExtResource("37_3uh7k"), ExtResource("38_07mgn"), ExtResource("39_leo7i"), ExtResource("40_133q1"), ExtResource("41_aix4x"), ExtResource("42_0pdnn"), ExtResource("43_yxqvv"), ExtResource("44_517oa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_0liif"]
+length = 1.55001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("76_egop2"), ExtResource("77_3eamq"), ExtResource("78_comqj"), ExtResource("79_bdsai"), ExtResource("80_rysd6"), ExtResource("81_lk045"), ExtResource("82_qlpda"), ExtResource("83_vugu4"), ExtResource("84_vfj02"), ExtResource("85_pitwa"), ExtResource("86_cqkmx"), ExtResource("87_cuq33"), ExtResource("88_grlmi"), ExtResource("89_1ukqn"), ExtResource("90_4x51t"), ExtResource("91_gv2o0"), ExtResource("92_32oxs"), ExtResource("93_2nqug"), ExtResource("94_2e3ge"), ExtResource("95_bduw2"), ExtResource("96_2wuln"), ExtResource("97_1bgpl"), ExtResource("98_b2248"), ExtResource("99_mkp1e"), ExtResource("100_7rw12"), ExtResource("101_xy4x6"), ExtResource("102_v1bgw"), ExtResource("103_nlefd"), ExtResource("104_jppey"), ExtResource("105_xbsyk"), ExtResource("106_5xpyj"), ExtResource("107_wfkg0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_yvvr4"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_11whi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(10, -110)]
+}
+
+[sub_resource type="Animation" id="Animation_diaoq"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_tj7xp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(4.5, -95.5)]
+}
+
+[sub_resource type="Animation" id="Animation_kf8o0"]
+length = 0.76667
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("142_ix7jd"), ExtResource("143_8qxw4"), ExtResource("144_wodqk"), ExtResource("145_538rm"), ExtResource("146_iufq7"), ExtResource("147_87guu"), ExtResource("148_al00c"), ExtResource("149_5ojcx"), ExtResource("150_fucix"), ExtResource("151_wvki8"), ExtResource("152_s723g"), ExtResource("153_j2so4"), ExtResource("154_wfy6p"), ExtResource("155_xavhj"), ExtResource("156_ff7so"), ExtResource("157_oxe8l"), ExtResource("158_1r2aa"), ExtResource("159_tqrff"), ExtResource("160_nrh3e"), ExtResource("161_j2ign"), ExtResource("162_knm68"), ExtResource("163_dwq75"), ExtResource("164_jwmde"), ExtResource("165_ywscm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_g8ynu"]
+length = 0.76667
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("190_pvgte"), ExtResource("191_ydlea"), ExtResource("192_m1ubl"), ExtResource("193_r10uj"), ExtResource("194_lhls0"), ExtResource("195_ruep5"), ExtResource("196_23b6p"), ExtResource("197_qjvak"), ExtResource("198_ukvcu"), ExtResource("199_t7tef"), ExtResource("200_q30ot"), ExtResource("201_qru5n"), ExtResource("202_aldhd"), ExtResource("203_nxkxg"), ExtResource("204_civ2m"), ExtResource("205_jf4l3"), ExtResource("206_453en"), ExtResource("207_p7uhj"), ExtResource("208_sn3pp"), ExtResource("209_gvfa0"), ExtResource("210_0phli"), ExtResource("211_ap2nk"), ExtResource("212_gtdbr"), ExtResource("213_ck32k")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_p445a"]
+resource_name = "Character_Walk_Tiffin"
+length = 0.783335
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("127_5v73f"), ExtResource("128_rl76u"), ExtResource("129_302ty"), ExtResource("130_i538r"), ExtResource("131_qw16b"), ExtResource("132_ixgec"), ExtResource("133_q1che"), ExtResource("134_ivulo"), ExtResource("135_6mujk"), ExtResource("136_o70fj"), ExtResource("137_c7hk2"), ExtResource("138_8dvyt"), ExtResource("139_qj3o8"), ExtResource("140_hmpma"), ExtResource("141_68st0"), ExtResource("142_swmie"), ExtResource("143_vpbdv"), ExtResource("144_ydf8v"), ExtResource("145_t0epl"), ExtResource("146_43mld"), ExtResource("147_mgh0t"), ExtResource("148_egs4j"), ExtResource("149_ndbct"), ExtResource("150_cqhu3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_b3lnv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("76_egop2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(5, -145)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[resource]
+_data = {
+&"Character_Eat_Back_Left": SubResource("Animation_g1pfp"),
+&"Character_Eat_Back_Right": SubResource("Animation_bvt0i"),
+&"Character_Eat_Front_Left": SubResource("Animation_5txr4"),
+&"Character_Eat_Front_Right": SubResource("Animation_vq8w3"),
+&"Character_Idle_Back": SubResource("Animation_brkgy"),
+&"Character_Idle_Front": SubResource("Animation_0liif"),
+&"Character_Sit_Back": SubResource("Animation_yvvr4"),
+&"Character_Sit_Front": SubResource("Animation_diaoq"),
+&"Character_Walk_Back": SubResource("Animation_kf8o0"),
+&"Character_Walk_Front": SubResource("Animation_g8ynu"),
+&"Character_Walk_Tiffin": SubResource("Animation_p445a"),
+&"RESET": SubResource("Animation_b3lnv")
+}

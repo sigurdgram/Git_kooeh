@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=18 format=3 uid="uid://b8w8alc2gyou1"]
+
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="2_4jg6i"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="3_4jg6i"]
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="3_4w0uu"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="4_4jg6i"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="4_xahpn"]
+[ext_resource type="Texture2D" uid="uid://cunnth6pufrl5" path="res://2024_Art/2024 Isometric F&B/T_TehTarik100.png" id="5_dgboy"]
+[ext_resource type="Texture2D" uid="uid://bw8wcxlneadsl" path="res://2024_Art/2024 Isometric F&B/T_TehTarik50.png" id="6_7gi2q"]
+[ext_resource type="Texture2D" uid="uid://d3ij6fwwmc8qn" path="res://2024_Art/2024 Isometric F&B/T_TehTarik0.png" id="7_krwyq"]
+[ext_resource type="Texture2D" uid="uid://c6ntk43rkrog0" path="res://Art/Food_Spritesheet/Atlas_TehTarik.tres" id="8_ahn6r"]
+[ext_resource type="Texture2D" uid="uid://dyxjpmc4tf1p0" path="res://2024_Art/2024 Isometric F&B/Plateless/T_TehTarik.png" id="9_uq4re"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="12_rk1md"]
+
+[sub_resource type="Resource" id="Resource_xahpn"]
+script = ExtResource("2_4jg6i")
+difficulty = 1
+tapRange = 0.15
+interval = 1.0
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_b7d6h"]
+script = ExtResource("3_4w0uu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_xahpn")
+description = ""
+
+[sub_resource type="Resource" id="Resource_hl3qy"]
+script = ExtResource("3_4jg6i")
+difficulty = 1
+numberOfExecutions = 4
+speed = 150.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_o8qlg"]
+script = ExtResource("3_4w0uu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_hl3qy")
+description = ""
+
+[sub_resource type="Resource" id="Resource_lyo8l"]
+script = ExtResource("4_4jg6i")
+referenceCurve = ExtResource("4_xahpn")
+scale = 1.5
+difficulty = 1
+qteHitCount = 4
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_4f13b"]
+script = ExtResource("3_4w0uu")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_lyo8l")
+description = ""
+
+[resource]
+resource_name = "FoodData.TehTarik"
+script = ExtResource("12_rk1md")
+name = "Teh Tarik"
+type = 2
+difficulty = 1
+description = "Actually, this is what happiness tastes like."
+sprite = ExtResource("9_uq4re")
+journalSprite = ExtResource("8_ahn6r")
+platelessSprite = ExtResource("9_uq4re")
+eatingSprites = Array[Texture2D]([ExtResource("5_dgboy"), ExtResource("6_7gi2q"), ExtResource("7_krwyq")])
+cookTime = 7.0
+price = 20.0
+batchCookAmount = 1
+ingredients = {
+"IngredientData.BlackTeaLeaves": 1,
+"IngredientData.CondensedMilk": 1,
+"IngredientData.Water": 3
+}
+cookInstructions = Array[ExtResource("3_4w0uu")]([SubResource("Resource_b7d6h"), SubResource("Resource_o8qlg"), SubResource("Resource_4f13b")])

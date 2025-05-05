@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnf6dylir58s8"]
+
+[ext_resource type="Script" uid="uid://c7ngfwqm30c4r" path="res://Scripts/UISystem/UIs/Misc/UI_Prompt.gd" id="1_fxqup"]
+[ext_resource type="AudioStream" uid="uid://b2huwuu8arjdj" path="res://Audio/SFX/AS_SFX_ui_button-general.wav" id="2_y0bhc"]
+[ext_resource type="AudioStream" uid="uid://he14x2y1cb23" path="res://Audio/SFX/AS_SFX_ui_select_3.wav" id="3_14f01"]
+[ext_resource type="AudioStream" uid="uid://7q0nic053bc5" path="res://Audio/SFX/AS_SFX_ui_select_1.wav" id="4_v72hx"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="4_yk5u1"]
+[ext_resource type="FontFile" uid="uid://cv0i6mujau7fk" path="res://Themes/Fonts/RooneyPro/RooneyPro-Bold.ttf" id="6_iobth"]
+[ext_resource type="Texture2D" uid="uid://dsssfrn0sddiv" path="res://2024_Art/2024 UI Assets/Main Menu/T_ConfirmWindow.png" id="10_c0lwh"]
+
+[sub_resource type="Gradient" id="Gradient_8nkbh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.690196)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ki5hw"]
+gradient = SubResource("Gradient_8nkbh")
+width = 1
+
+[node name="UI_Prompt" type="Control" node_paths=PackedStringArray("_descriptionTxt", "_btnYes", "_btnNo")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fxqup")
+_descriptionTxt = NodePath("TEXTRECT_Background/ReferenceRect/TXT_Description")
+_btnYes = NodePath("TEXTRECT_Background/ReferenceRect/HBoxContainer/BTN_Yes")
+_btnNo = NodePath("TEXTRECT_Background/ReferenceRect/HBoxContainer/BTN_No")
+_audioPrompt = ExtResource("2_y0bhc")
+_audioYes = ExtResource("3_14f01")
+_audioNo = ExtResource("4_v72hx")
+
+[node name="TEXTRECT_BlackFade" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_ki5hw")
+
+[node name="TEXTRECT_Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = 115.0
+offset_right = 540.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_c0lwh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ReferenceRect" type="ReferenceRect" parent="TEXTRECT_Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.375
+anchor_right = 0.5
+anchor_bottom = 0.713
+offset_left = -312.0
+offset_top = 0.249969
+offset_right = 315.0
+offset_bottom = -0.0501099
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_Description" type="Label" parent="TEXTRECT_Background/ReferenceRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.751
+offset_bottom = -0.115021
+theme_override_colors/font_color = Color(0.368627, 0.235294, 0.164706, 1)
+theme_override_fonts/font = ExtResource("6_iobth")
+theme_override_font_sizes/font_size = 30
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TEXTRECT_Background/ReferenceRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.5
+offset_top = -89.5749
+offset_right = 249.5
+offset_bottom = -35.5754
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="BTN_No" type="Button" parent="TEXTRECT_Background/ReferenceRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_yk5u1")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 25
+text = "No"
+
+[node name="BTN_Yes" type="Button" parent="TEXTRECT_Background/ReferenceRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_yk5u1")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 25
+text = "Yes"

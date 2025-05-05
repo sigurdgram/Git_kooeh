@@ -1,0 +1,466 @@
+[gd_scene load_steps=10 format=3 uid="uid://40uqrucu7hv2"]
+
+[ext_resource type="PackedScene" uid="uid://bb4t1a2ek7rg7" path="res://Scenes/UIs/Misc/UI_RewardPrompt.tscn" id="1_itfpg"]
+[ext_resource type="Script" uid="uid://c1h0g25x1ug0k" path="res://Scripts/UISystem/UIs/Misc/UI_RatingPrompt.gd" id="2_3tscr"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_sd8eh"]
+[ext_resource type="AudioStream" uid="uid://bbpaqd40ny2q" path="res://Audio/SFX/AS_SFX_NewRecipe.wav" id="3_0cp0t"]
+[ext_resource type="Texture2D" uid="uid://nfost7mjftdd" path="res://Art/UI/T_Icon_Star.png" id="3_gglto"]
+
+[sub_resource type="Animation" id="Animation_pfhov"]
+resource_name = "Anim_Failed"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Background/TEXTRECT_HorizontalBanner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PANEL_Background/TXT_Title1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PANEL_Background/TXT_Title2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PANEL_Background/Control_ContentGroup:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PANEL_Background/TXT_ClickToContinue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"unblock_input"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginCont_TryAgain:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_s138r"]
+resource_name = "Anim_Success"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Background/TEXTRECT_HorizontalBanner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PANEL_Background/TXT_Title1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PANEL_Background/TXT_Title2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PANEL_Background/Control_ContentGroup:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PANEL_Background/TXT_ClickToContinue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show_rating_stars"
+}, {
+"args": [],
+"method": &"unblock_input"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Left:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Right:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginContainer:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginCont_TryAgain:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_wggvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PANEL_Background/TEXTRECT_HorizontalBanner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PANEL_Background/TXT_Title1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PANEL_Background/TXT_Title2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PANEL_Background/Control_ContentGroup:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PANEL_Background/TXT_ClickToContinue:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Left:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PANEL_Background/Control_ContentGroup/TEXTRECT_Confetti_Right:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginCont_TryAgain:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/TEXTRECT_Star1:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/TEXTRECT_Star3:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/TEXTRECT_Star2:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vo3w0"]
+_data = {
+&"Anim_Failed": SubResource("Animation_pfhov"),
+&"Anim_Success": SubResource("Animation_s138r"),
+&"RESET": SubResource("Animation_wggvg")
+}
+
+[node name="UI_RatingPrompt" node_paths=PackedStringArray("_star1", "_star2", "_star3") instance=ExtResource("1_itfpg")]
+process_mode = 1
+script = ExtResource("2_3tscr")
+_audioRecipeLearned = ExtResource("3_0cp0t")
+_star1 = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/TEXTRECT_Star1")
+_star2 = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/TEXTRECT_Star2")
+_star3 = NodePath("PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/TEXTRECT_Star3")
+
+[node name="TXT_Title1" parent="PANEL_Background" index="1"]
+text = "YOU'VE LEARNED A"
+
+[node name="MarginContainer" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent" index="0"]
+visible = false
+
+[node name="MarginCont_TryAgain" type="MarginContainer" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXT_TryAgain" type="Label" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent/MarginCont_TryAgain" index="0"]
+layout_mode = 2
+theme = ExtResource("2_sd8eh")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 60
+text = "Try Again"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TEXTRECT_Star1" type="TextureRect" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent" index="2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 4.00006
+offset_right = 96.0
+offset_bottom = 100.0
+grow_vertical = 0
+rotation = -2.44346
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(48, 48)
+texture = ExtResource("3_gglto")
+
+[node name="TEXTRECT_Star3" type="TextureRect" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent" index="3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -95.0747
+offset_top = 4.00006
+offset_right = 0.925293
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 2.44346
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(48, 48)
+texture = ExtResource("3_gglto")
+
+[node name="TEXTRECT_Star2" type="TextureRect" parent="PANEL_Background/Control_ContentGroup/ASPECTRECT_Content/Panel/REFRECT_RewardContent" index="4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = 47.0001
+offset_right = 48.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(48, 48)
+texture = ExtResource("3_gglto")
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_vo3w0")
+}

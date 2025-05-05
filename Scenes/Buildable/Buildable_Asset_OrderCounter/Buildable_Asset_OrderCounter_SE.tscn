@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddhxmhmif8hom"]
+
+[ext_resource type="Script" uid="uid://bj6kuxtuy7k6n" path="res://Scripts/Buildable/Buildable_OrderCounter1.gd" id="1_vv7gu"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_2i3o8"]
+[ext_resource type="Texture2D" uid="uid://clpo0x43ij7o" path="res://2024_Art/2024 Restaurant (SceneEatery)/OrderCounter.tres" id="2_gchp4"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="3_vmkvo"]
+[ext_resource type="Script" uid="uid://cp2neomp1mnxl" path="res://addons/buildable_system/Scripts/Node2Ds/CollisionPolygonShape.gd" id="4_kmjgn"]
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="5_jibf6"]
+[ext_resource type="Script" uid="uid://ciy8kwvg6ofc4" path="res://Scripts/RestaurantSystems/CustomerManagement/QueueSystem.gd" id="6_hk67d"]
+[ext_resource type="Script" uid="uid://d3kiqoy7qitty" path="res://Scripts/RestaurantSystems/InteractableComponent.gd" id="8_ndx1i"]
+[ext_resource type="Script" uid="uid://dhqmrcvillut0" path="res://Scripts/RestaurantSystems/UpgradableComponent.gd" id="9_aue4x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfxij"]
+resource_local_to_scene = true
+shader = ExtResource("2_2i3o8")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.03
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="Curve2D" id="Curve2D_ldceg"]
+
+[node name="Buildable_Asset_OrderCounter_SE" type="Area2D" node_paths=PackedStringArray("queue", "_interactableComp", "_staticBody", "_clickablePolygon", "_sprite") groups=["Buildable.OrderCounter"]]
+script = ExtResource("1_vv7gu")
+queue = NodePath("Queue")
+_interactableComp = NodePath("InteractableComponent")
+_staticBody = NodePath("StaticBody2D")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_xfxij")
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("2_gchp4")
+offset = Vector2(0, -108.43)
+flip_h = true
+
+[node name="TShadowSquare" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.6)
+show_behind_parent = true
+visibility_layer = 3
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("3_vmkvo")
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("4_kmjgn")
+shape = ExtResource("5_jibf6")
+
+[node name="Queue" type="Path2D" parent="."]
+y_sort_enabled = true
+curve = SubResource("Curve2D_ldceg")
+script = ExtResource("6_hk67d")
+spacing = 150.0
+
+[node name="InteractableComponent" type="Node" parent="." node_paths=PackedStringArray("_parentArea", "_sprite")]
+script = ExtResource("8_ndx1i")
+_parentArea = NodePath("..")
+_sprite = NodePath("../Sprite2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+process_mode = 4
+collision_mask = 0
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("4_kmjgn")
+shape = ExtResource("5_jibf6")
+
+[node name="UpgradableComponent" type="Node" parent="."]
+script = ExtResource("9_aue4x")

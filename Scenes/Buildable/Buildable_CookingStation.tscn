@@ -1,0 +1,295 @@
+[gd_scene load_steps=119 format=3 uid="uid://bcpisoshe5rlq"]
+
+[ext_resource type="PackedScene" uid="uid://h8043hrwhb6h" path="res://Scenes/Buildable/Buildable_Base.tscn" id="1_x7urg"]
+[ext_resource type="Script" uid="uid://blleu6mu3lmcu" path="res://Scripts/Buildable/Buildable_CookingStation.gd" id="2_cwaq4"]
+[ext_resource type="PackedScene" uid="uid://ca1gfxk8dikj2" path="res://Scenes/UIs/Phase2UI/Cooking/UI_Phase2_Cookbook.tscn" id="3_jn2va"]
+[ext_resource type="AudioStream" uid="uid://bntlqcx816bln" path="res://Audio/SFX/AS_SFX_Pickup.wav" id="4_1bptm"]
+[ext_resource type="Script" uid="uid://dt22oivx2eb3t" path="res://Scripts/Misc/TriangulatablePolygon.gd" id="4_wmu3c"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="5_q47k5"]
+[ext_resource type="Texture2D" uid="uid://qd7l3seqh7ql" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (32).png" id="6_0hsos"]
+[ext_resource type="Texture2D" uid="uid://c77bqcgjfkeja" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (25).png" id="6_4g1al"]
+[ext_resource type="Texture2D" uid="uid://bl2nfhoiprv0u" path="res://2024_Art/T_ShadowSquare.png" id="7_ucxre"]
+[ext_resource type="PackedScene" uid="uid://cwyfyh8287yk3" path="res://Scenes/UIs/Misc/UI_RadialProgressBar.tscn" id="8_1yqfl"]
+[ext_resource type="Texture2D" uid="uid://cnys6ag2ks458" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (1).png" id="10_qvrqs"]
+[ext_resource type="Texture2D" uid="uid://d1njxtamxbwfi" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (2).png" id="11_peq4m"]
+[ext_resource type="Texture2D" uid="uid://5prl6p247c7o" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (3).png" id="12_bm8rw"]
+[ext_resource type="Texture2D" uid="uid://ctia0040iovxo" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (4).png" id="13_2x5mr"]
+[ext_resource type="Texture2D" uid="uid://bha5pjphwd0jp" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (5).png" id="14_q8nqx"]
+[ext_resource type="Texture2D" uid="uid://cdbqema04d6lv" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (6).png" id="15_ibedl"]
+[ext_resource type="Texture2D" uid="uid://btvwg3r5n4g7p" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (7).png" id="16_ygh76"]
+[ext_resource type="Texture2D" uid="uid://c3p31aqjyb7q5" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (8).png" id="17_hjhkp"]
+[ext_resource type="Texture2D" uid="uid://c30smhkxa1hnc" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (9).png" id="18_ghf1a"]
+[ext_resource type="Texture2D" uid="uid://ux0rvy7a0lro" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (10).png" id="19_i4chl"]
+[ext_resource type="Texture2D" uid="uid://b2b4ba1q608l2" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (11).png" id="20_2n0ya"]
+[ext_resource type="Texture2D" uid="uid://bqo88r3slx00v" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (12).png" id="21_p5lqf"]
+[ext_resource type="Texture2D" uid="uid://bshlinikncibv" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (13).png" id="22_w7s38"]
+[ext_resource type="Texture2D" uid="uid://br2nsatb0a1pm" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (14).png" id="23_7hc08"]
+[ext_resource type="Texture2D" uid="uid://crv6ij5fiq4m7" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (15).png" id="24_tvpwe"]
+[ext_resource type="Texture2D" uid="uid://0oc7gf2koliu" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (16).png" id="25_bwwad"]
+[ext_resource type="Texture2D" uid="uid://cyghqb76lh0eo" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (17).png" id="26_dvwdt"]
+[ext_resource type="Texture2D" uid="uid://da0r4lraymwb8" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (18).png" id="27_chyab"]
+[ext_resource type="Texture2D" uid="uid://cawox0xr0nyrt" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (19).png" id="28_bxi1u"]
+[ext_resource type="Texture2D" uid="uid://dr0bubjxecpru" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (20).png" id="29_57vf2"]
+[ext_resource type="Texture2D" uid="uid://dj8owq6ky58ij" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart2_Opti/T_Kooeh_A001_Props_Stove_EndPart2Opti_ (21).png" id="30_dun23"]
+[ext_resource type="Texture2D" uid="uid://b0c7fktqh6msm" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (11).png" id="31_k055r"]
+[ext_resource type="Texture2D" uid="uid://cb4qsr61jju7v" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (12).png" id="32_6mna0"]
+[ext_resource type="Texture2D" uid="uid://d35d680obbrbb" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (13).png" id="33_bcapo"]
+[ext_resource type="Texture2D" uid="uid://cbutel86pcn4p" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (14).png" id="34_7cv7o"]
+[ext_resource type="Texture2D" uid="uid://bihu144m7jlal" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (15).png" id="35_38fjs"]
+[ext_resource type="Texture2D" uid="uid://r0yckaf1yrk7" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (16).png" id="36_y8b45"]
+[ext_resource type="Texture2D" uid="uid://cup0hc04i8cq0" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (17).png" id="37_qpwx1"]
+[ext_resource type="Texture2D" uid="uid://fi5rufry1geu" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (18).png" id="38_lxi0w"]
+[ext_resource type="Texture2D" uid="uid://cwxlpbjsflwlj" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (19).png" id="39_jqnvf"]
+[ext_resource type="Texture2D" uid="uid://bx48b0caypri7" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (20).png" id="40_ow7kg"]
+[ext_resource type="Texture2D" uid="uid://84hpbf1sk3w0" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (21).png" id="41_55t7r"]
+[ext_resource type="Texture2D" uid="uid://5fmrhp6uncoo" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (22).png" id="42_qqosa"]
+[ext_resource type="Texture2D" uid="uid://c44rb4eout258" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (23).png" id="43_fteme"]
+[ext_resource type="Texture2D" uid="uid://da40rdxi2mh2v" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (24).png" id="44_djps4"]
+[ext_resource type="Texture2D" uid="uid://hln24dxum185" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (25).png" id="45_oixem"]
+[ext_resource type="Texture2D" uid="uid://brtxtrgru8k55" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (26).png" id="46_tsgqt"]
+[ext_resource type="Texture2D" uid="uid://dm1xxjri1jyil" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (27).png" id="47_c221f"]
+[ext_resource type="Texture2D" uid="uid://bfc80qd6bm0a5" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (28).png" id="48_lwnr2"]
+[ext_resource type="Texture2D" uid="uid://bxm4su1nugge4" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (29).png" id="49_a0b86"]
+[ext_resource type="Texture2D" uid="uid://cj1bb4r8pfjwb" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (30).png" id="50_mp5y2"]
+[ext_resource type="Texture2D" uid="uid://da46t16mcqbg2" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_EndPart1_Opti/T_Kooeh_A001_Props_Pot_EndPart1Opti_ (31).png" id="51_nwen1"]
+[ext_resource type="Texture2D" uid="uid://bnlo5001h02b" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (1).png" id="88_po4ey"]
+[ext_resource type="Texture2D" uid="uid://drssp0logthej" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (2).png" id="89_vihth"]
+[ext_resource type="Texture2D" uid="uid://cx6yco5q4n60e" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (3).png" id="90_2an6l"]
+[ext_resource type="Texture2D" uid="uid://cwsekxgoktgxd" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (4).png" id="91_adxap"]
+[ext_resource type="Texture2D" uid="uid://dqe4v3jm5k0y4" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (5).png" id="92_4a2gj"]
+[ext_resource type="Texture2D" uid="uid://mckp5ybdgpot" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (6).png" id="93_ei7w5"]
+[ext_resource type="Texture2D" uid="uid://nik3sj0obsfl" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (7).png" id="94_if574"]
+[ext_resource type="Texture2D" uid="uid://be0hac8pmg1en" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (8).png" id="95_p441s"]
+[ext_resource type="Texture2D" uid="uid://umhpm320te8h" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (9).png" id="96_8fe1f"]
+[ext_resource type="Texture2D" uid="uid://8pk6mi6jn4wx" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (10).png" id="97_8gppt"]
+[ext_resource type="Texture2D" uid="uid://bbde8i648iv6j" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (11).png" id="98_ex4ea"]
+[ext_resource type="Texture2D" uid="uid://c704y0q4r72hn" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (12).png" id="99_kjbvy"]
+[ext_resource type="Texture2D" uid="uid://kblr2dom2f0p" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (13).png" id="100_sp255"]
+[ext_resource type="Texture2D" uid="uid://cb8187nbgvmos" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (14).png" id="101_snffl"]
+[ext_resource type="Texture2D" uid="uid://bd10tvst302tt" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (15).png" id="102_7c20m"]
+[ext_resource type="Texture2D" uid="uid://bpq4rgm6vtp7y" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (16).png" id="103_8mgfe"]
+[ext_resource type="Texture2D" uid="uid://77km7jkm10d6" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (17).png" id="104_xsnvq"]
+[ext_resource type="Texture2D" uid="uid://ct3vdanmaxd2n" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (18).png" id="105_41cnd"]
+[ext_resource type="Texture2D" uid="uid://bf27006i2odr8" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (19).png" id="106_stbjw"]
+[ext_resource type="Texture2D" uid="uid://34fudurhhm1j" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (20).png" id="107_4wxxx"]
+[ext_resource type="Texture2D" uid="uid://cnmabvyt2l6g2" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (21).png" id="108_wf5uq"]
+[ext_resource type="Texture2D" uid="uid://bjimnjct4n2bd" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (22).png" id="109_ryovi"]
+[ext_resource type="Texture2D" uid="uid://dokygrqjohnrl" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (23).png" id="110_tabrk"]
+[ext_resource type="Texture2D" uid="uid://dprd5hdcyl8vj" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (24).png" id="111_pixde"]
+[ext_resource type="Texture2D" uid="uid://h5xeh4tj7qvc" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (26).png" id="112_7dopj"]
+[ext_resource type="Texture2D" uid="uid://dq7dxelgjwsb6" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (27).png" id="113_r57qx"]
+[ext_resource type="Texture2D" uid="uid://gr8psddv3dqr" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (28).png" id="114_yr5f7"]
+[ext_resource type="Texture2D" uid="uid://duc1dyftwqufo" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (29).png" id="115_6aak6"]
+[ext_resource type="Texture2D" uid="uid://cggpvtw26sulm" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (30).png" id="116_us7ad"]
+[ext_resource type="Texture2D" uid="uid://dioq3o1tvnk8g" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Mid_Opti/T_Kooeh_A001_Props_Stove_MidOpti_ (31).png" id="117_gldny"]
+[ext_resource type="Texture2D" uid="uid://cmxfgv0gq3s81" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (1).png" id="118_p8y6g"]
+[ext_resource type="Texture2D" uid="uid://gfs3m0brmnr1" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (2).png" id="119_d08px"]
+[ext_resource type="Texture2D" uid="uid://d00cmt3yu2gax" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (3).png" id="120_7ihrc"]
+[ext_resource type="Texture2D" uid="uid://c6u050rdm156n" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (4).png" id="121_1tcra"]
+[ext_resource type="Texture2D" uid="uid://dmoc4w352li04" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (5).png" id="122_0jevq"]
+[ext_resource type="Texture2D" uid="uid://bgbhihl0sjqjx" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (6).png" id="123_p1atn"]
+[ext_resource type="Texture2D" uid="uid://bhhqi1jq4ai4d" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (7).png" id="124_vp72x"]
+[ext_resource type="Texture2D" uid="uid://krmel5c0pbth" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (8).png" id="125_k3eer"]
+[ext_resource type="Texture2D" uid="uid://laeg2l37vlwl" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (9).png" id="126_x3dgy"]
+[ext_resource type="Texture2D" uid="uid://dq4ahr3pwska3" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (10).png" id="127_2fg5a"]
+[ext_resource type="Texture2D" uid="uid://be34bqbgwe5v3" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (11).png" id="128_vfghw"]
+[ext_resource type="Texture2D" uid="uid://cnyba8s5bciml" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (12).png" id="129_g2dvr"]
+[ext_resource type="Texture2D" uid="uid://x53qxktl7lc3" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (13).png" id="130_g4pmn"]
+[ext_resource type="Texture2D" uid="uid://dnhwldybfns5v" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (14).png" id="131_w1iq5"]
+[ext_resource type="Texture2D" uid="uid://cpxxrtvxl88f8" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (15).png" id="132_w2455"]
+[ext_resource type="Texture2D" uid="uid://dhrt37baygi1p" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (16).png" id="133_eqrul"]
+[ext_resource type="Texture2D" uid="uid://cel413elvjdn2" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (17).png" id="134_2t0yo"]
+[ext_resource type="Texture2D" uid="uid://cgwfd5a3ibtuy" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (18).png" id="135_ror1l"]
+[ext_resource type="Texture2D" uid="uid://c6tlhjo706vml" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (19).png" id="136_sk6eo"]
+[ext_resource type="Texture2D" uid="uid://dmk5uwmlvoamc" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (20).png" id="137_yd2o3"]
+[ext_resource type="Texture2D" uid="uid://c3d8ejlfakw65" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (21).png" id="138_lqx40"]
+[ext_resource type="Texture2D" uid="uid://bir4cujnmyvd5" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (22).png" id="139_skpns"]
+[ext_resource type="Texture2D" uid="uid://cx5e4cp5bn0wt" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (23).png" id="140_ek0wj"]
+[ext_resource type="Texture2D" uid="uid://bbbw6hitmpcs3" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (24).png" id="141_1t4yf"]
+[ext_resource type="Texture2D" uid="uid://uv3kbn7juvst" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (25).png" id="142_org2j"]
+[ext_resource type="Texture2D" uid="uid://ca7ynd3el3n38" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (26).png" id="143_dvuoa"]
+[ext_resource type="Texture2D" uid="uid://cwxfxlql2w2bn" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (27).png" id="144_g7fiy"]
+[ext_resource type="Texture2D" uid="uid://bi05h8be1jajc" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (28).png" id="145_wqhbq"]
+[ext_resource type="Texture2D" uid="uid://p50c2p88uqh3" path="res://2024_Art/2024 Restaurant (SceneEatery)/Stove Animation/T_Kooeh_A001_Props_Stove_Start_Opti/T_Kooeh_A001_Props_Stove_Start_ (29).png" id="146_h6xtg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3pod"]
+resource_local_to_scene = true
+shader = ExtResource("5_q47k5")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0.367889, 0.614951, 1.15514e-06, 1)
+shader_parameter/line_thickness = 0.02
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="Animation" id="Animation_cf0y0"]
+resource_name = "Stove_Collect"
+length = 1.00001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_qvrqs"), ExtResource("11_peq4m"), ExtResource("12_bm8rw"), ExtResource("13_2x5mr"), ExtResource("14_q8nqx"), ExtResource("15_ibedl"), ExtResource("16_ygh76"), ExtResource("17_hjhkp"), ExtResource("18_ghf1a"), ExtResource("19_i4chl"), ExtResource("20_2n0ya"), ExtResource("21_p5lqf"), ExtResource("22_w7s38"), ExtResource("23_7hc08"), ExtResource("24_tvpwe"), ExtResource("25_bwwad"), ExtResource("26_dvwdt"), ExtResource("27_chyab"), ExtResource("28_bxi1u"), ExtResource("29_57vf2"), ExtResource("30_dun23")]
+}
+
+[sub_resource type="Animation" id="Animation_bopfa"]
+resource_name = "Stove_End"
+length = 1.00001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("31_k055r"), ExtResource("32_6mna0"), ExtResource("33_bcapo"), ExtResource("34_7cv7o"), ExtResource("35_38fjs"), ExtResource("36_y8b45"), ExtResource("37_qpwx1"), ExtResource("38_lxi0w"), ExtResource("39_jqnvf"), ExtResource("40_ow7kg"), ExtResource("41_55t7r"), ExtResource("42_qqosa"), ExtResource("43_fteme"), ExtResource("44_djps4"), ExtResource("45_oixem"), ExtResource("46_tsgqt"), ExtResource("47_c221f"), ExtResource("48_lwnr2"), ExtResource("49_a0b86"), ExtResource("50_mp5y2"), ExtResource("51_nwen1"), ExtResource("6_0hsos")]
+}
+
+[sub_resource type="Animation" id="Animation_wr628"]
+resource_name = "Stove_Idle"
+length = 0.0166683
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("118_p8y6g")]
+}
+
+[sub_resource type="Animation" id="Animation_et2sg"]
+resource_name = "Stove_Mid"
+length = 1.50001
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("88_po4ey"), ExtResource("89_vihth"), ExtResource("90_2an6l"), ExtResource("91_adxap"), ExtResource("92_4a2gj"), ExtResource("93_ei7w5"), ExtResource("94_if574"), ExtResource("95_p441s"), ExtResource("96_8fe1f"), ExtResource("97_8gppt"), ExtResource("98_ex4ea"), ExtResource("99_kjbvy"), ExtResource("100_sp255"), ExtResource("101_snffl"), ExtResource("102_7c20m"), ExtResource("103_8mgfe"), ExtResource("104_xsnvq"), ExtResource("105_41cnd"), ExtResource("106_stbjw"), ExtResource("107_4wxxx"), ExtResource("108_wf5uq"), ExtResource("109_ryovi"), ExtResource("110_tabrk"), ExtResource("111_pixde"), ExtResource("6_4g1al"), ExtResource("112_7dopj"), ExtResource("113_r57qx"), ExtResource("114_yr5f7"), ExtResource("115_6aak6"), ExtResource("116_us7ad"), ExtResource("117_gldny")]
+}
+
+[sub_resource type="Animation" id="Animation_x6pmk"]
+resource_name = "Stove_Start"
+length = 1.12
+step = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.68, 0.72, 0.76, 0.8, 0.84, 0.88, 0.92, 0.96, 1, 1.04, 1.08, 1.12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("118_p8y6g"), ExtResource("119_d08px"), ExtResource("120_7ihrc"), ExtResource("121_1tcra"), ExtResource("122_0jevq"), ExtResource("123_p1atn"), ExtResource("124_vp72x"), ExtResource("125_k3eer"), ExtResource("126_x3dgy"), ExtResource("127_2fg5a"), ExtResource("128_vfghw"), ExtResource("129_g2dvr"), ExtResource("130_g4pmn"), ExtResource("131_w1iq5"), ExtResource("132_w2455"), ExtResource("133_eqrul"), ExtResource("134_2t0yo"), ExtResource("135_ror1l"), ExtResource("136_sk6eo"), ExtResource("137_yd2o3"), ExtResource("138_lqx40"), ExtResource("139_skpns"), ExtResource("140_ek0wj"), ExtResource("141_1t4yf"), ExtResource("142_org2j"), ExtResource("143_dvuoa"), ExtResource("144_g7fiy"), ExtResource("145_wqhbq"), ExtResource("146_h6xtg")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ni012"]
+_data = {
+&"Stove_Collect": SubResource("Animation_cf0y0"),
+&"Stove_End": SubResource("Animation_bopfa"),
+&"Stove_Idle": SubResource("Animation_wr628"),
+&"Stove_Mid": SubResource("Animation_et2sg"),
+&"Stove_Start": SubResource("Animation_x6pmk")
+}
+
+[node name="Buildable_CookingStation" node_paths=PackedStringArray("_cookedFoodPlacementPolygon", "_radialProgressBar", "_areaNavigation") groups=["Buildable_CookingStation", "Interactable"] instance=ExtResource("1_x7urg")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_cwaq4")
+_cookedFoodMaxInventory = 10
+_cookedFoodPlacementPolygon = NodePath("Area_CookedFoodPlacement/TriangulatablePolygon")
+_radialProgressBar = NodePath("UI_RadialProgressBar")
+_cookMenuUI = ExtResource("3_jn2va")
+_audioPickup = ExtResource("4_1bptm")
+_areaNavigation = NodePath("NavigationArea")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_a3pod")
+position = Vector2(1, 61)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_qvrqs")
+offset = Vector2(0, -240)
+
+[node name="TShadowSquare" type="Sprite2D" parent="Sprite2D" index="0"]
+modulate = Color(1, 1, 1, 0.6)
+visibility_layer = 3
+z_index = -1
+position = Vector2(-7.14286, -78.5714)
+scale = Vector2(0.571429, 0.571429)
+texture = ExtResource("7_ucxre")
+offset = Vector2(1, 8)
+
+[node name="UI_RadialProgressBar" parent="." index="1" instance=ExtResource("8_1yqfl")]
+visible = false
+z_index = 1
+offset_top = -274.0
+offset_bottom = -146.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(1, 0.100006)
+polygon = PackedVector2Array(0, -81.1, -114, -15, -114, 4.89999, -1, 68, 113, 5.89999, 113, -18)
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." index="3" groups=["Interactable"]]
+position = Vector2(0, -95.9)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-113, 98.9, -114, -1.1, 0, -68.1, 114, -2.1, 114, 100.9, 1, 30.9)
+disabled = true
+
+[node name="NavigationArea" type="Area2D" parent="." index="4" groups=["NavigationArea"]]
+position = Vector2(-2, 4.10001)
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationArea" index="0"]
+polygon = PackedVector2Array(117, 1.89999, 3, -69.1, -112, -0.10001, 3, 64.9)
+
+[node name="Area_CookedFoodPlacement" type="Area2D" parent="." index="5"]
+position = Vector2(4, -104)
+input_pickable = false
+monitorable = false
+
+[node name="TriangulatablePolygon" type="CollisionPolygon2D" parent="Area_CookedFoodPlacement" index="0"]
+position = Vector2(-3, 3.9)
+polygon = PackedVector2Array(39, 5, 38, -8, 25, -19, 0, -24, -24, -19, -38, -8, -38, 5, -24, 14, -1, 19, 25, 16)
+script = ExtResource("4_wmu3c")
+_triangulationData = PackedFloat32Array(70.5, 129, 248.5, 523, 939.5)
+_triangles = PackedInt32Array(0, 6, 5, 5, 4, 3, 3, 2, 1, 1, 0, 5, 5, 3, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_ni012")
+}

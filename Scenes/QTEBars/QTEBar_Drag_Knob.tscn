@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://yojof6n6my6o"]
+
+[ext_resource type="Script" uid="uid://xesglkcd3aq5" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Drag_Knob.gd" id="1_h1vdr"]
+[ext_resource type="Texture2D" uid="uid://cp50htbxat0px" path="res://Art/UI/Cooking/T_Icon_Circle.png" id="2_b4psr"]
+
+[node name="QTEBar_Drag_Knob" type="Control" node_paths=PackedStringArray("_textureKnob")]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1vdr")
+_textureKnob = NodePath("CenterContainer/TextureButton")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer"]
+self_modulate = Color(0.917969, 0.597656, 0.25, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("2_b4psr")
+ignore_texture_size = true
+stretch_mode = 5

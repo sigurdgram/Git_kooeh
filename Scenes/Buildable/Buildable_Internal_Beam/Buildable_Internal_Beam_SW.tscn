@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxmxsw847gveq"]
+
+[ext_resource type="PackedScene" uid="uid://c76rou3tpc6no" path="res://Scenes/Buildable/Buildable_Internal_Beam/Buildable_Internal_Beam_SE.tscn" id="1_yiow3"]
+
+[node name="Buildable_Internal_Beam_SW" instance=ExtResource("1_yiow3")]
+
+[node name="Sprite2D" parent="." index="0"]
+offset = Vector2(-15.5, -47.785)
+flip_h = true

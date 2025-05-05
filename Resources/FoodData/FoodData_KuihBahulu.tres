@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=23 format=3 uid="uid://cmfl3c47qd7el"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_sf8gi"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="2_kuxv0"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_uu7ax"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_inpwa"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="4_kw2c1"]
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="5_inpwa"]
+[ext_resource type="Script" uid="uid://brrlpfd302c4p" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="6_kw2c1"]
+[ext_resource type="Texture2D" uid="uid://cq2u6xrcu1330" path="res://Art/Food_Spritesheet/Atlas_KuihBahulu.tres" id="8_1jgt7"]
+[ext_resource type="Texture2D" uid="uid://wtje188xttlh" path="res://2024_Art/2024 Isometric F&B/T_Food_Bahulu_Eating.png" id="8_affil"]
+
+[sub_resource type="Resource" id="Resource_affil"]
+script = ExtResource("3_inpwa")
+referenceCurve = ExtResource("2_uu7ax")
+scale = 1.5
+difficulty = 1
+qteHitCount = 4
+qteSpeed = 0.4
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_1jgt7"]
+script = ExtResource("1_sf8gi")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_affil")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_6c3el"]
+script = ExtResource("4_kw2c1")
+difficulty = 1
+numberOfExecutions = 4
+speed = 150.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_rbi28"]
+script = ExtResource("1_sf8gi")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_6c3el")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_kw2c1"]
+script = ExtResource("5_inpwa")
+difficulty = 1
+tapRange = 0.15
+interval = 1.0
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_0xkde"]
+script = ExtResource("1_sf8gi")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_kw2c1")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_2w408"]
+script = ExtResource("6_kw2c1")
+difficulty = 1
+speed = 0.6
+barLengthMultiplier = 1.15
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_uvmpt"]
+script = ExtResource("1_sf8gi")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_2w408")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbi28"]
+atlas = ExtResource("8_affil")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkde"]
+atlas = ExtResource("8_affil")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w408"]
+atlas = ExtResource("8_affil")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c3el"]
+atlas = ExtResource("8_affil")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jgt7"]
+atlas = ExtResource("8_affil")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.KuihBahulu"
+script = ExtResource("2_kuxv0")
+name = "Kuih Bahulu"
+type = 1
+difficulty = 1
+description = "It's light and sweet treat! There's no way you could stop at just one!"
+sprite = SubResource("AtlasTexture_1jgt7")
+journalSprite = ExtResource("8_1jgt7")
+platelessSprite = SubResource("AtlasTexture_6c3el")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_rbi28"), SubResource("AtlasTexture_0xkde"), SubResource("AtlasTexture_2w408")])
+cookTime = 9.0
+price = 20.0
+batchCookAmount = 1
+ingredients = {
+&"IngredientData.Egg": 5,
+&"IngredientData.Oil": 2,
+&"IngredientData.PlainFlour": 3,
+&"IngredientData.Sugar": 3
+}
+cookInstructions = Array[ExtResource("1_sf8gi")]([SubResource("Resource_1jgt7"), SubResource("Resource_rbi28"), SubResource("Resource_0xkde"), SubResource("Resource_uvmpt")])
+metadata/_custom_type_script = "uid://c6u41cdmdxk78"

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=7 format=3 uid="uid://dwdglyf672l1p"]
+
+[ext_resource type="Script" uid="uid://c5c8oojstqwwm" path="res://Scripts/Resources/ConditionalRandomizer/ConditionalRandomizer_Base.gd" id="1_7obaj"]
+[ext_resource type="PackedScene" uid="uid://dnu3jghfoa7qq" path="res://Scenes/Customers/Customer_D.tscn" id="2_myjhx"]
+[ext_resource type="Script" uid="uid://chasj45xrtms1" path="res://Scripts/Resources/CustomerData.gd" id="4_dk1t8"]
+[ext_resource type="Script" uid="uid://1478kv0t2icv" path="res://Scripts/Resources/Conditions/Condition_Base.gd" id="5_7wd8o"]
+[ext_resource type="Script" uid="uid://dwsqttbhnyrlh" path="res://Scripts/Resources/ConditionalRandomizer/CondRand_IngredientRarity.gd" id="7_ra4ij"]
+
+[sub_resource type="Resource" id="Resource_8ttua"]
+script = ExtResource("7_ra4ij")
+rarity = 1
+probability = 1.0
+
+[resource]
+resource_name = "CustomerData.Sunbear"
+script = ExtResource("4_dk1t8")
+identifier = "R-1"
+name = "Sunbear"
+scene = ExtResource("2_myjhx")
+customerRarity = 0
+weight = 20.0
+foodOrderRate = {
+"FoodData.AmbraJuice": 1,
+"FoodData.KopiO": 1,
+"FoodData.KuihBahulu": 1,
+"FoodData.KuihLapis": 1,
+"FoodData.KuihSaguMerah": 1,
+"FoodData.OndehOndeh": 1,
+"FoodData.PatPoh": 1,
+"FoodData.PineappleTart": 1,
+"FoodData.SirapLimau": 1,
+"FoodData.TehTarik": 1,
+"FoodData.Vadai": 1
+}
+patience = 30.0
+spawnTrigger = Array[ExtResource("5_7wd8o")]([])
+paymentBonus = Array[ExtResource("1_7obaj")]([SubResource("Resource_8ttua")])
+customerSize = 150.0

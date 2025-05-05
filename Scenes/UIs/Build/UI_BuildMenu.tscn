@@ -1,0 +1,290 @@
+[gd_scene load_steps=13 format=3 uid="uid://b72bd5xshdsj6"]
+
+[ext_resource type="Script" uid="uid://3ill3nvdms0j" path="res://Scripts/UISystem/UIs/Buildable/UI_BuildMenu.gd" id="1_qdn8b"]
+[ext_resource type="PackedScene" uid="uid://dt6utaesjq8dh" path="res://Scenes/UIs/Build/UI_BuildableUpgrade.tscn" id="3_75vq8"]
+[ext_resource type="PackedScene" uid="uid://dhffl63f0r5h3" path="res://Scenes/UIs/Build/Ui_BuildableBuild.tscn" id="3_evc6q"]
+[ext_resource type="PackedScene" uid="uid://ug7wjoegdwle" path="res://Scenes/UIs/Build/UI_BuildableMove.tscn" id="4_rk7p2"]
+[ext_resource type="PackedScene" uid="uid://dddpyo23qur3o" path="res://Scenes/UIs/Build/UI_BuildableDelete.tscn" id="4_sm5g7"]
+[ext_resource type="PackedScene" uid="uid://g13gij4sm5q5" path="res://Scenes/UIs/Build/UI_BuildableButton.tscn" id="5_8n026"]
+[ext_resource type="Texture2D" uid="uid://djltwt0pwxjtm" path="res://2024_Art/2024 UI Assets/Dialogue Set/T_UI_Dialogue_Box.png" id="7_27j81"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="8_nosnx"]
+[ext_resource type="PackedScene" uid="uid://wrvmgc6g8deg" path="res://Scenes/UIs/Build/UI_BuildableRestrictions.tscn" id="9_iif1e"]
+[ext_resource type="FontFile" uid="uid://rmn7xx0fpgtd" path="res://Themes/Fonts/Nunito/Nunito-ExtraBold.ttf" id="9_yt28j"]
+[ext_resource type="PackedScene" uid="uid://bqn4mcwhkw3wx" path="res://Scenes/UIs/EconomySystem/UI_Economy.tscn" id="10_a6glj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61yup"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="UI_BuildMenu" type="Control" node_paths=PackedStringArray("_hboxBuildable", "_btnCategoryAll", "_btnCategoryTable", "_btnCategoryChair", "_btnMove", "_btnDelete", "_btnBack", "_btnExpand", "_restrictionsList", "moneyWarning")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.992991)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_qdn8b")
+_hboxBuildable = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/HBoxContainer")
+_btnCategoryAll = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/AllButton")
+_btnCategoryTable = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/TableButton")
+_btnCategoryChair = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/ChairButton")
+_btnBuildable = ExtResource("5_8n026")
+_btnMove = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer/MoveButton")
+_btnDelete = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer/DeleteButton")
+_btnBack = NodePath("Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer/BackButton")
+_btnExpand = NodePath("ShopExpansionButton")
+_buildableBuild = ExtResource("3_evc6q")
+_buildableMove = ExtResource("4_rk7p2")
+_buildableDelete = ExtResource("4_sm5g7")
+_buildableUpgrade = ExtResource("3_75vq8")
+_restrictionsList = NodePath("UI_BuildableRestrictions")
+moneyWarning = NodePath("Panel/MoneyWarning")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.722
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.239929
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_61yup")
+
+[node name="MoneyWarning" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.255
+anchor_top = -0.423
+anchor_right = 0.707
+anchor_bottom = 0.137
+offset_left = -0.600037
+offset_top = -0.0999146
+offset_right = 0.559937
+offset_bottom = -0.0999489
+texture = ExtResource("7_27j81")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/MoneyWarning"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.298
+anchor_right = 0.841
+anchor_bottom = 0.69
+offset_left = -0.302002
+offset_top = -0.064003
+offset_right = 0.170959
+offset_bottom = 0.0799866
+theme = ExtResource("8_nosnx")
+theme_override_colors/font_color = Color(0.176471, 0.054902, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("9_yt28j")
+theme_override_font_sizes/font_size = 50
+text = "Not Enough Money!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.698
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.634
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_27j81")
+region_rect = Rect2(272, 104, 1504, 296)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/NinePatchRect/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="AllButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "All
+"
+
+[node name="WorkStationButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+toggle_mode = true
+action_mode = 0
+text = "Station"
+
+[node name="TableButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+toggle_mode = true
+action_mode = 0
+text = "Table"
+
+[node name="ChairButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+toggle_mode = true
+action_mode = 0
+text = "Chair"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/MarginContainer2"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(1300, 225)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="UpgradeButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+text = "Upgrade
+"
+
+[node name="MoveButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+text = "Move
+"
+
+[node name="DeleteButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+text = "Delete
+"
+
+[node name="BackButton" type="Button" parent="Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="UI_BuildableRestrictions" parent="." instance=ExtResource("9_iif1e")]
+layout_mode = 1
+
+[node name="UI_Economy" parent="." instance=ExtResource("10_a6glj")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -486.0
+offset_top = 45.0
+offset_right = -486.0
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="ShopExpansionButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.803
+anchor_top = 0.571
+anchor_right = 0.999
+anchor_bottom = 0.698
+offset_left = 0.23999
+offset_top = -0.360229
+offset_right = 0.919922
+offset_bottom = 0.479797
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("8_nosnx")
+theme_type_variation = &"Button_SubSetting"
+theme_override_font_sizes/font_size = 30
+text = "Move
+"
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Panel/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

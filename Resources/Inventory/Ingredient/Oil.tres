@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://7klv3fumtduv"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_wn0lt"]
+[ext_resource type="Texture2D" uid="uid://bkp5jrsx2ddwd" path="res://Art/Ingredient_Spritesheet/T_I006_Oil.tres" id="2_alfr4"]
+
+[resource]
+resource_name = "IngredientData.Oil"
+script = ExtResource("1_wn0lt")
+name = "Oil"
+description = ""
+rarity = 0
+stackable = true
+texture = ExtResource("2_alfr4")
+bundlePrice = 10
+bundlePurchaseAmount = 10

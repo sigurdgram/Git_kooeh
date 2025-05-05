@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://dtn4ywkf0k4g2"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_amwa7"]
+[ext_resource type="Texture2D" uid="uid://bwweouyq01i0o" path="res://Art/Ingredient_Spritesheet/T_I016_GCoconut.tres" id="2_xhl7p"]
+
+[resource]
+resource_name = "IngredientData.GratedCoconut"
+script = ExtResource("1_amwa7")
+name = "Grated Coconut"
+description = "Hey, it's grated coconut! I think it's some \"great\"-ed coconut, actually. Or \"good\"-est?"
+rarity = 1
+stackable = true
+texture = ExtResource("2_xhl7p")
+bundlePrice = 20
+bundlePurchaseAmount = 10

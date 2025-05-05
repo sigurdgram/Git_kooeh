@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://0mte0y0nl36e"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_50f7p"]
+[ext_resource type="Texture2D" uid="uid://buu7x62ku4dc1" path="res://Art/Ingredient_Spritesheet/T_I008_ConMilk.tres" id="2_x3aaa"]
+
+[resource]
+resource_name = "IngredientData.CondensedMilk"
+script = ExtResource("1_50f7p")
+name = "Condensed Milk"
+description = ""
+rarity = 1
+stackable = true
+texture = ExtResource("2_x3aaa")
+bundlePrice = 20
+bundlePurchaseAmount = 10

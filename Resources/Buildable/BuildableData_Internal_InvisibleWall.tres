@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=14 format=3 uid="uid://deo83tpfkgkg1"]
+
+[ext_resource type="PackedScene" uid="uid://c2miq6wrq2eu" path="res://Scenes/Buildable/Buildable_Internal_InvisibleWall/Buildable_Internal_InvisibleWall_SE.tscn" id="1_81qci"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="1_thigx"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_qq08v"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="2_xcpm2"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="3_iu7hl"]
+[ext_resource type="PackedScene" uid="uid://b6w1e60r1gtsw" path="res://Scenes/Buildable/Buildable_Internal_InvisibleWall/Buildable_Internal_InvisibleWall_NE.tscn" id="3_kcbjh"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="3_mj0ju"]
+[ext_resource type="PackedScene" uid="uid://vomd31ymjpwu" path="res://Scenes/Buildable/Buildable_Internal_InvisibleWall/Buildable_Internal_InvisibleWall_SW.tscn" id="4_thelk"]
+[ext_resource type="PackedScene" uid="uid://djli2sqem5h4j" path="res://Scenes/Buildable/Buildable_Internal_InvisibleWall/Buildable_Internal_InvisibleWall_NW.tscn" id="6_khbgn"]
+
+[sub_resource type="Resource" id="Resource_khbgn"]
+script = ExtResource("3_mj0ju")
+buildable = ExtResource("3_kcbjh")
+buildReqs = Array[ExtResource("2_qq08v")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+metadata/_custom_type_script = "uid://c74ddjbackj7k"
+
+[sub_resource type="Resource" id="Resource_3gdus"]
+script = ExtResource("3_mj0ju")
+buildable = ExtResource("1_81qci")
+buildReqs = Array[ExtResource("2_qq08v")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[sub_resource type="Resource" id="Resource_4gibv"]
+script = ExtResource("3_mj0ju")
+buildable = ExtResource("4_thelk")
+buildReqs = Array[ExtResource("2_qq08v")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+
+[sub_resource type="Resource" id="Resource_0knsj"]
+script = ExtResource("3_mj0ju")
+buildable = ExtResource("6_khbgn")
+buildReqs = Array[ExtResource("2_qq08v")]([])
+variantData = {}
+blockedNav = PackedVector2Array()
+metadata/_custom_type_script = "uid://c74ddjbackj7k"
+
+[resource]
+resource_name = "BuildableData.InvisibleWall"
+script = ExtResource("3_iu7hl")
+name = "Invisible Wall"
+buildableScene = ExtResource("1_81qci")
+category = 0
+price = 100
+layer = 0
+customData = {}
+tileSetID = 0
+tileExtensions = Array[ExtResource("1_thigx")]([])
+flippedTileExtensions = Array[ExtResource("1_thigx")]([])
+restrictions = Array[ExtResource("2_xcpm2")]([])
+id = "BuildableData.InvisibleWall"
+displayName = "Invisible Wall"
+layer2 = 0
+collisionPriority = 0
+collisionLayer = 1
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: SubResource("Resource_khbgn"),
+2: null,
+3: SubResource("Resource_3gdus"),
+4: null,
+5: SubResource("Resource_4gibv"),
+6: null,
+7: SubResource("Resource_0knsj")
+}

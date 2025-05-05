@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkcvn34rysexm"]
+
+[ext_resource type="Script" uid="uid://cw6nmiuolx7xr" path="res://Scripts/GameModes/MainMenuGameMode.gd" id="1_6os7b"]
+[ext_resource type="PackedScene" uid="uid://bsowtv2isymwg" path="res://Scenes/UIs/UI_MainMenu.tscn" id="2_nbmhu"]
+
+[node name="LV_MainMenu" type="Node"]
+script = ExtResource("1_6os7b")
+_mainMenuPackedScene = ExtResource("2_nbmhu")

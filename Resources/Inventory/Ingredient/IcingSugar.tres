@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://c45ufp6oc0rgi"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_sw8if"]
+[ext_resource type="Texture2D" uid="uid://bnw533u8ljj8a" path="res://Art/Ingredient_Spritesheet/T_I012_ISugar.tres" id="2_5hxid"]
+
+[resource]
+resource_name = "IngredientData.IcingSugar"
+script = ExtResource("1_sw8if")
+name = "Icing Sugar"
+description = ""
+rarity = 2
+stackable = true
+texture = ExtResource("2_5hxid")
+bundlePrice = 30
+bundlePurchaseAmount = 10

@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="BuildableData" load_steps=14 format=3 uid="uid://dxgsws2inhjxb"]
+
+[ext_resource type="PackedScene" uid="uid://bru6jjjfj0hm1" path="res://Scenes/Buildable/Buildable_Table2.tscn" id="1_dkip3"]
+[ext_resource type="Script" uid="uid://2i4jf7ghrbq5" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildableRequirement.gd" id="2_05upn"]
+[ext_resource type="Resource" uid="uid://dhmieb3sqsuwr" path="res://Resources/Buildable/BuildableRequirements/BuildReq_WithinGrid_Origin.tres" id="3_3hcff"]
+[ext_resource type="Resource" uid="uid://dknr638kny52y" path="res://Resources/Buildable/BuildableRequirements/BuildReq_OnTerrain.tres" id="4_ns8v5"]
+[ext_resource type="PackedScene" uid="uid://bp6q6gmbfkmjf" path="res://Scenes/Buildable/Buildable_Asset_Table2/Buildable_Asset_Table2_SE.tscn" id="5_7wjjw"]
+[ext_resource type="Script" uid="uid://c74ddjbackj7k" path="res://addons/buildable_system/Scripts/Resources/BuildableVariant.gd" id="6_36u5c"]
+[ext_resource type="PackedScene" uid="uid://cpd42373tpgk5" path="res://Scenes/Buildable/Buildable_Asset_Table2/Buildable_Asset_Table2_SW.tscn" id="7_bk6rq"]
+[ext_resource type="Script" uid="uid://dwca5bvbci2qj" path="res://Scripts/Buildable/TileExtensions.gd" id="8_tt7n1"]
+[ext_resource type="Script" uid="uid://d2upo8fg0avtu" path="res://Resources/BuildableRestrictions/BuildableRestrictions_Base.gd" id="9_qhjfd"]
+[ext_resource type="Script" uid="uid://c4icwmrqbmkpi" path="res://Scripts/Buildable/BuildableData.gd" id="10_wouwm"]
+[ext_resource type="Texture2D" uid="uid://bbbcfnu51afyg" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_E002PlasticFoldableTable.png" id="11_x5vl1"]
+
+[sub_resource type="Resource" id="Resource_8kafq"]
+script = ExtResource("6_36u5c")
+buildable = ExtResource("5_7wjjw")
+buildReqs = Array[ExtResource("2_05upn")]([ExtResource("3_3hcff"), ExtResource("4_ns8v5")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[sub_resource type="Resource" id="Resource_a8cyj"]
+script = ExtResource("6_36u5c")
+buildable = ExtResource("7_bk6rq")
+buildReqs = Array[ExtResource("2_05upn")]([ExtResource("3_3hcff"), ExtResource("4_ns8v5")])
+variantData = {}
+blockedNav = PackedVector2Array(0, 0)
+
+[resource]
+resource_name = "BuildableData.Table2"
+script = ExtResource("10_wouwm")
+name = "Table 2"
+buildableScene = ExtResource("1_dkip3")
+texture = ExtResource("11_x5vl1")
+category = 1
+price = 100
+layer = 0
+customData = {
+"Upgrade": {
+1: {
+"Price": 70.0
+}
+}
+}
+tileSetID = 5
+tileExtensions = Array[ExtResource("8_tt7n1")]([])
+flippedTileExtensions = Array[ExtResource("8_tt7n1")]([])
+restrictions = Array[ExtResource("9_qhjfd")]([])
+id = "BuildableData.Table2"
+displayName = "Table2"
+layer2 = 2
+collisionPriority = 2
+collisionLayer = 128
+defaultDirection = 3
+directionalVariants = {
+0: null,
+1: null,
+2: null,
+3: SubResource("Resource_8kafq"),
+4: null,
+5: SubResource("Resource_a8cyj"),
+6: null,
+7: null
+}

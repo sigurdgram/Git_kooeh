@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bhowieh3xo0jb"]
+
+[ext_resource type="Texture2D" uid="uid://ba18ftjsxw8lm" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Support_FloorLEFT.png" id="1_bjeee"]
+[ext_resource type="Texture2D" uid="uid://b01va5mjtfki" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Support_FloorRIGHT.png" id="2_devi5"]
+[ext_resource type="Texture2D" uid="uid://blymhl8wf38s0" path="res://2024_Art/2024 Restaurant (SceneEatery)/4X4/T_Support_PillarMiddle.png" id="3_xjon1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdw4c"]
+texture = ExtResource("1_bjeee")
+texture_region_size = Vector2i(547, 353)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-240, -156)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbdx3"]
+texture = ExtResource("2_devi5")
+texture_region_size = Vector2i(547, 353)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(240, -156)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1pj3"]
+texture = ExtResource("3_xjon1")
+texture_region_size = Vector2i(128, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -61)
+
+[resource]
+tile_shape = 1
+tile_size = Vector2i(1017, 588)
+sources/0 = SubResource("TileSetAtlasSource_pdw4c")
+sources/1 = SubResource("TileSetAtlasSource_rbdx3")
+sources/2 = SubResource("TileSetAtlasSource_v1pj3")

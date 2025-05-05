@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TestAsset" load_steps=2 format=3 uid="uid://bpjjtw70la2kf"]
+
+[ext_resource type="Script" uid="uid://wy6pfduh1j7" path="res://addons/godot-assetmanager/Scripts/Tests/TestAsset.gd" id="1_wbxyg"]
+
+[resource]
+resource_name = "TestAsset.B"
+script = ExtResource("1_wbxyg")

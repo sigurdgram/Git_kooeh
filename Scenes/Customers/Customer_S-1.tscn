@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceeiixp32mp8n"]
+
+[ext_resource type="PackedScene" uid="uid://m6m5jlbnyg7o" path="res://Scenes/Customers/Customer_Base.tscn" id="1_ropb8"]
+[ext_resource type="Texture2D" uid="uid://bae3hdfw8rs43" path="res://Art/Character/T_Character_AncestorPineapple/Idle/T_Character_AncestorPineapple_FrontIdle.png" id="2_wrgiw"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="3_37bt0"]
+[ext_resource type="AnimationLibrary" uid="uid://trrgsnkeybku" path="res://Art/Character/T_Character_AncestorPineapple/AnimLib_Character_Ancestor_Pineapple.tres" id="3_54i6a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxjv4"]
+resource_local_to_scene = true
+shader = ExtResource("3_37bt0")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.014
+shader_parameter/uvRescale = 1.085
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="Customer_S-1" instance=ExtResource("1_ropb8")]
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_wrgiw")
+offset = Vector2(25, -116)
+
+[node name="Label" parent="CenterContainer" index="0"]
+text = "D"
+
+[node name="PANCONT_OrderPopup" parent="." index="6"]
+material = SubResource("ShaderMaterial_rxjv4")
+
+[node name="AnimationPlayer" parent="." index="8"]
+libraries = {
+"": ExtResource("3_54i6a")
+}

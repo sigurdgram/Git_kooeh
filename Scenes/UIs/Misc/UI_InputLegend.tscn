@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bphkfk34wrpah"]
+
+[ext_resource type="Script" uid="uid://dxu4gscpvihb6" path="res://Scripts/UISystem/UIs/Misc/UI_InputLegend.gd" id="1_esj1w"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="2_ip2d4"]
+[ext_resource type="Texture2D" uid="uid://41xnunntg0ye" path="res://Art/Icon/T_Icon_Controls_LMB.png" id="2_t0fps"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="3_goiie"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cygwg"]
+resource_local_to_scene = true
+shader = ExtResource("2_ip2d4")
+shader_parameter/useCustomColor = true
+shader_parameter/customColor = Color(0.298039, 0.141176, 0.0745098, 1)
+shader_parameter/line_thickness = 0.07
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 20
+shader_parameter/enabled = true
+
+[node name="UI_InputLegend" type="MarginContainer"]
+custom_minimum_size = Vector2(0, 30)
+offset_right = 129.0
+offset_bottom = 35.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_esj1w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="IMG_Input" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cygwg")
+layout_mode = 2
+texture = ExtResource("2_t0fps")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TXT_Input" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_goiie")
+theme_override_colors/font_outline_color = Color(0.34902, 0.172549, 0.0980392, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "Left Click"

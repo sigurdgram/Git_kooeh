@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InputData" load_steps=4 format=3 uid="uid://bkgpn70xyb8ip"]
+
+[ext_resource type="Texture2D" uid="uid://cy7e67qj2flir" path="res://addons/controller_icons/assets/mouse/right.png" id="1_3jxxg"]
+[ext_resource type="Texture2D" uid="uid://c06i3deebkd3k" path="res://addons/controller_icons/assets/xboxseries/y.png" id="2_mnkh6"]
+[ext_resource type="Script" uid="uid://cseyqynuc8rd5" path="res://Scripts/Resources/InputData.gd" id="3_q77we"]
+
+[resource]
+resource_name = "InputData.Wish"
+script = ExtResource("3_q77we")
+displayName = "Wish"
+inputLegends = {
+0: ExtResource("1_3jxxg"),
+1: ExtResource("2_mnkh6")
+}

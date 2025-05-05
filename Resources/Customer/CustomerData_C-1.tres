@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=5 format=3 uid="uid://bn1paib0gi4mn"]
+
+[ext_resource type="Script" uid="uid://c5c8oojstqwwm" path="res://Scripts/Resources/ConditionalRandomizer/ConditionalRandomizer_Base.gd" id="1_6q0wi"]
+[ext_resource type="Script" uid="uid://1478kv0t2icv" path="res://Scripts/Resources/Conditions/Condition_Base.gd" id="4_kroua"]
+[ext_resource type="PackedScene" uid="uid://linmmioxlt7k" path="res://Scenes/Customers/Customer_A.tscn" id="6_toeng"]
+[ext_resource type="Script" uid="uid://chasj45xrtms1" path="res://Scripts/Resources/CustomerData.gd" id="7_nkteo"]
+
+[resource]
+resource_name = "CustomerData.Tapir"
+script = ExtResource("7_nkteo")
+identifier = "C-1"
+name = "Tapir Aunty"
+scene = ExtResource("6_toeng")
+customerRarity = 0
+weight = 40.0
+foodOrderRate = {
+"FoodData.AmbraJuice": 1,
+"FoodData.KopiO": 1,
+"FoodData.KuihBahulu": 1,
+"FoodData.KuihLapis": 1,
+"FoodData.KuihSaguMerah": 1,
+"FoodData.OndehOndeh": 1,
+"FoodData.PatPoh": 1,
+"FoodData.SirapLimau": 1,
+"FoodData.TehTarik": 1,
+"FoodData.Vadai": 1
+}
+patience = 30.0
+spawnTrigger = Array[ExtResource("4_kroua")]([])
+paymentBonus = Array[ExtResource("1_6q0wi")]([])
+customerSize = 150.0

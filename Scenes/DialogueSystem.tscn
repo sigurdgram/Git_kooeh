@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dek3vkyhmaqsd"]
+
+[ext_resource type="Script" uid="uid://3snoe1omg8cj" path="res://Scripts/Dialogue/DialogueSystem.gd" id="1_cl23b"]
+[ext_resource type="PackedScene" uid="uid://dygvfrcta86vj" path="res://Scenes/UIs/Dialogue/UI_DialogueBalloon.tscn" id="2_3p6p1"]
+
+[node name="KooehDialogueSystem" type="Node"]
+process_mode = 1
+script = ExtResource("1_cl23b")
+_balloon = ExtResource("2_3p6p1")

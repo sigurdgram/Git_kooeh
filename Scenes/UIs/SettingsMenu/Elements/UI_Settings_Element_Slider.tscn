@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://djkmuvvtf7pxh"]
+
+[ext_resource type="Script" uid="uid://c2pl6fcfto4g4" path="res://Scripts/UISystem/UIs/Settings/Elements/UI_Settings_Element_Slider.gd" id="1_gyhbv"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="2_jyctn"]
+[ext_resource type="FontFile" uid="uid://ccmwobhg1hqcg" path="res://Themes/Fonts/RooneySans/RooneySansBold.OTF" id="3_gqn3s"]
+
+[node name="UI_Settings_Element_Slider" type="Button" node_paths=PackedStringArray("_label", "_hSlider")]
+custom_minimum_size = Vector2(313, 30)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1328.0
+offset_bottom = -1040.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jyctn")
+theme_type_variation = &"Button_SubSettingEntry"
+script = ExtResource("1_gyhbv")
+_label = NodePath("MarginContainer/HBoxContainer/TXT_Label")
+_hSlider = NodePath("MarginContainer/HBoxContainer/HSlider")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jyctn")
+theme_type_variation = &"Entry_MarginCont"
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TXT_Label" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("2_jyctn")
+theme_type_variation = &"HeaderSmall"
+theme_override_fonts/font = ExtResource("3_gqn3s")
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_vertical = 1
+focus_mode = 0
+mouse_filter = 1
+theme = ExtResource("2_jyctn")
+value = 50.0
+scrollable = false

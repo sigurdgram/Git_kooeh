@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3l8mt377bxbu"]
+
+[ext_resource type="Script" uid="uid://bqt8o6e5x4r6r" path="res://Scripts/UISystem/UIs/Misc/UI_BasicButton.gd" id="1_nt8f6"]
+[ext_resource type="Theme" uid="uid://dthnybgtjytoq" path="res://Themes/Theme_Main.tres" id="1_r8r0f"]
+[ext_resource type="AudioStream" uid="uid://b2huwuu8arjdj" path="res://Audio/SFX/AS_SFX_ui_button-general.wav" id="3_nut4k"]
+
+[node name="UI_BasicButton" type="AspectRatioContainer" node_paths=PackedStringArray("_button")]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1661.0
+offset_bottom = -1007.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+ratio = 3.535
+script = ExtResource("1_nt8f6")
+_button = NodePath("Button")
+_audio = ExtResource("3_nut4k")
+_fontSize = 24
+text = "asdasd"
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_r8r0f")
+theme_type_variation = &"Button_Menu"
+theme_override_font_sizes/font_size = 24
+text = "asdasd"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

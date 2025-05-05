@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://drkgr2x2w7fgr"]
+
+[ext_resource type="Script" uid="uid://cytohnqqt5ns5" path="res://Scripts/UISystem/UIs/Misc/UI_VideoPlayer.gd" id="1_sfl6x"]
+[ext_resource type="PackedScene" uid="uid://bphkfk34wrpah" path="res://Scenes/UIs/Misc/UI_InputLegend.tscn" id="2_tdirw"]
+
+[node name="UI_VideoPlayer" type="Control" node_paths=PackedStringArray("_player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_sfl6x")
+_player = NodePath("AspectRatioContainer/VideoStreamPlayer")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.7778
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="UI_InputLegend" parent="." instance=ExtResource("2_tdirw")]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -45.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+input = "act_pause"
+_translationContext = "skip"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BuildReq_OnCollisionLayer" load_steps=2 format=3 uid="uid://dknr638kny52y"]
+
+[ext_resource type="Script" uid="uid://c0ye7qtsabe0j" path="res://addons/buildable_system/Scripts/Resources/BuildableRequirement/BuildReq_OnCollisionLayer.gd" id="1_nuirk"]
+
+[resource]
+script = ExtResource("1_nuirk")
+collisionLayer = 32

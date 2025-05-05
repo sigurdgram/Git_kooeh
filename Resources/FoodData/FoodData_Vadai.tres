@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=23 format=3 uid="uid://bc6fgtigvx312"]
+
+[ext_resource type="Script" uid="uid://csdiwiu72k32u" path="res://Scripts/Resources/Phase3Cooking/CookInstruction.gd" id="1_vwdpf"]
+[ext_resource type="Curve2D" uid="uid://dbbtpldotwy1i" path="res://Resources/QTEData_Drag/QTECurve_Pour.tres" id="2_8ljhr"]
+[ext_resource type="Script" uid="uid://c6u41cdmdxk78" path="res://Scripts/Resources/FoodData.gd" id="2_fkx0t"]
+[ext_resource type="Script" uid="uid://dmis3a6joqiio" path="res://Scripts/Resources/QTEDatas/QTEData_Pour.gd" id="3_8nqaw"]
+[ext_resource type="Script" uid="uid://cwvg3qjh3otge" path="res://Scripts/Resources/QTEDatas/QTEData_Stir.gd" id="4_8nqaw"]
+[ext_resource type="Script" uid="uid://75jc3ym66p6j" path="res://Scripts/Resources/QTEDatas/QTEData_HoldToRange.gd" id="5_t2d83"]
+[ext_resource type="Script" uid="uid://brrlpfd302c4p" path="res://Scripts/Resources/QTEDatas/QTEData_Steam.gd" id="6_dlt1p"]
+[ext_resource type="Texture2D" uid="uid://bm742sr7br28s" path="res://Art/Food_Spritesheet/Atlas_Vadai.tres" id="7_exp8r"]
+[ext_resource type="Texture2D" uid="uid://b0tjrvmqdbfs4" path="res://2024_Art/2024 Isometric F&B/T_Food_Vadai_Eating.png" id="9_6w6f1"]
+
+[sub_resource type="Resource" id="Resource_t2d83"]
+script = ExtResource("3_8nqaw")
+referenceCurve = ExtResource("2_8ljhr")
+scale = 1.5
+difficulty = 2
+qteHitCount = 5
+qteSpeed = 0.5
+metadata/_custom_type_script = "uid://dmis3a6joqiio"
+
+[sub_resource type="Resource" id="Resource_dlt1p"]
+script = ExtResource("1_vwdpf")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_t2d83")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_exp8r"]
+script = ExtResource("4_8nqaw")
+difficulty = 2
+numberOfExecutions = 5
+speed = 175.0
+metadata/_custom_type_script = "uid://cwvg3qjh3otge"
+
+[sub_resource type="Resource" id="Resource_6w6f1"]
+script = ExtResource("1_vwdpf")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_exp8r")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_tdblg"]
+script = ExtResource("5_t2d83")
+difficulty = 2
+tapRange = 0.1
+interval = 0.8
+metadata/_custom_type_script = "uid://75jc3ym66p6j"
+
+[sub_resource type="Resource" id="Resource_hv1ky"]
+script = ExtResource("1_vwdpf")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_tdblg")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="Resource" id="Resource_aj3vs"]
+script = ExtResource("6_dlt1p")
+difficulty = 2
+speed = 0.7
+barLengthMultiplier = 1.0
+holdDuration = 3.0
+metadata/_custom_type_script = "uid://brrlpfd302c4p"
+
+[sub_resource type="Resource" id="Resource_sgdm8"]
+script = ExtResource("1_vwdpf")
+qteTimeLimit = 0.0
+qteData = SubResource("Resource_aj3vs")
+description = ""
+metadata/_custom_type_script = "uid://csdiwiu72k32u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv1ky"]
+atlas = ExtResource("9_6w6f1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj3vs"]
+atlas = ExtResource("9_6w6f1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgdm8"]
+atlas = ExtResource("9_6w6f1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w6f1"]
+atlas = ExtResource("9_6w6f1")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdblg"]
+atlas = ExtResource("9_6w6f1")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+resource_name = "FoodData.Vadai"
+script = ExtResource("2_fkx0t")
+name = "Vadai"
+type = 1
+difficulty = 2
+description = "Nobody can resist that crunchy texture! it's got some spice to it, too!"
+sprite = SubResource("AtlasTexture_tdblg")
+journalSprite = ExtResource("7_exp8r")
+platelessSprite = SubResource("AtlasTexture_6w6f1")
+eatingSprites = Array[Texture2D]([SubResource("AtlasTexture_hv1ky"), SubResource("AtlasTexture_aj3vs"), SubResource("AtlasTexture_sgdm8")])
+cookTime = 20.0
+price = 30.0
+batchCookAmount = 1
+ingredients = {
+&"IngredientData.Chili": 1,
+&"IngredientData.CurryPowder": 2,
+&"IngredientData.DhalBean": 3,
+&"IngredientData.Onion": 2
+}
+cookInstructions = Array[ExtResource("1_vwdpf")]([SubResource("Resource_dlt1p"), SubResource("Resource_6w6f1"), SubResource("Resource_hv1ky"), SubResource("Resource_sgdm8")])
+metadata/_custom_type_script = "uid://c6u41cdmdxk78"

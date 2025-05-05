@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0x2jn6wr8ewu"]
+
+[ext_resource type="Script" uid="uid://ceiidopb1c1fh" path="res://addons/buildable_system/Scripts/Node2Ds/Buildable.gd" id="1_ho63o"]
+[ext_resource type="Texture2D" uid="uid://bwnykalqek76o" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_DoorIndicator2.png" id="2_pfitr"]
+[ext_resource type="Script" uid="uid://cp2neomp1mnxl" path="res://addons/buildable_system/Scripts/Node2Ds/CollisionPolygonShape.gd" id="4_1hqyq"]
+[ext_resource type="Shape2D" uid="uid://cigtilp2g2jwt" path="res://Resources/Buildable/CVShape_IsoGrid.tres" id="5_nrk4p"]
+
+[node name="Buildable_Asset_Entrance_NE" type="Area2D" node_paths=PackedStringArray("_clickablePolygon", "_sprite") groups=["Buildable.Entrance"]]
+script = ExtResource("1_ho63o")
+_clickablePolygon = NodePath("ClickablePolygon")
+_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pfitr")
+offset = Vector2(-85, 77)
+
+[node name="ClickablePolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1, -65, -115, 0, 1, 65, 115, -1)
+script = ExtResource("4_1hqyq")
+shape = ExtResource("5_nrk4p")

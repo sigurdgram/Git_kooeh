@@ -1,0 +1,196 @@
+[gd_scene load_steps=24 format=3 uid="uid://m6m5jlbnyg7o"]
+
+[ext_resource type="Script" uid="uid://bkjkocx2mph5x" path="res://Scripts/Characters/Customer.gd" id="1_w4s3d"]
+[ext_resource type="Script" uid="uid://c0fb21d8oyexp" path="res://Scripts/StateMachine/State_WaitTillQueueHead.gd" id="4_a2h8d"]
+[ext_resource type="Script" uid="uid://difk7ant6kn4f" path="res://Scripts/StateMachine/State_Order.gd" id="4_u0yal"]
+[ext_resource type="Script" uid="uid://cfkpxdkc2sp4c" path="res://Scripts/StateMachine/State_WaitForOrderFulfill.gd" id="6_ygbtq"]
+[ext_resource type="Script" uid="uid://117l38p6peyb" path="res://Scripts/StateMachine/State_FindSeatAndSit.gd" id="7_c58s4"]
+[ext_resource type="Script" uid="uid://cmvmoa2uevg8a" path="res://Scripts/StateMachine/State_Leave.gd" id="8_352g6"]
+[ext_resource type="Script" uid="uid://c8x0qnmgbb1g0" path="res://Scripts/StateMachine/State_Eat.gd" id="8_j50b7"]
+[ext_resource type="Texture2D" uid="uid://bv6sfxqor5gj0" path="res://2024_Art/2024 Characters/Tapir/Idle/T_Kooeh_Tapir_IdleBreathing_Opti/T_Kooeh_A001_Tapir_IdleBreathingOpti_ (1).png" id="10_2fw8j"]
+[ext_resource type="Texture2D" uid="uid://buees53eldpnl" path="res://2024_Art/2024 UI Assets/T_UI_CustomerBubble_Medium.png" id="12_q50te"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="12_w3pm7"]
+[ext_resource type="AnimationLibrary" uid="uid://b1151c0ewpelj" path="res://Art/Character/T_Character_Customer_Tapir/AnimLib_Character_Customer_Tapir.tres" id="13_qlhnr"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://bykqq3dnmm5a0" path="res://Art/Character/T_Character_Customer_Tapir/AnimStateMachine_Character_Customer.tres" id="13_wqw4q"]
+[ext_resource type="Texture2D" uid="uid://5hytpu87kup" path="res://2024_Art/T_ShadowRound.png" id="15_qljn8"]
+[ext_resource type="Script" uid="uid://bu0ukourag3ri" path="res://Scripts/StateMachine/StateMachineRunner.gd" id="18_tbd55"]
+[ext_resource type="Script" uid="uid://cvmd621gjmdvg" path="res://Scripts/StateMachine/State_GoToQueue.gd" id="19_v0wlo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bevoo"]
+radius = 18.0
+height = 78.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bi0xj"]
+resource_local_to_scene = true
+shader = ExtResource("12_w3pm7")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.014
+shader_parameter/uvRescale = 1.085
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ieajj"]
+content_margin_left = 15.0
+content_margin_top = 54.0
+content_margin_right = 0.0
+texture = ExtResource("12_q50te")
+texture_margin_left = 91.8182
+texture_margin_top = 14.017
+texture_margin_right = 79.8195
+texture_margin_bottom = 39.8782
+region_rect = Rect2(13, 60, 102, 136)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dng8o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dm7g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6fhr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwipw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljmox"]
+
+[node name="Customer_Base" type="CharacterBody2D" node_paths=PackedStringArray("_stateMachine", "_orderPanel", "_orderBTN", "_orderContainer", "navigationAgent", "sprite", "collisionShape", "foodPosition", "_animTree") groups=["Customer"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_w4s3d")
+_stateMachine = NodePath("StateMachineRunner")
+_orderPanel = NodePath("PANCONT_OrderPopup")
+_orderBTN = NodePath("PANCONT_OrderPopup/MarginContainer/BTN_Order")
+_orderContainer = NodePath("PANCONT_OrderPopup/VBoxContainer")
+navigationAgent = NodePath("NavigationAgent2D")
+sprite = NodePath("Sprite")
+collisionShape = NodePath("CollisionShape2D")
+foodPosition = NodePath("Sprite/FoodPostion")
+_animTree = NodePath("AnimationTree")
+
+[node name="StateMachineRunner" type="Node" parent="." node_paths=PackedStringArray("_rootState", "_owner")]
+script = ExtResource("18_tbd55")
+_rootState = NodePath("State_GoToQueue")
+_owner = NodePath("..")
+
+[node name="State_GoToQueue" type="Node" parent="StateMachineRunner"]
+script = ExtResource("19_v0wlo")
+
+[node name="State_WaitTillQueueHead" type="Node" parent="StateMachineRunner"]
+script = ExtResource("4_a2h8d")
+
+[node name="State_Order" type="Node" parent="StateMachineRunner"]
+script = ExtResource("4_u0yal")
+
+[node name="State_WaitForOrderFulfill" type="Node" parent="StateMachineRunner"]
+script = ExtResource("6_ygbtq")
+
+[node name="State_FindSeatAndSit" type="Node" parent="StateMachineRunner"]
+script = ExtResource("7_c58s4")
+
+[node name="State_Eat" type="Node" parent="StateMachineRunner"]
+script = ExtResource("8_j50b7")
+
+[node name="State_Leave" type="Node" parent="StateMachineRunner"]
+script = ExtResource("8_352g6")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 0
+avoidance_enabled = true
+avoidance_layers = 15
+avoidance_mask = 0
+debug_use_custom = true
+debug_path_custom_color = Color(6.97896e-07, 0.6479, 0.167997, 1)
+debug_path_custom_line_width = 5.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("10_2fw8j")
+offset = Vector2(-14, -114.78)
+
+[node name="FoodPostion" type="Node2D" parent="Sprite"]
+position = Vector2(0, -76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bevoo")
+disabled = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -78.02
+offset_right = 20.0
+offset_bottom = -38.02
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="PANCONT_OrderPopup" type="PanelContainer" parent="."]
+z_index = 10
+material = SubResource("ShaderMaterial_bi0xj")
+custom_minimum_size = Vector2(140, 230)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = -173.0
+offset_right = 252.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.64, 0.64)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ieajj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PANCONT_OrderPopup"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PANCONT_OrderPopup"]
+layout_mode = 2
+theme_override_constants/margin_left = -10
+theme_override_constants/margin_top = -50
+theme_override_constants/margin_right = -10
+theme_override_constants/margin_bottom = -40
+
+[node name="BTN_Order" type="Button" parent="PANCONT_OrderPopup/MarginContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dng8o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dm7g7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j6fhr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iwipw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ljmox")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+&"": ExtResource("13_qlhnr")
+}
+playback_auto_capture = false
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Sprite")
+callback_mode_discrete = 0
+tree_root = ExtResource("13_wqw4q")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Stationary/Eat/blend_position = Vector2(0, -0.013624)
+
+[node name="TShadowRound" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.6)
+z_index = -1
+position = Vector2(-3, -10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_qljn8")
+
+[connection signal="mouse_entered" from="PANCONT_OrderPopup/MarginContainer/BTN_Order" to="." method="_on_btn_order_mouse_entered"]
+[connection signal="mouse_exited" from="PANCONT_OrderPopup/MarginContainer/BTN_Order" to="." method="_on_btn_order_mouse_exited"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://4xd1bft5tk3a"]
+
+[ext_resource type="Script" uid="uid://xe1dkdghab3l" path="res://Scripts/InventorySystem/IngredientData.gd" id="1_jksfr"]
+[ext_resource type="Texture2D" uid="uid://bb87mxkmyeuop" path="res://Art/Ingredient_Spritesheet/T_I014_BlackTL.tres" id="2_n8ijf"]
+
+[resource]
+resource_name = "IngredientData.BlackTeaLeaves"
+script = ExtResource("1_jksfr")
+name = "Black Tea Leaves"
+description = "Black Tea Leaves Description
+"
+rarity = 2
+stackable = true
+texture = ExtResource("2_n8ijf")
+bundlePrice = 30
+bundlePurchaseAmount = 10

@@ -1,0 +1,241 @@
+[gd_scene load_steps=30 format=3 uid="uid://lgf0vq6xyfd0"]
+
+[ext_resource type="TileSet" uid="uid://b31yxed6asvwh" path="res://Tilesets/Assets_Tileset.tres" id="1_bc4e2"]
+[ext_resource type="TileSet" uid="uid://bhowieh3xo0jb" path="res://Tilesets/Beams_Tileset.tres" id="1_onajh"]
+[ext_resource type="TileSet" uid="uid://dqehrdpkw57r" path="res://Tilesets/Terrain_Tileset.tres" id="2_rodt7"]
+[ext_resource type="TileSet" uid="uid://34taqyypdjfw" path="res://Tilesets/Floor_Tileset.tres" id="6_wx2ej"]
+[ext_resource type="Texture2D" uid="uid://5hytpu87kup" path="res://2024_Art/T_ShadowRound.png" id="7_ex066"]
+[ext_resource type="PackedScene" uid="uid://tvjursuybmn5" path="res://Scenes/Buildable/Buildable_DisplayCounter.tscn" id="10_gr1fl"]
+[ext_resource type="PackedScene" uid="uid://e86ussatll8q" path="res://Scenes/Buildable/Buildable_Table1.tscn" id="12_iu3io"]
+[ext_resource type="Texture2D" uid="uid://bck2pfkrdr0pb" path="res://2024_Art/2024 Characters/MC/Idle/T_Kooeh_A001_MainC_M_IdleBreathingBack_Opti/T_Kooeh_A001_MainC_M_BackIdleBreathingOpti_ (8).png" id="12_s5dxp"]
+[ext_resource type="PackedScene" uid="uid://bmkw227ctabh2" path="res://Scenes/Buildable/Buildable_Chair1.tscn" id="13_rqq5x"]
+[ext_resource type="PackedScene" uid="uid://qm8hleinh0h4" path="res://Scenes/Buildable/Buildable_Table3.tscn" id="14_uqs2e"]
+[ext_resource type="TileSet" uid="uid://dtxakf36ey0l1" path="res://Tilesets/Grass_Tileset.tres" id="16_36kgu"]
+[ext_resource type="Texture2D" uid="uid://bawuwllgcawxa" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush2.png" id="17_cv7w7"]
+[ext_resource type="Texture2D" uid="uid://cl7tskevh7x63" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush5.png" id="18_6uivb"]
+[ext_resource type="Texture2D" uid="uid://vbgsubw6r3ds" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_BananaTree2.png" id="21_dpwnu"]
+[ext_resource type="PackedScene" uid="uid://bru6jjjfj0hm1" path="res://Scenes/Buildable/Buildable_Table2.tscn" id="22_wsbee"]
+[ext_resource type="Texture2D" uid="uid://3bj42wbq7kxi" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Fern1.png" id="23_12neb"]
+[ext_resource type="PackedScene" uid="uid://b2n2chlg6jnwu" path="res://Character/Character_Tanah.tscn" id="23_w5sc0"]
+[ext_resource type="Shader" uid="uid://3dwjy15hn6rr" path="res://Scripts/Shaders/Shad_Outline.gdshader" id="23_xv8wi"]
+[ext_resource type="Texture2D" uid="uid://3u0x6b2ov0d0" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Bush3.png" id="24_5vyur"]
+[ext_resource type="PackedScene" uid="uid://csn6r4r2g13qy" path="res://Scenes/Buildable/Buildable_Chair2.tscn" id="24_6rwyg"]
+[ext_resource type="PackedScene" uid="uid://cvb5t4skd8k33" path="res://Scenes/Buildable/Buildable_OrderCounter.tscn" id="24_c06ej"]
+[ext_resource type="Texture2D" uid="uid://d2kj4202xe5er" path="res://2024_Art/2024 Scene1/Scene1 Foliage/T_Scene1_Grass6.png" id="25_f6wye"]
+[ext_resource type="AnimationLibrary" uid="uid://cgqwx6552eoe6" path="res://Art/Character/T_Character_MCMale/T_Animation/AnimLib_Character_MC_Male.res" id="26_727x3"]
+[ext_resource type="Texture2D" uid="uid://bwnykalqek76o" path="res://2024_Art/2024 Restaurant (SceneEatery)/T_DoorIndicator2.png" id="26_mxwdn"]
+[ext_resource type="PackedScene" uid="uid://bcpisoshe5rlq" path="res://Scenes/Buildable/Buildable_CookingStation.tscn" id="44_xttln"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ruw4g"]
+animation = &"AnimLib_Character_MC_Male/Character_Idle_Back"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_28jit"]
+resource_local_to_scene = true
+shader = ExtResource("23_xv8wi")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.007
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_286dp"]
+resource_local_to_scene = true
+shader = ExtResource("23_xv8wi")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.005
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_itrko"]
+resource_local_to_scene = true
+shader = ExtResource("23_xv8wi")
+shader_parameter/useCustomColor = false
+shader_parameter/customColor = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.005
+shader_parameter/uvRescale = 1.0
+shader_parameter/vertexRescale = 1.0
+shader_parameter/vertexOffset = Vector2(0, 0)
+shader_parameter/resolution = 9
+shader_parameter/enabled = false
+
+[node name="LV_Prologue_Phase2" type="Node2D"]
+process_mode = 1
+metadata/_edit_horizontal_guides_ = [-583.0, 580.0]
+metadata/_edit_vertical_guides_ = [961.0, -960.0]
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(-3, -57)
+offset = Vector2(0, -40)
+zoom = Vector2(0.8, 0.8)
+limit_smoothed = true
+
+[node name="TileMapGrass" type="TileMap" parent="."]
+z_index = -2
+y_sort_enabled = true
+position = Vector2(0, -45)
+tile_set = ExtResource("16_36kgu")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(327678, 7, 0, 131068, 7, 0, -65541, 7, 0, -262151, 7, 0, 262145, 7, 65536, 65538, 7, 65536, -131068, 7, 65536, -327675, 7, 65536, 524287, 8, 0, -65544, 0, 0, 131065, 0, 0, 327675, 6, 0, 524284, 5, 0, 720894, 4, 0, 458754, 4, 0, 655361, 5, 0, 262148, 1, 0, 917503, 0, 0, 65541, 0, 0, -131065, 0, 0, 131062, 0, 0, 327672, 0, 0, 524281, 0, 0, 720891, 0, 0, 917500, 0, 0, 1114110, 0, 0, 1310719, 0, 0, 1048577, 0, 0, 851970, 0, 0, 655364, 0, 0, 458757, 0, 0, 262151, 0, 0, 65544, 0, 0, -458760, 7, 0, -524281, 7, 65536, -262154, 0, 0, -65547, 0, 0, -327672, 0, 0, -131062, 0, 0, 131071, 0, 0, -65538, 0, 0, -262145, 0, 0, -131071, 5, 0, -262148, 3, 0, -458757, 3, 0, -655364, 3, 0, -458754, 3, 0, -655361, 6, 0, -524287, 6, 0, -327678, 5, 0, -720894, 6, 0, -524284, 4, 0, -655367, 0, 0, -851973, 0, 0, -1048580, 0, 0, -851970, 0, 0, -1048577, 0, 0, -917503, 0, 0, -720891, 0, 0, -1310719, 0, 0, -1114110, 0, 0, -917500, 0, 0, -1441793, 0, 0, -1245186, 0, 0)
+
+[node name="Foliage" type="Node2D" parent="TileMapGrass"]
+scale = Vector2(0.5, 0.5)
+
+[node name="TScene1Bush2" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1420, -604)
+texture = ExtResource("17_cv7w7")
+
+[node name="TScene1Bush5" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1824, -632)
+texture = ExtResource("18_6uivb")
+
+[node name="TScene1BananaTree2" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1116, -952)
+texture = ExtResource("21_dpwnu")
+
+[node name="TScene1Fern1" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(858, -1380)
+texture = ExtResource("23_12neb")
+
+[node name="TScene1Bush3" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(2036, -1282)
+texture = ExtResource("24_5vyur")
+
+[node name="TScene1Grass6" type="Sprite2D" parent="TileMapGrass/Foliage"]
+position = Vector2(1138, -204)
+texture = ExtResource("25_f6wye")
+
+[node name="TileMapBeams" type="TileMap" parent="."]
+z_index = -1
+y_sort_enabled = true
+tile_set = ExtResource("1_onajh")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-131072, 1, 0, -131074, 0, 0, -131073, 1, 0, -196609, 2, 0)
+
+[node name="TileMapTerrain" type="TileMap" parent="." groups=["TileMapTerrain"]]
+y_sort_enabled = true
+tile_set = ExtResource("2_rodt7")
+rendering_quadrant_size = 128
+navigation_visibility_mode = 2
+format = 2
+layer_0/name = "Floor"
+layer_0/y_sort_enabled = true
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(-1, 4, 0, -131072, 7, 0, -131074, 5, 0, -131073, 7, 0, -65537, 4, 0)
+layer_1/name = "Walls"
+layer_1/y_sort_enabled = true
+layer_1/navigation_enabled = false
+layer_1/tile_data = PackedInt32Array(-1, 6, 0)
+
+[node name="TileMapFloor" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("6_wx2ej")
+rendering_quadrant_size = 128
+navigation_visibility_mode = 2
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(65535, 11, 0, -65538, 11, 0, -2, 11, 0, 65534, 11, 0, -1, 11, 0, 65536, 11, 0, 196607, 11, 0, 131071, 11, 0, -458752, 17, 0, -393216, 17, 0, -327679, 17, 0, -262143, 17, 0, -131073, 11, 0, -65537, 11, 0, -65536, 11, 0, 0, 11, 0, -65535, 11, 0, -131072, 11, 0, -196608, 11, 0, -196609, 11, 0)
+
+[node name="TileMapAssets" type="TileMap" parent="." groups=["TileMapAssets"]]
+y_sort_enabled = true
+tile_set = ExtResource("1_bc4e2")
+rendering_quadrant_size = 128
+navigation_visibility_mode = 2
+format = 2
+layer_0/name = "Restaurant Buildables"
+layer_0/y_sort_enabled = true
+layer_0/z_index = -1
+layer_1/name = "On Table Objects"
+layer_1/y_sort_enabled = true
+layer_1/tile_data = PackedInt32Array(-1, 6, 0)
+
+[node name="Character_Main_Prologue" type="Sprite2D" parent="TileMapAssets"]
+position = Vector2(-139.2, 171.8)
+texture = ExtResource("12_s5dxp")
+offset = Vector2(0, -160)
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMapAssets/Character_Main_Prologue"]
+libraries = {
+"AnimLib_Character_MC_Male": ExtResource("26_727x3")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="TileMapAssets/Character_Main_Prologue"]
+tree_root = SubResource("AnimationNodeAnimation_ruw4g")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="TShadowRound" type="Sprite2D" parent="TileMapAssets/Character_Main_Prologue"]
+modulate = Color(1, 1, 1, 0.6)
+z_index = -1
+position = Vector2(6.2, -8.80001)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ex066")
+
+[node name="Character_Tanah_Prologue" parent="TileMapAssets" instance=ExtResource("23_w5sc0")]
+position = Vector2(22, 226)
+flip_h = true
+
+[node name="TShadowRound" parent="TileMapAssets/Character_Tanah_Prologue" index="1"]
+position = Vector2(-25, 7)
+
+[node name="Buildable_OrderCounter" parent="TileMapAssets" instance=ExtResource("24_c06ej")]
+position = Vector2(-761, -227)
+script = null
+
+[node name="Sprite2D" parent="TileMapAssets/Buildable_OrderCounter" index="0"]
+material = SubResource("ShaderMaterial_28jit")
+
+[node name="Buildable_CookingStation" parent="TileMapAssets" instance=ExtResource("44_xttln")]
+position = Vector2(-504, -514)
+script = null
+
+[node name="Buildable_CookingStation2" parent="TileMapAssets" instance=ExtResource("44_xttln")]
+position = Vector2(-505, -368)
+script = null
+
+[node name="Buildable_Table1" parent="TileMapAssets" instance=ExtResource("12_iu3io")]
+position = Vector2(-125, -3)
+script = null
+
+[node name="Buildable_Table3" parent="TileMapAssets" instance=ExtResource("14_uqs2e")]
+position = Vector2(251, -72)
+script = null
+
+[node name="Buildable_DisplayCounter" parent="TileMapAssets" instance=ExtResource("10_gr1fl")]
+z_index = 1
+position = Vector2(-380, -155)
+script = null
+
+[node name="Buildable_Table2" parent="TileMapAssets" instance=ExtResource("22_wsbee")]
+material = SubResource("ShaderMaterial_286dp")
+position = Vector2(-253, -225)
+script = null
+
+[node name="Buildable_Table4" parent="TileMapAssets" instance=ExtResource("22_wsbee")]
+material = SubResource("ShaderMaterial_itrko")
+position = Vector2(-378, -153)
+script = null
+
+[node name="Buildable_Chair1" parent="TileMapAssets" instance=ExtResource("13_rqq5x")]
+position = Vector2(126, -149)
+script = null
+
+[node name="Buildable_Chair2" parent="TileMapAssets" instance=ExtResource("24_6rwyg")]
+position = Vector2(-372, -446)
+script = null
+
+[node name="TDoorIndicator2" type="Sprite2D" parent="."]
+position = Vector2(-215, 218)
+texture = ExtResource("26_mxwdn")
+
+[editable path="TileMapAssets/Character_Tanah_Prologue"]
+[editable path="TileMapAssets/Buildable_OrderCounter"]

@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://csnoqq4e5pq71"]
+
+[ext_resource type="Script" uid="uid://byiehn25u3463" path="res://Scripts/UISystem/UIs/QTEBars/QTEBar_Hori_TapInRange.gd" id="1_figb0"]
+[ext_resource type="AudioStream" uid="uid://cqljunipisldy" path="res://Audio/SFX/AS_SFX_QTE_PingPong_Left.wav" id="2_p27dd"]
+[ext_resource type="AudioStream" uid="uid://rl02jc6i00n1" path="res://Audio/SFX/AS_SFX_QTE_PingPong_Right.wav" id="3_3x3o3"]
+[ext_resource type="Texture2D" uid="uid://c2cf4luvg48bq" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Horizontal_Over.png" id="3_ac3wr"]
+[ext_resource type="Shader" uid="uid://c4wvtbfjqyda0" path="res://Scripts/Shaders/QTEBars/Shad_QTEBar_Hori.gdshader" id="3_khtbd"]
+[ext_resource type="Texture2D" uid="uid://bth08ewqyqmcf" path="res://Art/UI/Cooking/T_CookingSystem_Bar_Horizontal_Progress.png" id="5_qo26c"]
+[ext_resource type="Texture2D" uid="uid://xd1jebwmio0c" path="res://Art/UI/Cooking/T_Icon_Spatula.png" id="6_l738w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oywqw"]
+resource_local_to_scene = true
+shader = ExtResource("3_khtbd")
+shader_parameter/sectorLimits = PackedVector2Array(0.1, 0.2, 0.3, 0.435)
+shader_parameter/processMode = 0
+shader_parameter/progress = 0.0
+shader_parameter/baseColor = Color(0.980392, 0.952941, 0.847059, 1)
+shader_parameter/tapZoneColor = Color(0.996078, 0.729412, 0.407843, 1)
+shader_parameter/progressColor = Color(0.894118, 0.509804, 0.0980392, 1)
+
+[node name="QTEBar_Hori_TapInRange" type="Control" node_paths=PackedStringArray("_qteTexture", "_pointerTexture")]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_figb0")
+_qteTexture = NodePath("QTEBar_Hori_WishingTree/Frame/Fill")
+_pointerTexture = NodePath("QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control/TEXTRECT_Pointer")
+_qteLeft = ExtResource("2_p27dd")
+_qteRight = ExtResource("3_3x3o3")
+
+[node name="QTEBar_Hori_WishingTree" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="TextureRect" parent="QTEBar_Hori_WishingTree"]
+layout_mode = 2
+texture = ExtResource("3_ac3wr")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Fill" type="TextureRect" parent="QTEBar_Hori_WishingTree/Frame"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_oywqw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_qo26c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="QTEBar_Hori_WishingTree/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2"]
+layout_mode = 2
+
+[node name="TEXTRECT_Pointer" type="TextureRect" parent="QTEBar_Hori_WishingTree/Frame/MarginContainer2/Control"]
+layout_mode = 2
+anchor_left = 0.472
+anchor_top = 0.411
+anchor_right = 0.528
+anchor_bottom = 0.589
+offset_left = -0.320038
+offset_top = 0.339996
+offset_right = 0.320007
+offset_bottom = -0.340027
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_l738w")
+expand_mode = 4
+stretch_mode = 5
